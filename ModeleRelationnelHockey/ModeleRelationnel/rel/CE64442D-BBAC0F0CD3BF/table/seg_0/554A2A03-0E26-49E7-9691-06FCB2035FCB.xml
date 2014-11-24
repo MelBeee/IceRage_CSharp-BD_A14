@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="554A2A03-0E26-49E7-9691-06FCB2035FCB" name="Équipes">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:01:48 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NumEquipe" id="FB6BFF48-DDFD-A88B-E4FE-B1F247A6C071">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:11:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementGenerateAlways>true</autoIncrementGenerateAlways>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>CKNumEquipe</autoIncrementSequenceName>
+</Column>
+<Column name="Nom" id="6CA2A5CF-63A1-1742-5EE7-0F88DE6E6CDA">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:11:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Logo" id="657718FC-A264-3018-72C8-DD0DE577A437">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:11:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Ville" id="6C1A19F7-3CE5-72A2-AD11-684B078CD891">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:11:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NumDivision" id="870112FB-54DB-87A3-BF16-6DFC32418D25">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:11:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>B9AD7076-E5D0-A55D-599F-1605AA9DB7B2</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BC2CDF8D-B0A3-37A1-DE5B-22FA6C440F1F" referredColumn="B9AD7076-E5D0-A55D-599F-1605AA9DB7B2"/>
+</associations>
+</Column>
+<Column name="DateIntroduction" id="AA447504-1200-550F-3772-B4FD05CF0C5D">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:11:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BC7D7DC2-EB5C-00D7-7CAB-19F85FC241E1" name="Équipes_PK">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:11:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FB6BFF48-DDFD-A88B-E4FE-B1F247A6C071"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F4C279C1-2137-C3C7-4747-427391787606" name="Équipes_Divisions_FK">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:11:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="870112FB-54DB-87A3-BF16-6DFC32418D25"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

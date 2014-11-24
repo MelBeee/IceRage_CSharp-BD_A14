@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6DE03334-A374-93CF-36BD-3836A306CCF4" name="Divisions">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:02:02 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NumDivision" id="B9AD7076-E5D0-A55D-599F-1605AA9DB7B2">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:04:50 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementGenerateAlways>true</autoIncrementGenerateAlways>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>CKDivision</autoIncrementSequenceName>
+</Column>
+<Column name="Nom" id="3F23B903-6665-CAAC-C2F1-16D017557B62">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:08:12 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DateCreation" id="F5AB9075-D448-E995-5DB6-39906971AF28">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:08:12 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B0B33504-CDC0-D407-1C7E-9D57A020D38D" name="Divisions_PK">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:04:50 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B9AD7076-E5D0-A55D-599F-1605AA9DB7B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

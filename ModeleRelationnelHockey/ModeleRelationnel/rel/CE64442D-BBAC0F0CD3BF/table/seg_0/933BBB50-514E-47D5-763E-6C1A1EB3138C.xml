@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="933BBB50-514E-47D5-763E-6C1A1EB3138C" name="Joueurs">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:00:11 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NumJoueur" id="01E11970-3FDB-0A0B-8FF3-1959BE654D91">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:15:51 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementGenerateAlways>true</autoIncrementGenerateAlways>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>CKNumJoueur</autoIncrementSequenceName>
+</Column>
+<Column name="Nom" id="9F48E121-028B-87D5-9AB1-4FA1B33E9563">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:15:51 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Prenom" id="A933090B-4457-4855-CBF2-5B1E4973E6D1">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:15:51 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Naissance" id="E4415698-1096-13B4-E9F0-132AEFE1F276">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:19:58 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NumeroMaillot" id="AC56C5E5-AC7C-5C31-89E3-98617C80D41C">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:19:58 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TypeJoueur" id="9560F33F-9251-18D4-A85E-696304EEFB5C">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:19:58 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<constraintName>CKTypeJ</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="Attaquant" description=""/>
+<valueDef value="Defenseur" description=""/>
+<valueDef value="Gardien" description=""/>
+</listOfValues>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Photo" id="C05B51D6-5212-8A9B-B984-3A199E7CE34B">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:19:58 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NumEquipe" id="DCCBBA22-1FB7-0AE8-8E00-FAF737989DCB">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:19:58 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>FB6BFF48-DDFD-A88B-E4FE-B1F247A6C071</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A29FFF2E-7D6C-350E-3FA9-EF487D2AFDC4" referredColumn="FB6BFF48-DDFD-A88B-E4FE-B1F247A6C071"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="719DB16D-1150-5D83-5A0F-5C9042EF0FA6" name="Joueurs_PK">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:15:51 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="01E11970-3FDB-0A0B-8FF3-1959BE654D91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6C230BD9-6D5C-BE28-6B07-EE51B740AE41" name="Joueurs_Équipes_FK">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:19:58 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCCBBA22-1FB7-0AE8-8E00-FAF737989DCB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

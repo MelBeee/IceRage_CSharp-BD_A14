@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FD30FCB5-379A-1BD9-1C52-3A6952203D92" name="JoueursDansMatch">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 20:02:21 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NumMatch" id="D3BBF528-CE26-A8E4-0A67-0795B0B98C73">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 21:01:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<delegate>10FF93F1-FBC0-C869-A052-A51BE4F9949D</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="92CDE7A5-31D4-03AE-D045-C5EED167B325" referredColumn="10FF93F1-FBC0-C869-A052-A51BE4F9949D"/>
+</associations>
+</Column>
+<Column name="NumJoueur" id="32711A73-B282-0D6B-48AD-5E9ABCEE10C5">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 21:01:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>01E11970-3FDB-0A0B-8FF3-1959BE654D91</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6EE06A0C-E859-7EE5-0430-3FD45F013FA5" referredColumn="01E11970-3FDB-0A0B-8FF3-1959BE654D91"/>
+</associations>
+</Column>
+<Column name="NbreButs" id="C4E6D5B7-DFF0-9624-0757-0AC521BF174A">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 21:01:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NbrePasses" id="6ACBA8E2-9706-5D8C-D31A-1D7BC58D3AE7">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 21:01:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TempsPunission" id="68E44038-DF69-9FAC-5676-189BE3CDA1F0">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 21:01:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F9B79B0D-A9F5-9A45-7C03-4482AA79D273" name="JoueursDansMatch_PK">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 21:01:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3BBF528-CE26-A8E4-0A67-0795B0B98C73"/>
+<colUsage columnID="32711A73-B282-0D6B-48AD-5E9ABCEE10C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5978EF9B-EC29-34E8-CA63-206E12782330" name="JoueursDansMatch_Matchs_FK">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 21:01:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3BBF528-CE26-A8E4-0A67-0795B0B98C73"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C227B221-CA5B-D283-7536-0681B429ABFE" name="JoueursDansMatch_Joueurs_FK">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-23 21:01:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="32711A73-B282-0D6B-48AD-5E9ABCEE10C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
