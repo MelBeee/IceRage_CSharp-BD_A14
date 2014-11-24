@@ -1,0 +1,48 @@
+INSERT INTO Divisions VALUES(1, 'Est','01-01-14');
+INSERT INTO Divisions VALUES(1, 'Ouest','01-01-14');
+
+INSERT INTO Equipes VALUES(1, 'Habs', 'Montreal', 1,'01-01-14');
+INSERT INTO Equipes VALUES(1, 'Leaf', 'Toronto', 1,'01-01-14');
+
+INSERT INTO Equipes VALUES(1, 'King', 'Los Angeles', 2,'01-01-14');
+INSERT INTO Equipes VALUES(1, 'Blac', 'Chicago', 2,'01-01-14');
+
+INSERT INTO Joueurs VALUES(1, 'Price',      'Carey',  '16-08-1987', 31, 'Gardien',    1);
+INSERT INTO Joueurs VALUES(1, 'Pacioretty', 'Max',    '20-11-1988', 67, 'Attaquant',  1);
+INSERT INTO Joueurs VALUES(1, 'Prust',      'Brandon','16-03-1984', 8,  'Attaquant',  1);
+INSERT INTO Joueurs VALUES(1, 'Markov',     'Andrei', '20-12-1978', 79, 'Defenseur',  1);
+INSERT INTO Joueurs VALUES(1, 'Subban',     'PK',     '13-05-1989', 76, 'Defenseur',  1);
+
+INSERT INTO Joueurs VALUES(1, 'Bernier',  'Jonathan', '07-08-1988', 45, 'Gardien',    2);
+INSERT INTO Joueurs VALUES(1, 'Kessel',   'Phil',     '02-10-1987', 81, 'Attaquant',  2);
+INSERT INTO Joueurs VALUES(1, 'Joffrey',  'Lupul',    '23-09-1983', 19, 'Attaquant',  2);
+INSERT INTO Joueurs VALUES(1, 'Phaneuf',  'Dion',     '10-04-1985', 3,  'Defenseur',  2);
+INSERT INTO Joueurs VALUES(1, 'Gardiner', 'Jake',     '04-07-1990', 51, 'Defenseur',  2);
+
+INSERT INTO Joueurs VALUES(1, 'Jonathan', 'Quick',  '21-01-1986', 32, 'Gardien',    3);
+INSERT INTO Joueurs VALUES(1, 'Kopitar',  'Anze',   '24-07-1987', 11, 'Attaquant',  3);
+INSERT INTO Joueurs VALUES(1, 'Dustin',   'Brown',  '04-11-1984', 23, 'Attaquant',  3);
+INSERT INTO Joueurs VALUES(1, 'Doughty',  'Drew',   '08-12-1989', 8,  'Defenseur',  3);
+INSERT INTO Joueurs VALUES(1, 'Regehr',   'Robyn',  '19-04-1980', 44, 'Defenseur',  3);
+
+INSERT INTO Joueurs VALUES(1, 'Crawford', 'Corey',    '31-12-1984', 50, 'Gardien',    4);
+INSERT INTO Joueurs VALUES(1, 'Toews',    'Jonathan', '29-04-1988', 19, 'Attaquant',  4);
+INSERT INTO Joueurs VALUES(1, 'Kane',     'Patrick',  '19-11-1988', 88, 'Attaquant',  4);
+INSERT INTO Joueurs VALUES(1, 'Seabrook', 'Brent',    '20-04-1985', 7,  'Defenseur',  4);
+INSERT INTO Joueurs VALUES(1, 'Keith',    'Duncan',   '16-07-1983', 2,  'Defenseur',  4);
+
+ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MM-YYYY';
+
+INSERT INTO Matchs VALUES(1, 1, 2, '13-11-2014', 'Toronto',     TO_DATE('07:30:00','hh-mi-ss'));
+INSERT INTO Matchs VALUES(1, 3, 4, '15-11-2014', 'Los Angeles', TO_DATE('08:30:00','hh-mi-ss'));
+INSERT INTO Matchs VALUES(1, 1, 3, '17-11-2014', 'Los Angeles', TO_DATE('08:00:00','hh-mi-ss'));
+INSERT INTO Matchs VALUES(1, 2, 4, '19-11-2014', 'Chicago',     TO_DATE('07:15:00','hh-mi-ss'));
+INSERT INTO Matchs VALUES(1, 2, 3, '21-11-2014', 'Chicago',     TO_DATE('06:30:00','hh-mi-ss'));
+INSERT INTO Matchs VALUES(1, 1, 4, '23-11-2014', 'Montreal',    TO_DATE('07:00:00','hh-mi-ss'));
+
+INSERT INTO JoueursDansMatch VALUES();
+
+select * from matchs;
+select * from joueurs;
+select * from Equipes;
+select * from divisions;
