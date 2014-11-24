@@ -47,11 +47,11 @@ INSERT INTO Joueurs VALUES(1, 'Kane',     'Patrick',  '19-11-88', 88, 'Attaquant
 INSERT INTO Joueurs VALUES(1, 'Seabrook', 'Brent',    '20-04-85', 7,  'Defenseur',  6);
 INSERT INTO Joueurs VALUES(1, 'Keith',    'Duncan',   '16-07-83', 2,  'Defenseur',  6);
 
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Gardien',      7);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Attaquant',    7);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Attaquant',    7);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Defenseur',    7);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Defenseur',    7);
+INSERT INTO Joueurs VALUES(1, 'Beck', 		'Taylor',	'13-05-91', 41, 'Gardien',      7);
+INSERT INTO Joueurs VALUES(1, 'Bourque', 	'Gabriel',  '23-09-90', 57, 'Attaquant',    7);
+INSERT INTO Joueurs VALUES(1, 'Cullen', 	'Matt',    	'02-11-76', 7, 'Attaquant',    7);
+INSERT INTO Joueurs VALUES(1, 'Forsberg', 	'Filip',    '13-08-94', 9, 'Defenseur',    7);
+INSERT INTO Joueurs VALUES(1, 'Gaustad', 	'Paul',    	'03-02-82', 28, 'Defenseur',    7);
 
 INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Gardien',      8);
 INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Attaquant',    8);
