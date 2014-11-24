@@ -23,17 +23,17 @@ INSERT INTO Joueurs VALUES(1, 'Joffrey',  'Lupul',    '23-09-83', 19, 'Attaquant
 INSERT INTO Joueurs VALUES(1, 'Phaneuf',  'Dion',     '10-04-85', 3,  'Defenseur',  2);
 INSERT INTO Joueurs VALUES(1, 'Gardiner', 'Jake',     '04-07-90', 51, 'Defenseur',  2);
 
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Gardien',      3);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Attaquant',    3);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Attaquant',    3);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Defenseur',    3);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Defenseur',    3);
+INSERT INTO Joueurs VALUES(1, 'Lundqvist',  'Henrik',  '02-03-82', 30, 'Gardien',   3);
+INSERT INTO Joueurs VALUES(1, 'Nash',       'Rick',    '16-06-84', 30, 'Attaquant', 3);
+INSERT INTO Joueurs VALUES(1, 'St-Louis',   'Martin',  '18-06-75', 26, 'Attaquant', 3);
+INSERT INTO Joueurs VALUES(1, 'Boyle',      'Dan',     '12-07-76', 22, 'Defenseur', 3);
+INSERT INTO Joueurs VALUES(1, 'Staal',      'Marc',    '13-01-87', 18, 'Defenseur', 3);
 
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Gardien',      4);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Attaquant',    4);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Attaquant',    4);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Defenseur',    4);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Defenseur',    4);
+INSERT INTO Joueurs VALUES(1, 'Anderson', 'Craig', '21-05-81', 41,  'Gardien',   4);
+INSERT INTO Joueurs VALUES(1, 'Chiasson', 'Alex',  '01-10-90', 90,  'Attaquant', 4);
+INSERT INTO Joueurs VALUES(1, 'Neil',     'Chris', '18-06-79', 25,  'Attaquant', 4);
+INSERT INTO Joueurs VALUES(1, 'Phillips', 'Chris', '09-03-78', 4,   'Defenseur', 4);
+INSERT INTO Joueurs VALUES(1, 'Karlsson', 'Erik',  '31-05-90', 65,  'Defenseur', 4);
 
 INSERT INTO Joueurs VALUES(1, 'Jonathan', 'Quick',  '21-01-86', 32, 'Gardien',    5);
 INSERT INTO Joueurs VALUES(1, 'Kopitar',  'Anze',   '24-07-87', 11, 'Attaquant',  5);
@@ -53,11 +53,11 @@ INSERT INTO Joueurs VALUES(1, 'Cullen', 	'Matt',    	'02-11-76', 7, 'Attaquant',
 INSERT INTO Joueurs VALUES(1, 'Forsberg', 	'Filip',    '13-08-94', 9, 'Defenseur',    7);
 INSERT INTO Joueurs VALUES(1, 'Gaustad', 	'Paul',    	'03-02-82', 28, 'Defenseur',    7);
 
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Gardien',      8);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Attaquant',    8);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Attaquant',    8);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Defenseur',    8);
-INSERT INTO Joueurs VALUES(1, '', '',    '', 1, 'Defenseur',    8);
+INSERT INTO Joueurs VALUES(1, 'Niemi', 'Antti',    '29-08-83', 31, 'Gardien',   8);
+INSERT INTO Joueurs VALUES(1, 'Marleau', 'Patrick','15-09-79', 12, 'Attaquant', 8);
+INSERT INTO Joueurs VALUES(1, 'Pavelski', 'Joe',   '11-07-84', 8,  'Attaquant', 8);
+INSERT INTO Joueurs VALUES(1, 'Braun', 'Justin',   '10-02-87', 61, 'Defenseur', 8);
+INSERT INTO Joueurs VALUES(1, 'Burns', 'Brent',    '09-03-85', 88, 'Defenseur', 8);
 
 INSERT INTO Matchs VALUES(1, 1, 2, '13-11-14', 'Toronto',     TO_DATE('07:30:00','hh-mi-ss'));
 INSERT INTO Matchs VALUES(1, 3, 4, '15-11-14', 'Los Angeles', TO_DATE('08:30:00','hh-mi-ss'));
