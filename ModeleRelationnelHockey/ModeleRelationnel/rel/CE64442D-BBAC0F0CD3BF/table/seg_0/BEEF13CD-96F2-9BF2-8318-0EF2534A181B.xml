@@ -82,6 +82,28 @@
 <logicalDatatype>LOGDT014</logicalDatatype>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="ScoreMaison" id="5803D2E1-87F4-B0D8-FDBB-FD96A98ACA4E">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-26 21:52:47 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ScoreVisiteur" id="EFC52B8E-0544-4DDD-3D2F-AA86D93964A2">
+<createdBy>Mélissa</createdBy>
+<createdTime>2014-11-26 21:52:47 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>ModeleRelationnel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="F24B25AA-2774-D1BB-E91C-3B3A114F8187" name="Matchs_PK">
