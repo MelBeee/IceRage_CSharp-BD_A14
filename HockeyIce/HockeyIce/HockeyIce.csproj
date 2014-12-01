@@ -209,6 +209,45 @@
   <ItemGroup>
     <None Include="Resources\Hockey_Stick_Pin.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3JoueursClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3JoueursDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3JoueursHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3JoueursNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CEquipeClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CEquipeDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CEquipeHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CEquipeNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CJoueursClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CJoueursDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CJoueursHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CJoueursNormal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

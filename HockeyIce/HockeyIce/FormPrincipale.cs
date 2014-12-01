@@ -121,7 +121,10 @@ namespace HockeyIce
         {
             FormErreur dlg = new FormErreur();
 
-            dlg.ShowDialog();
+            if(dlg.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Close();
+            }
         }
       
         private void FB_Fermer_Click(object sender, EventArgs e)

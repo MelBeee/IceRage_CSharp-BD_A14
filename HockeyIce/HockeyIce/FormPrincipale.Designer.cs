@@ -32,29 +32,27 @@
             this.LB_NomApp = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.PN_PasDeConnection = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.FB_CJoueurs = new FlashButton.FlashButton();
+            this.FB_CEquipe = new FlashButton.FlashButton();
+            this.FB_3MeilleursJs = new FlashButton.FlashButton();
+            this.FB_APropos = new FlashButton.FlashButton();
             this.FB_QuitterPDC = new FlashButton.FlashButton();
             this.FB_Retour = new FlashButton.FlashButton();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.FB_APropos = new FlashButton.FlashButton();
             this.FB_Fermer = new FlashButton.FlashButton();
             this.PB_Logo = new System.Windows.Forms.PictureBox();
             this.PB_Fond = new System.Windows.Forms.PictureBox();
-            this.panel6.SuspendLayout();
             this.PN_PasDeConnection.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -95,15 +93,6 @@
             this.panel3.Size = new System.Drawing.Size(206, 100);
             this.panel3.TabIndex = 6;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Yellow;
-            this.panel6.Controls.Add(this.FB_APropos);
-            this.panel6.Location = new System.Drawing.Point(33, 57);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(100, 206);
-            this.panel6.TabIndex = 8;
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(87)))), ((int)(((byte)(46)))));
@@ -111,22 +100,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(100, 100);
             this.panel8.TabIndex = 8;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(184)))));
-            this.panel10.Location = new System.Drawing.Point(670, 57);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(100, 312);
-            this.panel10.TabIndex = 9;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(170)))));
-            this.panel12.Location = new System.Drawing.Point(458, 269);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(206, 100);
-            this.panel12.TabIndex = 8;
             // 
             // panel9
             // 
@@ -143,14 +116,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(206, 100);
             this.panel2.TabIndex = 10;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(214)))), ((int)(((byte)(51)))));
-            this.panel4.Location = new System.Drawing.Point(564, 375);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(206, 100);
-            this.panel4.TabIndex = 6;
             // 
             // panel13
             // 
@@ -200,6 +165,62 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Aucune connection, réessayer plus tard";
             // 
+            // FB_CJoueurs
+            // 
+            this.FB_CJoueurs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_CJoueurs.ImageClick = global::HockeyIce.Properties.Resources.CJoueursClick;
+            this.FB_CJoueurs.ImageDisable = global::HockeyIce.Properties.Resources.CJoueursDisable;
+            this.FB_CJoueurs.ImageNeutral = global::HockeyIce.Properties.Resources.CJoueursNormal;
+            this.FB_CJoueurs.ImageOver = global::HockeyIce.Properties.Resources.CJoueursHover;
+            this.FB_CJoueurs.Location = new System.Drawing.Point(671, 57);
+            this.FB_CJoueurs.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_CJoueurs.Name = "FB_CJoueurs";
+            this.FB_CJoueurs.Size = new System.Drawing.Size(99, 310);
+            this.FB_CJoueurs.TabIndex = 19;
+            // 
+            // FB_CEquipe
+            // 
+            this.FB_CEquipe.BackgroundImage = global::HockeyIce.Properties.Resources.CEquipeNormal;
+            this.FB_CEquipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_CEquipe.ImageClick = global::HockeyIce.Properties.Resources.CEquipeClick;
+            this.FB_CEquipe.ImageDisable = global::HockeyIce.Properties.Resources.CEquipeDisable;
+            this.FB_CEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.CEquipeNormal;
+            this.FB_CEquipe.ImageOver = global::HockeyIce.Properties.Resources.CEquipeHover;
+            this.FB_CEquipe.Location = new System.Drawing.Point(459, 269);
+            this.FB_CEquipe.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_CEquipe.Name = "FB_CEquipe";
+            this.FB_CEquipe.Size = new System.Drawing.Size(205, 100);
+            this.FB_CEquipe.TabIndex = 18;
+            // 
+            // FB_3MeilleursJs
+            // 
+            this.FB_3MeilleursJs.BackgroundImage = global::HockeyIce.Properties.Resources._3JoueursNormal;
+            this.FB_3MeilleursJs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_3MeilleursJs.ImageClick = global::HockeyIce.Properties.Resources._3JoueursClick;
+            this.FB_3MeilleursJs.ImageDisable = global::HockeyIce.Properties.Resources._3JoueursDisable;
+            this.FB_3MeilleursJs.ImageNeutral = global::HockeyIce.Properties.Resources._3JoueursNormal;
+            this.FB_3MeilleursJs.ImageOver = global::HockeyIce.Properties.Resources._3JoueursHover;
+            this.FB_3MeilleursJs.Location = new System.Drawing.Point(565, 375);
+            this.FB_3MeilleursJs.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_3MeilleursJs.Name = "FB_3MeilleursJs";
+            this.FB_3MeilleursJs.Size = new System.Drawing.Size(205, 100);
+            this.FB_3MeilleursJs.TabIndex = 17;
+            // 
+            // FB_APropos
+            // 
+            this.FB_APropos.BackgroundImage = global::HockeyIce.Properties.Resources.AideNormal;
+            this.FB_APropos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_APropos.ImageClick = global::HockeyIce.Properties.Resources.AideClick;
+            this.FB_APropos.ImageDisable = global::HockeyIce.Properties.Resources.AideDisable;
+            this.FB_APropos.ImageNeutral = global::HockeyIce.Properties.Resources.AideNormal;
+            this.FB_APropos.ImageOver = global::HockeyIce.Properties.Resources.AideHover;
+            this.FB_APropos.Location = new System.Drawing.Point(33, 57);
+            this.FB_APropos.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_APropos.Name = "FB_APropos";
+            this.FB_APropos.Size = new System.Drawing.Size(100, 205);
+            this.FB_APropos.TabIndex = 16;
+            this.FB_APropos.Click += new System.EventHandler(this.FB_APropos_Click);
+            // 
             // FB_QuitterPDC
             // 
             this.FB_QuitterPDC.BackgroundImage = global::HockeyIce.Properties.Resources.QuitterNormal;
@@ -209,7 +230,7 @@
             this.FB_QuitterPDC.ImageNeutral = global::HockeyIce.Properties.Resources.QuitterNormal;
             this.FB_QuitterPDC.ImageOver = global::HockeyIce.Properties.Resources.QuitterHover;
             this.FB_QuitterPDC.Location = new System.Drawing.Point(101, 63);
-            this.FB_QuitterPDC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_QuitterPDC.Margin = new System.Windows.Forms.Padding(4);
             this.FB_QuitterPDC.Name = "FB_QuitterPDC";
             this.FB_QuitterPDC.Size = new System.Drawing.Size(100, 20);
             this.FB_QuitterPDC.TabIndex = 0;
@@ -224,7 +245,7 @@
             this.FB_Retour.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormal;
             this.FB_Retour.ImageOver = global::HockeyIce.Properties.Resources.RetourHover;
             this.FB_Retour.Location = new System.Drawing.Point(740, 4);
-            this.FB_Retour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_Retour.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Retour.Name = "FB_Retour";
             this.FB_Retour.Size = new System.Drawing.Size(27, 26);
             this.FB_Retour.TabIndex = 14;
@@ -268,21 +289,6 @@
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
             // 
-            // FB_APropos
-            // 
-            this.FB_APropos.BackgroundImage = global::HockeyIce.Properties.Resources.AideNormal;
-            this.FB_APropos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_APropos.ImageClick = global::HockeyIce.Properties.Resources.AideClick;
-            this.FB_APropos.ImageDisable = global::HockeyIce.Properties.Resources.AideDisable;
-            this.FB_APropos.ImageNeutral = global::HockeyIce.Properties.Resources.AideNormal;
-            this.FB_APropos.ImageOver = global::HockeyIce.Properties.Resources.AideHover;
-            this.FB_APropos.Location = new System.Drawing.Point(0, 0);
-            this.FB_APropos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FB_APropos.Name = "FB_APropos";
-            this.FB_APropos.Size = new System.Drawing.Size(100, 205);
-            this.FB_APropos.TabIndex = 16;
-            this.FB_APropos.Click += new System.EventHandler(this.FB_APropos_Click);
-            // 
             // FB_Fermer
             // 
             this.FB_Fermer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -293,7 +299,7 @@
             this.FB_Fermer.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageNeutral")));
             this.FB_Fermer.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageOver")));
             this.FB_Fermer.Location = new System.Drawing.Point(771, 4);
-            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(27, 26);
             this.FB_Fermer.TabIndex = 4;
@@ -317,7 +323,7 @@
             this.PB_Fond.BackColor = System.Drawing.Color.LightSkyBlue;
             this.PB_Fond.Location = new System.Drawing.Point(3, 33);
             this.PB_Fond.Name = "PB_Fond";
-            this.PB_Fond.Size = new System.Drawing.Size(795, 472);
+            this.PB_Fond.Size = new System.Drawing.Size(795, 469);
             this.PB_Fond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Fond.TabIndex = 1;
             this.PB_Fond.TabStop = false;
@@ -329,21 +335,21 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(802, 506);
+            this.Controls.Add(this.FB_CJoueurs);
+            this.Controls.Add(this.FB_CEquipe);
+            this.Controls.Add(this.FB_3MeilleursJs);
+            this.Controls.Add(this.FB_APropos);
             this.Controls.Add(this.PN_PasDeConnection);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.FB_Retour);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel12);
-            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.FB_Fermer);
@@ -358,7 +364,6 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormPrincipale_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormPrincipale_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormPrincipale_MouseUp);
-            this.panel6.ResumeLayout(false);
             this.PN_PasDeConnection.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -381,16 +386,12 @@
         private FlashButton.FlashButton FB_Fermer;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel5;
@@ -400,6 +401,9 @@
         private FlashButton.FlashButton FB_QuitterPDC;
         private System.Windows.Forms.Label label3;
         private FlashButton.FlashButton FB_APropos;
+        private FlashButton.FlashButton FB_3MeilleursJs;
+        private FlashButton.FlashButton FB_CEquipe;
+        private FlashButton.FlashButton FB_CJoueurs;
 
     }
 }

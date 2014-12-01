@@ -47,15 +47,7 @@ namespace HockeyIce
             }
         }
 
-        private void FB_Quitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void FB_Continuer_Click(object sender, EventArgs e)
-        {
-            this.Close(); 
-        }
 
         private void LB_Text_MouseDown(object sender, MouseEventArgs e)
         {
@@ -77,5 +69,24 @@ namespace HockeyIce
             _dragging = false; 
         }
 
+        private void LB_Description_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FB_Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FB_Continuer_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void FB_Fermer_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
     }
 }
