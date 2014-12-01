@@ -30,18 +30,20 @@
         {
             this.LB_Text = new System.Windows.Forms.Label();
             this.PN_CJoueurs = new System.Windows.Forms.Panel();
-            this.PN_3Joueurs = new System.Windows.Forms.Panel();
             this.CJoueurs = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.PN_3Joueurs = new System.Windows.Forms.Panel();
+            this.LB_Gold = new System.Windows.Forms.Label();
+            this.PB_Podium = new System.Windows.Forms.PictureBox();
             this.PN_CEquipe = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FB_Quitter = new FlashButton.FlashButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LB_Bronze = new System.Windows.Forms.Label();
+            this.LB_Silver = new System.Windows.Forms.Label();
             this.PN_CJoueurs.SuspendLayout();
             this.PN_3Joueurs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Podium)).BeginInit();
             this.PN_CEquipe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,22 +67,10 @@
             this.PN_CJoueurs.BackColor = System.Drawing.Color.LightSkyBlue;
             this.PN_CJoueurs.Controls.Add(this.CJoueurs);
             this.PN_CJoueurs.Location = new System.Drawing.Point(4, 30);
-            this.PN_CJoueurs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PN_CJoueurs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_CJoueurs.Name = "PN_CJoueurs";
-            this.PN_CJoueurs.Size = new System.Drawing.Size(586, 345);
+            this.PN_CJoueurs.Size = new System.Drawing.Size(673, 397);
             this.PN_CJoueurs.TabIndex = 10;
-            // 
-            // PN_3Joueurs
-            // 
-            this.PN_3Joueurs.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_3Joueurs.Controls.Add(this.label2);
-            this.PN_3Joueurs.Controls.Add(this.pictureBox1);
-            this.PN_3Joueurs.Controls.Add(this.PN_CEquipe);
-            this.PN_3Joueurs.Location = new System.Drawing.Point(4, 29);
-            this.PN_3Joueurs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PN_3Joueurs.Name = "PN_3Joueurs";
-            this.PN_3Joueurs.Size = new System.Drawing.Size(586, 345);
-            this.PN_3Joueurs.TabIndex = 12;
             // 
             // CJoueurs
             // 
@@ -92,6 +82,52 @@
             this.CJoueurs.TabIndex = 0;
             this.CJoueurs.Text = "CJoueurs";
             // 
+            // PN_3Joueurs
+            // 
+            this.PN_3Joueurs.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_3Joueurs.Controls.Add(this.LB_Silver);
+            this.PN_3Joueurs.Controls.Add(this.LB_Bronze);
+            this.PN_3Joueurs.Controls.Add(this.LB_Gold);
+            this.PN_3Joueurs.Controls.Add(this.PB_Podium);
+            this.PN_3Joueurs.Controls.Add(this.PN_CEquipe);
+            this.PN_3Joueurs.Location = new System.Drawing.Point(4, 29);
+            this.PN_3Joueurs.Margin = new System.Windows.Forms.Padding(2);
+            this.PN_3Joueurs.Name = "PN_3Joueurs";
+            this.PN_3Joueurs.Size = new System.Drawing.Size(673, 397);
+            this.PN_3Joueurs.TabIndex = 12;
+            // 
+            // LB_Gold
+            // 
+            this.LB_Gold.AutoSize = true;
+            this.LB_Gold.BackColor = System.Drawing.Color.Gold;
+            this.LB_Gold.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Gold.Location = new System.Drawing.Point(284, 133);
+            this.LB_Gold.Name = "LB_Gold";
+            this.LB_Gold.Size = new System.Drawing.Size(98, 22);
+            this.LB_Gold.TabIndex = 13;
+            this.LB_Gold.Text = "Bryan Prust";
+            this.LB_Gold.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // PB_Podium
+            // 
+            this.PB_Podium.Image = global::HockeyIce.Properties.Resources.podium;
+            this.PB_Podium.Location = new System.Drawing.Point(51, 16);
+            this.PB_Podium.Name = "PB_Podium";
+            this.PB_Podium.Size = new System.Drawing.Size(568, 148);
+            this.PB_Podium.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PB_Podium.TabIndex = 12;
+            this.PB_Podium.TabStop = false;
+            // 
+            // PN_CEquipe
+            // 
+            this.PN_CEquipe.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_CEquipe.Controls.Add(this.label1);
+            this.PN_CEquipe.Location = new System.Drawing.Point(0, 244);
+            this.PN_CEquipe.Margin = new System.Windows.Forms.Padding(2);
+            this.PN_CEquipe.Name = "PN_CEquipe";
+            this.PN_CEquipe.Size = new System.Drawing.Size(673, 397);
+            this.PN_CEquipe.TabIndex = 11;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -101,26 +137,6 @@
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "CEquipe";
-            // 
-            // PN_CEquipe
-            // 
-            this.PN_CEquipe.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_CEquipe.Controls.Add(this.label1);
-            this.PN_CEquipe.Location = new System.Drawing.Point(2, 250);
-            this.PN_CEquipe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PN_CEquipe.Name = "PN_CEquipe";
-            this.PN_CEquipe.Size = new System.Drawing.Size(586, 345);
-            this.PN_CEquipe.TabIndex = 11;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HockeyIce.Properties.Resources.podium;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(469, 114);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -141,37 +157,46 @@
             this.FB_Quitter.ImageDisable = global::HockeyIce.Properties.Resources.CloseDisable;
             this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
             this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
-            this.FB_Quitter.Location = new System.Drawing.Point(571, 4);
+            this.FB_Quitter.Location = new System.Drawing.Point(658, 4);
             this.FB_Quitter.Name = "FB_Quitter";
             this.FB_Quitter.Size = new System.Drawing.Size(19, 20);
             this.FB_Quitter.TabIndex = 11;
             this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
-            // label2
+            // LB_Bronze
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Gold;
-            this.label2.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(241, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 22);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Bryan Prust";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.LB_Bronze.AutoSize = true;
+            this.LB_Bronze.Font = new System.Drawing.Font("Kristen ITC", 11.25F);
+            this.LB_Bronze.Location = new System.Drawing.Point(482, 133);
+            this.LB_Bronze.Name = "LB_Bronze";
+            this.LB_Bronze.Size = new System.Drawing.Size(92, 22);
+            this.LB_Bronze.TabIndex = 14;
+            this.LB_Bronze.Text = "PK Subban";
+            // 
+            // LB_Silver
+            // 
+            this.LB_Silver.AutoSize = true;
+            this.LB_Silver.BackColor = System.Drawing.Color.Gold;
+            this.LB_Silver.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Silver.Location = new System.Drawing.Point(94, 133);
+            this.LB_Silver.Name = "LB_Silver";
+            this.LB_Silver.Size = new System.Drawing.Size(98, 22);
+            this.LB_Silver.TabIndex = 15;
+            this.LB_Silver.Text = "Bryan Prust";
             // 
             // FormClassement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(594, 379);
+            this.ClientSize = new System.Drawing.Size(681, 431);
             this.Controls.Add(this.PN_3Joueurs);
             this.Controls.Add(this.LB_Text);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.FB_Quitter);
             this.Controls.Add(this.PN_CJoueurs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormClassement";
             this.Text = "FormClassement";
             this.Load += new System.EventHandler(this.FormClassement_Load);
@@ -182,9 +207,9 @@
             this.PN_CJoueurs.PerformLayout();
             this.PN_3Joueurs.ResumeLayout(false);
             this.PN_3Joueurs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Podium)).EndInit();
             this.PN_CEquipe.ResumeLayout(false);
             this.PN_CEquipe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -201,7 +226,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label CJoueurs;
         private System.Windows.Forms.Panel PN_3Joueurs;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox PB_Podium;
+        private System.Windows.Forms.Label LB_Gold;
+        private System.Windows.Forms.Label LB_Bronze;
+        private System.Windows.Forms.Label LB_Silver;
     }
 }

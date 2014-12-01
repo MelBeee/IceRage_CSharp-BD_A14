@@ -19,12 +19,30 @@ namespace HockeyIce
         public FormClassement()
         {
             InitializeComponent();
-            var pos = this.PointToScreen(label2.Location);
-            pos = pictureBox1.PointToClient(pos);
-            label2.Parent = pictureBox1;
-            label2.Location = pos;
-            label2.BackColor = Color.Transparent;
+
         }
+
+        private void LBFond()
+        {
+            var pos = this.PointToScreen(LB_Gold.Location);
+            pos = PB_Podium.PointToClient(pos);
+            LB_Gold.Parent = PB_Podium;
+            LB_Gold.Location = pos;
+            LB_Gold.BackColor = Color.Transparent;
+
+            var pos1 = this.PointToScreen(LB_Silver.Location);
+            pos1 = PB_Podium.PointToClient(pos1);
+            LB_Silver.Parent = PB_Podium;
+            LB_Silver.Location = pos1;
+            LB_Silver.BackColor = Color.Transparent;
+
+            var pos2 = this.PointToScreen(LB_Bronze.Location);
+            pos2 = PB_Podium.PointToClient(pos2);
+            LB_Bronze.Parent = PB_Podium;
+            LB_Bronze.Location = pos2;
+            LB_Bronze.BackColor = Color.Transparent;
+        }
+
 
         private void FB_Quitter_Click(object sender, EventArgs e)
         {
