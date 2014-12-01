@@ -19,11 +19,11 @@ namespace HockeyIce
         public FormClassement()
         {
             InitializeComponent();
-            var pos = this.PointToScreen(label1.Location);
+            var pos = this.PointToScreen(label2.Location);
             pos = pictureBox1.PointToClient(pos);
-            label1.Parent = pictureBox1;
-            label1.Location = pos;
-            label1.BackColor = Color.Transparent;
+            label2.Parent = pictureBox1;
+            label2.Location = pos;
+            label2.BackColor = Color.Transparent;
         }
 
         private void FB_Quitter_Click(object sender, EventArgs e)
