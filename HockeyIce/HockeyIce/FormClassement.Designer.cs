@@ -101,11 +101,12 @@
             this.LB_Gold.AutoSize = true;
             this.LB_Gold.BackColor = System.Drawing.Color.Gold;
             this.LB_Gold.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Gold.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.LB_Gold.Location = new System.Drawing.Point(284, 133);
             this.LB_Gold.Name = "LB_Gold";
-            this.LB_Gold.Size = new System.Drawing.Size(98, 22);
+            this.LB_Gold.Size = new System.Drawing.Size(214, 22);
             this.LB_Gold.TabIndex = 13;
-            this.LB_Gold.Text = "Bryan Prust";
+            this.LB_Gold.Text = "Bryan Prustwerawrawreawr";
             this.LB_Gold.Click += new System.EventHandler(this.label2_Click);
             // 
             // PB_Podium
@@ -117,6 +118,8 @@
             this.PB_Podium.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_Podium.TabIndex = 12;
             this.PB_Podium.TabStop = false;
+            this.PB_Podium.Click += new System.EventHandler(this.PB_Podium_Click);
+            this.PB_Podium.Paint += new System.Windows.Forms.PaintEventHandler(this.PB_Podium_Paint);
             // 
             // PN_CEquipe
             // 
@@ -167,6 +170,7 @@
             // 
             this.LB_Bronze.AutoSize = true;
             this.LB_Bronze.Font = new System.Drawing.Font("Kristen ITC", 11.25F);
+            this.LB_Bronze.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.LB_Bronze.Location = new System.Drawing.Point(482, 133);
             this.LB_Bronze.Name = "LB_Bronze";
             this.LB_Bronze.Size = new System.Drawing.Size(92, 22);
@@ -178,6 +182,7 @@
             this.LB_Silver.AutoSize = true;
             this.LB_Silver.BackColor = System.Drawing.Color.Gold;
             this.LB_Silver.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Silver.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.LB_Silver.Location = new System.Drawing.Point(94, 133);
             this.LB_Silver.Name = "LB_Silver";
             this.LB_Silver.Size = new System.Drawing.Size(98, 22);

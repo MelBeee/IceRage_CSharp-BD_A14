@@ -19,28 +19,27 @@ namespace HockeyIce
         public FormClassement()
         {
             InitializeComponent();
+            LBFond();
 
         }
 
         private void LBFond()
         {
-            var pos = this.PointToScreen(LB_Gold.Location);
-            pos = PB_Podium.PointToClient(pos);
+            Point position = new Point(45, 115);
+            Point position2 = new Point(235, 115);
+            Point position3 = new Point(435, 115);
             LB_Gold.Parent = PB_Podium;
-            LB_Gold.Location = pos;
             LB_Gold.BackColor = Color.Transparent;
+            LB_Gold.Location = position2;
+            
 
-            var pos1 = this.PointToScreen(LB_Silver.Location);
-            pos1 = PB_Podium.PointToClient(pos1);
             LB_Silver.Parent = PB_Podium;
-            LB_Silver.Location = pos1;
             LB_Silver.BackColor = Color.Transparent;
+            LB_Silver.Location = position;
 
-            var pos2 = this.PointToScreen(LB_Bronze.Location);
-            pos2 = PB_Podium.PointToClient(pos2);
             LB_Bronze.Parent = PB_Podium;
-            LB_Bronze.Location = pos2;
             LB_Bronze.BackColor = Color.Transparent;
+            LB_Bronze.Location = position3;
         }
 
 
@@ -130,6 +129,16 @@ namespace HockeyIce
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PB_Podium_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PB_Podium_Paint(object sender, PaintEventArgs e)
         {
 
         }
