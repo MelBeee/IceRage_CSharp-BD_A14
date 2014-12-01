@@ -14,10 +14,16 @@ namespace HockeyIce
     {
         private bool _dragging = false;
         private Point _start_point = new Point(0, 0);
+        private Point basePanel = new Point(4, 30);
 
         public FormClassement()
         {
             InitializeComponent();
+            var pos = this.PointToScreen(label1.Location);
+            pos = pictureBox1.PointToClient(pos);
+            label1.Parent = pictureBox1;
+            label1.Location = pos;
+            label1.BackColor = Color.Transparent;
         }
 
         private void FB_Quitter_Click(object sender, EventArgs e)
@@ -37,6 +43,7 @@ namespace HockeyIce
                     PN_3Joueurs.Enabled = false;
                     PN_CJoueurs.Visible = false;
                     PN_CJoueurs.Enabled = false;
+                    PN_CEquipe.Location = basePanel;
                     LB_Text.Text = "Classement des équipes"; 
                     break;
                 case "C3J":
@@ -47,6 +54,7 @@ namespace HockeyIce
                     PN_3Joueurs.Enabled = true;
                     PN_CJoueurs.Visible = false;
                     PN_CJoueurs.Enabled = false;
+                    PN_3Joueurs.Location = basePanel;
                     LB_Text.Text = "Trois meilleurs joueurs"; 
                     break;
                 case "CJoueurs":
@@ -57,6 +65,7 @@ namespace HockeyIce
                     PN_CJoueurs.Parent = this; 
                     PN_CJoueurs.Visible = true;
                     PN_CJoueurs.Enabled = true;
+                    PN_CJoueurs.Location = basePanel;
                     LB_Text.Text = "Classement des joueurs"; 
                     break;
             }
@@ -100,6 +109,11 @@ namespace HockeyIce
         private void LB_Text_MouseUp(object sender, MouseEventArgs e)
         {
             _dragging = false; 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -145,8 +145,8 @@
   <data name="ContinuerClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ContinuerClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3JoueursHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3JoueursHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CJoueursDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CJoueursDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,11 +157,17 @@
   <data name="Hockey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hockey.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CJoueursNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CJoueursNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FermerHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FermerHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3JoueursHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3JoueursHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RetourHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RetourHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,6 +190,9 @@
   <data name="3JoueursDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3JoueursDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="6a00e54ff350bc8833017c32908339970b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6a00e54ff350bc8833017c32908339970b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CloseHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CloseHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -201,6 +210,9 @@
   </data>
   <data name="ContinuerDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ContinuerDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CJoueursHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CJoueursHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CEquipeDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CEquipeDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,6 +247,9 @@
   <data name="ContinuerNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ContinuerNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CJoueursClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CJoueursClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="hockeyjeune" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hockeyjeune.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -250,16 +265,7 @@
   <data name="AideClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AideClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CJoueursClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CJoueursClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CJoueursDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CJoueursDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CJoueursHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CJoueursHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CJoueursNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CJoueursNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="podium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\podium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
