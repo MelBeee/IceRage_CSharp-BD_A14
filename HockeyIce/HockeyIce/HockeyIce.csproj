@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48C0BD4B-AA11-44D7-8580-676AFF155106}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HockeyIce</RootNamespace>
+    <AssemblyName>HockeyIce</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FlashButton, Version=1.0.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ProgrammesDeveloppement\FlashButton\bin\Debug\FlashButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GitHub\Structure6DaysToDie\TP2_Sql\TP2_Sql\bin\Debug\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormAPropos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAPropos.Designer.cs">
+      <DependentUpon>FormAPropos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormErreur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormErreur.Designer.cs">
+      <DependentUpon>FormErreur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipale.Designer.cs">
+      <DependentUpon>FormPrincipale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAPropos.resx">
+      <DependentUpon>FormAPropos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormErreur.resx">
+      <DependentUpon>FormErreur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipale.resx">
+      <DependentUpon>FormPrincipale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HockeyIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hockey.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hockey-cosom7-9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gardien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hockeyjeune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetourClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetourDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetourHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetourNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuitterClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuitterDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuitterHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuitterNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ContinuerClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ContinuerDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ContinuerHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ContinuerNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AideClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AideDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AideHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AideNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FermerClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FermerDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FermerHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FermerNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hockey_Stick_Pin.PNG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
