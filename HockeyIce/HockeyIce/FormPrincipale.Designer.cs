@@ -167,6 +167,7 @@
             // 
             // FB_CJoueurs
             // 
+            this.FB_CJoueurs.BackgroundImage = global::HockeyIce.Properties.Resources.CJoueursNormal;
             this.FB_CJoueurs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FB_CJoueurs.ImageClick = global::HockeyIce.Properties.Resources.CJoueursClick;
             this.FB_CJoueurs.ImageDisable = global::HockeyIce.Properties.Resources.CJoueursDisable;
@@ -177,6 +178,7 @@
             this.FB_CJoueurs.Name = "FB_CJoueurs";
             this.FB_CJoueurs.Size = new System.Drawing.Size(99, 310);
             this.FB_CJoueurs.TabIndex = 19;
+            this.FB_CJoueurs.Click += new System.EventHandler(this.FB_CJoueurs_Click);
             // 
             // FB_CEquipe
             // 
@@ -191,6 +193,7 @@
             this.FB_CEquipe.Name = "FB_CEquipe";
             this.FB_CEquipe.Size = new System.Drawing.Size(205, 100);
             this.FB_CEquipe.TabIndex = 18;
+            this.FB_CEquipe.Click += new System.EventHandler(this.FB_CEquipe_Click);
             // 
             // FB_3MeilleursJs
             // 
@@ -205,6 +208,7 @@
             this.FB_3MeilleursJs.Name = "FB_3MeilleursJs";
             this.FB_3MeilleursJs.Size = new System.Drawing.Size(205, 100);
             this.FB_3MeilleursJs.TabIndex = 17;
+            this.FB_3MeilleursJs.Click += new System.EventHandler(this.FB_3MeilleursJs_Click);
             // 
             // FB_APropos
             // 
@@ -360,6 +364,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPrincipale";
             this.Text = " ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipale_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipale_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormPrincipale_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormPrincipale_MouseMove);

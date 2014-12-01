@@ -30,18 +30,18 @@
         {
             this.LB_Text = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.FB_Continuer = new FlashButton.FlashButton();
             this.LB_Description = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FB_Quitter = new FlashButton.FlashButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.FB_Continuer = new FlashButton.FlashButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Text
@@ -73,40 +73,47 @@
             this.panel1.Size = new System.Drawing.Size(463, 425);
             this.panel1.TabIndex = 6;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tw Cen MT", 10.2F, System.Drawing.FontStyle.Italic);
+            this.label4.Location = new System.Drawing.Point(96, 186);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(170, 80);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Ouvrir fenêtre À Propos\r\nQuitter le programme\r\nQuitter le programme\r\nAfficher le " +
+    "classement";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(28, 186);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 80);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "F1 - \r\nCtrl+Q - \r\nEscape - \r\nF2 - ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(69, 155);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(181, 28);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Raccourcis Claviers";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Kristen ITC", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(7, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 42);
+            this.label1.Size = new System.Drawing.Size(154, 42);
             this.label1.TabIndex = 5;
-            this.label1.Text = "U-Puck";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HockeyIce.Properties.Resources.Hockey_Stick_Pin;
-            this.pictureBox1.Location = new System.Drawing.Point(257, 160);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(203, 262);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // FB_Continuer
-            // 
-            this.FB_Continuer.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_Continuer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_Continuer.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
-            this.FB_Continuer.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
-            this.FB_Continuer.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_Continuer.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_Continuer.Location = new System.Drawing.Point(4, 401);
-            this.FB_Continuer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FB_Continuer.Name = "FB_Continuer";
-            this.FB_Continuer.Size = new System.Drawing.Size(100, 20);
-            this.FB_Continuer.TabIndex = 3;
-            this.FB_Continuer.Click += new System.EventHandler(this.FB_Continuer_Click);
+            this.label1.Text = "Ice Rage";
             // 
             // LB_Description
             // 
@@ -138,43 +145,36 @@
             this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
             this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
             this.FB_Quitter.Location = new System.Drawing.Point(441, 4);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Quitter.Name = "FB_Quitter";
             this.FB_Quitter.Size = new System.Drawing.Size(25, 25);
             this.FB_Quitter.TabIndex = 7;
             this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
-            // label2
+            // pictureBox1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(69, 155);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 28);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Raccourcis Claviers";
+            this.pictureBox1.Image = global::HockeyIce.Properties.Resources.Hockey_Stick_Pin;
+            this.pictureBox1.Location = new System.Drawing.Point(257, 160);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(203, 262);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
-            // label3
+            // FB_Continuer
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 186);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 80);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "F1 - \r\nCtrl+Q - \r\nEscape - \r\nF2 - ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tw Cen MT", 10.2F, System.Drawing.FontStyle.Italic);
-            this.label4.Location = new System.Drawing.Point(96, 186);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 80);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Ouvrir fenêtre À Propos\r\nQuitter le programme\r\nQuitter le programme\r\nAfficher le " +
-    "classement";
+            this.FB_Continuer.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_Continuer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Continuer.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
+            this.FB_Continuer.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
+            this.FB_Continuer.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_Continuer.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
+            this.FB_Continuer.Location = new System.Drawing.Point(4, 401);
+            this.FB_Continuer.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Continuer.Name = "FB_Continuer";
+            this.FB_Continuer.Size = new System.Drawing.Size(100, 20);
+            this.FB_Continuer.TabIndex = 3;
+            this.FB_Continuer.Click += new System.EventHandler(this.FB_Continuer_Click);
             // 
             // FormAPropos
             // 
@@ -195,8 +195,8 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.APropos_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -35,10 +35,14 @@ namespace HockeyIce
 
         private void PasDeConnection()
         {
+            PN_PasDeConnection.BringToFront();
             PN_PasDeConnection.Enabled = true;
             PN_PasDeConnection.Visible = true;
             FB_Fermer.Enabled = false;
-            FB_APropos.Enabled = false; 
+            FB_APropos.Enabled = false;
+            FB_3MeilleursJs.Enabled = false;
+            FB_CEquipe.Enabled = false;
+            FB_CJoueurs.Enabled = false;
         }
 
         private void Connection()
@@ -205,6 +209,35 @@ namespace HockeyIce
             }
             bool result = base.ProcessCmdKey(ref msg, keyData);
             return result;
+        }
+
+        private void FormPrincipale_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            oraconn.Close();
+        }
+
+        private void FB_CJoueurs_Click(object sender, EventArgs e)
+        {
+            AfficherClassement("CJoueurs");
+        }
+
+        private void FB_CEquipe_Click(object sender, EventArgs e)
+        {
+            AfficherClassement("CEquipes");
+        }
+
+        private void FB_3MeilleursJs_Click(object sender, EventArgs e)
+        {
+            AfficherClassement("C3J");
+        }
+
+        private void AfficherClassement(string Classement)
+        {
+            Properties.Settings.Default.Classement = Classement;
+            Properties.Settings.Default.Save();
+            FormClassement dlg = new FormClassement();
+
+            dlg.ShowDialog();
         }
     }
 }

@@ -2,13 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HockeyIce.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="NomErreur" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="CodeErreur" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="DescriptionErreur" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Classement" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

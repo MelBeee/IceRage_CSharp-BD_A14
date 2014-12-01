@@ -26,18 +26,6 @@ namespace HockeyIce.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string NomErreur {
-            get {
-                return ((string)(this["NomErreur"]));
-            }
-            set {
-                this["NomErreur"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string CodeErreur {
             get {
                 return ((string)(this["CodeErreur"]));
@@ -56,6 +44,18 @@ namespace HockeyIce.Properties {
             }
             set {
                 this["DescriptionErreur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Classement {
+            get {
+                return ((string)(this["Classement"]));
+            }
+            set {
+                this["Classement"] = value;
             }
         }
     }
