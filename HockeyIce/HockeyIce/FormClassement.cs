@@ -19,7 +19,7 @@ namespace HockeyIce
         public FormClassement()
         {
             InitializeComponent();
-            var pos = this.PointToScreen(label2.Location);
+            //var pos = this.PointToScreen(label2.Location);
             pos = pictureBox1.PointToClient(pos);
             label2.Parent = pictureBox1;
             label2.Location = pos;
