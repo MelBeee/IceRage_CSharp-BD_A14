@@ -1,14 +1,14 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.relational.RelationalDesign>
-   <object objectType="Table" objectID="554A2A03-0E26-49E7-9691-06FCB2035FCB" name="Équipes" seqName="seg_0"/>
    <object objectType="Table" objectID="6DE03334-A374-93CF-36BD-3836A306CCF4" name="Divisions" seqName="seg_0"/>
    <object objectType="Table" objectID="933BBB50-514E-47D5-763E-6C1A1EB3138C" name="Joueurs" seqName="seg_0"/>
    <object objectType="Table" objectID="BEEF13CD-96F2-9BF2-8318-0EF2534A181B" name="Matchs" seqName="seg_0"/>
    <object objectType="Table" objectID="FD30FCB5-379A-1BD9-1C52-3A6952203D92" name="StatistiquesJoueurs" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="478325D2-D862-8C9E-B392-73695F8BF429" name="Matchs_Équipes_FK" seqName="seg_0"/>
+   <object objectType="Table" objectID="554A2A03-0E26-49E7-9691-06FCB2035FCB" name="Équipes" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="6EE06A0C-E859-7EE5-0430-3FD45F013FA5" name="JoueursDansMatch_Joueurs_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="92CDE7A5-31D4-03AE-D045-C5EED167B325" name="JoueursDansMatch_Matchs_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="A29FFF2E-7D6C-350E-3FA9-EF487D2AFDC4" name="Joueurs_Équipes_FK" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="BC2CDF8D-B0A3-37A1-DE5B-22FA6C440F1F" name="Équipes_Divisions_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="478325D2-D862-8C9E-B392-73695F8BF429" name="Matchs_Équipes_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="E92701A1-7F14-7A39-3E57-F20DBD0A9A34" name="Matchs_Équipes_FKv2" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="BC2CDF8D-B0A3-37A1-DE5B-22FA6C440F1F" name="Équipes_Divisions_FK" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.relational.RelationalDesign>

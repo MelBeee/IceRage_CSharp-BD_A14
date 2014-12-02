@@ -51,7 +51,7 @@
 <colAssociation fkAssociation="E92701A1-7F14-7A39-3E57-F20DBD0A9A34" referredColumn="FB6BFF48-DDFD-A88B-E4FE-B1F247A6C071"/>
 </associations>
 </Column>
-<Column name="Date" id="997495F7-2711-C744-B9E3-C6B37284B763">
+<Column name="DateHeure" id="997495F7-2711-C744-B9E3-C6B37284B763">
 <createdBy>Mélissa</createdBy>
 <createdTime>2014-11-23 20:58:07 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
@@ -70,16 +70,6 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>30 CHAR</dataTypeSize>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Heure" id="E4943698-B620-4082-D667-86ED6ADF7E7D">
-<createdBy>Mélissa</createdBy>
-<createdTime>2014-11-23 20:58:07 UTC</createdTime>
-<generatorID>Généré par l&apos;utilisateur</generatorID>
-<ownerDesignName>ModeleRelationnel</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT014</logicalDatatype>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="ScoreMaison" id="5803D2E1-87F4-B0D8-FDBB-FD96A98ACA4E">
