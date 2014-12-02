@@ -85,27 +85,33 @@
             // 
             this.PN_GestionDivision.BackColor = System.Drawing.Color.LightSkyBlue;
             this.PN_GestionDivision.Controls.Add(this.PN_Equipe);
+            this.PN_GestionDivision.Enabled = false;
             this.PN_GestionDivision.Location = new System.Drawing.Point(3, 27);
             this.PN_GestionDivision.Name = "PN_GestionDivision";
             this.PN_GestionDivision.Size = new System.Drawing.Size(626, 360);
             this.PN_GestionDivision.TabIndex = 7;
+            this.PN_GestionDivision.Visible = false;
             // 
             // PN_Equipe
             // 
             this.PN_Equipe.BackColor = System.Drawing.Color.LightSkyBlue;
             this.PN_Equipe.Controls.Add(this.PN_Joueurs);
+            this.PN_Equipe.Enabled = false;
             this.PN_Equipe.Location = new System.Drawing.Point(8, 8);
             this.PN_Equipe.Name = "PN_Equipe";
             this.PN_Equipe.Size = new System.Drawing.Size(626, 360);
             this.PN_Equipe.TabIndex = 8;
+            this.PN_Equipe.Visible = false;
             // 
             // PN_Joueurs
             // 
             this.PN_Joueurs.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Joueurs.Enabled = false;
             this.PN_Joueurs.Location = new System.Drawing.Point(8, 8);
             this.PN_Joueurs.Name = "PN_Joueurs";
             this.PN_Joueurs.Size = new System.Drawing.Size(626, 360);
             this.PN_Joueurs.TabIndex = 8;
+            this.PN_Joueurs.Visible = false;
             // 
             // FormGestion
             // 

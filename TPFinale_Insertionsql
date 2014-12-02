@@ -1,125 +1,134 @@
 INSERT INTO Divisions VALUES(1, 'Est','01-01-14');
 INSERT INTO Divisions VALUES(1, 'Ouest','01-01-14');
-                                            /*Blob initialisé a null*/
-INSERT INTO Équipes VALUES(1, 'Canadiens',  '',     'Montreal', 1,'01-01-14');
-INSERT INTO Équipes VALUES(1, 'Maple Leaf', '',     'Toronto',  1,'01-01-14');
-INSERT INTO Équipes VALUES(1, 'Rangers',    '',     'New York', 1,'01-01-14');
-INSERT INTO Équipes VALUES(1, 'Senateurs',  '',     'Ottawa',   1,'01-01-14');
+      /*Blob initialisé a null*/
+INSERT INTO equipes VALUES(1, 'Canadiens',  '',     'Montreal', 1,'01-01-14');
+INSERT INTO equipes VALUES(1, 'Maple Leaf', '',     'Toronto',  1,'01-01-14');
+INSERT INTO equipes VALUES(1, 'Rangers',    '',     'New York', 1,'01-01-14');
+INSERT INTO equipes VALUES(1, 'Senateurs',  '',     'Ottawa',   1,'01-01-14');
+INSERT INTO equipes VALUES(1, 'Kings',      '',     'Los Angeles',  2,'01-01-14');
+INSERT INTO equipes VALUES(1, 'BlackHawks', '',     'Chicago',      2,'01-01-14');
+INSERT INTO equipes VALUES(1, 'Predators',  '',     'Nashville',    2,'01-01-14');
+INSERT INTO equipes VALUES(1, 'Sharks',     '',     'San Jose',     2,'01-01-14');
 
-INSERT INTO Équipes VALUES(1, 'Kings',      '',     'Los Angeles',  2,'01-01-14');
-INSERT INTO Équipes VALUES(1, 'BlackHawks', '',     'Chicago',      2,'01-01-14');
-INSERT INTO Équipes VALUES(1, 'Predators',  '',     'Nashville',    2,'01-01-14');
-INSERT INTO Équipes VALUES(1, 'Sharks',     '',     'San Jose',     2,'01-01-14');
+alter SESSION set NLS_DATE_FORMAT = 'DD-MM-YY' ;
 
-INSERT INTO Joueurs VALUES(1, 'Price',      'Carey',  '16-08-87', 31, 'Gardien',  'http://blogues.lapresse.ca/laporte/files/2011/09/hull_bobby.jpg',  1);
-INSERT INTO Joueurs VALUES(1, 'Pacioretty', 'Max',    '20-11-88', 67, 'Attaquant','http://www.quizz.biz/uploads/quizz/147557/icons/3_w72U7.jpg',  1);
-INSERT INTO Joueurs VALUES(1, 'Prust',      'Brandon','16-03-84', 8,  'Attaquant','http://cdn.hollywoodpq.com/wp-content/uploads/2013/09/1236597_144165609127926_1795464244_n.jpg',  1);
-INSERT INTO Joueurs VALUES(1, 'Markov',     'Andrei', '20-12-78', 79, 'Defenseur','data:image/jpeg;base64,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',  1);
-INSERT INTO Joueurs VALUES(1, 'Subban',     'PK',     '13-05-89', 76, 'Defenseur','http://media.paperblog.fr/i/192/1928454/joueurs-hockey-laids-nhl-L-3.jpeg',  1);
+INSERT INTO Joueurs VALUES(1, 'Price',      'Carey',  '16-08-87', 31, 'Gardien',    'http://i.imgur.com/xYysYQL.jpg',  1);
+INSERT INTO Joueurs VALUES(1, 'Pacioretty', 'Max',    '20-11-88', 67, 'Attaquant',  'http://i.imgur.com/tuJhqkJ.jpg',  1);
+INSERT INTO Joueurs VALUES(1, 'Prust',      'Brandon','16-03-84', 8,  'Attaquant',  'http://i.imgur.com/wRuSaQi.jpg',  1);
+INSERT INTO Joueurs VALUES(1, 'Markov',     'Andrei', '20-12-78', 79, 'Defenseur',  'http://i.imgur.com/1wLcvRm.jpg',  1);
+INSERT INTO Joueurs VALUES(1, 'Subban',     'PK',     '13-05-89', 76, 'Defenseur',  'http://i.imgur.com/3RcBtgX.jpg',  1);
 
-INSERT INTO Joueurs VALUES(1, 'Bernier',  'Jonathan', '07-08-88', 45, 'Gardien', 'http://cdn.25stanley.com/wp-content/uploads/2011/09/dustin-byfuglien-mugshot.jpg',   2);
-INSERT INTO Joueurs VALUES(1, 'Kessel',   'Phil',     '02-10-87', 81, 'Attaquant','http://img.radio.cz/pictures/sport/jagr_jaromir2.jpg',  2);
-INSERT INTO Joueurs VALUES(1, 'Joffrey',  'Lupul',    '23-09-83', 19, 'Attaquant','http://doyoulookgood.com/images/canadiens/players/17.jpg',  2);
-INSERT INTO Joueurs VALUES(1, 'Phaneuf',  'Dion',     '10-04-85', 3,  'Defenseur','http://montreal.hockey-cosom.ca/deep/within/wordpress/wp-content/uploads/2012/05/Robert-Lang-ou-Pierre-Menard.jpg',  2);
-INSERT INTO Joueurs VALUES(1, 'Gardiner', 'Jake',     '04-07-90', 51, 'Defenseur','http://www.stars-portraits.com/img/portraits/photos/alexander-ovechkin.jpg',  2);
+INSERT INTO Joueurs VALUES(1, 'Bernier',  'Jonathan', '07-08-88', 45, 'Gardien',    'http://i.imgur.com/aIRmfSK.jpg',   2);
+INSERT INTO Joueurs VALUES(1, 'Kessel',   'Phil',     '02-10-87', 81, 'Attaquant',  'http://i.imgur.com/KaGP2M1.jpg',  2);
+INSERT INTO Joueurs VALUES(1, 'Joffrey',  'Lupul',    '23-09-83', 19, 'Attaquant',  'http://i.imgur.com/jL7YSiI.jpg',  2);
+INSERT INTO Joueurs VALUES(1, 'Phaneuf',  'Dion',     '10-04-85', 3,  'Defenseur',  'http://i.imgur.com/mDo2qFE.jpg',  2);
+INSERT INTO Joueurs VALUES(1, 'Gardiner', 'Jake',     '04-07-90', 51, 'Defenseur',  'http://i.imgur.com/WRahMyn.jpg',  2);
 
-INSERT INTO Joueurs VALUES(1, 'Lundqvist',  'Henrik',  '02-03-82', 30, 'Gardien','http://tophockeycards.com/bio/guy-carbonneau.jpg',   3);
-INSERT INTO Joueurs VALUES(1, 'Nash',       'Rick',    '16-06-84', 30, 'Attaquant','http://data2.collectionscanada.gc.ca/ap/a/a195211.jpg', 3);
-INSERT INTO Joueurs VALUES(1, 'St-Louis',   'Martin',  '18-06-75', 26, 'Attaquant','http://cdn.25stanley.com/wp-content/uploads/2011/10/Mike-Cammalleri-painting.png', 3);
-INSERT INTO Joueurs VALUES(1, 'Boyle',      'Dan',     '12-07-76', 22, 'Defenseur','http://doyoulookgood.com/images/canadiens/players/13.jpg', 3);
-INSERT INTO Joueurs VALUES(1, 'Staal',      'Marc',    '13-01-87', 18, 'Defenseur','http://doyoulookgood.com/images/canadiens/players/51.jpg', 3);
+INSERT INTO Joueurs VALUES(1, 'Lundqvist',  'Henrik',  '02-03-82', 30, 'Gardien',   'http://i.imgur.com/MxDafHm.jpg',   3);
+INSERT INTO Joueurs VALUES(1, 'Nash',       'Rick',    '16-06-84', 30, 'Attaquant', 'http://i.imgur.com/Hv1QYRW.jpg', 3);
+INSERT INTO Joueurs VALUES(1, 'St-Louis',   'Martin',  '18-06-75', 26, 'Attaquant', 'http://i.imgur.com/gALFQnY.jpg', 3);
+INSERT INTO Joueurs VALUES(1, 'Boyle',      'Dan',     '12-07-76', 22, 'Defenseur', 'http://i.imgur.com/WSUZ9LQ.jpg', 3);
+INSERT INTO Joueurs VALUES(1, 'Staal',      'Marc',    '13-01-87', 18, 'Defenseur', 'http://i.imgur.com/ch3fvCd.jpg', 3);
 
-INSERT INTO Joueurs VALUES(1, 'Anderson', 'Craig', '21-05-81', 41,  'Gardien', 'http://cdn.bleacherreport.net/images_root/slides/photos/002/084/150/boucha_original_display_image.jpg?1333400576',  4);
-INSERT INTO Joueurs VALUES(1, 'Chiasson', 'Alex',  '01-10-90', 90,  'Attaquant','http://montreal.hockey-cosom.ca/deep/within/wordpress/wp-content/uploads/2014/11/joueur_hockey_cosom-9-150x150.jpg', 4);
-INSERT INTO Joueurs VALUES(1, 'Neil',     'Chris', '18-06-79', 25,  'Attaquant','http://img.src.ca/2013/11/06/635x357/PC_131106_wp7kj_pluson_bobby_orr_sn635.jpg', 4);
-INSERT INTO Joueurs VALUES(1, 'Phillips', 'Chris', '09-03-78', 4,   'Defenseur','http://files.gestionradioqc.com/news/picture/2014/09/19/20140919RVP583_328.jpg', 4);
-INSERT INTO Joueurs VALUES(1, 'Karlsson', 'Erik',  '31-05-90', 65,  'Defenseur','http://2.bp.blogspot.com/-6LWJE_KD-NY/TmP4bVW_PbI/AAAAAAAAAWQ/rqs5TnKVPro/s320/2011-09-09-comment_survivre_a_un_pool_de_hockey-01.jpg', 4);
+INSERT INTO Joueurs VALUES(1, 'Anderson', 'Craig', '21-05-81', 41,  'Gardien',      'http://i.imgur.com/Ba4ABeM.jpg',  4);
+INSERT INTO Joueurs VALUES(1, 'Chiasson', 'Alex',  '01-10-90', 90,  'Attaquant',    'http://i.imgur.com/RrZajkb.jpg', 4);
+INSERT INTO Joueurs VALUES(1, 'Neil',     'Chris', '18-06-79', 25,  'Attaquant',    'http://i.imgur.com/saVrA3y.jpg', 4);
+INSERT INTO Joueurs VALUES(1, 'Phillips', 'Chris', '09-03-78', 4,   'Defenseur',    'http://i.imgur.com/8rn9fmF.jpg', 4);
+INSERT INTO Joueurs VALUES(1, 'Karlsson', 'Erik',  '31-05-90', 65,  'Defenseur',    'http://i.imgur.com/41alZWp.jpg', 4);
 
-INSERT INTO Joueurs VALUES(1, 'Jonathan', 'Quick',  '21-01-86', 32, 'Gardien','http://upload.wikimedia.org/wikipedia/commons/thumb/9/91/RussellBowie1910.JPG/120px-RussellBowie1910.JPG',    5);
-INSERT INTO Joueurs VALUES(1, 'Kopitar',  'Anze',   '24-07-87', 11, 'Attaquant', 'http://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Vladimir_Malakhov_(hockey).JPG/220px-Vladimir_Malakhov_(hockey).JPG', 5);
-INSERT INTO Joueurs VALUES(1, 'Dustin',   'Brown',  '04-11-84', 23, 'Attaquant','http://aec.brebeuf.qc.ca/web/2014/Claudia/moi/1604422_10202656241760109_636754653_n.jpg',  5);
-INSERT INTO Joueurs VALUES(1, 'Doughty',  'Drew',   '08-12-89', 8,  'Defenseur','http://images.lpcdn.ca/641x427/201305/07/684530-brendan-gallagher-appris-lundi-quil.jpg',  5);
-INSERT INTO Joueurs VALUES(1, 'Regehr',   'Robyn',  '19-04-80', 44, 'Defenseur','https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQR7T-zNm4oWZ2-MJZnUMJLSTbh1k2O8cJdrKx5tosahUaVhtiYYA',  5);
+INSERT INTO Joueurs VALUES(1, 'Quick',    'Jonathan',   '21-01-86', 32, 'Gardien',  'http://i.imgur.com/E4zHx5W.jpg',    5);
+INSERT INTO Joueurs VALUES(1, 'Kopitar',  'Anze',       '24-07-87', 11, 'Attaquant','http://i.imgur.com/m07pu3F.jpg', 5);
+INSERT INTO Joueurs VALUES(1, 'Brown',    'Dustin',     '04-11-84', 23, 'Attaquant','http://i.imgur.com/mhk23Mz.jpg',  5);
+INSERT INTO Joueurs VALUES(1, 'Doughty',  'Drew',       '08-12-89', 8,  'Defenseur','http://i.imgur.com/j09GsnZ.jpg',  5);
+INSERT INTO Joueurs VALUES(1, 'Regehr',   'Robyn',      '19-04-80', 44, 'Defenseur','http://i.imgur.com/gFCFyhG.jpg',  5);
 
-INSERT INTO Joueurs VALUES(1, 'Crawford', 'Corey',    '31-12-84', 50, 'Gardien', 'http://media.paperblog.fr/i/192/1928454/joueurs-hockey-laids-nhl-L-11.jpeg',   6);
-INSERT INTO Joueurs VALUES(1, 'Toews',    'Jonathan', '29-04-88', 19, 'Attaquant','http://i.ytimg.com/vi/OQf6vwPJrWM/0.jpg',  6);
-INSERT INTO Joueurs VALUES(1, 'Kane',     'Patrick',  '19-11-88', 88, 'Attaquant', 'http://www.lessignets.com/signetsdiane/calendrier/images/janv/5/3/mosdell_ken_042.jpg', 6);
-INSERT INTO Joueurs VALUES(1, 'Seabrook', 'Brent',    '20-04-85', 7,  'Defenseur', 'http://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Maurice_richard_profile.jpg/220px-Maurice_richard_profile.jpg', 6);
-INSERT INTO Joueurs VALUES(1, 'Keith',    'Duncan',   '16-07-83', 2,  'Defenseur','http://blogues.lapresse.ca/lnh/wp-content/uploads/2008/11/beau.jpg',  6);
+INSERT INTO Joueurs VALUES(1, 'Crawford', 'Corey',    '31-12-84', 50, 'Gardien',    'http://i.imgur.com/DUKbZYi.jpg',   6);
+INSERT INTO Joueurs VALUES(1, 'Toews',    'Jonathan', '29-04-88', 19, 'Attaquant',  'http://i.imgur.com/5KB2EBW.jpg',  6);
+INSERT INTO Joueurs VALUES(1, 'Kane',     'Patrick',  '19-11-88', 88, 'Attaquant',  'http://i.imgur.com/QiEuGR4.jpg', 6);
+INSERT INTO Joueurs VALUES(1, 'Seabrook', 'Brent',    '20-04-85', 7,  'Defenseur',  'http://i.imgur.com/L9CST0U.jpg', 6);
+INSERT INTO Joueurs VALUES(1, 'Keith',    'Duncan',   '16-07-83', 2,  'Defenseur',  'http://i.imgur.com/u0ggVEs.jpg',  6);
 
-INSERT INTO Joueurs VALUES(1, 'Beck', 		'Taylor',	  '13-05-91', 41, 'Gardien','http://www.publicationsports.com/cache/fileStorage/b8/9d/b89dd7a0c59245b5274973851abfa969_p_vi_17670_1411992506.jpeg',   7);
-INSERT INTO Joueurs VALUES(1, 'Bourque', 	'Gabriel',  '23-09-90', 57, 'Attaquant','http://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Terry_Sawchuk_1963.JPG/220px-Terry_Sawchuk_1963.JPG', 7);
-INSERT INTO Joueurs VALUES(1, 'Cullen', 	'Matt',    	'02-11-76', 7,  'Attaquant','http://www.publicationsports.com/cache/fileStorage/97/30/97306eaec205d432549b4b2dd45f460a_p_vi_18329_1413288395.jpg', 7);
-INSERT INTO Joueurs VALUES(1, 'Forsberg', 'Filip',    '13-08-94', 9,  'Defenseur','http://tvanouvelles.ca/archives/lcn/infos/regional/sherbrooke/media/2013/04/20130418-205433-g.jpg', 7);
-INSERT INTO Joueurs VALUES(1, 'Gaustad', 	'Paul',    	'03-02-82', 28, 'Defenseur','http://us.cdn4.123rf.com/168nwm/blueskyimage/blueskyimage1311/blueskyimage131101537/23778406-portrait-de-joueur-de-hockey-avec-des-cris-regard-de-colere-sans-une-dent.jpg', 7);
+INSERT INTO Joueurs VALUES(1, 'Beck', 		'Taylor',	  '13-05-91', 41, 'Gardien',    'http://i.imgur.com/ox742WC.jpg',   7);
+INSERT INTO Joueurs VALUES(1, 'Bourque', 	'Gabriel',  '23-09-90', 57, 'Attaquant',  'http://i.imgur.com/yxUKqeQ.jpg', 7);
+INSERT INTO Joueurs VALUES(1, 'Cullen', 	'Matt',    	'02-11-76', 7,  'Attaquant',  'http://i.imgur.com/Y2H3494.jpg', 7);
+INSERT INTO Joueurs VALUES(1, 'Forsberg', 'Filip',    '13-08-94', 9,  'Defenseur',  'http://i.imgur.com/fEx35ZC.jpg', 7);
+INSERT INTO Joueurs VALUES(1, 'Gaustad', 	'Paul',    	'03-02-82', 28, 'Defenseur',  'http://i.imgur.com/V1P7qgQ.jpg', 7);
 
-INSERT INTO Joueurs VALUES(1, 'Niemi',    'Antti',    '29-08-83', 31, 'Gardien', 'http://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Pete_Babando.JPG/220px-Pete_Babando.JPG',  8);
-INSERT INTO Joueurs VALUES(1, 'Marleau',  'Patrick',  '15-09-79', 12, 'Attaquant','http://www.estrieplus.com/contenu/2014/11/3/large_33925.jpg', 8);
-INSERT INTO Joueurs VALUES(1, 'Pavelski', 'Joe',      '11-07-84', 8,  'Attaquant','http://www.sudinfo.be/sites/default/files/imagecache/pagallery_450x300/2013/09/24/686515524_B971091783Z.1_20130924185552_000_GG219Q96O.1-0.jpg', 8);
-INSERT INTO Joueurs VALUES(1, 'Braun',    'Justin',   '10-02-87', 61, 'Defenseur','http://patinagehorsglace.files.wordpress.com/2010/06/112774-vincent-lecavalier-presentement-plus-haut.jpg', 8);
-INSERT INTO Joueurs VALUES(1, 'Burns',    'Brent',    '09-03-85', 88, 'Defenseur','http://2.cdn.nhle.com/nhl/en/v3/photos/mugs/8477505.jpg', 8);
+INSERT INTO Joueurs VALUES(1, 'Niemi',    'Antti',    '29-08-83', 31, 'Gardien',    'http://i.imgur.com/EH0oXhc.jpg',  8);
+INSERT INTO Joueurs VALUES(1, 'Marleau',  'Patrick',  '15-09-79', 12, 'Attaquant',  'http://i.imgur.com/94NTUuB.jpg', 8);
+INSERT INTO Joueurs VALUES(1, 'Pavelski', 'Joe',      '11-07-84', 8,  'Attaquant',  'http://i.imgur.com/YZv072R.jpg', 8);
+INSERT INTO Joueurs VALUES(1, 'Braun',    'Justin',   '10-02-87', 61, 'Defenseur',  'http://i.imgur.com/dfLEa7T.jpg', 8);
+INSERT INTO Joueurs VALUES(1, 'Burns',    'Brent',    '09-03-85', 88, 'Defenseur',  'http://i.imgur.com/PSgNf38.jpg', 8);
 
-INSERT INTO Matchs VALUES(1, 1, 8, '13-11-14', 'Montreal',    TO_DATE('07:30:00','hh-mi-ss'));
-INSERT INTO Matchs VALUES(1, 2, 7, '15-11-14', 'Toronto',     TO_DATE('08:30:00','hh-mi-ss'));
-INSERT INTO Matchs VALUES(1, 3, 6, '17-11-14', 'Los Angeles', TO_DATE('08:00:00','hh-mi-ss'));
-INSERT INTO Matchs VALUES(1, 4, 5, '19-11-14', 'Chicago',     TO_DATE('07:15:00','hh-mi-ss'));
+INSERT INTO Matchs VALUES(1, 1, 8, '13-11-14', 'Montreal',     7, 2);
+INSERT INTO Matchs VALUES(1, 2, 7, '15-11-14', 'Toronto',      3, 2);
+INSERT INTO Matchs VALUES(1, 3, 6, '17-11-14', 'Los Angeles',  1, 2);
+INSERT INTO Matchs VALUES(1, 4, 5, '19-11-14', 'Chicago',      2, 5);
 
 //--- Insertion Match 1 
 //--- Equipe 1 (1-5)
-INSERT INTO JoueursDansMatch VALUES(1,1,null,null,'');
-INSERT INTO JoueursDansMatch VALUES(1,2,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(1,3,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(1,4,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(1,5,1,1,'');
+INSERT INTO StatistiquesJoueurs VALUES(1,1,0,0,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(1,2,1,2,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(1,3,2,2,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(1,4,1,3,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(1,5,3,1,'15:00');
 //--- Equipe 8 (36-40)
-INSERT INTO JoueursDansMatch VALUES(1,36,null,null,'');
-INSERT INTO JoueursDansMatch VALUES(1,37,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(1,38,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(1,39,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(1,40,1,1,'');
+INSERT INTO StatistiquesJoueurs VALUES(1,36,null,null,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(1,37,0,1,'05:00');
+INSERT INTO StatistiquesJoueurs VALUES(1,38,1,0,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(1,39,0,1,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(1,40,1,1,'02:00');
 //--- Insertion Match 2
 //--- Equipe 2 (6-10)
-INSERT INTO JoueursDansMatch VALUES(2,6,null,null,'');
-INSERT INTO JoueursDansMatch VALUES(2,7,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(2,8,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(2,9,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(2,10,1,1,'');
+INSERT INTO StatistiquesJoueurs VALUES(2,6,null,null,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(2,7,1,0,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(2,8,1,0,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(2,9,0,2,'04:00');
+INSERT INTO StatistiquesJoueurs VALUES(2,10,1,1,'00:00');
 //--- Equipe 7 (31-35)
-INSERT INTO JoueursDansMatch VALUES(2,31,null,null,'');
-INSERT INTO JoueursDansMatch VALUES(2,32,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(2,33,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(2,34,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(2,35,1,1,'');
+INSERT INTO StatistiquesJoueurs VALUES(2,31,null,null,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(2,32,2,0,'06:00');
+INSERT INTO StatistiquesJoueurs VALUES(2,33,0,0,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(2,34,0,1,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(2,35,0,1,'05:00');
 //--- Insertion Match 3
-//--- Equipe 6  (26-30)
-INSERT INTO JoueursDansMatch VALUES(3,26,null,null,'');
-INSERT INTO JoueursDansMatch VALUES(3,27,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(3,28,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(3,29,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(3,30,1,1,'');
+//--- Equipe 6  (26-30) 1 - 2 
+INSERT INTO StatistiquesJoueurs VALUES(3,26,null,null,'04:00');
+INSERT INTO StatistiquesJoueurs VALUES(3,27,1,0,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(3,28,0,1,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(3,29,0,1,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(3,30,0,0,'02:00');
 //--- Equipe 3 (11-15)
-INSERT INTO JoueursDansMatch VALUES(3,11,null,null,'');
-INSERT INTO JoueursDansMatch VALUES(3,12,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(3,13,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(3,14,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(3,15,1,1,'');
+INSERT INTO StatistiquesJoueurs VALUES(3,11,null,null,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(3,12,1,0,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(3,13,1,0,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(3,14,0,2,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(3,15,0,1,'00:00');
 //--- Insertion Match 4
-//--- Equipe 5 (21-25)
-INSERT INTO JoueursDansMatch VALUES(4,21,null,null,'');
-INSERT INTO JoueursDansMatch VALUES(4,22,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(4,23,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(4,24,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(4,25,1,1,'');
+//--- Equipe 5 (21-25) 2 - 5 
+INSERT INTO StatistiquesJoueurs VALUES(4,21,null,null,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(4,22,1,1,'04:00');
+INSERT INTO StatistiquesJoueurs VALUES(4,23,0,1,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(4,24,1,0,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(4,25,0,1,'02:00');
 //--- Equipe 4 (16-20)
-INSERT INTO JoueursDansMatch VALUES(4,16,null,null,'');
-INSERT INTO JoueursDansMatch VALUES(4,17,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(4,18,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(4,19,1,1,'');
-INSERT INTO JoueursDansMatch VALUES(4,20,1,1,'');
+INSERT INTO StatistiquesJoueurs VALUES(4,16,null,null,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(4,17,4,1,'04:00');
+INSERT INTO StatistiquesJoueurs VALUES(4,18,1,1,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(4,19,0,2,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(4,20,0,1,'02:00');
 
+commit;
 
 select * from matchs;
 select * from joueurs;
-select * from Équipes;
+select * from Equipes;
 select * from divisions;
-select * from JoueursDansMatch; 
+select * from StatistiquesJoueurs;
+
+drop table statistiquesjoueurs;
+drop table matchs;
+drop table joueurs;
+drop table equipes;
+drop table divisions;
+

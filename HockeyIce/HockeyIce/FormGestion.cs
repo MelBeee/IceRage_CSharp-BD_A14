@@ -74,6 +74,16 @@ namespace HockeyIce
             EnabledVisibleLesPanels();
         }
 
+        private void ClassementEquipe()
+        {
+
+        }
+
+        private void ClassementJoueur()
+        {
+
+        }
+
         private void EnabledVisibleLesPanels()
         {
             switch (Properties.Settings.Default.FenetreAOuvrir)
@@ -83,36 +93,16 @@ namespace HockeyIce
                     PN_Equipe.Visible = true;
                     PN_Equipe.Enabled = true;
                     PN_Equipe.Location = basePanel;
-
-                    PN_Joueurs.Visible = false;
-                    PN_Joueurs.Enabled = false;
-
-                    PN_GestionDivision.Visible = false;
-                    PN_GestionDivision.Enabled = false;
-                   
                     LB_Text.Text = "Gestion des équipes";
                     break;
                 case "Joueur":
-                    PN_Equipe.Visible = false;
-                    PN_Equipe.Enabled = false;
-
                     PN_Joueurs.Parent = this;
                     PN_Joueurs.Visible = true;
                     PN_Joueurs.Enabled = true;
                     PN_Joueurs.Location = basePanel;
-
-                    PN_GestionDivision.Visible = false;
-                    PN_GestionDivision.Enabled = false;
-                    
                     LB_Text.Text = "Gestion des joueurs";
                     break;
                 case "Division":
-                    PN_Equipe.Visible = false;
-                    PN_Equipe.Enabled = false;
-
-                    PN_Joueurs.Visible = false;
-                    PN_Joueurs.Enabled = false;
-
                     PN_GestionDivision.Parent = this;
                     PN_GestionDivision.Visible = true;
                     PN_GestionDivision.Enabled = true;

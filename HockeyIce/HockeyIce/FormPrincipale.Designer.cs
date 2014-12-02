@@ -79,6 +79,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(33)))), ((int)(((byte)(77)))));
             this.panel3.Location = new System.Drawing.Point(128, 147);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
@@ -89,6 +90,7 @@
             // 
             // panel8
             // 
+            this.panel8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(87)))), ((int)(((byte)(46)))));
             this.panel8.Location = new System.Drawing.Point(23, 251);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
@@ -98,6 +100,7 @@
             // 
             // panel9
             // 
+            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(119)))), ((int)(((byte)(237)))));
             this.panel9.Location = new System.Drawing.Point(332, 147);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
@@ -108,6 +111,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(119)))), ((int)(((byte)(237)))));
             this.panel2.Location = new System.Drawing.Point(23, 352);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -117,6 +121,7 @@
             // 
             // panel13
             // 
+            this.panel13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(0)))), ((int)(((byte)(166)))));
             this.panel13.Location = new System.Drawing.Point(128, 46);
             this.panel13.Margin = new System.Windows.Forms.Padding(2);
@@ -126,6 +131,7 @@
             // 
             // panel5
             // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.BackColor = System.Drawing.Color.DarkOrange;
             this.panel5.Location = new System.Drawing.Point(332, 251);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
@@ -184,6 +190,7 @@
             // 
             // FB_GestionDivision
             // 
+            this.FB_GestionDivision.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FB_GestionDivision.BackgroundImage = global::HockeyIce.Properties.Resources.AjoutModif_Division_Normal;
             this.FB_GestionDivision.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FB_GestionDivision.ImageClick = global::HockeyIce.Properties.Resources.AjoutModif_Division_Normal;
@@ -198,6 +205,7 @@
             // 
             // FB_CJoueurs
             // 
+            this.FB_CJoueurs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FB_CJoueurs.BackgroundImage = global::HockeyIce.Properties.Resources.CJoueursNormal;
             this.FB_CJoueurs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FB_CJoueurs.ImageClick = global::HockeyIce.Properties.Resources.CJoueursClick;
@@ -212,6 +220,7 @@
             // 
             // FB_CEquipe
             // 
+            this.FB_CEquipe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FB_CEquipe.BackgroundImage = global::HockeyIce.Properties.Resources.CEquipeNormal;
             this.FB_CEquipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FB_CEquipe.ImageClick = global::HockeyIce.Properties.Resources.CEquipeClick;
@@ -226,6 +235,7 @@
             // 
             // FB_3MeilleursJs
             // 
+            this.FB_3MeilleursJs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FB_3MeilleursJs.BackgroundImage = global::HockeyIce.Properties.Resources._3JoueursNormal;
             this.FB_3MeilleursJs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FB_3MeilleursJs.ImageClick = global::HockeyIce.Properties.Resources._3JoueursClick;
@@ -240,6 +250,7 @@
             // 
             // FB_APropos
             // 
+            this.FB_APropos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FB_APropos.BackgroundImage = global::HockeyIce.Properties.Resources.AideNormal;
             this.FB_APropos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FB_APropos.ImageClick = global::HockeyIce.Properties.Resources.AideClick;
@@ -254,6 +265,7 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox6.Image = global::HockeyIce.Properties.Resources.hockeyjeune;
             this.pictureBox6.Location = new System.Drawing.Point(227, 352);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
@@ -265,6 +277,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox5.Image = global::HockeyIce.Properties.Resources.gardien;
             this.pictureBox5.Location = new System.Drawing.Point(128, 251);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
@@ -276,6 +289,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = global::HockeyIce.Properties.Resources.hockey_cosom7_9;
             this.pictureBox4.Location = new System.Drawing.Point(536, 147);
@@ -288,6 +302,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = global::HockeyIce.Properties.Resources.Hockey;
             this.pictureBox3.Location = new System.Drawing.Point(436, 46);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
