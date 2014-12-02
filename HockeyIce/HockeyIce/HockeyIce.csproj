@@ -70,6 +70,12 @@
     <Compile Include="FormErreur.Designer.cs">
       <DependentUpon>FormErreur.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestion.Designer.cs">
+      <DependentUpon>FormGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormErreur.resx">
       <DependentUpon>FormErreur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestion.resx">
+      <DependentUpon>FormGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipale.resx">
       <DependentUpon>FormPrincipale.cs</DependentUpon>
@@ -265,6 +274,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1280px-Montreal_Canadiens.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AjoutModif_Division_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AjoutModif_Division_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AjoutModif_Division_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Nashville.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Chicago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_LA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_NY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Otawa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_SanJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Toronto.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

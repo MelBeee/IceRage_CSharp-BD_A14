@@ -32,26 +32,26 @@
             this.PN_CJoueurs = new System.Windows.Forms.Panel();
             this.CJoueurs = new System.Windows.Forms.Label();
             this.PN_3Joueurs = new System.Windows.Forms.Panel();
-            this.PN_CEquipe = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.LB_PrenomBronze = new System.Windows.Forms.Label();
-            this.LB_PositionBronze = new System.Windows.Forms.Label();
-            this.LB_PointsBronze = new System.Windows.Forms.Label();
-            this.LB_PunitionBronze = new System.Windows.Forms.Label();
-            this.LB_NumeroBronze = new System.Windows.Forms.Label();
-            this.LB_NomBronze = new System.Windows.Forms.Label();
-            this.LB_NomGold = new System.Windows.Forms.Label();
-            this.LB_NumeroGold = new System.Windows.Forms.Label();
-            this.LB_PunitionGold = new System.Windows.Forms.Label();
-            this.LB_PointsGold = new System.Windows.Forms.Label();
-            this.LB_PositionGold = new System.Windows.Forms.Label();
-            this.LB_PrenomGold = new System.Windows.Forms.Label();
             this.LB_NomSilver = new System.Windows.Forms.Label();
             this.LB_NumeroSilver = new System.Windows.Forms.Label();
             this.LB_PunitionSilver = new System.Windows.Forms.Label();
             this.LB_PointsSilver = new System.Windows.Forms.Label();
             this.LB_PositionSilver = new System.Windows.Forms.Label();
             this.LB_PrenomSilver = new System.Windows.Forms.Label();
+            this.LB_NomGold = new System.Windows.Forms.Label();
+            this.LB_NumeroGold = new System.Windows.Forms.Label();
+            this.LB_PunitionGold = new System.Windows.Forms.Label();
+            this.LB_PointsGold = new System.Windows.Forms.Label();
+            this.LB_PositionGold = new System.Windows.Forms.Label();
+            this.LB_PrenomGold = new System.Windows.Forms.Label();
+            this.LB_NomBronze = new System.Windows.Forms.Label();
+            this.LB_NumeroBronze = new System.Windows.Forms.Label();
+            this.LB_PunitionBronze = new System.Windows.Forms.Label();
+            this.LB_PointsBronze = new System.Windows.Forms.Label();
+            this.LB_PositionBronze = new System.Windows.Forms.Label();
+            this.LB_PrenomBronze = new System.Windows.Forms.Label();
+            this.PN_CEquipe = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.PB_EquipeSilver = new System.Windows.Forms.PictureBox();
             this.PB_EquipeGold = new System.Windows.Forms.PictureBox();
             this.PB_EquipeBronze = new System.Windows.Forms.PictureBox();
@@ -128,92 +128,71 @@
             this.PN_3Joueurs.Controls.Add(this.LB_PositionBronze);
             this.PN_3Joueurs.Controls.Add(this.LB_PrenomBronze);
             this.PN_3Joueurs.Controls.Add(this.PB_Podium);
-            this.PN_3Joueurs.Controls.Add(this.PN_CEquipe);
             this.PN_3Joueurs.Location = new System.Drawing.Point(4, 29);
             this.PN_3Joueurs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_3Joueurs.Name = "PN_3Joueurs";
             this.PN_3Joueurs.Size = new System.Drawing.Size(673, 397);
             this.PN_3Joueurs.TabIndex = 12;
             // 
-            // PN_CEquipe
+            // LB_NomSilver
             // 
-            this.PN_CEquipe.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_CEquipe.Controls.Add(this.label1);
-            this.PN_CEquipe.Location = new System.Drawing.Point(7, 335);
-            this.PN_CEquipe.Margin = new System.Windows.Forms.Padding(2);
-            this.PN_CEquipe.Name = "PN_CEquipe";
-            this.PN_CEquipe.Size = new System.Drawing.Size(673, 397);
-            this.PN_CEquipe.TabIndex = 11;
+            this.LB_NomSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_NomSilver.Location = new System.Drawing.Point(51, 183);
+            this.LB_NomSilver.Name = "LB_NomSilver";
+            this.LB_NomSilver.Size = new System.Drawing.Size(179, 15);
+            this.LB_NomSilver.TabIndex = 31;
+            this.LB_NomSilver.Text = "Subban";
+            this.LB_NomSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label1
+            // LB_NumeroSilver
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(197, 132);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CEquipe";
+            this.LB_NumeroSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_NumeroSilver.Location = new System.Drawing.Point(51, 201);
+            this.LB_NumeroSilver.Name = "LB_NumeroSilver";
+            this.LB_NumeroSilver.Size = new System.Drawing.Size(179, 18);
+            this.LB_NumeroSilver.TabIndex = 30;
+            this.LB_NumeroSilver.Text = "Numéro 76";
+            this.LB_NumeroSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LB_PrenomBronze
+            // LB_PunitionSilver
             // 
-            this.LB_PrenomBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_PrenomBronze.Location = new System.Drawing.Point(443, 167);
-            this.LB_PrenomBronze.Name = "LB_PrenomBronze";
-            this.LB_PrenomBronze.Size = new System.Drawing.Size(176, 15);
-            this.LB_PrenomBronze.TabIndex = 13;
-            this.LB_PrenomBronze.Text = "Brandon";
-            this.LB_PrenomBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LB_PunitionSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_PunitionSilver.Location = new System.Drawing.Point(51, 254);
+            this.LB_PunitionSilver.Name = "LB_PunitionSilver";
+            this.LB_PunitionSilver.Size = new System.Drawing.Size(179, 18);
+            this.LB_PunitionSilver.TabIndex = 29;
+            this.LB_PunitionSilver.Text = "2m25s";
+            this.LB_PunitionSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LB_PositionBronze
+            // LB_PointsSilver
             // 
-            this.LB_PositionBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_PositionBronze.Location = new System.Drawing.Point(440, 219);
-            this.LB_PositionBronze.Name = "LB_PositionBronze";
-            this.LB_PositionBronze.Size = new System.Drawing.Size(179, 18);
-            this.LB_PositionBronze.TabIndex = 14;
-            this.LB_PositionBronze.Text = "Attaquant";
-            this.LB_PositionBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LB_PointsSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_PointsSilver.Location = new System.Drawing.Point(51, 236);
+            this.LB_PointsSilver.Name = "LB_PointsSilver";
+            this.LB_PointsSilver.Size = new System.Drawing.Size(179, 18);
+            this.LB_PointsSilver.TabIndex = 28;
+            this.LB_PointsSilver.Text = "12 points";
+            this.LB_PointsSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LB_PointsBronze
+            // LB_PositionSilver
             // 
-            this.LB_PointsBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_PointsBronze.Location = new System.Drawing.Point(440, 236);
-            this.LB_PointsBronze.Name = "LB_PointsBronze";
-            this.LB_PointsBronze.Size = new System.Drawing.Size(179, 18);
-            this.LB_PointsBronze.TabIndex = 15;
-            this.LB_PointsBronze.Text = "12 points";
-            this.LB_PointsBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LB_PositionSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_PositionSilver.Location = new System.Drawing.Point(51, 219);
+            this.LB_PositionSilver.Name = "LB_PositionSilver";
+            this.LB_PositionSilver.Size = new System.Drawing.Size(179, 18);
+            this.LB_PositionSilver.TabIndex = 27;
+            this.LB_PositionSilver.Text = "Defenseur";
+            this.LB_PositionSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LB_PunitionBronze
+            // LB_PrenomSilver
             // 
-            this.LB_PunitionBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_PunitionBronze.Location = new System.Drawing.Point(440, 254);
-            this.LB_PunitionBronze.Name = "LB_PunitionBronze";
-            this.LB_PunitionBronze.Size = new System.Drawing.Size(179, 18);
-            this.LB_PunitionBronze.TabIndex = 16;
-            this.LB_PunitionBronze.Text = "2m25s";
-            this.LB_PunitionBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // LB_NumeroBronze
-            // 
-            this.LB_NumeroBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_NumeroBronze.Location = new System.Drawing.Point(440, 201);
-            this.LB_NumeroBronze.Name = "LB_NumeroBronze";
-            this.LB_NumeroBronze.Size = new System.Drawing.Size(179, 18);
-            this.LB_NumeroBronze.TabIndex = 17;
-            this.LB_NumeroBronze.Text = "Numéro 8";
-            this.LB_NumeroBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // LB_NomBronze
-            // 
-            this.LB_NomBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_NomBronze.Location = new System.Drawing.Point(440, 183);
-            this.LB_NomBronze.Name = "LB_NomBronze";
-            this.LB_NomBronze.Size = new System.Drawing.Size(179, 15);
-            this.LB_NomBronze.TabIndex = 18;
-            this.LB_NomBronze.Text = "Prust";
-            this.LB_NomBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LB_PrenomSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_PrenomSilver.Location = new System.Drawing.Point(54, 167);
+            this.LB_PrenomSilver.Name = "LB_PrenomSilver";
+            this.LB_PrenomSilver.Size = new System.Drawing.Size(176, 15);
+            this.LB_PrenomSilver.TabIndex = 26;
+            this.LB_PrenomSilver.Text = "PK";
+            this.LB_PrenomSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // LB_NomGold
             // 
@@ -276,79 +255,101 @@
             this.LB_PrenomGold.Text = "Carey";
             this.LB_PrenomGold.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LB_NomSilver
+            // LB_NomBronze
             // 
-            this.LB_NomSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_NomSilver.Location = new System.Drawing.Point(51, 183);
-            this.LB_NomSilver.Name = "LB_NomSilver";
-            this.LB_NomSilver.Size = new System.Drawing.Size(179, 15);
-            this.LB_NomSilver.TabIndex = 31;
-            this.LB_NomSilver.Text = "Subban";
-            this.LB_NomSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LB_NomBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_NomBronze.Location = new System.Drawing.Point(440, 183);
+            this.LB_NomBronze.Name = "LB_NomBronze";
+            this.LB_NomBronze.Size = new System.Drawing.Size(179, 15);
+            this.LB_NomBronze.TabIndex = 18;
+            this.LB_NomBronze.Text = "Prust";
+            this.LB_NomBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LB_NumeroSilver
+            // LB_NumeroBronze
             // 
-            this.LB_NumeroSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_NumeroSilver.Location = new System.Drawing.Point(51, 201);
-            this.LB_NumeroSilver.Name = "LB_NumeroSilver";
-            this.LB_NumeroSilver.Size = new System.Drawing.Size(179, 18);
-            this.LB_NumeroSilver.TabIndex = 30;
-            this.LB_NumeroSilver.Text = "Numéro 76";
-            this.LB_NumeroSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LB_NumeroBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_NumeroBronze.Location = new System.Drawing.Point(440, 201);
+            this.LB_NumeroBronze.Name = "LB_NumeroBronze";
+            this.LB_NumeroBronze.Size = new System.Drawing.Size(179, 18);
+            this.LB_NumeroBronze.TabIndex = 17;
+            this.LB_NumeroBronze.Text = "Numéro 8";
+            this.LB_NumeroBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LB_PunitionSilver
+            // LB_PunitionBronze
             // 
-            this.LB_PunitionSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_PunitionSilver.Location = new System.Drawing.Point(51, 254);
-            this.LB_PunitionSilver.Name = "LB_PunitionSilver";
-            this.LB_PunitionSilver.Size = new System.Drawing.Size(179, 18);
-            this.LB_PunitionSilver.TabIndex = 29;
-            this.LB_PunitionSilver.Text = "2m25s";
-            this.LB_PunitionSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LB_PunitionBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_PunitionBronze.Location = new System.Drawing.Point(440, 254);
+            this.LB_PunitionBronze.Name = "LB_PunitionBronze";
+            this.LB_PunitionBronze.Size = new System.Drawing.Size(179, 18);
+            this.LB_PunitionBronze.TabIndex = 16;
+            this.LB_PunitionBronze.Text = "2m25s";
+            this.LB_PunitionBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LB_PointsSilver
+            // LB_PointsBronze
             // 
-            this.LB_PointsSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_PointsSilver.Location = new System.Drawing.Point(51, 236);
-            this.LB_PointsSilver.Name = "LB_PointsSilver";
-            this.LB_PointsSilver.Size = new System.Drawing.Size(179, 18);
-            this.LB_PointsSilver.TabIndex = 28;
-            this.LB_PointsSilver.Text = "12 points";
-            this.LB_PointsSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LB_PointsBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_PointsBronze.Location = new System.Drawing.Point(440, 236);
+            this.LB_PointsBronze.Name = "LB_PointsBronze";
+            this.LB_PointsBronze.Size = new System.Drawing.Size(179, 18);
+            this.LB_PointsBronze.TabIndex = 15;
+            this.LB_PointsBronze.Text = "12 points";
+            this.LB_PointsBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LB_PositionSilver
+            // LB_PositionBronze
             // 
-            this.LB_PositionSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_PositionSilver.Location = new System.Drawing.Point(51, 219);
-            this.LB_PositionSilver.Name = "LB_PositionSilver";
-            this.LB_PositionSilver.Size = new System.Drawing.Size(179, 18);
-            this.LB_PositionSilver.TabIndex = 27;
-            this.LB_PositionSilver.Text = "Defenseur";
-            this.LB_PositionSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LB_PositionBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_PositionBronze.Location = new System.Drawing.Point(440, 219);
+            this.LB_PositionBronze.Name = "LB_PositionBronze";
+            this.LB_PositionBronze.Size = new System.Drawing.Size(179, 18);
+            this.LB_PositionBronze.TabIndex = 14;
+            this.LB_PositionBronze.Text = "Attaquant";
+            this.LB_PositionBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LB_PrenomSilver
+            // LB_PrenomBronze
             // 
-            this.LB_PrenomSilver.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_PrenomSilver.Location = new System.Drawing.Point(54, 167);
-            this.LB_PrenomSilver.Name = "LB_PrenomSilver";
-            this.LB_PrenomSilver.Size = new System.Drawing.Size(176, 15);
-            this.LB_PrenomSilver.TabIndex = 26;
-            this.LB_PrenomSilver.Text = "PK";
-            this.LB_PrenomSilver.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LB_PrenomBronze.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_PrenomBronze.Location = new System.Drawing.Point(443, 167);
+            this.LB_PrenomBronze.Name = "LB_PrenomBronze";
+            this.LB_PrenomBronze.Size = new System.Drawing.Size(176, 15);
+            this.LB_PrenomBronze.TabIndex = 13;
+            this.LB_PrenomBronze.Text = "Brandon";
+            this.LB_PrenomBronze.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PN_CEquipe
+            // 
+            this.PN_CEquipe.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_CEquipe.Controls.Add(this.label1);
+            this.PN_CEquipe.Location = new System.Drawing.Point(2, 397);
+            this.PN_CEquipe.Margin = new System.Windows.Forms.Padding(2);
+            this.PN_CEquipe.Name = "PN_CEquipe";
+            this.PN_CEquipe.Size = new System.Drawing.Size(673, 397);
+            this.PN_CEquipe.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(197, 132);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CEquipe";
             // 
             // PB_EquipeSilver
             // 
-            this.PB_EquipeSilver.Location = new System.Drawing.Point(57, 275);
+            this.PB_EquipeSilver.Image = global::HockeyIce.Properties.Resources.Logo_Nashville;
+            this.PB_EquipeSilver.Location = new System.Drawing.Point(57, 287);
             this.PB_EquipeSilver.Name = "PB_EquipeSilver";
             this.PB_EquipeSilver.Size = new System.Drawing.Size(173, 62);
+            this.PB_EquipeSilver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_EquipeSilver.TabIndex = 33;
             this.PB_EquipeSilver.TabStop = false;
             this.PB_EquipeSilver.Click += new System.EventHandler(this.PB_EquipeSilver_Click);
             // 
             // PB_EquipeGold
             // 
-            this.PB_EquipeGold.Image = global::HockeyIce.Properties.Resources._1280px_Montreal_Canadiens_svg;
-            this.PB_EquipeGold.Location = new System.Drawing.Point(249, 275);
+            this.PB_EquipeGold.Image = global::HockeyIce.Properties.Resources.Logo_Toronto;
+            this.PB_EquipeGold.Location = new System.Drawing.Point(249, 287);
             this.PB_EquipeGold.Name = "PB_EquipeGold";
             this.PB_EquipeGold.Size = new System.Drawing.Size(176, 62);
             this.PB_EquipeGold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -357,9 +358,11 @@
             // 
             // PB_EquipeBronze
             // 
-            this.PB_EquipeBronze.Location = new System.Drawing.Point(443, 275);
+            this.PB_EquipeBronze.Image = global::HockeyIce.Properties.Resources._1280px_Montreal_Canadiens_svg;
+            this.PB_EquipeBronze.Location = new System.Drawing.Point(443, 287);
             this.PB_EquipeBronze.Name = "PB_EquipeBronze";
             this.PB_EquipeBronze.Size = new System.Drawing.Size(176, 62);
+            this.PB_EquipeBronze.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_EquipeBronze.TabIndex = 19;
             this.PB_EquipeBronze.TabStop = false;
             // 
@@ -410,6 +413,7 @@
             this.Controls.Add(this.LB_Text);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.FB_Quitter);
+            this.Controls.Add(this.PN_CEquipe);
             this.Controls.Add(this.PN_CJoueurs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);

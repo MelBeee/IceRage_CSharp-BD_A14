@@ -50,12 +50,12 @@ namespace HockeyIce.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Classement {
+        public string FenetreAOuvrir {
             get {
-                return ((string)(this["Classement"]));
+                return ((string)(this["FenetreAOuvrir"]));
             }
             set {
-                this["Classement"] = value;
+                this["FenetreAOuvrir"] = value;
             }
         }
     }

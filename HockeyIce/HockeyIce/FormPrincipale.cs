@@ -235,12 +235,36 @@ namespace HockeyIce
 
         private void AfficherClassement(string Classement)
         {
-            Properties.Settings.Default.Classement = Classement;
+            Properties.Settings.Default.FenetreAOuvrir = Classement;
             Properties.Settings.Default.Save();
-            FormClassement dlg = new FormClassement();
-            dlg.oraconn = oraconn;
+            FormClassement dlg = new FormClassement(oraconn);
 
             dlg.ShowDialog();
+        }
+
+        private void FB_GestionDivision_Click(object sender, EventArgs e)
+        {
+             AfficherGestion("Division");
+        }
+
+        private void AfficherGestion(string Gestion)
+        {
+            Properties.Settings.Default.FenetreAOuvrir = Gestion;
+            Properties.Settings.Default.Save();
+
+            FormGestion dlg = new FormGestion(oraconn);
+
+            dlg.ShowDialog();
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            AfficherGestion("Equipe");
+        }
+
+        private void panel9_Click(object sender, EventArgs e)
+        {
+            AfficherGestion("Joueur");
         }
     }
 }

@@ -16,11 +16,12 @@ namespace HockeyIce
         private bool _dragging = false;
         private Point _start_point = new Point(0, 0);
         private Point basePanel = new Point(4, 30);
-        public OracleConnection oraconn { set ; get ; }
+        public OracleConnection oraconnClassement { set ; get ; }
 
-        public FormClassement()
+        public FormClassement(OracleConnection oraconn)
         {
             InitializeComponent();
+            oraconnClassement = oraconn;
         }
 
 
@@ -36,7 +37,7 @@ namespace HockeyIce
 
         private void EnabledVisibleLesPanels()
         {
-            switch (Properties.Settings.Default.Classement)
+            switch (Properties.Settings.Default.FenetreAOuvrir)
             {
                 case "CEquipes":
                     PN_CEquipe.Parent = this;

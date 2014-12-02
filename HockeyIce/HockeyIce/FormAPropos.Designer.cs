@@ -34,14 +34,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.FB_Continuer = new FlashButton.FlashButton();
             this.LB_Description = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FB_Quitter = new FlashButton.FlashButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.FB_Continuer = new FlashButton.FlashButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Text
@@ -49,7 +49,7 @@
             this.LB_Text.AutoSize = true;
             this.LB_Text.Font = new System.Drawing.Font("Kristen ITC", 12F);
             this.LB_Text.ForeColor = System.Drawing.Color.White;
-            this.LB_Text.Location = new System.Drawing.Point(25, 3);
+            this.LB_Text.Location = new System.Drawing.Point(25, 2);
             this.LB_Text.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Text.Name = "LB_Text";
             this.LB_Text.Size = new System.Drawing.Size(83, 23);
@@ -121,31 +121,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Ice Rage";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HockeyIce.Properties.Resources.Hockey_Stick_Pin;
-            this.pictureBox1.Location = new System.Drawing.Point(256, 216);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 213);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // FB_Continuer
-            // 
-            this.FB_Continuer.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_Continuer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_Continuer.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
-            this.FB_Continuer.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
-            this.FB_Continuer.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_Continuer.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_Continuer.Location = new System.Drawing.Point(10, 404);
-            this.FB_Continuer.Name = "FB_Continuer";
-            this.FB_Continuer.Size = new System.Drawing.Size(86, 19);
-            this.FB_Continuer.TabIndex = 3;
-            this.FB_Continuer.Click += new System.EventHandler(this.FB_Continuer_Click);
-            // 
             // LB_Description
             // 
             this.LB_Description.AutoSize = true;
@@ -183,6 +158,31 @@
             this.FB_Quitter.TabIndex = 7;
             this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HockeyIce.Properties.Resources.Hockey_Stick_Pin;
+            this.pictureBox1.Location = new System.Drawing.Point(256, 216);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(152, 213);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // FB_Continuer
+            // 
+            this.FB_Continuer.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_Continuer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Continuer.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
+            this.FB_Continuer.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
+            this.FB_Continuer.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_Continuer.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
+            this.FB_Continuer.Location = new System.Drawing.Point(10, 404);
+            this.FB_Continuer.Name = "FB_Continuer";
+            this.FB_Continuer.Size = new System.Drawing.Size(86, 19);
+            this.FB_Continuer.TabIndex = 3;
+            this.FB_Continuer.Click += new System.EventHandler(this.FB_Continuer_Click);
+            // 
             // FormAPropos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,8 +203,8 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.APropos_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
