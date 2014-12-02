@@ -21,12 +21,12 @@ namespace HockeyIce
         public FormPrincipale()
         {
             InitializeComponent();
+ 
         }
 
         private void FormPrincipale_Load(object sender, EventArgs e)
         {
             Connection();
-            FB_Retour.Enabled = false;
             if (!connection)
             {
                 PasDeConnection();
@@ -36,6 +36,8 @@ namespace HockeyIce
         private void PasDeConnection()
         {
             PN_PasDeConnection.BringToFront();
+
+
             PN_PasDeConnection.Enabled = true;
             PN_PasDeConnection.Visible = true;
             FB_Fermer.Enabled = false;
@@ -236,6 +238,7 @@ namespace HockeyIce
             Properties.Settings.Default.Classement = Classement;
             Properties.Settings.Default.Save();
             FormClassement dlg = new FormClassement();
+            dlg.oraconn = oraconn;
 
             dlg.ShowDialog();
         }

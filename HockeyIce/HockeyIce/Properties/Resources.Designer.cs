@@ -63,6 +63,16 @@ namespace HockeyIce.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1280px_Montreal_Canadiens_svg {
+            get {
+                object obj = ResourceManager.GetObject("1280px-Montreal_Canadiens.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3JoueursClick {
             get {
                 object obj = ResourceManager.GetObject("3JoueursClick", resourceCulture);
