@@ -143,6 +143,7 @@
             // 
             // PB_Photo_Bronze
             // 
+            this.PB_Photo_Bronze.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PB_Photo_Bronze.Location = new System.Drawing.Point(439, 170);
             this.PB_Photo_Bronze.Name = "PB_Photo_Bronze";
             this.PB_Photo_Bronze.Size = new System.Drawing.Size(71, 111);
@@ -151,6 +152,7 @@
             // 
             // PB_Photo_Gold
             // 
+            this.PB_Photo_Gold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PB_Photo_Gold.Location = new System.Drawing.Point(246, 170);
             this.PB_Photo_Gold.Name = "PB_Photo_Gold";
             this.PB_Photo_Gold.Size = new System.Drawing.Size(71, 111);
@@ -159,6 +161,7 @@
             // 
             // PB_Photo_Silver
             // 
+            this.PB_Photo_Silver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PB_Photo_Silver.Location = new System.Drawing.Point(51, 170);
             this.PB_Photo_Silver.Name = "PB_Photo_Silver";
             this.PB_Photo_Silver.Size = new System.Drawing.Size(71, 111);
@@ -192,7 +195,7 @@
             this.LB_NomSilver.Name = "LB_NomSilver";
             this.LB_NomSilver.Size = new System.Drawing.Size(105, 15);
             this.LB_NomSilver.TabIndex = 31;
-            this.LB_NomSilver.Text = "Subban";
+            this.LB_NomSilver.Text = "nom";
             // 
             // LB_NumeroSilver
             // 
@@ -201,7 +204,7 @@
             this.LB_NumeroSilver.Name = "LB_NumeroSilver";
             this.LB_NumeroSilver.Size = new System.Drawing.Size(105, 18);
             this.LB_NumeroSilver.TabIndex = 30;
-            this.LB_NumeroSilver.Text = "Numéro 76";
+            this.LB_NumeroSilver.Text = "Num";
             // 
             // LB_PointsSilver
             // 
@@ -219,7 +222,7 @@
             this.LB_PositionSilver.Name = "LB_PositionSilver";
             this.LB_PositionSilver.Size = new System.Drawing.Size(105, 18);
             this.LB_PositionSilver.TabIndex = 27;
-            this.LB_PositionSilver.Text = "Defenseur";
+            this.LB_PositionSilver.Text = "position";
             // 
             // LB_PrenomSilver
             // 
@@ -228,7 +231,7 @@
             this.LB_PrenomSilver.Name = "LB_PrenomSilver";
             this.LB_PrenomSilver.Size = new System.Drawing.Size(105, 15);
             this.LB_PrenomSilver.TabIndex = 26;
-            this.LB_PrenomSilver.Text = "PK";
+            this.LB_PrenomSilver.Text = "Prenom";
             // 
             // LB_NomGold
             // 
@@ -237,7 +240,7 @@
             this.LB_NomGold.Name = "LB_NomGold";
             this.LB_NomGold.Size = new System.Drawing.Size(105, 15);
             this.LB_NomGold.TabIndex = 25;
-            this.LB_NomGold.Text = "Price";
+            this.LB_NomGold.Text = "n";
             // 
             // LB_NumeroGold
             // 
@@ -246,7 +249,7 @@
             this.LB_NumeroGold.Name = "LB_NumeroGold";
             this.LB_NumeroGold.Size = new System.Drawing.Size(105, 18);
             this.LB_NumeroGold.TabIndex = 24;
-            this.LB_NumeroGold.Text = "Numéro 31";
+            this.LB_NumeroGold.Text = "num";
             // 
             // LB_PointsGold
             // 
@@ -264,7 +267,7 @@
             this.LB_PositionGold.Name = "LB_PositionGold";
             this.LB_PositionGold.Size = new System.Drawing.Size(105, 18);
             this.LB_PositionGold.TabIndex = 21;
-            this.LB_PositionGold.Text = "Gardien";
+            this.LB_PositionGold.Text = "pos";
             // 
             // LB_PrenomGold
             // 
@@ -273,7 +276,7 @@
             this.LB_PrenomGold.Name = "LB_PrenomGold";
             this.LB_PrenomGold.Size = new System.Drawing.Size(105, 15);
             this.LB_PrenomGold.TabIndex = 20;
-            this.LB_PrenomGold.Text = "Carey";
+            this.LB_PrenomGold.Text = "p";
             // 
             // PB_EquipeBronze
             // 
@@ -292,7 +295,7 @@
             this.LB_NomBronze.Name = "LB_NomBronze";
             this.LB_NomBronze.Size = new System.Drawing.Size(107, 10);
             this.LB_NomBronze.TabIndex = 18;
-            this.LB_NomBronze.Text = "Prust";
+            this.LB_NomBronze.Text = "n";
             // 
             // LB_NumeroBronze
             // 
@@ -301,7 +304,7 @@
             this.LB_NumeroBronze.Name = "LB_NumeroBronze";
             this.LB_NumeroBronze.Size = new System.Drawing.Size(107, 10);
             this.LB_NumeroBronze.TabIndex = 17;
-            this.LB_NumeroBronze.Text = "Numéro 8";
+            this.LB_NumeroBronze.Text = "num";
             // 
             // LB_PointsBronze
             // 
@@ -319,16 +322,16 @@
             this.LB_PositionBronze.Name = "LB_PositionBronze";
             this.LB_PositionBronze.Size = new System.Drawing.Size(107, 17);
             this.LB_PositionBronze.TabIndex = 14;
-            this.LB_PositionBronze.Text = "Attaquant";
+            this.LB_PositionBronze.Text = "p";
             // 
             // LB_PrenomBronze
             // 
             this.LB_PrenomBronze.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_PrenomBronze.Location = new System.Drawing.Point(513, 182);
             this.LB_PrenomBronze.Name = "LB_PrenomBronze";
-            this.LB_PrenomBronze.Size = new System.Drawing.Size(107, 10);
+            this.LB_PrenomBronze.Size = new System.Drawing.Size(107, 15);
             this.LB_PrenomBronze.TabIndex = 13;
-            this.LB_PrenomBronze.Text = "Brandon";
+            this.LB_PrenomBronze.Text = "p";
             // 
             // PB_Podium
             // 

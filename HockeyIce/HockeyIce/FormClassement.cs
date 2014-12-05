@@ -16,18 +16,68 @@ namespace HockeyIce
         private bool _dragging = false;
         private Point _start_point = new Point(0, 0);
         private Point basePanel = new Point(4, 30);
-        public OracleConnection oraconnClassement { set ; get ; }
+        public OracleConnection oraconnClassement { set; get; }
 
         public FormClassement(OracleConnection oraconn)
         {
             InitializeComponent();
             oraconnClassement = oraconn;
+
         }
 
         private void FormClassement_Load(object sender, EventArgs e)
         {
             EnabledVisibleLesPanels();
             this.Location = Properties.Settings.Default.PosFormClassement;
+            InitData();
+        }
+
+        private void InitData()
+        {
+            string Sql = "select j.prenom, j.nom, j.numeromaillot, j.typejoueur, j.photo, e.LOGO, s.NBREBUTS*2 + s.NBREPASSES as Score " +
+             "from joueurs j inner join equipes e on j.NUMEQUIPE = e.NUMEQUIPE " +
+             "inner join STATISTIQUESJOUEURS s on j.NUMJOUEUR = s.NUMJOUEUR " +
+             "where s.NBREBUTS*2 + s.NBREPASSES  is not null " +
+             "order by Score desc";
+
+            try
+            {
+                OracleCommand orcd = new OracleCommand(Sql, oraconnClassement);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                oraRead.Read();
+                LB_PrenomGold.Text = oraRead.GetString(0);
+                LB_NomGold.Text = oraRead.GetString(1);
+                LB_NumeroGold.Text = "Numéro " + oraRead.GetInt32(2).ToString();
+                LB_PositionGold.Text = oraRead.GetString(3);
+                PB_Photo_Gold.ImageLocation = oraRead.GetString(4);
+                PB_Photo_Gold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                LB_PointsGold.Text = oraRead.GetInt32(6).ToString() + " Points";
+
+                oraRead.Read();
+                LB_PrenomSilver.Text = oraRead.GetString(0);
+                LB_NomSilver.Text = oraRead.GetString(1);
+                LB_NumeroSilver.Text = "Numéro " + oraRead.GetInt32(2).ToString();
+                LB_PositionSilver.Text = oraRead.GetString(3);
+                PB_Photo_Silver.ImageLocation = oraRead.GetString(4);
+                PB_Photo_Silver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                LB_PointsSilver.Text = oraRead.GetInt32(6).ToString() + " Points";
+
+                oraRead.Read();
+                LB_PrenomBronze.Text = oraRead.GetString(0);
+                LB_NomBronze.Text = oraRead.GetString(1);
+                LB_NumeroBronze.Text = "Numéro " + oraRead.GetInt32(2).ToString();
+                LB_PositionBronze.Text = oraRead.GetString(3);
+                PB_Photo_Bronze.ImageLocation = oraRead.GetString(4);
+                PB_Photo_Bronze.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                LB_PointsBronze.Text = oraRead.GetInt32(6).ToString() + " Points";
+            }
+            catch (OracleException ex)
+            {
+                //SwitchException(ex);
+                MessageBox.Show("cbhuabfv");
+            }
         }
 
         private void EnabledVisibleLesPanels()
@@ -74,7 +124,7 @@ namespace HockeyIce
         }
         private void FormClassement_MouseUp(object sender, MouseEventArgs e)
         {
-            _dragging = false; 
+            _dragging = false;
         }
         private void LB_Text_MouseDown(object sender, MouseEventArgs e)
         {
@@ -91,7 +141,7 @@ namespace HockeyIce
         }
         private void LB_Text_MouseUp(object sender, MouseEventArgs e)
         {
-            _dragging = false; 
+            _dragging = false;
         }
 
         private void FB_Quitter_Click(object sender, EventArgs e)
@@ -104,5 +154,6 @@ namespace HockeyIce
             Properties.Settings.Default.PosFormClassement = this.Location;
             Properties.Settings.Default.Save();
         }
+
     }
 }
