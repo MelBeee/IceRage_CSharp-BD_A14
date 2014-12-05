@@ -32,9 +32,9 @@
             this.PN_CJoueurs = new System.Windows.Forms.Panel();
             this.CJoueurs = new System.Windows.Forms.Label();
             this.PN_3Joueurs = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PB_Photo_Bronze = new System.Windows.Forms.PictureBox();
+            this.PB_Photo_Gold = new System.Windows.Forms.PictureBox();
+            this.PB_Photo_Silver = new System.Windows.Forms.PictureBox();
             this.PB_EquipeSilver = new System.Windows.Forms.PictureBox();
             this.PB_EquipeGold = new System.Windows.Forms.PictureBox();
             this.LB_NomSilver = new System.Windows.Forms.Label();
@@ -60,9 +60,9 @@
             this.FB_Quitter = new FlashButton.FlashButton();
             this.PN_CJoueurs.SuspendLayout();
             this.PN_3Joueurs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Photo_Bronze)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Photo_Gold)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Photo_Silver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_EquipeSilver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_EquipeGold)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_EquipeBronze)).BeginInit();
@@ -111,9 +111,9 @@
             // PN_3Joueurs
             // 
             this.PN_3Joueurs.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_3Joueurs.Controls.Add(this.pictureBox4);
-            this.PN_3Joueurs.Controls.Add(this.pictureBox3);
-            this.PN_3Joueurs.Controls.Add(this.pictureBox1);
+            this.PN_3Joueurs.Controls.Add(this.PB_Photo_Bronze);
+            this.PN_3Joueurs.Controls.Add(this.PB_Photo_Gold);
+            this.PN_3Joueurs.Controls.Add(this.PB_Photo_Silver);
             this.PN_3Joueurs.Controls.Add(this.PB_EquipeSilver);
             this.PN_3Joueurs.Controls.Add(this.PB_EquipeGold);
             this.PN_3Joueurs.Controls.Add(this.LB_NomSilver);
@@ -141,29 +141,29 @@
             this.PN_3Joueurs.TabIndex = 12;
             this.PN_3Joueurs.Visible = false;
             // 
-            // pictureBox4
+            // PB_Photo_Bronze
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(439, 170);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(71, 111);
-            this.pictureBox4.TabIndex = 36;
-            this.pictureBox4.TabStop = false;
+            this.PB_Photo_Bronze.Location = new System.Drawing.Point(439, 170);
+            this.PB_Photo_Bronze.Name = "PB_Photo_Bronze";
+            this.PB_Photo_Bronze.Size = new System.Drawing.Size(71, 111);
+            this.PB_Photo_Bronze.TabIndex = 36;
+            this.PB_Photo_Bronze.TabStop = false;
             // 
-            // pictureBox3
+            // PB_Photo_Gold
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(246, 170);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(71, 111);
-            this.pictureBox3.TabIndex = 35;
-            this.pictureBox3.TabStop = false;
+            this.PB_Photo_Gold.Location = new System.Drawing.Point(246, 170);
+            this.PB_Photo_Gold.Name = "PB_Photo_Gold";
+            this.PB_Photo_Gold.Size = new System.Drawing.Size(71, 111);
+            this.PB_Photo_Gold.TabIndex = 35;
+            this.PB_Photo_Gold.TabStop = false;
             // 
-            // pictureBox1
+            // PB_Photo_Silver
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(51, 170);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 111);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
+            this.PB_Photo_Silver.Location = new System.Drawing.Point(51, 170);
+            this.PB_Photo_Silver.Name = "PB_Photo_Silver";
+            this.PB_Photo_Silver.Size = new System.Drawing.Size(71, 111);
+            this.PB_Photo_Silver.TabIndex = 34;
+            this.PB_Photo_Silver.TabStop = false;
             // 
             // PB_EquipeSilver
             // 
@@ -412,9 +412,9 @@
             this.PN_CJoueurs.ResumeLayout(false);
             this.PN_CJoueurs.PerformLayout();
             this.PN_3Joueurs.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Photo_Bronze)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Photo_Gold)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Photo_Silver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_EquipeSilver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_EquipeGold)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_EquipeBronze)).EndInit();
@@ -456,8 +456,8 @@
         private System.Windows.Forms.Label LB_PrenomGold;
         private System.Windows.Forms.PictureBox PB_EquipeSilver;
         private System.Windows.Forms.PictureBox PB_EquipeGold;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PB_Photo_Bronze;
+        private System.Windows.Forms.PictureBox PB_Photo_Gold;
+        private System.Windows.Forms.PictureBox PB_Photo_Silver;
     }
 }
