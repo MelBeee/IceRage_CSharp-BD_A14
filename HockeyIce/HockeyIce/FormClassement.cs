@@ -17,6 +17,11 @@ namespace HockeyIce
         private Point _start_point = new Point(0, 0);
         private Point basePanel = new Point(4, 30);
         public OracleConnection oraconnClassement { set; get; }
+        string Sql = "select j.prenom, j.nom, j.numeromaillot, j.typejoueur, j.photo, e.LOGO, s.NBREBUTS*2 + s.NBREPASSES as Score " +
+                     "from joueurs j inner join equipes e on j.NUMEQUIPE = e.NUMEQUIPE " +
+                     "inner join STATISTIQUESJOUEURS s on j.NUMJOUEUR = s.NUMJOUEUR " +
+                     "where s.NBREBUTS*2 + s.NBREPASSES  is not null " +
+                     "order by Score desc";
 
         public FormClassement(OracleConnection oraconn)
         {
@@ -34,12 +39,6 @@ namespace HockeyIce
 
         private void InitClassementBestJoueurs()
         {
-            string Sql = "select j.prenom, j.nom, j.numeromaillot, j.typejoueur, j.photo, e.LOGO, s.NBREBUTS*2 + s.NBREPASSES as Score " +
-             "from joueurs j inner join equipes e on j.NUMEQUIPE = e.NUMEQUIPE " +
-             "inner join STATISTIQUESJOUEURS s on j.NUMJOUEUR = s.NUMJOUEUR " +
-             "where s.NBREBUTS*2 + s.NBREPASSES  is not null " +
-             "order by Score desc";
-
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql, oraconnClassement);
@@ -53,7 +52,7 @@ namespace HockeyIce
                 LB_PositionGold.Text = oraRead.GetString(3);
                 PB_Photo_Gold.ImageLocation = oraRead.GetString(4);
                 PB_Photo_Gold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                //pb_
+                PB_EquipeGold.
                 LB_PointsGold.Text = oraRead.GetInt32(6).ToString() + " Points";
 
                 oraRead.Read();
