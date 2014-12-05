@@ -104,6 +104,5 @@ namespace HockeyIce
             Properties.Settings.Default.PosFormClassement = this.Location;
             Properties.Settings.Default.Save();
         }
-
     }
 }
