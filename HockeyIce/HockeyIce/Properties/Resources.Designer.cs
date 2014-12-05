@@ -123,6 +123,86 @@ namespace HockeyIce.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ADivision_Click {
+            get {
+                object obj = ResourceManager.GetObject("ADivision_Click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ADivision_Disable {
+            get {
+                object obj = ResourceManager.GetObject("ADivision_Disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ADivision_Hover {
+            get {
+                object obj = ResourceManager.GetObject("ADivision_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ADivision_Normal {
+            get {
+                object obj = ResourceManager.GetObject("ADivision_Normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AEquipes_Click {
+            get {
+                object obj = ResourceManager.GetObject("AEquipes_Click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AEquipes_Disable {
+            get {
+                object obj = ResourceManager.GetObject("AEquipes_Disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AEquipes_Hover {
+            get {
+                object obj = ResourceManager.GetObject("AEquipes_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AEquipes_Normal {
+            get {
+                object obj = ResourceManager.GetObject("AEquipes_Normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AideClick {
             get {
                 object obj = ResourceManager.GetObject("AideClick", resourceCulture);
@@ -163,9 +243,9 @@ namespace HockeyIce.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AjoutModif_Division_Disable {
+        internal static System.Drawing.Bitmap AJoueurs_Click {
             get {
-                object obj = ResourceManager.GetObject("AjoutModif_Division_Disable", resourceCulture);
+                object obj = ResourceManager.GetObject("AJoueurs_Click", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +253,9 @@ namespace HockeyIce.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AjoutModif_Division_Hover {
+        internal static System.Drawing.Bitmap AJoueurs_Disable {
             get {
-                object obj = ResourceManager.GetObject("AjoutModif_Division_Hover", resourceCulture);
+                object obj = ResourceManager.GetObject("AJoueurs_Disable", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +263,59 @@ namespace HockeyIce.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AjoutModif_Division_Normal {
+        internal static System.Drawing.Bitmap AJoueurs_Hover {
             get {
-                object obj = ResourceManager.GetObject("AjoutModif_Division_Normal", resourceCulture);
+                object obj = ResourceManager.GetObject("AJoueurs_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AJoueurs_Normal {
+            get {
+                object obj = ResourceManager.GetObject("AJoueurs_Normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AMatchs_Click {
+            get {
+                object obj = ResourceManager.GetObject("AMatchs_Click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AMatchs_Disable {
+            get {
+                object obj = ResourceManager.GetObject("AMatchs_Disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AMatchs_Hover {
+            get {
+                object obj = ResourceManager.GetObject("AMatchs_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AMatchs_Normal {
+            get {
+                object obj = ResourceManager.GetObject("AMatchs_Normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -666,6 +796,126 @@ namespace HockeyIce.Properties {
         internal static System.Drawing.Bitmap RetourNormal {
             get {
                 object obj = ResourceManager.GetObject("RetourNormal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverEquipe_Click {
+            get {
+                object obj = ResourceManager.GetObject("TrouverEquipe_Click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverEquipe_Disable {
+            get {
+                object obj = ResourceManager.GetObject("TrouverEquipe_Disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverEquipe_Hover {
+            get {
+                object obj = ResourceManager.GetObject("TrouverEquipe_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverEquipe_Normal {
+            get {
+                object obj = ResourceManager.GetObject("TrouverEquipe_Normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverJoueur_Click {
+            get {
+                object obj = ResourceManager.GetObject("TrouverJoueur_Click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverJoueur_Disable {
+            get {
+                object obj = ResourceManager.GetObject("TrouverJoueur_Disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverJoueur_Hover {
+            get {
+                object obj = ResourceManager.GetObject("TrouverJoueur_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverJoueur_Normal {
+            get {
+                object obj = ResourceManager.GetObject("TrouverJoueur_Normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverMatch_Click {
+            get {
+                object obj = ResourceManager.GetObject("TrouverMatch_Click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverMatch_Disable {
+            get {
+                object obj = ResourceManager.GetObject("TrouverMatch_Disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverMatch_Hover {
+            get {
+                object obj = ResourceManager.GetObject("TrouverMatch_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrouverMatch_Normal {
+            get {
+                object obj = ResourceManager.GetObject("TrouverMatch_Normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -39,33 +39,21 @@ namespace HockeyIce
         {
             switch (Properties.Settings.Default.FenetreAOuvrir)
             {
-                case "CEquipes":
+                case "Equipes":
                     PN_CEquipe.Parent = this;
                     PN_CEquipe.Visible = true;
                     PN_CEquipe.Enabled = true;
-                    PN_3Joueurs.Visible = false;
-                    PN_3Joueurs.Enabled = false;
-                    PN_CJoueurs.Visible = false;
-                    PN_CJoueurs.Enabled = false;
                     PN_CEquipe.Location = basePanel;
                     LB_Text.Text = "Classement des équipes";
                     break;
-                case "C3J":
-                    PN_CEquipe.Visible = false;
-                    PN_CEquipe.Enabled = false;
+                case "Top3":
                     PN_3Joueurs.Parent = this;
                     PN_3Joueurs.Visible = true;
                     PN_3Joueurs.Enabled = true;
-                    PN_CJoueurs.Visible = false;
-                    PN_CJoueurs.Enabled = false;
                     PN_3Joueurs.Location = basePanel;
                     LB_Text.Text = "Trois meilleurs joueurs";
                     break;
-                case "CJoueurs":
-                    PN_CEquipe.Visible = false;
-                    PN_CEquipe.Enabled = false;
-                    PN_3Joueurs.Visible = false;
-                    PN_3Joueurs.Enabled = false;
+                case "Joueurs":
                     PN_CJoueurs.Parent = this;
                     PN_CJoueurs.Visible = true;
                     PN_CJoueurs.Enabled = true;

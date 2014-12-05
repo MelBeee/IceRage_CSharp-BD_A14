@@ -75,44 +75,44 @@ namespace HockeyIce
 
         private void SwitchException(OracleException ex)
         {
-            string CodeErreur;
+            string CodeErreur = ex.Number.ToString();
             string DescriptionErreur;
             switch (ex.Number)
             {
                 case 2292:
-                    CodeErreur = ex.Number.ToString();
                     DescriptionErreur = "Tentative de suppression d'une clé lié à une clé étrangère "; 
                     break;
                 case 1407:
-                    CodeErreur = ex.Number.ToString();
                     DescriptionErreur = "Vous ne pouvez pas mettre a jour une colonne avec une valeur null";
                     break;
                 case 1400:
-                    CodeErreur = ex.Number.ToString();
                     DescriptionErreur = "Vous ne pouvez pas ajouter une colonne avec une valeur null";
                     break;
                 case 1:
-                    CodeErreur = ex.Number.ToString();
                     DescriptionErreur = "Le numero d'employé doit être unique";
                     break;
                 case 1410:
-                    CodeErreur = ex.Number.ToString();
                     DescriptionErreur = "Vous ne pouvez pas mettre de valeur null";
                     break;
                 case 1017:
-                    CodeErreur = ex.Number.ToString();
                     DescriptionErreur = "Mot de passe ou nom d'utilisateur invalide, connection non établi";
                     break;
                 case 12170:
-                    CodeErreur = ex.Number.ToString();
                     DescriptionErreur = "La base de données est indisponible, réessayer plus tard";
                     break;
                 case 12543:
-                    CodeErreur = ex.Number.ToString();
                     DescriptionErreur = "Connexion impossible,Vérifiez votre connection internet";
                     break;
+                case 12533:
+                    DescriptionErreur = "";
+                    break;
+                case 12504:
+                    DescriptionErreur = "";
+                    break;
+                case 12541:
+                    DescriptionErreur = "";
+                    break;
                 default:
-                    CodeErreur = ex.Number.ToString();
                     DescriptionErreur = ex.Message; 
                     break;
             }
@@ -178,23 +178,6 @@ namespace HockeyIce
             }
         }
 
-        private void FB_QuitterPDC_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void FB_APropos_Click(object sender, EventArgs e)
-        {
-            AfficherAPropos();
-        }
-
-        private void AfficherAPropos()
-        {
-            FormAPropos dlg = new FormAPropos();
-
-            dlg.ShowDialog();
-        }
-
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -213,24 +196,41 @@ namespace HockeyIce
             return result;
         }
 
+        private void FB_QuitterPDC_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void FormPrincipale_FormClosing(object sender, FormClosingEventArgs e)
         {
             oraconn.Close();
         }
 
+        private void FB_APropos_Click(object sender, EventArgs e)
+        {
+            AfficherAPropos();
+        }
+
+        private void AfficherAPropos()
+        {
+            FormAPropos dlg = new FormAPropos();
+
+            dlg.ShowDialog();
+        }
+
         private void FB_CJoueurs_Click(object sender, EventArgs e)
         {
-            AfficherClassement("CJoueurs");
+            AfficherClassement("Joueurs");
         }
 
         private void FB_CEquipe_Click(object sender, EventArgs e)
         {
-            AfficherClassement("CEquipes");
+            AfficherClassement("Equipes");
         }
 
         private void FB_3MeilleursJs_Click(object sender, EventArgs e)
         {
-            AfficherClassement("C3J");
+            AfficherClassement("Top3");
         }
 
         private void AfficherClassement(string Classement)
@@ -242,9 +242,24 @@ namespace HockeyIce
             dlg.ShowDialog();
         }
 
-        private void FB_GestionDivision_Click(object sender, EventArgs e)
+        private void FB_AEquipe_Click(object sender, EventArgs e)
         {
-             AfficherGestion("Division");
+            AfficherGestion("Équipes");
+        }
+
+        private void FB_AJoueurs_Click(object sender, EventArgs e)
+        {
+            AfficherGestion("Joueurs");
+        }
+
+        private void FB_AMatchs_Click(object sender, EventArgs e)
+        {
+            AfficherGestion("Matchs");
+        }
+
+        private void FB_ADivision_Click(object sender, EventArgs e)
+        {
+            AfficherGestion("Division");
         }
 
         private void AfficherGestion(string Gestion)
@@ -257,15 +272,28 @@ namespace HockeyIce
             dlg.ShowDialog();
         }
 
-        private void panel3_Click(object sender, EventArgs e)
+        private void FB_TrouverEquipe_Click(object sender, EventArgs e)
         {
-            AfficherGestion("Equipe");
+            AfficherRecherche("Équipes");
         }
 
-        private void panel9_Click(object sender, EventArgs e)
+        private void FB_TrouverMatch_Click(object sender, EventArgs e)
         {
-            AfficherGestion("Joueur");
+            AfficherRecherche("Matchs");
         }
+
+        private void FB_TrouverJoueur_Click(object sender, EventArgs e)
+        {
+            AfficherRecherche("Joueurs");
+        }
+
+        private void AfficherRecherche(string Recherche)
+        {
+            Properties.Settings.Default.FenetreAOuvrir = Recherche;
+            Properties.Settings.Default.Save();
+        }
+
+
     }
 }
 

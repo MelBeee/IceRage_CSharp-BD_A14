@@ -276,15 +276,6 @@
     <None Include="Resources\1280px-Montreal_Canadiens.svg.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AjoutModif_Division_Disable.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AjoutModif_Division_Hover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AjoutModif_Division_Normal.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Logo_Nashville.png" />
   </ItemGroup>
   <ItemGroup>
@@ -304,6 +295,90 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo_Toronto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADivision_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADivision_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADivision_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADivision_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AEquipes_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AEquipes_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AEquipes_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AEquipes_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AJoueurs_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AJoueurs_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AJoueurs_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AJoueurs_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AMatchs_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AMatchs_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AMatchs_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AMatchs_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverMatch_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverMatch_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverMatch_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverMatch_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverJoueur_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverJoueur_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverJoueur_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverJoueur_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverEquipe_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverEquipe_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverEquipe_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrouverEquipe_Normal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
