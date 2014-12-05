@@ -87,7 +87,7 @@ namespace HockeyIce
             switch (ex.Number)
             {
                 case 2292:
-                    DescriptionErreur = "Tentative de suppression d'une clé lié à une clé étrangère "; 
+                    DescriptionErreur = "Tentative de suppression d'une clé lié à une clé étrangère"; 
                     break;
                 case 1407:
                     DescriptionErreur = "Vous ne pouvez pas mettre a jour une colonne avec une valeur null";
@@ -108,16 +108,16 @@ namespace HockeyIce
                     DescriptionErreur = "La base de données est indisponible, réessayer plus tard";
                     break;
                 case 12543:
-                    DescriptionErreur = "Connexion impossible,Vérifiez votre connection internet";
+                    DescriptionErreur = "Connexion impossible. Vérifiez votre connection internet";
                     break;
                 case 12533:
-                    DescriptionErreur = "";
+                    DescriptionErreur = "Connexion impossible. Le parametre de connexion d'adresse est invalide";
                     break;
                 case 12504:
-                    DescriptionErreur = "";
+                    DescriptionErreur = "Connexion impossible. Le nom d'instance Oracle est invalide";
                     break;
                 case 12541:
-                    DescriptionErreur = "";
+                    DescriptionErreur = "Connexion impossible. La destination est invalide ou pas rejoignable";
                     break;
                 default:
                     DescriptionErreur = ex.Message; 
@@ -145,12 +145,12 @@ namespace HockeyIce
             this.Close();
         }
 
+        // Events pour pouvoir faire bouger le form 
         private void LB_NomApp_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
             _start_point = new Point(e.X, e.Y);
         }
-
         private void LB_NomApp_MouseMove(object sender, MouseEventArgs e)
         {
             if (_dragging)
@@ -159,23 +159,19 @@ namespace HockeyIce
                 Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
             }
         }
-
         private void LB_NomApp_MouseUp(object sender, MouseEventArgs e)
         {
             _dragging = false; 
         }
-
         private void FormPrincipale_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
             _start_point = new Point(e.X, e.Y);
         }
-
         private void FormPrincipale_MouseUp(object sender, MouseEventArgs e)
         {
             _dragging = false; 
         }
-
         private void FormPrincipale_MouseMove(object sender, MouseEventArgs e)
         {
             if (_dragging)
@@ -301,6 +297,10 @@ namespace HockeyIce
         {
             Properties.Settings.Default.FenetreAOuvrir = Recherche;
             Properties.Settings.Default.Save();
+
+            FormRecherche dlg = new FormRecherche(oraconn);
+
+            dlg.ShowDialog();
         }
 
 

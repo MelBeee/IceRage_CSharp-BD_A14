@@ -30,13 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGestion));
             this.LB_Text = new System.Windows.Forms.Label();
-            this.PN_GestionDivision = new System.Windows.Forms.Panel();
+            this.PN_Division = new System.Windows.Forms.Panel();
             this.PN_Equipe = new System.Windows.Forms.Panel();
             this.PN_Joueurs = new System.Windows.Forms.Panel();
             this.FB_Fermer = new FlashButton.FlashButton();
             this.PB_Logo = new System.Windows.Forms.PictureBox();
-            this.PN_GestionDivision.SuspendLayout();
+            this.PN_Matchs = new System.Windows.Forms.Panel();
+            this.PN_Division.SuspendLayout();
             this.PN_Equipe.SuspendLayout();
+            this.PN_Joueurs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,17 +56,17 @@
             this.LB_Text.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseMove);
             this.LB_Text.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseUp);
             // 
-            // PN_GestionDivision
+            // PN_Division
             // 
-            this.PN_GestionDivision.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_GestionDivision.Controls.Add(this.PN_Equipe);
-            this.PN_GestionDivision.Enabled = false;
-            this.PN_GestionDivision.Location = new System.Drawing.Point(4, 33);
-            this.PN_GestionDivision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.PN_GestionDivision.Name = "PN_GestionDivision";
-            this.PN_GestionDivision.Size = new System.Drawing.Size(835, 443);
-            this.PN_GestionDivision.TabIndex = 7;
-            this.PN_GestionDivision.Visible = false;
+            this.PN_Division.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Division.Controls.Add(this.PN_Equipe);
+            this.PN_Division.Enabled = false;
+            this.PN_Division.Location = new System.Drawing.Point(4, 33);
+            this.PN_Division.Margin = new System.Windows.Forms.Padding(4);
+            this.PN_Division.Name = "PN_Division";
+            this.PN_Division.Size = new System.Drawing.Size(835, 443);
+            this.PN_Division.TabIndex = 7;
+            this.PN_Division.Visible = false;
             // 
             // PN_Equipe
             // 
@@ -72,7 +74,7 @@
             this.PN_Equipe.Controls.Add(this.PN_Joueurs);
             this.PN_Equipe.Enabled = false;
             this.PN_Equipe.Location = new System.Drawing.Point(11, 10);
-            this.PN_Equipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PN_Equipe.Margin = new System.Windows.Forms.Padding(4);
             this.PN_Equipe.Name = "PN_Equipe";
             this.PN_Equipe.Size = new System.Drawing.Size(835, 443);
             this.PN_Equipe.TabIndex = 8;
@@ -81,9 +83,10 @@
             // PN_Joueurs
             // 
             this.PN_Joueurs.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Joueurs.Controls.Add(this.PN_Matchs);
             this.PN_Joueurs.Enabled = false;
             this.PN_Joueurs.Location = new System.Drawing.Point(11, 10);
-            this.PN_Joueurs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PN_Joueurs.Margin = new System.Windows.Forms.Padding(4);
             this.PN_Joueurs.Name = "PN_Joueurs";
             this.PN_Joueurs.Size = new System.Drawing.Size(835, 443);
             this.PN_Joueurs.TabIndex = 8;
@@ -116,18 +119,29 @@
             this.PB_Logo.TabIndex = 5;
             this.PB_Logo.TabStop = false;
             // 
+            // PN_Matchs
+            // 
+            this.PN_Matchs.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Matchs.Enabled = false;
+            this.PN_Matchs.Location = new System.Drawing.Point(8, 8);
+            this.PN_Matchs.Margin = new System.Windows.Forms.Padding(4);
+            this.PN_Matchs.Name = "PN_Matchs";
+            this.PN_Matchs.Size = new System.Drawing.Size(835, 443);
+            this.PN_Matchs.TabIndex = 9;
+            this.PN_Matchs.Visible = false;
+            // 
             // FormGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(844, 481);
-            this.Controls.Add(this.PN_GestionDivision);
+            this.Controls.Add(this.PN_Division);
             this.Controls.Add(this.FB_Fermer);
             this.Controls.Add(this.PB_Logo);
             this.Controls.Add(this.LB_Text);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormGestion";
             this.Text = "FormGestion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormGestion_FormClosing);
@@ -135,8 +149,9 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormGestion_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormGestion_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormGestion_MouseUp);
-            this.PN_GestionDivision.ResumeLayout(false);
+            this.PN_Division.ResumeLayout(false);
             this.PN_Equipe.ResumeLayout(false);
+            this.PN_Joueurs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,8 +163,9 @@
         private System.Windows.Forms.PictureBox PB_Logo;
         private System.Windows.Forms.Label LB_Text;
         private FlashButton.FlashButton FB_Fermer;
-        private System.Windows.Forms.Panel PN_GestionDivision;
+        private System.Windows.Forms.Panel PN_Division;
         private System.Windows.Forms.Panel PN_Equipe;
         private System.Windows.Forms.Panel PN_Joueurs;
+        private System.Windows.Forms.Panel PN_Matchs;
     }
 }

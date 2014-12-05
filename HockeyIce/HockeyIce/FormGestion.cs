@@ -34,14 +34,14 @@ namespace HockeyIce
         {
             switch (Properties.Settings.Default.FenetreAOuvrir)
             {
-                case "Equipe":
+                case "Équipes":
                     PN_Equipe.Parent = this;
                     PN_Equipe.Visible = true;
                     PN_Equipe.Enabled = true;
                     PN_Equipe.Location = basePanel;
                     LB_Text.Text = "Gestion des équipes";
                     break;
-                case "Joueur":
+                case "Joueurs":
                     PN_Joueurs.Parent = this;
                     PN_Joueurs.Visible = true;
                     PN_Joueurs.Enabled = true;
@@ -49,21 +49,28 @@ namespace HockeyIce
                     LB_Text.Text = "Gestion des joueurs";
                     break;
                 case "Division":
-                    PN_GestionDivision.Parent = this;
-                    PN_GestionDivision.Visible = true;
-                    PN_GestionDivision.Enabled = true;
-                    PN_GestionDivision.Location = basePanel;
+                    PN_Division.Parent = this;
+                    PN_Division.Visible = true;
+                    PN_Division.Enabled = true;
+                    PN_Division.Location = basePanel;
                     LB_Text.Text = "Gestion des divisions";
+                    break;
+                case "Matchs":
+                    PN_Matchs.Parent = this;
+                    PN_Matchs.Visible = true;
+                    PN_Matchs.Enabled = true;
+                    PN_Matchs.Location = basePanel;
+                    LB_Text.Text = "Gestion des matchs";
                     break;
             }
         }
 
+        // Events pour pouvoir faire bouger le form 
         private void FormGestion_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
             _start_point = new Point(e.X, e.Y);
         }
-
         private void FormGestion_MouseMove(object sender, MouseEventArgs e)
         {
             if (_dragging)
@@ -72,18 +79,15 @@ namespace HockeyIce
                 Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
             }
         }
-
         private void FormGestion_MouseUp(object sender, MouseEventArgs e)
         {
             _dragging = false; 
         }
-
         private void LB_Text_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
             _start_point = new Point(e.X, e.Y);
         }
-
         private void LB_Text_MouseMove(object sender, MouseEventArgs e)
         {
             if (_dragging)
@@ -92,7 +96,6 @@ namespace HockeyIce
                 Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
             }
         }
-
         private void LB_Text_MouseUp(object sender, MouseEventArgs e)
         {
             _dragging = false; 

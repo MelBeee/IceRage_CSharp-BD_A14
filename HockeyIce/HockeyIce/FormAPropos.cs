@@ -25,12 +25,12 @@ namespace HockeyIce
             this.Location = Properties.Settings.Default.PosFormAPropos;
         }
 
+        // Events pour pouvoir faire bouger le form 
         private void APropos_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
             _start_point = new Point(e.X, e.Y);
         }
-
         private void APropos_MouseMove(object sender, MouseEventArgs e)
         {
             if (_dragging)
@@ -39,18 +39,15 @@ namespace HockeyIce
                 Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
             }
         }
-
         private void APropos_MouseUp(object sender, MouseEventArgs e)
         {
             _dragging = false; 
         }
-
         private void LB_Text_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
             _start_point = new Point(e.X, e.Y);
         }
-
         private void LB_Text_MouseMove(object sender, MouseEventArgs e)
         {
             if (_dragging)
@@ -59,7 +56,6 @@ namespace HockeyIce
                 Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
             }
         }
-
         private void LB_Text_MouseUp(object sender, MouseEventArgs e)
         {
             _dragging = false; 
