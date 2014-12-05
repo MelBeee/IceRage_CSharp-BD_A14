@@ -145,6 +145,7 @@ namespace HockeyIce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2014-12-05")]
         public global::System.DateTime DateChoisi {
             get {
                 return ((global::System.DateTime)(this["DateChoisi"]));

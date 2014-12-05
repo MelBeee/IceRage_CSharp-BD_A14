@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MC_Date = new System.Windows.Forms.MonthCalendar();
             this.LB_Text = new System.Windows.Forms.Label();
+            this.FB_Fermer = new FlashButton.FlashButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FB_Quitter = new FlashButton.FlashButton();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -40,11 +41,23 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel1.Controls.Add(this.monthCalendar1);
+            this.panel1.Controls.Add(this.FB_Fermer);
+            this.panel1.Controls.Add(this.MC_Date);
             this.panel1.Location = new System.Drawing.Point(2, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 232);
             this.panel1.TabIndex = 0;
+            // 
+            // MC_Date
+            // 
+            this.MC_Date.FirstDayOfWeek = System.Windows.Forms.Day.Sunday;
+            this.MC_Date.Location = new System.Drawing.Point(26, 22);
+            this.MC_Date.MaxSelectionCount = 1;
+            this.MC_Date.MinDate = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
+            this.MC_Date.Name = "MC_Date";
+            this.MC_Date.ShowTodayCircle = false;
+            this.MC_Date.TabIndex = 0;
+            this.MC_Date.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // LB_Text
             // 
@@ -60,6 +73,20 @@
             this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseDown);
             this.LB_Text.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseMove);
             this.LB_Text.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseUp);
+            // 
+            // FB_Fermer
+            // 
+            this.FB_Fermer.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_Fermer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.FB_Fermer.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
+            this.FB_Fermer.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
+            this.FB_Fermer.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_Fermer.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
+            this.FB_Fermer.Location = new System.Drawing.Point(90, 196);
+            this.FB_Fermer.Name = "FB_Fermer";
+            this.FB_Fermer.Size = new System.Drawing.Size(100, 20);
+            this.FB_Fermer.TabIndex = 1;
+            this.FB_Fermer.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
             // pictureBox2
             // 
@@ -86,16 +113,6 @@
             this.FB_Quitter.Size = new System.Drawing.Size(19, 20);
             this.FB_Quitter.TabIndex = 10;
             this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(26, 22);
-            this.monthCalendar1.MaxSelectionCount = 1;
-            this.monthCalendar1.MinDate = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.ShowTodayCircle = false;
-            this.monthCalendar1.TabIndex = 0;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // FormDate
             // 
@@ -128,6 +145,7 @@
         private System.Windows.Forms.Label LB_Text;
         private System.Windows.Forms.PictureBox pictureBox2;
         private FlashButton.FlashButton FB_Quitter;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar MC_Date;
+        private FlashButton.FlashButton FB_Fermer;
     }
 }

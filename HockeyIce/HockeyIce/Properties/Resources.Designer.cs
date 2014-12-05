@@ -663,6 +663,16 @@ namespace HockeyIce.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImageGEquipe {
+            get {
+                object obj = ResourceManager.GetObject("ImageGEquipe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_Chicago {
             get {
                 object obj = ResourceManager.GetObject("Logo_Chicago", resourceCulture);
@@ -826,6 +836,16 @@ namespace HockeyIce.Properties {
         internal static System.Drawing.Bitmap RetourNormal {
             get {
                 object obj = ResourceManager.GetObject("RetourNormal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sl_yog_winter_icehockey {
+            get {
+                object obj = ResourceManager.GetObject("sl-yog-winter-icehockey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

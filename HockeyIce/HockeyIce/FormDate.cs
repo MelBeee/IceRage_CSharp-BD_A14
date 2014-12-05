@@ -28,6 +28,7 @@ namespace HockeyIce
         private void FormDate_Load(object sender, EventArgs e)
         {
             this.Location = Properties.Settings.Default.PosFormDate;
+            MC_Date.SelectionRange.Start = Properties.Settings.Default.DateChoisi;
         }
 
         private void FormDate_FormClosing(object sender, FormClosingEventArgs e)
@@ -36,6 +37,7 @@ namespace HockeyIce
             Properties.Settings.Default.Save();
         }
 
+        // Events pour pouvoir faire bouger le form 
         private void FormDate_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
@@ -73,8 +75,13 @@ namespace HockeyIce
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            Properties.Settings.Default.DateChoisi = monthCalendar1.SelectionRange.Start;
+            Properties.Settings.Default.DateChoisi = MC_Date.SelectionRange.Start;
             Properties.Settings.Default.Save();
+        }
+
+        private void FB_Fermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

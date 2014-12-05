@@ -107,16 +107,6 @@ namespace HockeyIce
             this.Close();
         }
 
-        private void ClassementEquipe()
-        {
-
-        }
-
-        private void ClassementJoueur()
-        {
-
-        }
-
         private void FormGestion_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.PosFormGestion = this.Location;
@@ -128,9 +118,12 @@ namespace HockeyIce
             this.Close();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void BTN_Date_Click(object sender, EventArgs e)
         {
+            FormDate dlg = new FormDate();
 
+            dlg.ShowDialog();
         }
+
     }
 }

@@ -121,6 +121,9 @@
   <data name="AMatchs_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AMatchs_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TrouverEquipe_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrouverEquipe_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FermerHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FermerHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,8 +157,8 @@
   <data name="ADivision_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ADivision_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TrouverEquipe_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TrouverEquipe_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Baton de Hockey2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Baton de Hockey2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AJoueurs_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AJoueurs_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -180,6 +183,9 @@
   </data>
   <data name="3JoueursNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3JoueursNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageGEquipe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageGEquipe.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AideDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AideDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -234,6 +240,9 @@
   </data>
   <data name="ContinuerClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ContinuerClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AMatchs_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AMatchs_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,9 +316,6 @@
   <data name="Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="QuitterHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QuitterHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -319,8 +325,8 @@
   <data name="ADivision_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ADivision_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AMatchs_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AMatchs_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TrouverEquipe_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrouverEquipe_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CloseClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CloseClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -355,8 +361,8 @@
   <data name="QuitterDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QuitterDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TrouverEquipe_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TrouverEquipe_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AEquipes_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AEquipes_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -382,7 +388,7 @@
   <data name="Hockey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hockey.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Baton de Hockey2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Baton de Hockey2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sl-yog-winter-icehockey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sl-yog-winter-icehockey.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
