@@ -29,10 +29,10 @@ namespace HockeyIce
         {
             EnabledVisibleLesPanels();
             this.Location = Properties.Settings.Default.PosFormClassement;
-            InitData();
+            InitClassementBestJoueurs();
         }
 
-        private void InitData()
+        private void InitClassementBestJoueurs()
         {
             string Sql = "select j.prenom, j.nom, j.numeromaillot, j.typejoueur, j.photo, e.LOGO, s.NBREBUTS*2 + s.NBREPASSES as Score " +
              "from joueurs j inner join equipes e on j.NUMEQUIPE = e.NUMEQUIPE " +
@@ -53,6 +53,7 @@ namespace HockeyIce
                 LB_PositionGold.Text = oraRead.GetString(3);
                 PB_Photo_Gold.ImageLocation = oraRead.GetString(4);
                 PB_Photo_Gold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                //pb_
                 LB_PointsGold.Text = oraRead.GetInt32(6).ToString() + " Points";
 
                 oraRead.Read();
