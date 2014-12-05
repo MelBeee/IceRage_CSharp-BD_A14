@@ -82,6 +82,12 @@
     <Compile Include="FormPrincipale.Designer.cs">
       <DependentUpon>FormPrincipale.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRecherche.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecherche.Designer.cs">
+      <DependentUpon>FormRecherche.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAPropos.resx">
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipale.resx">
       <DependentUpon>FormPrincipale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecherche.resx">
+      <DependentUpon>FormRecherche.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

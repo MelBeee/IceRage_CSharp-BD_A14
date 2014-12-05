@@ -21,11 +21,12 @@ namespace HockeyIce
         public FormPrincipale()
         {
             InitializeComponent();
- 
+  
         }
 
         private void FormPrincipale_Load(object sender, EventArgs e)
         {
+            this.Location = Properties.Settings.Default.PosFormPrincipale;
             Connection();
             if (!connection)
             {
@@ -37,7 +38,6 @@ namespace HockeyIce
         {
             PN_PasDeConnection.BringToFront();
 
-
             PN_PasDeConnection.Enabled = true;
             PN_PasDeConnection.Visible = true;
             FB_Fermer.Enabled = false;
@@ -45,6 +45,13 @@ namespace HockeyIce
             FB_3MeilleursJs.Enabled = false;
             FB_CEquipe.Enabled = false;
             FB_CJoueurs.Enabled = false;
+            FB_ADivision.Enabled = false;
+            FB_AEquipe.Enabled = false;
+            FB_AJoueurs.Enabled = false;
+            FB_AMatchs.Enabled = false;
+            FB_TrouverEquipe.Enabled = false;
+            FB_TrouverJoueur.Enabled = false;
+            FB_TrouverMatch.Enabled = false; 
         }
 
         private void Connection()
@@ -204,6 +211,9 @@ namespace HockeyIce
         private void FormPrincipale_FormClosing(object sender, FormClosingEventArgs e)
         {
             oraconn.Close();
+            Properties.Settings.Default.PosFormPrincipale = this.Location;
+            Properties.Settings.Default.Save();
+
         }
 
         private void FB_APropos_Click(object sender, EventArgs e)

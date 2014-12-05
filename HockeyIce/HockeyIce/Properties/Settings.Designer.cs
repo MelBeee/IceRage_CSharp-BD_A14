@@ -58,5 +58,77 @@ namespace HockeyIce.Properties {
                 this["FenetreAOuvrir"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point PosFormPrincipale {
+            get {
+                return ((global::System.Drawing.Point)(this["PosFormPrincipale"]));
+            }
+            set {
+                this["PosFormPrincipale"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point PosFormRecherche {
+            get {
+                return ((global::System.Drawing.Point)(this["PosFormRecherche"]));
+            }
+            set {
+                this["PosFormRecherche"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point PosFormGestion {
+            get {
+                return ((global::System.Drawing.Point)(this["PosFormGestion"]));
+            }
+            set {
+                this["PosFormGestion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point PosFormAPropos {
+            get {
+                return ((global::System.Drawing.Point)(this["PosFormAPropos"]));
+            }
+            set {
+                this["PosFormAPropos"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point PosFormClassement {
+            get {
+                return ((global::System.Drawing.Point)(this["PosFormClassement"]));
+            }
+            set {
+                this["PosFormClassement"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point PosFormErreur {
+            get {
+                return ((global::System.Drawing.Point)(this["PosFormErreur"]));
+            }
+            set {
+                this["PosFormErreur"] = value;
+            }
+        }
     }
 }
