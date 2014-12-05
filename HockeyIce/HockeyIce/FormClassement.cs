@@ -24,15 +24,10 @@ namespace HockeyIce
             oraconnClassement = oraconn;
         }
 
-
-        private void FB_Quitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void FormClassement_Load(object sender, EventArgs e)
         {
             EnabledVisibleLesPanels();
+            this.Location = Properties.Settings.Default.PosFormClassement;
         }
 
         private void EnabledVisibleLesPanels()
@@ -103,29 +98,16 @@ namespace HockeyIce
             _dragging = false; 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void FB_Quitter_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void PB_Podium_Click(object sender, EventArgs e)
+        private void FormClassement_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Properties.Settings.Default.PosFormClassement = this.Location;
+            Properties.Settings.Default.Save();
         }
 
-        private void PB_Podium_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PB_EquipeSilver_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

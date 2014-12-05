@@ -25,6 +25,7 @@ namespace HockeyIce
         {
             LB_Text.Text += " " + Properties.Settings.Default.CodeErreur;
             LB_Description.Text = Properties.Settings.Default.DescriptionErreur;
+            this.Location = Properties.Settings.Default.PosFormErreur;
         }
 
         private void FormErreur_MouseDown(object sender, MouseEventArgs e)
@@ -47,8 +48,6 @@ namespace HockeyIce
             }
         }
 
-
-
         private void LB_Text_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
@@ -69,11 +68,6 @@ namespace HockeyIce
             _dragging = false; 
         }
 
-        private void LB_Description_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FB_Quitter_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -87,6 +81,12 @@ namespace HockeyIce
         private void FB_Fermer_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void FormErreur_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.PosFormErreur = this.Location;
+            Properties.Settings.Default.Save();
         }
     }
 }

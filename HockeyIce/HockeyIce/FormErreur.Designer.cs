@@ -104,7 +104,6 @@
             this.LB_Description.TabIndex = 1;
             this.LB_Description.Text = "Message d\'Erreur";
             this.LB_Description.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.LB_Description.Click += new System.EventHandler(this.LB_Description_Click);
             // 
             // LB_Text
             // 
@@ -159,6 +158,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormErreur";
             this.Text = "FormErreur";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormErreur_FormClosing);
             this.Load += new System.EventHandler(this.FormErreur_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormErreur_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormErreur_MouseMove);

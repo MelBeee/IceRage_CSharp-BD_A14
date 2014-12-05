@@ -140,19 +140,18 @@
             // 
             this.PB_EquipeSilver.Image = global::HockeyIce.Properties.Resources.Logo_Nashville;
             this.PB_EquipeSilver.Location = new System.Drawing.Point(76, 353);
-            this.PB_EquipeSilver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB_EquipeSilver.Margin = new System.Windows.Forms.Padding(4);
             this.PB_EquipeSilver.Name = "PB_EquipeSilver";
             this.PB_EquipeSilver.Size = new System.Drawing.Size(231, 76);
             this.PB_EquipeSilver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_EquipeSilver.TabIndex = 33;
             this.PB_EquipeSilver.TabStop = false;
-            this.PB_EquipeSilver.Click += new System.EventHandler(this.PB_EquipeSilver_Click);
             // 
             // PB_EquipeGold
             // 
             this.PB_EquipeGold.Image = global::HockeyIce.Properties.Resources.Logo_Toronto;
             this.PB_EquipeGold.Location = new System.Drawing.Point(332, 353);
-            this.PB_EquipeGold.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB_EquipeGold.Margin = new System.Windows.Forms.Padding(4);
             this.PB_EquipeGold.Name = "PB_EquipeGold";
             this.PB_EquipeGold.Size = new System.Drawing.Size(235, 76);
             this.PB_EquipeGold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -246,7 +245,6 @@
             this.LB_NumeroGold.TabIndex = 24;
             this.LB_NumeroGold.Text = "Numéro 31";
             this.LB_NumeroGold.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.LB_NumeroGold.Click += new System.EventHandler(this.label3_Click);
             // 
             // LB_PunitionGold
             // 
@@ -296,7 +294,7 @@
             // 
             this.PB_EquipeBronze.Image = global::HockeyIce.Properties.Resources._1280px_Montreal_Canadiens_svg;
             this.PB_EquipeBronze.Location = new System.Drawing.Point(591, 353);
-            this.PB_EquipeBronze.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB_EquipeBronze.Margin = new System.Windows.Forms.Padding(4);
             this.PB_EquipeBronze.Name = "PB_EquipeBronze";
             this.PB_EquipeBronze.Size = new System.Drawing.Size(235, 76);
             this.PB_EquipeBronze.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -373,14 +371,12 @@
             // 
             this.PB_Podium.Image = global::HockeyIce.Properties.Resources.podium;
             this.PB_Podium.Location = new System.Drawing.Point(68, 20);
-            this.PB_Podium.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB_Podium.Margin = new System.Windows.Forms.Padding(4);
             this.PB_Podium.Name = "PB_Podium";
             this.PB_Podium.Size = new System.Drawing.Size(757, 182);
             this.PB_Podium.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_Podium.TabIndex = 12;
             this.PB_Podium.TabStop = false;
-            this.PB_Podium.Click += new System.EventHandler(this.PB_Podium_Click);
-            this.PB_Podium.Paint += new System.Windows.Forms.PaintEventHandler(this.PB_Podium_Paint);
             // 
             // PN_CEquipe
             // 
@@ -423,7 +419,7 @@
             this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
             this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
             this.FB_Quitter.Location = new System.Drawing.Point(877, 5);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Quitter.Name = "FB_Quitter";
             this.FB_Quitter.Size = new System.Drawing.Size(25, 25);
             this.FB_Quitter.TabIndex = 11;
@@ -445,6 +441,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormClassement";
             this.Text = "FormClassement";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClassement_FormClosing);
             this.Load += new System.EventHandler(this.FormClassement_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormClassement_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormClassement_MouseMove);

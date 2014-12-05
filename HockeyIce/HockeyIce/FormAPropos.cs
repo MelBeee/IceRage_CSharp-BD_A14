@@ -22,7 +22,7 @@ namespace HockeyIce
 
         private void APropos_Load(object sender, EventArgs e)
         {
-
+            this.Location = Properties.Settings.Default.PosFormAPropos;
         }
 
         private void APropos_MouseDown(object sender, MouseEventArgs e)
@@ -73,6 +73,12 @@ namespace HockeyIce
         private void FB_Quitter_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormAPropos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.PosFormAPropos = this.Location;
+            Properties.Settings.Default.Save();
         }
     }
 }

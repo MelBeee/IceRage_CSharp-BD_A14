@@ -24,6 +24,40 @@ namespace HockeyIce
             oraconnGestion = oraconn; 
         }
 
+        private void FormGestion_Load(object sender, EventArgs e)
+        {
+            EnabledVisibleLesPanels();
+            this.Location = Properties.Settings.Default.PosFormGestion;
+        }
+
+        private void EnabledVisibleLesPanels()
+        {
+            switch (Properties.Settings.Default.FenetreAOuvrir)
+            {
+                case "Equipe":
+                    PN_Equipe.Parent = this;
+                    PN_Equipe.Visible = true;
+                    PN_Equipe.Enabled = true;
+                    PN_Equipe.Location = basePanel;
+                    LB_Text.Text = "Gestion des équipes";
+                    break;
+                case "Joueur":
+                    PN_Joueurs.Parent = this;
+                    PN_Joueurs.Visible = true;
+                    PN_Joueurs.Enabled = true;
+                    PN_Joueurs.Location = basePanel;
+                    LB_Text.Text = "Gestion des joueurs";
+                    break;
+                case "Division":
+                    PN_GestionDivision.Parent = this;
+                    PN_GestionDivision.Visible = true;
+                    PN_GestionDivision.Enabled = true;
+                    PN_GestionDivision.Location = basePanel;
+                    LB_Text.Text = "Gestion des divisions";
+                    break;
+            }
+        }
+
         private void FormGestion_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
@@ -69,11 +103,6 @@ namespace HockeyIce
             this.Close();
         }
 
-        private void FormGestion_Load(object sender, EventArgs e)
-        {
-            EnabledVisibleLesPanels();
-        }
-
         private void ClassementEquipe()
         {
 
@@ -84,32 +113,10 @@ namespace HockeyIce
 
         }
 
-        private void EnabledVisibleLesPanels()
+        private void FormGestion_FormClosing(object sender, FormClosingEventArgs e)
         {
-            switch (Properties.Settings.Default.FenetreAOuvrir)
-            {
-                case "Equipe":
-                    PN_Equipe.Parent = this;
-                    PN_Equipe.Visible = true;
-                    PN_Equipe.Enabled = true;
-                    PN_Equipe.Location = basePanel;
-                    LB_Text.Text = "Gestion des équipes";
-                    break;
-                case "Joueur":
-                    PN_Joueurs.Parent = this;
-                    PN_Joueurs.Visible = true;
-                    PN_Joueurs.Enabled = true;
-                    PN_Joueurs.Location = basePanel;
-                    LB_Text.Text = "Gestion des joueurs";
-                    break;
-                case "Division":
-                    PN_GestionDivision.Parent = this;
-                    PN_GestionDivision.Visible = true;
-                    PN_GestionDivision.Enabled = true;
-                    PN_GestionDivision.Location = basePanel;
-                    LB_Text.Text = "Gestion des divisions";
-                    break;
-            }
+            Properties.Settings.Default.PosFormGestion = this.Location;
+            Properties.Settings.Default.Save();
         }
     }
 }
