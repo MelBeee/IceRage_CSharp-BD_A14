@@ -333,6 +333,36 @@ namespace HockeyIce.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Baton_de_Hockey {
+            get {
+                object obj = ResourceManager.GetObject("Baton de Hockey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Baton_de_Hockey1 {
+            get {
+                object obj = ResourceManager.GetObject("Baton de Hockey1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Baton_de_Hockey2 {
+            get {
+                object obj = ResourceManager.GetObject("Baton de Hockey2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CEquipeClick {
             get {
                 object obj = ResourceManager.GetObject("CEquipeClick", resourceCulture);

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="FB_Fermer.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="FB_Quitter.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAP3SURBVHhe7ZvdVeNADEaphkJc
@@ -141,7 +141,7 @@
         IGUZSFkGUpaBlGUgZRlIWQZSloGUZSBlGUhZBlKWgZS1mfP5P3967+31rkQMAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="FB_Fermer.ImageClick" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="FB_Quitter.ImageClick" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAPxSURBVHhe7Zstd+NADEWLS42D
@@ -164,7 +164,7 @@
         KctAyjKQsgykLAMpy0DKMpCyDKQsAynLQMrazPn8H/9DL98clCpjAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="FB_Fermer.ImageDisable" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="FB_Quitter.ImageDisable" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAQiSURBVHhe7Zu/axVBEMdTiQgp
@@ -188,7 +188,7 @@
         sgyELAMhy0DIMhCyDISs1Wzu/gN9J+tY29AnqQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="FB_Fermer.ImageNeutral" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="FB_Quitter.ImageNeutral" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAP3SURBVHhe7ZvdVeNADEaphkJc
@@ -211,7 +211,7 @@
         IGUZSFkGUpaBlGUgZRlIWQZSloGUZSBlGUhZBlKWgZS1mfP5P3967+31rkQMAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="FB_Fermer.ImageOver" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="FB_Quitter.ImageOver" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAP5SURBVHhe7ZttdeNADEWLoAiM

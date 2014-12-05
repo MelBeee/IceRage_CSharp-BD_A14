@@ -101,7 +101,8 @@ namespace HockeyIce
             _dragging = false; 
         }
 
-        private void FB_Fermer_Click(object sender, EventArgs e)
+
+        private void FB_Quitter_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -120,6 +121,16 @@ namespace HockeyIce
         {
             Properties.Settings.Default.PosFormGestion = this.Location;
             Properties.Settings.Default.Save();
+        }
+
+        private void FB_Fermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

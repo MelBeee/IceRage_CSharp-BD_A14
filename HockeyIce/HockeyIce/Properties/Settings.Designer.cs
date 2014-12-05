@@ -130,5 +130,28 @@ namespace HockeyIce.Properties {
                 this["PosFormErreur"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point PosFormDate {
+            get {
+                return ((global::System.Drawing.Point)(this["PosFormDate"]));
+            }
+            set {
+                this["PosFormDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateChoisi {
+            get {
+                return ((global::System.DateTime)(this["DateChoisi"]));
+            }
+            set {
+                this["DateChoisi"] = value;
+            }
+        }
     }
 }

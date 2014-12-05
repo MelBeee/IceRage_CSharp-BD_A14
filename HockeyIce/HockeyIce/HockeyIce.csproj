@@ -64,6 +64,12 @@
     <Compile Include="FormClassement.Designer.cs">
       <DependentUpon>FormClassement.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDate.Designer.cs">
+      <DependentUpon>FormDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormErreur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormClassement.resx">
       <DependentUpon>FormClassement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDate.resx">
+      <DependentUpon>FormDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormErreur.resx">
       <DependentUpon>FormErreur.cs</DependentUpon>
@@ -388,6 +397,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TrouverEquipe_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Baton de Hockey.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Baton de Hockey1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Baton de Hockey2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
