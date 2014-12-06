@@ -64,12 +64,6 @@
     <Compile Include="FormClassement.Designer.cs">
       <DependentUpon>FormClassement.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDate.Designer.cs">
-      <DependentUpon>FormDate.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormErreur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,9 +95,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormClassement.resx">
       <DependentUpon>FormClassement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDate.resx">
-      <DependentUpon>FormDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormErreur.resx">
       <DependentUpon>FormErreur.cs</DependentUpon>
@@ -399,19 +390,40 @@
     <None Include="Resources\TrouverEquipe_Normal.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Baton de Hockey.jpg" />
+    <None Include="Resources\AjouterClick.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Baton de Hockey1.jpg" />
+    <None Include="Resources\AjouterDisable.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Baton de Hockey2.jpg" />
+    <None Include="Resources\AjouterHover.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ImageGEquipe.jpg" />
+    <None Include="Resources\AjouterNormal.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sl-yog-winter-icehockey.jpg" />
+    <None Include="Resources\ChoisirDateClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChoisirDateDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChoisirDateHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChoisirDateNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SupprimerClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SupprimerDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SupprimerHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SupprimerNormal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

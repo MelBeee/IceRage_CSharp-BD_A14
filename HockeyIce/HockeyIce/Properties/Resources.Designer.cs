@@ -283,6 +283,46 @@ namespace HockeyIce.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AjouterClick {
+            get {
+                object obj = ResourceManager.GetObject("AjouterClick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AjouterDisable {
+            get {
+                object obj = ResourceManager.GetObject("AjouterDisable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AjouterHover {
+            get {
+                object obj = ResourceManager.GetObject("AjouterHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AjouterNormal {
+            get {
+                object obj = ResourceManager.GetObject("AjouterNormal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AMatchs_Click {
             get {
                 object obj = ResourceManager.GetObject("AMatchs_Click", resourceCulture);
@@ -396,6 +436,46 @@ namespace HockeyIce.Properties {
         internal static System.Drawing.Bitmap CEquipeNormal {
             get {
                 object obj = ResourceManager.GetObject("CEquipeNormal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChoisirDateClick {
+            get {
+                object obj = ResourceManager.GetObject("ChoisirDateClick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChoisirDateDisable {
+            get {
+                object obj = ResourceManager.GetObject("ChoisirDateDisable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChoisirDateHover {
+            get {
+                object obj = ResourceManager.GetObject("ChoisirDateHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChoisirDateNormal {
+            get {
+                object obj = ResourceManager.GetObject("ChoisirDateNormal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -846,6 +926,46 @@ namespace HockeyIce.Properties {
         internal static System.Drawing.Bitmap sl_yog_winter_icehockey {
             get {
                 object obj = ResourceManager.GetObject("sl-yog-winter-icehockey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SupprimerClick {
+            get {
+                object obj = ResourceManager.GetObject("SupprimerClick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SupprimerDisable {
+            get {
+                object obj = ResourceManager.GetObject("SupprimerDisable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SupprimerHover {
+            get {
+                object obj = ResourceManager.GetObject("SupprimerHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SupprimerNormal {
+            get {
+                object obj = ResourceManager.GetObject("SupprimerNormal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
