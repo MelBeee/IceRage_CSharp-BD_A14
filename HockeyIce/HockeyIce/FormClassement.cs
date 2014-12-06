@@ -52,7 +52,7 @@ namespace HockeyIce
                 LB_PositionGold.Text = oraRead.GetString(3);
                 PB_Photo_Gold.ImageLocation = oraRead.GetString(4);
                 PB_Photo_Gold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                PB_EquipeGold.
+                //PB_EquipeGold.
                 LB_PointsGold.Text = oraRead.GetInt32(6).ToString() + " Points";
 
                 oraRead.Read();
