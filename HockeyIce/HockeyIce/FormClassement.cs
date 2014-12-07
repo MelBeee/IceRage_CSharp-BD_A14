@@ -44,7 +44,8 @@ namespace HockeyIce
                 OracleCommand orcd = new OracleCommand(Sql, oraconnClassement);
                 orcd.CommandType = CommandType.Text;
                 OracleDataReader oraRead = orcd.ExecuteReader();
-
+                
+                //Joueur #1
                 oraRead.Read();
                 LB_PrenomGold.Text = oraRead.GetString(0);
                 LB_NomGold.Text = oraRead.GetString(1);
@@ -52,9 +53,11 @@ namespace HockeyIce
                 LB_PositionGold.Text = oraRead.GetString(3);
                 PB_Photo_Gold.ImageLocation = oraRead.GetString(4);
                 PB_Photo_Gold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                //PB_EquipeGold.
+                PB_EquipeGold.Image = Image.FromStream(oraRead.GetOracleBlob(5));
+                PB_EquipeGold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                 LB_PointsGold.Text = oraRead.GetInt32(6).ToString() + " Points";
 
+                //Joueur #2
                 oraRead.Read();
                 LB_PrenomSilver.Text = oraRead.GetString(0);
                 LB_NomSilver.Text = oraRead.GetString(1);
@@ -62,8 +65,11 @@ namespace HockeyIce
                 LB_PositionSilver.Text = oraRead.GetString(3);
                 PB_Photo_Silver.ImageLocation = oraRead.GetString(4);
                 PB_Photo_Silver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                PB_EquipeSilver.Image = Image.FromStream(oraRead.GetOracleBlob(5));
+                PB_EquipeSilver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                 LB_PointsSilver.Text = oraRead.GetInt32(6).ToString() + " Points";
 
+                //Joueur #3
                 oraRead.Read();
                 LB_PrenomBronze.Text = oraRead.GetString(0);
                 LB_NomBronze.Text = oraRead.GetString(1);
@@ -71,6 +77,8 @@ namespace HockeyIce
                 LB_PositionBronze.Text = oraRead.GetString(3);
                 PB_Photo_Bronze.ImageLocation = oraRead.GetString(4);
                 PB_Photo_Bronze.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                PB_EquipeBronze.Image = Image.FromStream(oraRead.GetOracleBlob(5));
+                PB_EquipeBronze.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                 LB_PointsBronze.Text = oraRead.GetInt32(6).ToString() + " Points";
             }
             catch (OracleException ex)
