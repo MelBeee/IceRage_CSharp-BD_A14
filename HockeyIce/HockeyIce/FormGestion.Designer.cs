@@ -110,7 +110,7 @@
             // FB_ChoisirDate
             // 
             this.FB_ChoisirDate.BackgroundImage = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.FB_ChoisirDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.FB_ChoisirDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FB_ChoisirDate.ImageClick = global::HockeyIce.Properties.Resources.ChoisirDateClick;
             this.FB_ChoisirDate.ImageDisable = global::HockeyIce.Properties.Resources.ChoisirDateDisable;
             this.FB_ChoisirDate.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
@@ -120,6 +120,7 @@
             this.FB_ChoisirDate.Name = "FB_ChoisirDate";
             this.FB_ChoisirDate.Size = new System.Drawing.Size(101, 20);
             this.FB_ChoisirDate.TabIndex = 14;
+            this.FB_ChoisirDate.Click += new System.EventHandler(this.BTN_Date_Click);
             // 
             // textBox1
             // 

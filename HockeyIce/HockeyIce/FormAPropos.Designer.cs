@@ -136,7 +136,7 @@
             this.FB_Continuer.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_Continuer.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
             this.FB_Continuer.Location = new System.Drawing.Point(13, 497);
-            this.FB_Continuer.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Continuer.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Continuer.Name = "FB_Continuer";
             this.FB_Continuer.Size = new System.Drawing.Size(115, 23);
             this.FB_Continuer.TabIndex = 3;
@@ -173,7 +173,7 @@
             this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
             this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
             this.FB_Quitter.Location = new System.Drawing.Point(523, 4);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Quitter.Name = "FB_Quitter";
             this.FB_Quitter.Size = new System.Drawing.Size(25, 25);
             this.FB_Quitter.TabIndex = 7;
@@ -181,8 +181,7 @@
             // 
             // FormAPropos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(552, 564);
             this.Controls.Add(this.LB_Text);
