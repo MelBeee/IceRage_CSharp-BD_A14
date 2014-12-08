@@ -32,8 +32,7 @@ namespace HockeyIce
         private void FormClassement_Load(object sender, EventArgs e)
         {
             EnabledVisibleLesPanels();
-            this.Location = Properties.Settings.Default.PosFormClassement;
-            InitClassementBestJoueurs();
+            this.Location = Properties.Settings.Default.PosFormClassement;            
         }
 
         private void InitClassementBestJoueurs()
@@ -79,6 +78,8 @@ namespace HockeyIce
                 PB_EquipeBronze.Image = Image.FromStream(oraRead.GetOracleBlob(5));
                 PB_EquipeBronze.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                 LB_PointsBronze.Text = oraRead.GetInt32(6).ToString() + " Points";
+
+                oraRead.Close();
             }
             catch (OracleException ex)
             {
@@ -104,6 +105,7 @@ namespace HockeyIce
                     PN_3Joueurs.Enabled = true;
                     PN_3Joueurs.Location = basePanel;
                     LB_Text.Text = "Trois meilleurs joueurs";
+                    InitClassementBestJoueurs();
                     break;
                 case "Joueurs":
                     PN_CJoueurs.Parent = this;
