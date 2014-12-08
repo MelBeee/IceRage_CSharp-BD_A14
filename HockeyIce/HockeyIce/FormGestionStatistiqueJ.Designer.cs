@@ -33,6 +33,10 @@
             this.PB_Logo = new System.Windows.Forms.PictureBox();
             this.FB_Quitter = new FlashButton.FlashButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.flashButton2 = new FlashButton.FlashButton();
             this.flashButton1 = new FlashButton.FlashButton();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
@@ -41,10 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CB_Joueur = new System.Windows.Forms.ComboBox();
             this.CB_Match = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -110,13 +110,50 @@
             this.panel1.Controls.Add(this.CB_Match);
             this.panel1.Location = new System.Drawing.Point(2, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(239, 272);
+            this.panel1.Size = new System.Drawing.Size(239, 247);
             this.panel1.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(41, 175);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 12);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Punition :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(55, 149);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 12);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Passes :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(69, 125);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 12);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Buts :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(122, 172);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(64, 19);
+            this.textBox1.TabIndex = 8;
             // 
             // flashButton2
             // 
             this.flashButton2.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flashButton2.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
             this.flashButton2.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
             this.flashButton2.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
@@ -129,7 +166,7 @@
             // flashButton1
             // 
             this.flashButton1.BackgroundImage = global::HockeyIce.Properties.Resources.AjouterNormal;
-            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flashButton1.ImageClick = global::HockeyIce.Properties.Resources.AjouterClick;
             this.flashButton1.ImageDisable = global::HockeyIce.Properties.Resources.AjouterDisable;
             this.flashButton1.ImageNeutral = global::HockeyIce.Properties.Resources.AjouterNormal;
@@ -189,49 +226,12 @@
             this.CB_Match.Size = new System.Drawing.Size(142, 20);
             this.CB_Match.TabIndex = 0;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(122, 172);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 19);
-            this.textBox1.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(69, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 12);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Buts :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(55, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 12);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Passes :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(41, 175);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 12);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Punition :";
-            // 
             // FormGestionStatistiqueJ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(243, 300);
+            this.ClientSize = new System.Drawing.Size(243, 274);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.FB_Quitter);
             this.Controls.Add(this.PB_Logo);
