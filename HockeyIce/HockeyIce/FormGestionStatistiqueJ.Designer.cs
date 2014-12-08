@@ -36,19 +36,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.flashButton2 = new FlashButton.FlashButton();
-            this.flashButton1 = new FlashButton.FlashButton();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.TB_Punition = new System.Windows.Forms.TextBox();
+            this.FB_Fermer = new FlashButton.FlashButton();
+            this.FB_Ajouter = new FlashButton.FlashButton();
+            this.NUD_Passes = new System.Windows.Forms.NumericUpDown();
+            this.NUD_Buts = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CB_Joueur = new System.Windows.Forms.ComboBox();
             this.CB_Match = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Passes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Buts)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Text
@@ -99,11 +99,11 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.flashButton2);
-            this.panel1.Controls.Add(this.flashButton1);
-            this.panel1.Controls.Add(this.numericUpDown2);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.TB_Punition);
+            this.panel1.Controls.Add(this.FB_Fermer);
+            this.panel1.Controls.Add(this.FB_Ajouter);
+            this.panel1.Controls.Add(this.NUD_Passes);
+            this.panel1.Controls.Add(this.NUD_Buts);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.CB_Joueur);
@@ -143,52 +143,54 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Buts :";
             // 
-            // textBox1
+            // TB_Punition
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 172);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 19);
-            this.textBox1.TabIndex = 8;
+            this.TB_Punition.Location = new System.Drawing.Point(122, 172);
+            this.TB_Punition.Name = "TB_Punition";
+            this.TB_Punition.Size = new System.Drawing.Size(64, 19);
+            this.TB_Punition.TabIndex = 8;
             // 
-            // flashButton2
+            // FB_Fermer
             // 
-            this.flashButton2.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton2.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
-            this.flashButton2.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
-            this.flashButton2.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.flashButton2.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.flashButton2.Location = new System.Drawing.Point(122, 214);
-            this.flashButton2.Name = "flashButton2";
-            this.flashButton2.Size = new System.Drawing.Size(102, 20);
-            this.flashButton2.TabIndex = 7;
+            this.FB_Fermer.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_Fermer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Fermer.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
+            this.FB_Fermer.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
+            this.FB_Fermer.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_Fermer.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
+            this.FB_Fermer.Location = new System.Drawing.Point(122, 214);
+            this.FB_Fermer.Name = "FB_Fermer";
+            this.FB_Fermer.Size = new System.Drawing.Size(102, 20);
+            this.FB_Fermer.TabIndex = 7;
+            this.FB_Fermer.Click += new System.EventHandler(this.flashButton2_Click);
             // 
-            // flashButton1
+            // FB_Ajouter
             // 
-            this.flashButton1.BackgroundImage = global::HockeyIce.Properties.Resources.AjouterNormal;
-            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton1.ImageClick = global::HockeyIce.Properties.Resources.AjouterClick;
-            this.flashButton1.ImageDisable = global::HockeyIce.Properties.Resources.AjouterDisable;
-            this.flashButton1.ImageNeutral = global::HockeyIce.Properties.Resources.AjouterNormal;
-            this.flashButton1.ImageOver = global::HockeyIce.Properties.Resources.AjouterHover;
-            this.flashButton1.Location = new System.Drawing.Point(12, 214);
-            this.flashButton1.Name = "flashButton1";
-            this.flashButton1.Size = new System.Drawing.Size(104, 20);
-            this.flashButton1.TabIndex = 6;
+            this.FB_Ajouter.BackgroundImage = global::HockeyIce.Properties.Resources.AjouterNormal;
+            this.FB_Ajouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Ajouter.ImageClick = global::HockeyIce.Properties.Resources.AjouterClick;
+            this.FB_Ajouter.ImageDisable = global::HockeyIce.Properties.Resources.AjouterDisable;
+            this.FB_Ajouter.ImageNeutral = global::HockeyIce.Properties.Resources.AjouterNormal;
+            this.FB_Ajouter.ImageOver = global::HockeyIce.Properties.Resources.AjouterHover;
+            this.FB_Ajouter.Location = new System.Drawing.Point(12, 214);
+            this.FB_Ajouter.Name = "FB_Ajouter";
+            this.FB_Ajouter.Size = new System.Drawing.Size(104, 20);
+            this.FB_Ajouter.TabIndex = 6;
+            this.FB_Ajouter.Click += new System.EventHandler(this.flashButton1_Click);
             // 
-            // numericUpDown2
+            // NUD_Passes
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(122, 147);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(65, 19);
-            this.numericUpDown2.TabIndex = 5;
+            this.NUD_Passes.Location = new System.Drawing.Point(122, 147);
+            this.NUD_Passes.Name = "NUD_Passes";
+            this.NUD_Passes.Size = new System.Drawing.Size(65, 19);
+            this.NUD_Passes.TabIndex = 5;
             // 
-            // numericUpDown1
+            // NUD_Buts
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(122, 123);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(65, 19);
-            this.numericUpDown1.TabIndex = 4;
+            this.NUD_Buts.Location = new System.Drawing.Point(122, 123);
+            this.NUD_Buts.Name = "NUD_Buts";
+            this.NUD_Buts.Size = new System.Drawing.Size(65, 19);
+            this.NUD_Buts.TabIndex = 4;
             // 
             // label2
             // 
@@ -225,6 +227,7 @@
             this.CB_Match.Name = "CB_Match";
             this.CB_Match.Size = new System.Drawing.Size(142, 20);
             this.CB_Match.TabIndex = 0;
+            this.CB_Match.TextChanged += new System.EventHandler(this.CB_Match_TextChanged);
             // 
             // FormGestionStatistiqueJ
             // 
@@ -248,8 +251,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Passes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Buts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,15 +264,15 @@
         private System.Windows.Forms.Label LB_Text;
         private FlashButton.FlashButton FB_Quitter;
         private System.Windows.Forms.Panel panel1;
-        private FlashButton.FlashButton flashButton2;
-        private FlashButton.FlashButton flashButton1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private FlashButton.FlashButton FB_Fermer;
+        private FlashButton.FlashButton FB_Ajouter;
+        private System.Windows.Forms.NumericUpDown NUD_Passes;
+        private System.Windows.Forms.NumericUpDown NUD_Buts;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CB_Joueur;
         private System.Windows.Forms.ComboBox CB_Match;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TB_Punition;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

@@ -26,6 +26,25 @@ namespace HockeyIce
         private void FormGestionStatistiqueJ_Load(object sender, EventArgs e)
         {
             this.Location = Properties.Settings.Default.PosFormGestStat;
+            RempliComboBoxMatch();
+
+            FB_Ajouter.Enabled = false;
+
+
+        }
+        private void UpdateControl()
+        {
+            if(TB_Punition.Text == null)
+            {
+
+            }
+        }
+
+        private bool ElementRempli()
+        {
+            return (TB_Punition.Text == null &&
+                    NUD_Buts.Value == null &&
+                    NUD_Passes.Value == null);
         }
         private void FormGestionStatistiqueJ_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -70,6 +89,7 @@ namespace HockeyIce
         private void RempliComboBoxMatch()
         {
             string Sql = "select nummatch from matchs"; 
+
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql, oraconnStats);
@@ -81,37 +101,40 @@ namespace HockeyIce
                     CB_Match.Items.Add(oraRead.GetInt32(0));
                 }
 
-                RempliComboBoxJoueur();
+                oraRead.Close();
             }
             catch (OracleException ex)
             {
-                //SwitchException(ex);
                 SwitchException(ex);
             }
         }
 
         private void RempliComboBoxJoueur()
         {
-            string Sql = "select prenom, nom from joueurs j " + 
-                         "inner join equipes e on e.numequipe = j.numequipe " +
-                         "inner join matchs m on e.numequipevis = m.numequipe " +
-                         "where m.numatch = " + CB_Match.Text + " ";
+            string Sql = "  select j.prenom, j.nom from joueurs j " +
+                           " inner join equipes e on e.numequipe = j.numequipe " + 
+                           " inner join matchs m on e.numequipe = m.numequipemai " +
+                           " where m.nummatch = " + CB_Match.Text +
+                           " union " +
+                           " select j.prenom, j.nom from joueurs j " +
+                           " inner join equipes e on e.numequipe = j.numequipe  " +
+                           " inner join matchs m on e.numequipe = m.numequipevis " +
+                           " where m.nummatch = " + CB_Match.Text;
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql, oraconnStats);
                 orcd.CommandType = CommandType.Text;
-                OracleDataReader oraRead = orcd.ExecuteReader();
+                OracleDataReader oraReadJ = orcd.ExecuteReader();
 
-                while (oraRead.Read())
+                while (oraReadJ.Read())
                 {
-                    CB_Match.Items.Add(oraRead.GetInt32(0) + " vs " + oraRead.GetInt32(1));
+                    CB_Joueur.Items.Add(oraReadJ.GetString(0) + " " + oraReadJ.GetString(1));
                 }
 
-                RempliComboBoxJoueur();
+                oraReadJ.Close();
             }
             catch (OracleException ex)
             {
-                //SwitchException(ex);
                 SwitchException(ex);
             }
         }
@@ -121,6 +144,7 @@ namespace HockeyIce
             this.Close();
         }
 
+        // Gestion des erreurs
         private void SwitchException(OracleException ex)
         {
             string CodeErreur = ex.Number.ToString();
@@ -169,6 +193,31 @@ namespace HockeyIce
             Properties.Settings.Default.Save();
 
             AfficherErreur();
+        }
+        private void AfficherErreur()
+        {
+            FormErreur dlg = new FormErreur();
+
+            if (dlg.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Close();
+            }
+        }
+
+        private void CB_Match_TextChanged(object sender, EventArgs e)
+        {
+            CB_Joueur.Items.Clear();
+            RempliComboBoxJoueur();
+        }
+
+        private void flashButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void flashButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

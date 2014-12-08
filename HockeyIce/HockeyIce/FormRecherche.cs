@@ -104,5 +104,12 @@ namespace HockeyIce
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormGestionStatistiqueJ dlg = new FormGestionStatistiqueJ(oraconnRecherche);
+
+            dlg.ShowDialog();
+        }
     }
 }
