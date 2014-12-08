@@ -29,6 +29,10 @@ namespace HockeyIce
             EnabledVisibleLesPanels();
             this.Location = Properties.Settings.Default.PosFormGestion;
         }
+        private void FB_Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void EnabledVisibleLesPanels()
         {
@@ -101,12 +105,6 @@ namespace HockeyIce
             _dragging = false; 
         }
 
-
-        private void FB_Quitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void FormGestion_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.PosFormGestion = this.Location;
@@ -123,6 +121,16 @@ namespace HockeyIce
             FormDate dlg = new FormDate();
 
             dlg.ShowDialog();
+        }
+
+        private void flashButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flashButton6_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

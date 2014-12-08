@@ -713,6 +713,16 @@ namespace HockeyIce.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hockey_wallpaper_hd_4_742195 {
+            get {
+                object obj = ResourceManager.GetObject("hockey-wallpaper-hd-4-742195", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HockeyIcon {
             get {
                 object obj = ResourceManager.GetObject("HockeyIcon", resourceCulture);

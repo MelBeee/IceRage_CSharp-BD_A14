@@ -27,7 +27,6 @@ namespace HockeyIce
         {
             InitializeComponent();
             oraconnClassement = oraconn;
-
         }
 
         private void FormClassement_Load(object sender, EventArgs e)

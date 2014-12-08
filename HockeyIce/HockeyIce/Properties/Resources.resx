@@ -121,11 +121,14 @@
   <data name="AMatchs_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AMatchs_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TrouverEquipe_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrouverEquipe_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FermerHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FermerHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FermerDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FermerDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TrouverEquipe_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrouverEquipe_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AEquipes_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AEquipes_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,11 +142,17 @@
   <data name="hockeyjeune" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hockeyjeune.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AjouterDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AjouterDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AEquipes_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AEquipes_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TrouverJoueur_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TrouverJoueur_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1280px-Montreal_Canadiens.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1280px-Montreal_Canadiens.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo_LA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_LA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,11 +169,20 @@
   <data name="3JoueursDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3JoueursDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ChoisirDateDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChoisirDateDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SupprimerHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SupprimerHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="3JoueursClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3JoueursClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ADivision_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ADivision_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuitterClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuitterClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CEquipeNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CEquipeNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,6 +214,9 @@
   <data name="RetourHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RetourHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SupprimerDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SupprimerDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Logo_Toronto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_Toronto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,29 +229,41 @@
   <data name="AideHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AideHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AjouterClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AjouterClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Logo_Chicago" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_Chicago.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CEquipeDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CEquipeDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="QuitterHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\QuitterHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ChoisirDateHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChoisirDateHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CEquipeClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CEquipeClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AEquipes_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AEquipes_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FermerClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FermerClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RetourClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RetourClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Baton de Hockey1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Baton de Hockey1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TrouverJoueur_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrouverJoueur_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ContinuerClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ContinuerClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ChoisirDateClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChoisirDateClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AjouterHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AjouterHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,11 +277,11 @@
   <data name="ContinuerNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ContinuerNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ChoisirDateNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChoisirDateNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ImageGEquipe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImageGEquipe.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="QuitterDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\QuitterDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CloseNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CloseNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,11 +289,11 @@
   <data name="ContinuerDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ContinuerDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TrouverMatch_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TrouverMatch_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CloseDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CloseDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TrouverEquipe_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrouverEquipe_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo_Otawa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_Otawa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,11 +319,11 @@
   <data name="AEquipes_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AEquipes_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RetourDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RetourDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AJoueurs_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AJoueurs_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AideNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AideNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="QuitterNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QuitterNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,23 +337,29 @@
   <data name="TrouverJoueur_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TrouverJoueur_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TrouverJoueur_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TrouverJoueur_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="QuitterClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\QuitterClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="QuitterHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuitterHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TrouverMatch_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TrouverMatch_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CJoueursDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CJoueursDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SupprimerClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SupprimerClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AjouterNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AjouterNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SupprimerNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SupprimerNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ADivision_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ADivision_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -334,8 +373,8 @@
   <data name="AMatchs_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AMatchs_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RetourClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RetourClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TrouverMatch_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrouverMatch_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AJoueurs_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AJoueurs_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -343,8 +382,8 @@
   <data name="TrouverMatch_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TrouverMatch_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TrouverEquipe_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TrouverEquipe_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FermerDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FermerDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TrouverJoueur_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TrouverJoueur_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -358,23 +397,20 @@
   <data name="HockeyIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HockeyIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1280px-Montreal_Canadiens.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1280px-Montreal_Canadiens.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="QuitterDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuitterDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AEquipes_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AEquipes_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="6a00e54ff350bc8833017c32908339970b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6a00e54ff350bc8833017c32908339970b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TrouverEquipe_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TrouverEquipe_Normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FermerClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FermerClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TrouverEquipe_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TrouverEquipe_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hockey" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hockey.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CloseHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FermerNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FermerNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -382,49 +418,16 @@
   <data name="CJoueursNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CJoueursNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RetourDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RetourDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AideNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AideNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CJoueursClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CJoueursClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CloseHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CloseHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Hockey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hockey.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AjouterClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AjouterClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AjouterDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AjouterDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AjouterHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AjouterHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AjouterNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AjouterNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ChoisirDateClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChoisirDateClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ChoisirDateDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChoisirDateDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ChoisirDateHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChoisirDateHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ChoisirDateNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChoisirDateNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SupprimerClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SupprimerClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SupprimerDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SupprimerDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SupprimerHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SupprimerHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SupprimerNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SupprimerNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hockey-wallpaper-hd-4-742195" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hockey-wallpaper-hd-4-742195.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

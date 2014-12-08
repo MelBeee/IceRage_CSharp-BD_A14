@@ -8,9 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
-//    PB_Photo_Silver.ImageLocation = "http://i.imgur.com/RrZajkb.jpg";
-//    PB_Photo_Silver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-//    oraRead.GetDataTypeName(4).ToString();
+
+//      PB_Photo_Silver.ImageLocation = "http://i.imgur.com/RrZajkb.jpg";
+//      PB_Photo_Silver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+//      oraRead.GetDataTypeName(4).ToString();
+//      label1.Text = (Int32.Parse(TB_ChiffreUn.Text) + Int32.Parse(TB_Chiffre2.Text)).ToString(); 
 
 namespace HockeyIce
 {

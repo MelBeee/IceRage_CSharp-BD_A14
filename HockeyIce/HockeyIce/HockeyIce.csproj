@@ -82,6 +82,12 @@
     <Compile Include="FormGestion.Designer.cs">
       <DependentUpon>FormGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGestionStatistiqueJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionStatistiqueJ.Designer.cs">
+      <DependentUpon>FormGestionStatistiqueJ.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestion.resx">
       <DependentUpon>FormGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionStatistiqueJ.resx">
+      <DependentUpon>FormGestionStatistiqueJ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipale.resx">
       <DependentUpon>FormPrincipale.cs</DependentUpon>
@@ -433,6 +442,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SupprimerNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hockey-wallpaper-hd-4-742195.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
