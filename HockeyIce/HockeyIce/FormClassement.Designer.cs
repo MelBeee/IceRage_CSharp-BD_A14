@@ -134,7 +134,7 @@
             this.PN_3Joueurs.Controls.Add(this.LB_PrenomBronze);
             this.PN_3Joueurs.Controls.Add(this.PB_Podium);
             this.PN_3Joueurs.Enabled = false;
-            this.PN_3Joueurs.Location = new System.Drawing.Point(4, 29);
+            this.PN_3Joueurs.Location = new System.Drawing.Point(681, 30);
             this.PN_3Joueurs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_3Joueurs.Name = "PN_3Joueurs";
             this.PN_3Joueurs.Size = new System.Drawing.Size(673, 397);
@@ -396,7 +396,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(681, 431);
+            this.ClientSize = new System.Drawing.Size(1364, 684);
             this.Controls.Add(this.PN_3Joueurs);
             this.Controls.Add(this.LB_Text);
             this.Controls.Add(this.pictureBox2);
