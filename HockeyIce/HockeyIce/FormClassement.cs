@@ -46,15 +46,16 @@ namespace HockeyIce
                 //Joueur #1
                 while (oraRead.Read())
                 {
-                    LB_PrenomGold.Text = oraRead.GetString(0);
-                    LB_NomGold.Text = oraRead.GetString(1);
-                    LB_NumeroGold.Text = "Numéro " + oraRead.GetInt32(2).ToString();
-                    LB_PositionGold.Text = oraRead.GetString(3);
-                    PB_Photo_Gold.ImageLocation = oraRead.GetString(4);
-                    PB_Photo_Gold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                    PB_EquipeGold.Image = Image.FromStream(oraRead.GetOracleBlob(5));
-                    PB_EquipeGold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                    LB_PointsGold.Text = oraRead.GetInt32(6).ToString() + " Points";
+                    Image Photo = new Image(Image.FromFile(oraRead.GetString(4)));
+                    
+                    DGV_JoueurList.Rows.Add(
+                    Image.FromFile(oraRead.GetString(4)),
+                    oraRead.GetString(0),
+                    oraRead.GetString(1),
+                    "Numéro " + oraRead.GetInt32(2).ToString(),
+                    oraRead.GetString(3),                    
+                    oraRead.GetInt32(6).ToString() + " Points",
+                    Image.FromStream(oraRead.GetOracleBlob(5)));
                 }
                 oraRead.Close();
             }
@@ -126,7 +127,6 @@ namespace HockeyIce
                     PN_CEquipe.Enabled = true;
                     PN_CEquipe.Location = basePanel;
                     LB_Text.Text = "Classement des équipes";
-                    InitListJoueur();
                     break;
                 case "Top3":
                     PN_3Joueurs.Parent = this;
@@ -142,6 +142,7 @@ namespace HockeyIce
                     PN_CJoueurs.Enabled = true;
                     PN_CJoueurs.Location = basePanel;
                     LB_Text.Text = "Classement des joueurs";
+                    InitListJoueur();
                     break;
             }
         }
