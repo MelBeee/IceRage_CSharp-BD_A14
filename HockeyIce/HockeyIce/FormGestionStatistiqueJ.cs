@@ -34,18 +34,13 @@ namespace HockeyIce
         }
         private void UpdateControl()
         {
-            if(TB_Punition.Text == null)
-            {
-
-            }
+            FB_Ajouter.Enabled = (CB_Joueur.Text == "" ||
+                                  CB_Match.Text == "" ||
+                                  TB_Punition.Text == "" ||
+                                  TB_Buts.Text == "" ||
+                                  TB_Passes.Text == "") ? false : true;
         }
 
-        private bool ElementRempli()
-        {
-            return (TB_Punition.Text == null &&
-                    NUD_Buts.Value == null &&
-                    NUD_Passes.Value == null);
-        }
         private void FormGestionStatistiqueJ_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.PosFormGestStat = this.Location;
@@ -88,7 +83,10 @@ namespace HockeyIce
 
         private void RempliComboBoxMatch()
         {
-            string Sql = "select nummatch from matchs"; 
+            string Sql = "select m.nummatch, ev.nom, em.nom " +
+                         "from matchs m " +
+                         "inner join equipes ev on ev.numequipe = m.numequipevis " +
+                         "inner join equipes em on em.numequipe = m.numequipemai " ; 
 
             try
             {
@@ -98,7 +96,7 @@ namespace HockeyIce
 
                 while(oraRead.Read())
                 {
-                    CB_Match.Items.Add(oraRead.GetInt32(0));
+                    CB_Match.Items.Add(oraRead.GetString(1).ToString() + " vs " + oraRead.GetString(2).ToString());
                 }
 
                 oraRead.Close();
@@ -119,7 +117,7 @@ namespace HockeyIce
                            " select j.prenom, j.nom from joueurs j " +
                            " inner join equipes e on e.numequipe = j.numequipe  " +
                            " inner join matchs m on e.numequipe = m.numequipevis " +
-                           " where m.nummatch = " + CB_Match.Text;
+                           " where m.nummatch = " + CB_Match.Text + " ";
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql, oraconnStats);
@@ -210,14 +208,39 @@ namespace HockeyIce
             RempliComboBoxJoueur();
         }
 
-        private void flashButton2_Click(object sender, EventArgs e)
+        private void FB_Fermer_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void flashButton1_Click(object sender, EventArgs e)
+        private void FB_Ajouter_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TB_Punition_TextChanged(object sender, EventArgs e)
+        {
+            UpdateControl();
+        }
+
+        private void TB_Buts_TextChanged(object sender, EventArgs e)
+        {
+            UpdateControl();
+        }
+
+        private void TB_Passes_TextChanged(object sender, EventArgs e)
+        {
+            UpdateControl();
+        }
+
+        private void CB_Match_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateControl();
+        }
+
+        private void CB_Joueur_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateControl();
         }
     }
 }

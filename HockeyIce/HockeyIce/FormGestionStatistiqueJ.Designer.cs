@@ -33,22 +33,20 @@
             this.PB_Logo = new System.Windows.Forms.PictureBox();
             this.FB_Quitter = new FlashButton.FlashButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TB_Buts = new System.Windows.Forms.TextBox();
+            this.TB_Passes = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TB_Punition = new System.Windows.Forms.TextBox();
             this.FB_Fermer = new FlashButton.FlashButton();
             this.FB_Ajouter = new FlashButton.FlashButton();
-            this.NUD_Passes = new System.Windows.Forms.NumericUpDown();
-            this.NUD_Buts = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CB_Joueur = new System.Windows.Forms.ComboBox();
             this.CB_Match = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_Passes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_Buts)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Text
@@ -96,14 +94,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.TB_Buts);
+            this.panel1.Controls.Add(this.TB_Passes);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.TB_Punition);
             this.panel1.Controls.Add(this.FB_Fermer);
             this.panel1.Controls.Add(this.FB_Ajouter);
-            this.panel1.Controls.Add(this.NUD_Passes);
-            this.panel1.Controls.Add(this.NUD_Buts);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.CB_Joueur);
@@ -113,11 +111,27 @@
             this.panel1.Size = new System.Drawing.Size(239, 247);
             this.panel1.TabIndex = 9;
             // 
+            // TB_Buts
+            // 
+            this.TB_Buts.Location = new System.Drawing.Point(122, 122);
+            this.TB_Buts.Name = "TB_Buts";
+            this.TB_Buts.Size = new System.Drawing.Size(64, 19);
+            this.TB_Buts.TabIndex = 13;
+            this.TB_Buts.TextChanged += new System.EventHandler(this.TB_Buts_TextChanged);
+            // 
+            // TB_Passes
+            // 
+            this.TB_Passes.Location = new System.Drawing.Point(122, 146);
+            this.TB_Passes.Name = "TB_Passes";
+            this.TB_Passes.Size = new System.Drawing.Size(64, 19);
+            this.TB_Passes.TabIndex = 12;
+            this.TB_Passes.TextChanged += new System.EventHandler(this.TB_Passes_TextChanged);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(41, 175);
+            this.label5.Location = new System.Drawing.Point(41, 173);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 12);
             this.label5.TabIndex = 11;
@@ -145,10 +159,11 @@
             // 
             // TB_Punition
             // 
-            this.TB_Punition.Location = new System.Drawing.Point(122, 172);
+            this.TB_Punition.Location = new System.Drawing.Point(122, 170);
             this.TB_Punition.Name = "TB_Punition";
             this.TB_Punition.Size = new System.Drawing.Size(64, 19);
             this.TB_Punition.TabIndex = 8;
+            this.TB_Punition.TextChanged += new System.EventHandler(this.TB_Punition_TextChanged);
             // 
             // FB_Fermer
             // 
@@ -162,7 +177,7 @@
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(102, 20);
             this.FB_Fermer.TabIndex = 7;
-            this.FB_Fermer.Click += new System.EventHandler(this.flashButton2_Click);
+            this.FB_Fermer.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
             // FB_Ajouter
             // 
@@ -176,21 +191,7 @@
             this.FB_Ajouter.Name = "FB_Ajouter";
             this.FB_Ajouter.Size = new System.Drawing.Size(104, 20);
             this.FB_Ajouter.TabIndex = 6;
-            this.FB_Ajouter.Click += new System.EventHandler(this.flashButton1_Click);
-            // 
-            // NUD_Passes
-            // 
-            this.NUD_Passes.Location = new System.Drawing.Point(122, 147);
-            this.NUD_Passes.Name = "NUD_Passes";
-            this.NUD_Passes.Size = new System.Drawing.Size(65, 19);
-            this.NUD_Passes.TabIndex = 5;
-            // 
-            // NUD_Buts
-            // 
-            this.NUD_Buts.Location = new System.Drawing.Point(122, 123);
-            this.NUD_Buts.Name = "NUD_Buts";
-            this.NUD_Buts.Size = new System.Drawing.Size(65, 19);
-            this.NUD_Buts.TabIndex = 4;
+            this.FB_Ajouter.Click += new System.EventHandler(this.FB_Ajouter_Click);
             // 
             // label2
             // 
@@ -219,6 +220,7 @@
             this.CB_Joueur.Name = "CB_Joueur";
             this.CB_Joueur.Size = new System.Drawing.Size(140, 20);
             this.CB_Joueur.TabIndex = 1;
+            this.CB_Joueur.SelectedIndexChanged += new System.EventHandler(this.CB_Joueur_SelectedIndexChanged);
             // 
             // CB_Match
             // 
@@ -227,6 +229,7 @@
             this.CB_Match.Name = "CB_Match";
             this.CB_Match.Size = new System.Drawing.Size(142, 20);
             this.CB_Match.TabIndex = 0;
+            this.CB_Match.SelectedIndexChanged += new System.EventHandler(this.CB_Match_SelectedIndexChanged);
             this.CB_Match.TextChanged += new System.EventHandler(this.CB_Match_TextChanged);
             // 
             // FormGestionStatistiqueJ
@@ -251,8 +254,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_Passes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_Buts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,8 +267,6 @@
         private System.Windows.Forms.Panel panel1;
         private FlashButton.FlashButton FB_Fermer;
         private FlashButton.FlashButton FB_Ajouter;
-        private System.Windows.Forms.NumericUpDown NUD_Passes;
-        private System.Windows.Forms.NumericUpDown NUD_Buts;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CB_Joueur;
@@ -276,5 +275,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TB_Buts;
+        private System.Windows.Forms.TextBox TB_Passes;
     }
 }
