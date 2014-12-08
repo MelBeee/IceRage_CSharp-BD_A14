@@ -32,7 +32,36 @@ namespace HockeyIce
         private void FormClassement_Load(object sender, EventArgs e)
         {
             EnabledVisibleLesPanels();
-            this.Location = Properties.Settings.Default.PosFormClassement;            
+            this.Location = Properties.Settings.Default.PosFormClassement;
+        }
+
+        private void InitListJoueur()
+        {
+            try
+            {
+                OracleCommand orcd = new OracleCommand(Sql, oraconnClassement);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                //Joueur #1
+                while (oraRead.Read())
+                {
+                    LB_PrenomGold.Text = oraRead.GetString(0);
+                    LB_NomGold.Text = oraRead.GetString(1);
+                    LB_NumeroGold.Text = "Numéro " + oraRead.GetInt32(2).ToString();
+                    LB_PositionGold.Text = oraRead.GetString(3);
+                    PB_Photo_Gold.ImageLocation = oraRead.GetString(4);
+                    PB_Photo_Gold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                    PB_EquipeGold.Image = Image.FromStream(oraRead.GetOracleBlob(5));
+                    PB_EquipeGold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                    LB_PointsGold.Text = oraRead.GetInt32(6).ToString() + " Points";
+                }
+                oraRead.Close();
+            }
+            catch (OracleException exsqlajout)
+            {
+                MessageBox.Show(exsqlajout.Message.ToString());
+            }
         }
 
         private void InitClassementBestJoueurs()
@@ -42,7 +71,7 @@ namespace HockeyIce
                 OracleCommand orcd = new OracleCommand(Sql, oraconnClassement);
                 orcd.CommandType = CommandType.Text;
                 OracleDataReader oraRead = orcd.ExecuteReader();
-                
+
                 //Joueur #1
                 oraRead.Read();
                 LB_PrenomGold.Text = oraRead.GetString(0);
@@ -81,10 +110,9 @@ namespace HockeyIce
 
                 oraRead.Close();
             }
-            catch (OracleException ex)
+            catch (OracleException exsqlajout)
             {
-                //SwitchException(ex);
-                MessageBox.Show("cbhuabfv");
+                MessageBox.Show(exsqlajout.Message.ToString());
             }
         }
 
@@ -98,6 +126,7 @@ namespace HockeyIce
                     PN_CEquipe.Enabled = true;
                     PN_CEquipe.Location = basePanel;
                     LB_Text.Text = "Classement des équipes";
+                    InitListJoueur();
                     break;
                 case "Top3":
                     PN_3Joueurs.Parent = this;
