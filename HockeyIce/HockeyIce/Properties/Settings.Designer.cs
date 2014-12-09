@@ -166,5 +166,29 @@ namespace HockeyIce.Properties {
                 this["PosFormGestStat"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ModifierAjouter {
+            get {
+                return ((bool)(this["ModifierAjouter"]));
+            }
+            set {
+                this["ModifierAjouter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NumValue {
+            get {
+                return ((string)(this["NumValue"]));
+            }
+            set {
+                this["NumValue"] = value;
+            }
+        }
     }
 }

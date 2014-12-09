@@ -15,8 +15,10 @@ using Oracle.DataAccess.Client;
 //      label1.Text = (Int32.Parse(TB_ChiffreUn.Text) + Int32.Parse(TB_Chiffre2.Text)).ToString(); 
 
 /*  Erreurs à gérer
- * 947
- 
+        00947
+        00936
+        00904
+        00933
  */
 
 namespace HockeyIce
@@ -283,7 +285,7 @@ namespace HockeyIce
             Properties.Settings.Default.FenetreAOuvrir = Gestion;
             Properties.Settings.Default.Save();
 
-            FormGestion dlg = new FormGestion(oraconn);
+            FormOptions dlg = new FormOptions(oraconn);
 
             dlg.ShowDialog();
         }

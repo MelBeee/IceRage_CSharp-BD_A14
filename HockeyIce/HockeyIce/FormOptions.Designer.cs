@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOptions));
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.RB_Ajouter = new System.Windows.Forms.RadioButton();
+            this.RB_Modifier = new System.Windows.Forms.RadioButton();
+            this.RB_Supprimer = new System.Windows.Forms.RadioButton();
             this.CB_Invisible = new System.Windows.Forms.ComboBox();
             this.CB_Value = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,41 +44,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // RB_Ajouter
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(12, 14);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(86, 26);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Ajouter";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.RB_Ajouter.AutoSize = true;
+            this.RB_Ajouter.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RB_Ajouter.Location = new System.Drawing.Point(12, 14);
+            this.RB_Ajouter.Name = "RB_Ajouter";
+            this.RB_Ajouter.Size = new System.Drawing.Size(86, 26);
+            this.RB_Ajouter.TabIndex = 0;
+            this.RB_Ajouter.TabStop = true;
+            this.RB_Ajouter.Text = "Ajouter";
+            this.RB_Ajouter.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // RB_Modifier
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(12, 37);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(93, 26);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Modifier";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.RB_Modifier.AutoSize = true;
+            this.RB_Modifier.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RB_Modifier.Location = new System.Drawing.Point(12, 37);
+            this.RB_Modifier.Name = "RB_Modifier";
+            this.RB_Modifier.Size = new System.Drawing.Size(93, 26);
+            this.RB_Modifier.TabIndex = 1;
+            this.RB_Modifier.TabStop = true;
+            this.RB_Modifier.Text = "Modifier";
+            this.RB_Modifier.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // RB_Supprimer
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(12, 60);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(103, 26);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Supprimer";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.RB_Supprimer.AutoSize = true;
+            this.RB_Supprimer.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RB_Supprimer.Location = new System.Drawing.Point(12, 60);
+            this.RB_Supprimer.Name = "RB_Supprimer";
+            this.RB_Supprimer.Size = new System.Drawing.Size(103, 26);
+            this.RB_Supprimer.TabIndex = 2;
+            this.RB_Supprimer.TabStop = true;
+            this.RB_Supprimer.Text = "Supprimer";
+            this.RB_Supprimer.UseVisualStyleBackColor = true;
             // 
             // CB_Invisible
             // 
@@ -98,6 +98,8 @@
             this.CB_Value.Name = "CB_Value";
             this.CB_Value.Size = new System.Drawing.Size(133, 21);
             this.CB_Value.TabIndex = 4;
+            this.CB_Value.SelectedIndexChanged += new System.EventHandler(this.CB_Value_SelectedIndexChanged);
+            this.CB_Value.TextChanged += new System.EventHandler(this.CB_Value_TextChanged);
             // 
             // panel1
             // 
@@ -105,9 +107,9 @@
             this.panel1.Controls.Add(this.FB_Ok);
             this.panel1.Controls.Add(this.FB_Annuler);
             this.panel1.Controls.Add(this.CB_Value);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.RB_Ajouter);
+            this.panel1.Controls.Add(this.RB_Supprimer);
+            this.panel1.Controls.Add(this.RB_Modifier);
             this.panel1.Location = new System.Drawing.Point(3, 26);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(403, 102);
@@ -125,6 +127,7 @@
             this.FB_Ok.Name = "FB_Ok";
             this.FB_Ok.Size = new System.Drawing.Size(106, 26);
             this.FB_Ok.TabIndex = 6;
+            this.FB_Ok.Click += new System.EventHandler(this.FB_Ok_Click);
             // 
             // FB_Annuler
             // 
@@ -196,6 +199,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormOptions";
             this.Text = "FormOptions";
+            this.Load += new System.EventHandler(this.FormOptions_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormOptions_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormOptions_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormOptions_MouseUp);
@@ -209,9 +213,9 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton RB_Ajouter;
+        private System.Windows.Forms.RadioButton RB_Modifier;
+        private System.Windows.Forms.RadioButton RB_Supprimer;
         private System.Windows.Forms.ComboBox CB_Invisible;
         private System.Windows.Forms.ComboBox CB_Value;
         private System.Windows.Forms.Panel panel1;

@@ -57,7 +57,7 @@ namespace HockeyIce
             return (Image)(new Bitmap(imgToResize, size));
         }
 
-        InitDivisionEquipe()
+        private void InitDivisionEquipe()
         {
 
         }
