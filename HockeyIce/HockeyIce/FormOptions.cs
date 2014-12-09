@@ -25,6 +25,7 @@ namespace HockeyIce
         }
         private void FormOptions_Load(object sender, EventArgs e)
         {
+            this.Location = Properties.Settings.Default.PosFormOptions;
             SwitchCommandeComboBox();
             FB_Annuler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             FB_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -223,12 +224,14 @@ namespace HockeyIce
                 Properties.Settings.Default.NumValue = CB_Invisible.Text;
                 Properties.Settings.Default.Save();
                 AfficherGestion();
+                this.Close();
             }
             else
             {
                 Properties.Settings.Default.ModifierAjouter = false;
                 Properties.Settings.Default.Save();
                 AfficherGestion();
+                this.Close();
             }
         }
 
@@ -259,11 +262,55 @@ namespace HockeyIce
         private void CB_Value_TextChanged(object sender, EventArgs e)
         {
             CB_Invisible.SelectedIndex = CB_Value.SelectedIndex;
+            UpdateControl();
         }
 
         private void CB_Value_SelectedIndexChanged(object sender, EventArgs e)
         {
             CB_Invisible.SelectedIndex = CB_Value.SelectedIndex;
+            UpdateControl();
+        }
+
+        private void RB_Ajouter_CheckedChanged(object sender, EventArgs e)
+        {
+            CB_Value.Enabled = false;
+            CB_Value.Visible = false;
+            UpdateControl();
+        }
+
+        private void RB_Modifier_CheckedChanged(object sender, EventArgs e)
+        {
+            CB_Value.Enabled = true;
+            CB_Value.Visible = true;
+            UpdateControl();
+        }
+
+        private void RB_Supprimer_CheckedChanged(object sender, EventArgs e)
+        {
+            CB_Value.Enabled = true;
+            CB_Value.Visible = true;
+            UpdateControl();
+        }
+
+        private void UpdateControl()
+        {
+            FB_Ok.Enabled = false;
+            if (RB_Ajouter.Checked)
+            {
+                FB_Ok.Enabled = true; 
+            }
+            else if(RB_Modifier.Checked || RB_Supprimer.Checked)
+            {
+                if (CB_Value.Text != "")
+                {
+                    FB_Ok.Enabled = true;
+                }
+            }
+        }
+
+        private void FormOptions_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.PosFormOptions = this.Location;
         }
     }
 }

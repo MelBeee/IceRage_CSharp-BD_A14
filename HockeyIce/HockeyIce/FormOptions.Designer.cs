@@ -55,6 +55,7 @@
             this.RB_Ajouter.TabStop = true;
             this.RB_Ajouter.Text = "Ajouter";
             this.RB_Ajouter.UseVisualStyleBackColor = true;
+            this.RB_Ajouter.CheckedChanged += new System.EventHandler(this.RB_Ajouter_CheckedChanged);
             // 
             // RB_Modifier
             // 
@@ -67,6 +68,7 @@
             this.RB_Modifier.TabStop = true;
             this.RB_Modifier.Text = "Modifier";
             this.RB_Modifier.UseVisualStyleBackColor = true;
+            this.RB_Modifier.CheckedChanged += new System.EventHandler(this.RB_Modifier_CheckedChanged);
             // 
             // RB_Supprimer
             // 
@@ -79,6 +81,7 @@
             this.RB_Supprimer.TabStop = true;
             this.RB_Supprimer.Text = "Supprimer";
             this.RB_Supprimer.UseVisualStyleBackColor = true;
+            this.RB_Supprimer.CheckedChanged += new System.EventHandler(this.RB_Supprimer_CheckedChanged);
             // 
             // CB_Invisible
             // 
@@ -93,11 +96,13 @@
             // CB_Value
             // 
             this.CB_Value.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Value.Enabled = false;
             this.CB_Value.FormattingEnabled = true;
             this.CB_Value.Location = new System.Drawing.Point(132, 38);
             this.CB_Value.Name = "CB_Value";
             this.CB_Value.Size = new System.Drawing.Size(133, 21);
             this.CB_Value.TabIndex = 4;
+            this.CB_Value.Visible = false;
             this.CB_Value.SelectedIndexChanged += new System.EventHandler(this.CB_Value_SelectedIndexChanged);
             this.CB_Value.TextChanged += new System.EventHandler(this.CB_Value_TextChanged);
             // 
@@ -199,6 +204,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormOptions";
             this.Text = "FormOptions";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormOptions_FormClosing);
             this.Load += new System.EventHandler(this.FormOptions_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormOptions_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormOptions_MouseMove);
