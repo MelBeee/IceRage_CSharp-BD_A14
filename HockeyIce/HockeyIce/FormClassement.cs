@@ -37,14 +37,11 @@ namespace HockeyIce
             EnabledVisibleLesPanels();
             this.Location = Properties.Settings.Default.PosFormClassement;
         }
-        //****************************************************************
-        // below method will download the image from given url
+        
+        // Telecharge l'image de l'URL fournit
         public static Image GetImageFromUrl(string url)
         {
             HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
-            // if you have proxy server, you may need to set proxy details like below 
-            //httpWebRequest.Proxy = new WebProxy("proxyserver",port){ Credentials = new NetworkCredential(){ UserName ="uname", Password = "pw"}};
-
             using (HttpWebResponse httpWebReponse = (HttpWebResponse)httpWebRequest.GetResponse())
             {
                 using (Stream stream = httpWebReponse.GetResponseStream())
@@ -54,13 +51,12 @@ namespace HockeyIce
             }
         }
 
+        //resize l'image passer en paramettre et ces nouvelles dimension
         public static Image resizeImage(Image imgToResize, Size size)
         {
             return (Image)(new Bitmap(imgToResize, size));
         }
 
-
-        //****************************************************************
         private void InitListJoueur()
         {
             try
