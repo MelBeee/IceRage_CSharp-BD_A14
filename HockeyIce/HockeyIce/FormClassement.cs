@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
+using System.Collections.Specialized;
+using System.Net;
+using System.IO;
 
 namespace HockeyIce
 {
@@ -34,7 +37,30 @@ namespace HockeyIce
             EnabledVisibleLesPanels();
             this.Location = Properties.Settings.Default.PosFormClassement;
         }
+        //****************************************************************
+        // below method will download the image from given url
+        public static Image GetImageFromUrl(string url)
+        {
+            HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
+            // if you have proxy server, you may need to set proxy details like below 
+            //httpWebRequest.Proxy = new WebProxy("proxyserver",port){ Credentials = new NetworkCredential(){ UserName ="uname", Password = "pw"}};
 
+            using (HttpWebResponse httpWebReponse = (HttpWebResponse)httpWebRequest.GetResponse())
+            {
+                using (Stream stream = httpWebReponse.GetResponseStream())
+                {
+                    return Image.FromStream(stream);
+                }
+            }
+        }
+
+        public static Image resizeImage(Image imgToResize, Size size)
+        {
+            return (Image)(new Bitmap(imgToResize, size));
+        }
+
+
+        //****************************************************************
         private void InitListJoueur()
         {
             try
@@ -46,18 +72,23 @@ namespace HockeyIce
                 //Joueur #1
                 while (oraRead.Read())
                 {
-                    //Image Photo = new Image(Image.FromFile(oraRead.GetString(4)));
-                    
+
+                    Image Photo = GetImageFromUrl(oraRead.GetString(4));
+                    Photo = resizeImage(Photo, new Size(50, 50));
+                    Image Logo = Image.FromStream(oraRead.GetOracleBlob(5));
+                    Logo = resizeImage(Logo, new Size(50, 50));
+
                     DGV_JoueurList.Rows.Add(
-                    Image.FromFile(oraRead.GetString(4)),
+                    Photo,
                     oraRead.GetString(0),
                     oraRead.GetString(1),
                     "Numéro " + oraRead.GetInt32(2).ToString(),
-                    oraRead.GetString(3),                    
+                    oraRead.GetString(3),
                     oraRead.GetInt32(6).ToString() + " Points",
-                    Image.FromStream(oraRead.GetOracleBlob(5)));
+                    Logo);
                 }
                 oraRead.Close();
+                
             }
             catch (OracleException exsqlajout)
             {
