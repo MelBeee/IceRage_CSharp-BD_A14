@@ -446,6 +446,30 @@
   <ItemGroup>
     <None Include="Resources\hockey-wallpaper-hd-4-742195.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnnulerClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnnulerDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnnulerHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnnulerNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParcourirClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParcourirDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParcourirHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParcourirNormal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

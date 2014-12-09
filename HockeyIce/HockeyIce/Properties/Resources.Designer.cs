@@ -363,6 +363,46 @@ namespace HockeyIce.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AnnulerClick {
+            get {
+                object obj = ResourceManager.GetObject("AnnulerClick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AnnulerDisable {
+            get {
+                object obj = ResourceManager.GetObject("AnnulerDisable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AnnulerHover {
+            get {
+                object obj = ResourceManager.GetObject("AnnulerHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AnnulerNormal {
+            get {
+                object obj = ResourceManager.GetObject("AnnulerNormal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background {
             get {
                 object obj = ResourceManager.GetObject("background", resourceCulture);
@@ -836,6 +876,46 @@ namespace HockeyIce.Properties {
         internal static System.Drawing.Bitmap Normal {
             get {
                 object obj = ResourceManager.GetObject("Normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ParcourirClick {
+            get {
+                object obj = ResourceManager.GetObject("ParcourirClick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ParcourirDisable {
+            get {
+                object obj = ResourceManager.GetObject("ParcourirDisable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ParcourirHover {
+            get {
+                object obj = ResourceManager.GetObject("ParcourirHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ParcourirNormal {
+            get {
+                object obj = ResourceManager.GetObject("ParcourirNormal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
