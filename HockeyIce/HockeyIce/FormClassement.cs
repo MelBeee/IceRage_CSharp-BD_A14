@@ -74,9 +74,9 @@ namespace HockeyIce
                 {
 
                     Image Photo = GetImageFromUrl(oraRead.GetString(4));
-                    Photo = resizeImage(Photo, new Size(50, 50));
+                    Photo = resizeImage(Photo, new Size(50, 75));
                     Image Logo = Image.FromStream(oraRead.GetOracleBlob(5));
-                    Logo = resizeImage(Logo, new Size(50, 50));
+                    Logo = resizeImage(Logo, new Size(50, 45));
 
                     DGV_JoueurList.Rows.Add(
                     Photo,
@@ -87,6 +87,7 @@ namespace HockeyIce
                     oraRead.GetInt32(6).ToString() + " Points",
                     Logo);
                 }
+                
                 oraRead.Close();
                 
             }

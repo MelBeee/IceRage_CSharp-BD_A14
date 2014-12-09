@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LB_Text = new System.Windows.Forms.Label();
             this.PN_CJoueurs = new System.Windows.Forms.Panel();
             this.DGV_JoueurList = new System.Windows.Forms.DataGridView();
@@ -111,7 +112,7 @@
             this.DGV_JoueurList.AllowUserToAddRows = false;
             this.DGV_JoueurList.AllowUserToDeleteRows = false;
             this.DGV_JoueurList.AllowUserToOrderColumns = true;
-            this.DGV_JoueurList.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DGV_JoueurList.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.DGV_JoueurList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.DGV_JoueurList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_JoueurList.ColumnHeadersVisible = false;
@@ -128,7 +129,10 @@
             this.DGV_JoueurList.Name = "DGV_JoueurList";
             this.DGV_JoueurList.ReadOnly = true;
             this.DGV_JoueurList.RowHeadersVisible = false;
-            this.DGV_JoueurList.RowTemplate.Height = 50;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DGV_JoueurList.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV_JoueurList.RowTemplate.Height = 75;
             this.DGV_JoueurList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_JoueurList.Size = new System.Drawing.Size(673, 397);
             this.DGV_JoueurList.TabIndex = 0;
