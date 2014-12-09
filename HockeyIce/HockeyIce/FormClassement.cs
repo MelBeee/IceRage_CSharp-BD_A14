@@ -57,6 +57,11 @@ namespace HockeyIce
             return (Image)(new Bitmap(imgToResize, size));
         }
 
+        InitDivisionEquipe()
+        {
+
+        }
+
         private void InitListJoueur()
         {
             try
@@ -155,6 +160,7 @@ namespace HockeyIce
                     PN_CEquipe.Enabled = true;
                     PN_CEquipe.Location = basePanel;
                     LB_Text.Text = "Classement des équipes";
+                    InitDivisionEquipe();
                     break;
                 case "Top3":
                     PN_3Joueurs.Parent = this;
@@ -221,6 +227,5 @@ namespace HockeyIce
             Properties.Settings.Default.PosFormClassement = this.Location;
             Properties.Settings.Default.Save();
         }
-
     }
 }

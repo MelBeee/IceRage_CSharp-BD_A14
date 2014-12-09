@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LB_Text = new System.Windows.Forms.Label();
             this.PN_CJoueurs = new System.Windows.Forms.Panel();
             this.DGV_JoueurList = new System.Windows.Forms.DataGridView();
+            this.PhotoJoueur = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUMveste = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypePosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pointage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Equipe = new System.Windows.Forms.DataGridViewImageColumn();
             this.PN_3Joueurs = new System.Windows.Forms.Panel();
             this.PB_Photo_Bronze = new System.Windows.Forms.PictureBox();
             this.PB_Photo_Gold = new System.Windows.Forms.PictureBox();
@@ -57,15 +65,17 @@
             this.PB_Podium = new System.Windows.Forms.PictureBox();
             this.PN_CEquipe = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.CB_Division = new System.Windows.Forms.ComboBox();
+            this.DGV_Divison = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FB_Quitter = new FlashButton.FlashButton();
-            this.PhotoJoueur = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NUMveste = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypePosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pointage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Equipe = new System.Windows.Forms.DataGridViewImageColumn();
             this.PN_CJoueurs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_JoueurList)).BeginInit();
             this.PN_3Joueurs.SuspendLayout();
@@ -77,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_EquipeBronze)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Podium)).BeginInit();
             this.PN_CEquipe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Divison)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +111,7 @@
             this.PN_CJoueurs.BackColor = System.Drawing.Color.LightSkyBlue;
             this.PN_CJoueurs.Controls.Add(this.DGV_JoueurList);
             this.PN_CJoueurs.Enabled = false;
-            this.PN_CJoueurs.Location = new System.Drawing.Point(4, 30);
+            this.PN_CJoueurs.Location = new System.Drawing.Point(854, 378);
             this.PN_CJoueurs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_CJoueurs.Name = "PN_CJoueurs";
             this.PN_CJoueurs.Size = new System.Drawing.Size(673, 397);
@@ -124,18 +135,92 @@
             this.TypePosition,
             this.Pointage,
             this.Equipe});
-            this.DGV_JoueurList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGV_JoueurList.Location = new System.Drawing.Point(0, 0);
+            this.DGV_JoueurList.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DGV_JoueurList.Location = new System.Drawing.Point(0, 31);
             this.DGV_JoueurList.Name = "DGV_JoueurList";
             this.DGV_JoueurList.ReadOnly = true;
             this.DGV_JoueurList.RowHeadersVisible = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DGV_JoueurList.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DGV_JoueurList.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_JoueurList.RowTemplate.Height = 75;
             this.DGV_JoueurList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_JoueurList.Size = new System.Drawing.Size(673, 397);
+            this.DGV_JoueurList.Size = new System.Drawing.Size(673, 366);
             this.DGV_JoueurList.TabIndex = 0;
+            // 
+            // PhotoJoueur
+            // 
+            this.PhotoJoueur.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.PhotoJoueur.Frozen = true;
+            this.PhotoJoueur.HeaderText = "PhotoJoueur";
+            this.PhotoJoueur.MinimumWidth = 50;
+            this.PhotoJoueur.Name = "PhotoJoueur";
+            this.PhotoJoueur.ReadOnly = true;
+            this.PhotoJoueur.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PhotoJoueur.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.PhotoJoueur.Width = 50;
+            // 
+            // Nom
+            // 
+            this.Nom.FillWeight = 128F;
+            this.Nom.Frozen = true;
+            this.Nom.HeaderText = "Nom";
+            this.Nom.MinimumWidth = 50;
+            this.Nom.Name = "Nom";
+            this.Nom.ReadOnly = true;
+            this.Nom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Nom.Width = 127;
+            // 
+            // Prenom
+            // 
+            this.Prenom.FillWeight = 128F;
+            this.Prenom.Frozen = true;
+            this.Prenom.HeaderText = "Prenom";
+            this.Prenom.MinimumWidth = 50;
+            this.Prenom.Name = "Prenom";
+            this.Prenom.ReadOnly = true;
+            this.Prenom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Prenom.Width = 127;
+            // 
+            // NUMveste
+            // 
+            this.NUMveste.Frozen = true;
+            this.NUMveste.HeaderText = "NUMveste";
+            this.NUMveste.MinimumWidth = 50;
+            this.NUMveste.Name = "NUMveste";
+            this.NUMveste.ReadOnly = true;
+            this.NUMveste.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // TypePosition
+            // 
+            this.TypePosition.Frozen = true;
+            this.TypePosition.HeaderText = "TypePosition";
+            this.TypePosition.MinimumWidth = 50;
+            this.TypePosition.Name = "TypePosition";
+            this.TypePosition.ReadOnly = true;
+            this.TypePosition.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.TypePosition.Width = 99;
+            // 
+            // Pointage
+            // 
+            this.Pointage.Frozen = true;
+            this.Pointage.HeaderText = "Pointage";
+            this.Pointage.MinimumWidth = 50;
+            this.Pointage.Name = "Pointage";
+            this.Pointage.ReadOnly = true;
+            this.Pointage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Pointage.Width = 99;
+            // 
+            // Equipe
+            // 
+            this.Equipe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.Equipe.Frozen = true;
+            this.Equipe.HeaderText = "Equipe";
+            this.Equipe.MinimumWidth = 50;
+            this.Equipe.Name = "Equipe";
+            this.Equipe.ReadOnly = true;
+            this.Equipe.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Equipe.Width = 50;
             // 
             // PN_3Joueurs
             // 
@@ -163,7 +248,7 @@
             this.PN_3Joueurs.Controls.Add(this.LB_PrenomBronze);
             this.PN_3Joueurs.Controls.Add(this.PB_Podium);
             this.PN_3Joueurs.Enabled = false;
-            this.PN_3Joueurs.Location = new System.Drawing.Point(7, 2);
+            this.PN_3Joueurs.Location = new System.Drawing.Point(942, 102);
             this.PN_3Joueurs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_3Joueurs.Name = "PN_3Joueurs";
             this.PN_3Joueurs.Size = new System.Drawing.Size(673, 397);
@@ -375,10 +460,11 @@
             // PN_CEquipe
             // 
             this.PN_CEquipe.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_CEquipe.Controls.Add(this.PN_3Joueurs);
             this.PN_CEquipe.Controls.Add(this.label1);
+            this.PN_CEquipe.Controls.Add(this.CB_Division);
+            this.PN_CEquipe.Controls.Add(this.DGV_Divison);
             this.PN_CEquipe.Enabled = false;
-            this.PN_CEquipe.Location = new System.Drawing.Point(4, 431);
+            this.PN_CEquipe.Location = new System.Drawing.Point(4, 29);
             this.PN_CEquipe.Margin = new System.Windows.Forms.Padding(2);
             this.PN_CEquipe.Name = "PN_CEquipe";
             this.PN_CEquipe.Size = new System.Drawing.Size(673, 397);
@@ -388,12 +474,127 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(197, 132);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(8, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CEquipe";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Division";
+            // 
+            // CB_Division
+            // 
+            this.CB_Division.AutoCompleteCustomSource.AddRange(new string[] {
+            "Ouest",
+            "Est"});
+            this.CB_Division.DisplayMember = "1";
+            this.CB_Division.FormattingEnabled = true;
+            this.CB_Division.Location = new System.Drawing.Point(58, 7);
+            this.CB_Division.Name = "CB_Division";
+            this.CB_Division.Size = new System.Drawing.Size(121, 21);
+            this.CB_Division.TabIndex = 2;
+            // 
+            // DGV_Divison
+            // 
+            this.DGV_Divison.AllowUserToAddRows = false;
+            this.DGV_Divison.AllowUserToDeleteRows = false;
+            this.DGV_Divison.AllowUserToOrderColumns = true;
+            this.DGV_Divison.BackgroundColor = System.Drawing.Color.LightSkyBlue;
+            this.DGV_Divison.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DGV_Divison.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Divison.ColumnHeadersVisible = false;
+            this.DGV_Divison.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn1,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewImageColumn2});
+            this.DGV_Divison.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DGV_Divison.Location = new System.Drawing.Point(0, 31);
+            this.DGV_Divison.Name = "DGV_Divison";
+            this.DGV_Divison.ReadOnly = true;
+            this.DGV_Divison.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DGV_Divison.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DGV_Divison.RowTemplate.Height = 75;
+            this.DGV_Divison.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_Divison.Size = new System.Drawing.Size(673, 366);
+            this.DGV_Divison.TabIndex = 1;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.dataGridViewImageColumn1.Frozen = true;
+            this.dataGridViewImageColumn1.HeaderText = "PhotoJoueur";
+            this.dataGridViewImageColumn1.MinimumWidth = 50;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 128F;
+            this.dataGridViewTextBoxColumn1.Frozen = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nom";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 50;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.Width = 127;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 128F;
+            this.dataGridViewTextBoxColumn2.Frozen = true;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Prenom";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 50;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn2.Width = 127;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.Frozen = true;
+            this.dataGridViewTextBoxColumn3.HeaderText = "NUMveste";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 50;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.Frozen = true;
+            this.dataGridViewTextBoxColumn4.HeaderText = "TypePosition";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 50;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn4.Width = 99;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.Frozen = true;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Pointage";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 50;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn5.Width = 99;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.dataGridViewImageColumn2.Frozen = true;
+            this.dataGridViewImageColumn2.HeaderText = "Equipe";
+            this.dataGridViewImageColumn2.MinimumWidth = 50;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn2.Width = 50;
             // 
             // pictureBox2
             // 
@@ -421,86 +622,13 @@
             this.FB_Quitter.TabIndex = 11;
             this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
-            // PhotoJoueur
-            // 
-            this.PhotoJoueur.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.PhotoJoueur.Frozen = true;
-            this.PhotoJoueur.HeaderText = "PhotoJoueur";
-            this.PhotoJoueur.MinimumWidth = 50;
-            this.PhotoJoueur.Name = "PhotoJoueur";
-            this.PhotoJoueur.ReadOnly = true;
-            this.PhotoJoueur.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.PhotoJoueur.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.PhotoJoueur.Width = 50;
-            // 
-            // Nom
-            // 
-            this.Nom.FillWeight = 128F;
-            this.Nom.Frozen = true;
-            this.Nom.HeaderText = "Nom";
-            this.Nom.MinimumWidth = 50;
-            this.Nom.Name = "Nom";
-            this.Nom.ReadOnly = true;
-            this.Nom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Nom.Width = 127;
-            // 
-            // Prenom
-            // 
-            this.Prenom.FillWeight = 128F;
-            this.Prenom.Frozen = true;
-            this.Prenom.HeaderText = "Prenom";
-            this.Prenom.MinimumWidth = 50;
-            this.Prenom.Name = "Prenom";
-            this.Prenom.ReadOnly = true;
-            this.Prenom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Prenom.Width = 127;
-            // 
-            // NUMveste
-            // 
-            this.NUMveste.Frozen = true;
-            this.NUMveste.HeaderText = "NUMveste";
-            this.NUMveste.MinimumWidth = 50;
-            this.NUMveste.Name = "NUMveste";
-            this.NUMveste.ReadOnly = true;
-            this.NUMveste.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // TypePosition
-            // 
-            this.TypePosition.Frozen = true;
-            this.TypePosition.HeaderText = "TypePosition";
-            this.TypePosition.MinimumWidth = 50;
-            this.TypePosition.Name = "TypePosition";
-            this.TypePosition.ReadOnly = true;
-            this.TypePosition.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.TypePosition.Width = 99;
-            // 
-            // Pointage
-            // 
-            this.Pointage.Frozen = true;
-            this.Pointage.HeaderText = "Pointage";
-            this.Pointage.MinimumWidth = 50;
-            this.Pointage.Name = "Pointage";
-            this.Pointage.ReadOnly = true;
-            this.Pointage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Pointage.Width = 99;
-            // 
-            // Equipe
-            // 
-            this.Equipe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.Equipe.Frozen = true;
-            this.Equipe.HeaderText = "Equipe";
-            this.Equipe.MinimumWidth = 50;
-            this.Equipe.Name = "Equipe";
-            this.Equipe.ReadOnly = true;
-            this.Equipe.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Equipe.Width = 50;
-            // 
             // FormClassement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(683, 433);
+            this.ClientSize = new System.Drawing.Size(1092, 643);
+            this.Controls.Add(this.PN_3Joueurs);
             this.Controls.Add(this.LB_Text);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.FB_Quitter);
@@ -527,6 +655,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_Podium)).EndInit();
             this.PN_CEquipe.ResumeLayout(false);
             this.PN_CEquipe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Divison)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -540,7 +669,6 @@
         private FlashButton.FlashButton FB_Quitter;
         private System.Windows.Forms.Panel PN_CJoueurs;
         private System.Windows.Forms.Panel PN_CEquipe;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PN_3Joueurs;
         private System.Windows.Forms.PictureBox PB_Podium;
         private System.Windows.Forms.Label LB_NomBronze;
@@ -572,5 +700,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TypePosition;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pointage;
         private System.Windows.Forms.DataGridViewImageColumn Equipe;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CB_Division;
+        private System.Windows.Forms.DataGridView DGV_Divison;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }
