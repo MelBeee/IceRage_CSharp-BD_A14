@@ -16,6 +16,7 @@ namespace HockeyIce
         private bool _dragging = false;
         private Point _start_point = new Point(0, 0);
         private OracleConnection oraconnStats;
+                const char BACKSPACE = '\b';
 
         public FormGestionStatistiqueJ(OracleConnection oraconn)
         {
@@ -27,11 +28,21 @@ namespace HockeyIce
         {
             this.Location = Properties.Settings.Default.PosFormGestStat;
             RempliComboBoxMatch();
-
+            TT_Punition.SetToolTip(this.TB_Punition, "Le temps en seconde !");
             FB_Ajouter.Enabled = false;
-
-
         }
+
+        bool EstChiffre(char c)
+        {
+            String chiffres = "0123456789";
+            return (chiffres.IndexOf(c.ToString()) != -1);
+        }
+        private void TB_Buts_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != BACKSPACE)
+                e.Handled = !EstChiffre(e.KeyChar);
+        }
+
         private void UpdateControl()
         {
             FB_Ajouter.Enabled = (CB_Joueur.Text == "" ||
@@ -207,6 +218,7 @@ namespace HockeyIce
         private void CB_Match_TextChanged(object sender, EventArgs e)
         {
             CB_Invisible.SelectedIndex = CB_Match.SelectedIndex;
+            CB_InvisibleJ.Items.Clear();
             CB_Joueur.Items.Clear();
             RempliComboBoxJoueur();
         }
@@ -218,11 +230,16 @@ namespace HockeyIce
 
         private void FB_Ajouter_Click(object sender, EventArgs e)
         {
-            AjoutStats();
+            if(AjoutStats())
+            {
+                MessageBox.Show("Insertion réussi");
+            }
+            
         }
 
-        private void AjoutStats()
+        private bool AjoutStats()
         {
+            bool reussi = true; 
             string sql = "Insert into StatistiquesJoueurs values(" + 
                 CB_Invisible.Text + ", " +
                 CB_InvisibleJ.Text + ", " +
@@ -238,7 +255,9 @@ namespace HockeyIce
             catch(OracleException ex)
             {
                 SwitchException(ex);
+                reussi = false;
             }
+            return reussi;
         }
 
         private void TB_Punition_TextChanged(object sender, EventArgs e)
@@ -273,5 +292,6 @@ namespace HockeyIce
             CB_InvisibleJ.SelectedIndex = CB_Joueur.SelectedIndex;
             UpdateControl();
         }
+
     }
 }
