@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Ice Rage est un logiciel de gestion de ligue de hockey. Il permet à l'utilisateur de faire la gestion des équipes, des divisions, des joueurs et des matchs. Aussi, un système de classement est disponible. </value>
+  </data>
 </root>
