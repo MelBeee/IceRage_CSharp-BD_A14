@@ -96,6 +96,7 @@ namespace HockeyIce
 
                 while(oraRead.Read())
                 {
+                    CB_Invisible.Items.Add(oraRead.GetInt32(0).ToString());
                     CB_Match.Items.Add(oraRead.GetString(1).ToString() + " vs " + oraRead.GetString(2).ToString());
                 }
 
@@ -109,15 +110,15 @@ namespace HockeyIce
 
         private void RempliComboBoxJoueur()
         {
-            string Sql = "  select j.prenom, j.nom from joueurs j " +
+            string Sql = "  select j.numjoueur, j.prenom, j.nom from joueurs j " +
                            " inner join equipes e on e.numequipe = j.numequipe " + 
                            " inner join matchs m on e.numequipe = m.numequipemai " +
-                           " where m.nummatch = " + CB_Match.Text +
+                           " where m.nummatch = " + CB_Invisible.Text +
                            " union " +
-                           " select j.prenom, j.nom from joueurs j " +
+                           " select j.numjoueur, j.prenom, j.nom from joueurs j " +
                            " inner join equipes e on e.numequipe = j.numequipe  " +
                            " inner join matchs m on e.numequipe = m.numequipevis " +
-                           " where m.nummatch = " + CB_Match.Text + " ";
+                           " where m.nummatch = " + CB_Invisible.Text + " ";
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql, oraconnStats);
@@ -126,7 +127,8 @@ namespace HockeyIce
 
                 while (oraReadJ.Read())
                 {
-                    CB_Joueur.Items.Add(oraReadJ.GetString(0) + " " + oraReadJ.GetString(1));
+                    CB_InvisibleJ.Items.Add(oraReadJ.GetInt32(0).ToString());
+                    CB_Joueur.Items.Add(oraReadJ.GetString(1) + " " + oraReadJ.GetString(2));
                 }
 
                 oraReadJ.Close();
@@ -204,6 +206,7 @@ namespace HockeyIce
 
         private void CB_Match_TextChanged(object sender, EventArgs e)
         {
+            CB_Invisible.SelectedIndex = CB_Match.SelectedIndex;
             CB_Joueur.Items.Clear();
             RempliComboBoxJoueur();
         }
@@ -215,7 +218,27 @@ namespace HockeyIce
 
         private void FB_Ajouter_Click(object sender, EventArgs e)
         {
+            AjoutStats();
+        }
 
+        private void AjoutStats()
+        {
+            string sql = "Insert into StatistiquesJoueurs values(" + 
+                CB_Invisible.Text + ", " +
+                CB_InvisibleJ.Text + ", " +
+                TB_Buts.Text + ", " +
+                TB_Passes.Text + ", '" + 
+                TB_Punition.Text + "') " ;
+            OracleCommand orcd = new OracleCommand(sql, oraconnStats);
+            try
+            {
+                orcd.CommandType = CommandType.Text;
+                orcd.ExecuteNonQuery();
+            }
+            catch(OracleException ex)
+            {
+                SwitchException(ex);
+            }
         }
 
         private void TB_Punition_TextChanged(object sender, EventArgs e)
@@ -235,11 +258,19 @@ namespace HockeyIce
 
         private void CB_Match_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CB_Invisible.SelectedIndex = CB_Match.SelectedIndex;
             UpdateControl();
         }
 
         private void CB_Joueur_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CB_InvisibleJ.SelectedIndex = CB_Joueur.SelectedIndex;
+            UpdateControl();
+        }
+
+        private void CB_Joueur_TextChanged(object sender, EventArgs e)
+        {
+            CB_InvisibleJ.SelectedIndex = CB_Joueur.SelectedIndex;
             UpdateControl();
         }
     }

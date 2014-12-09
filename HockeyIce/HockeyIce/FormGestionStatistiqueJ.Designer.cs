@@ -45,6 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CB_Joueur = new System.Windows.Forms.ComboBox();
             this.CB_Match = new System.Windows.Forms.ComboBox();
+            this.CB_Invisible = new System.Windows.Forms.ComboBox();
+            this.CB_InvisibleJ = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +59,7 @@
             this.LB_Text.Location = new System.Drawing.Point(27, 0);
             this.LB_Text.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Text.Name = "LB_Text";
-            this.LB_Text.Size = new System.Drawing.Size(104, 23);
+            this.LB_Text.Size = new System.Drawing.Size(129, 28);
             this.LB_Text.TabIndex = 6;
             this.LB_Text.Text = "Statistiques";
             this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseDown);
@@ -115,7 +117,7 @@
             // 
             this.TB_Buts.Location = new System.Drawing.Point(122, 122);
             this.TB_Buts.Name = "TB_Buts";
-            this.TB_Buts.Size = new System.Drawing.Size(64, 19);
+            this.TB_Buts.Size = new System.Drawing.Size(64, 22);
             this.TB_Buts.TabIndex = 13;
             this.TB_Buts.TextChanged += new System.EventHandler(this.TB_Buts_TextChanged);
             // 
@@ -123,7 +125,7 @@
             // 
             this.TB_Passes.Location = new System.Drawing.Point(122, 146);
             this.TB_Passes.Name = "TB_Passes";
-            this.TB_Passes.Size = new System.Drawing.Size(64, 19);
+            this.TB_Passes.Size = new System.Drawing.Size(64, 22);
             this.TB_Passes.TabIndex = 12;
             this.TB_Passes.TextChanged += new System.EventHandler(this.TB_Passes_TextChanged);
             // 
@@ -133,7 +135,7 @@
             this.label5.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(41, 173);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 12);
+            this.label5.Size = new System.Drawing.Size(97, 15);
             this.label5.TabIndex = 11;
             this.label5.Text = "Punition :";
             // 
@@ -143,7 +145,7 @@
             this.label4.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(55, 149);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 12);
+            this.label4.Size = new System.Drawing.Size(79, 15);
             this.label4.TabIndex = 10;
             this.label4.Text = "Passes :";
             // 
@@ -153,7 +155,7 @@
             this.label3.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(69, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 12);
+            this.label3.Size = new System.Drawing.Size(61, 15);
             this.label3.TabIndex = 9;
             this.label3.Text = "Buts :";
             // 
@@ -161,7 +163,7 @@
             // 
             this.TB_Punition.Location = new System.Drawing.Point(122, 170);
             this.TB_Punition.Name = "TB_Punition";
-            this.TB_Punition.Size = new System.Drawing.Size(64, 19);
+            this.TB_Punition.Size = new System.Drawing.Size(64, 22);
             this.TB_Punition.TabIndex = 8;
             this.TB_Punition.TextChanged += new System.EventHandler(this.TB_Punition_TextChanged);
             // 
@@ -174,6 +176,7 @@
             this.FB_Fermer.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_Fermer.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
             this.FB_Fermer.Location = new System.Drawing.Point(122, 214);
+            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(102, 20);
             this.FB_Fermer.TabIndex = 7;
@@ -188,6 +191,7 @@
             this.FB_Ajouter.ImageNeutral = global::HockeyIce.Properties.Resources.AjouterNormal;
             this.FB_Ajouter.ImageOver = global::HockeyIce.Properties.Resources.AjouterHover;
             this.FB_Ajouter.Location = new System.Drawing.Point(12, 214);
+            this.FB_Ajouter.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Ajouter.Name = "FB_Ajouter";
             this.FB_Ajouter.Size = new System.Drawing.Size(104, 20);
             this.FB_Ajouter.TabIndex = 6;
@@ -199,7 +203,7 @@
             this.label2.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(70, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.Size = new System.Drawing.Size(121, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Choisir Joueur";
             // 
@@ -209,32 +213,52 @@
             this.label1.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(70, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 17);
+            this.label1.Size = new System.Drawing.Size(117, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Choisir Match";
             // 
             // CB_Joueur
             // 
+            this.CB_Joueur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_Joueur.FormattingEnabled = true;
             this.CB_Joueur.Location = new System.Drawing.Point(47, 79);
             this.CB_Joueur.Name = "CB_Joueur";
-            this.CB_Joueur.Size = new System.Drawing.Size(140, 20);
+            this.CB_Joueur.Size = new System.Drawing.Size(140, 23);
             this.CB_Joueur.TabIndex = 1;
             this.CB_Joueur.SelectedIndexChanged += new System.EventHandler(this.CB_Joueur_SelectedIndexChanged);
+            this.CB_Joueur.TextChanged += new System.EventHandler(this.CB_Joueur_TextChanged);
             // 
             // CB_Match
             // 
+            this.CB_Match.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_Match.FormattingEnabled = true;
-            this.CB_Match.Location = new System.Drawing.Point(47, 32);
+            this.CB_Match.Location = new System.Drawing.Point(12, 32);
             this.CB_Match.Name = "CB_Match";
-            this.CB_Match.Size = new System.Drawing.Size(142, 20);
+            this.CB_Match.Size = new System.Drawing.Size(212, 23);
             this.CB_Match.TabIndex = 0;
             this.CB_Match.SelectedIndexChanged += new System.EventHandler(this.CB_Match_SelectedIndexChanged);
             this.CB_Match.TextChanged += new System.EventHandler(this.CB_Match_TextChanged);
             // 
+            // CB_Invisible
+            // 
+            this.CB_Invisible.FormattingEnabled = true;
+            this.CB_Invisible.Location = new System.Drawing.Point(62, 30);
+            this.CB_Invisible.Name = "CB_Invisible";
+            this.CB_Invisible.Size = new System.Drawing.Size(121, 23);
+            this.CB_Invisible.TabIndex = 14;
+            this.CB_Invisible.Visible = false;
+            // 
+            // CB_InvisibleJ
+            // 
+            this.CB_InvisibleJ.FormattingEnabled = true;
+            this.CB_InvisibleJ.Location = new System.Drawing.Point(96, 81);
+            this.CB_InvisibleJ.Name = "CB_InvisibleJ";
+            this.CB_InvisibleJ.Size = new System.Drawing.Size(121, 23);
+            this.CB_InvisibleJ.TabIndex = 15;
+            // 
             // FormGestionStatistiqueJ
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(243, 274);
@@ -242,6 +266,8 @@
             this.Controls.Add(this.FB_Quitter);
             this.Controls.Add(this.PB_Logo);
             this.Controls.Add(this.LB_Text);
+            this.Controls.Add(this.CB_Invisible);
+            this.Controls.Add(this.CB_InvisibleJ);
             this.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormGestionStatistiqueJ";
@@ -277,5 +303,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TB_Buts;
         private System.Windows.Forms.TextBox TB_Passes;
+        private System.Windows.Forms.ComboBox CB_Invisible;
+        private System.Windows.Forms.ComboBox CB_InvisibleJ;
     }
 }

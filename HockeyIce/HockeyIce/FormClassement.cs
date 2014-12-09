@@ -46,7 +46,7 @@ namespace HockeyIce
                 //Joueur #1
                 while (oraRead.Read())
                 {
-                    Image Photo = new Image(Image.FromFile(oraRead.GetString(4)));
+                    //Image Photo = new Image(Image.FromFile(oraRead.GetString(4)));
                     
                     DGV_JoueurList.Rows.Add(
                     Image.FromFile(oraRead.GetString(4)),

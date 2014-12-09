@@ -14,6 +14,11 @@ using Oracle.DataAccess.Client;
 //      oraRead.GetDataTypeName(4).ToString();
 //      label1.Text = (Int32.Parse(TB_ChiffreUn.Text) + Int32.Parse(TB_Chiffre2.Text)).ToString(); 
 
+/*  Erreurs à gérer
+ * 947
+ 
+ */
+
 namespace HockeyIce
 {
     public partial class FormPrincipale : Form

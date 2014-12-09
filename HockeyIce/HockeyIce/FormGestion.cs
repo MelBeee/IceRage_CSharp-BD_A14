@@ -123,15 +123,14 @@ namespace HockeyIce
             dlg.ShowDialog();
         }
 
-        private void flashButton5_Click(object sender, EventArgs e)
+        private void label23_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void flashButton6_Click(object sender, EventArgs e)
+        private void PN_Joueurs_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
     }
 }
