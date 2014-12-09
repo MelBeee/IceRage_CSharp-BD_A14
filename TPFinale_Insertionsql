@@ -67,56 +67,56 @@ INSERT INTO Matchs VALUES(1, 4, 5, '19-11-14', 'Chicago',      2, 5);
 
 //--- Insertion Match 1 
 //--- Equipe 1 (1-5)
-INSERT INTO StatistiquesJoueurs VALUES(1,1,0,0,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(1,2,1,2,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(1,3,2,2,'02:00');
-INSERT INTO StatistiquesJoueurs VALUES(1,4,1,3,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(1,5,3,1,'15:00');
+INSERT INTO StatistiquesJoueurs VALUES(1,1,0,0,'0');
+INSERT INTO StatistiquesJoueurs VALUES(1,2,1,2,'0');
+INSERT INTO StatistiquesJoueurs VALUES(1,3,2,2,'120');
+INSERT INTO StatistiquesJoueurs VALUES(1,4,1,3,'0');
+INSERT INTO StatistiquesJoueurs VALUES(1,5,3,1,'240');
 //--- Equipe 8 (36-40)
-INSERT INTO StatistiquesJoueurs VALUES(1,36,null,null,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(1,37,0,1,'05:00');
-INSERT INTO StatistiquesJoueurs VALUES(1,38,1,0,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(1,39,0,1,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(1,40,1,1,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(1,36,null,null,'0');
+INSERT INTO StatistiquesJoueurs VALUES(1,37,0,1,'300');
+INSERT INTO StatistiquesJoueurs VALUES(1,38,1,0,'0');
+INSERT INTO StatistiquesJoueurs VALUES(1,39,0,1,'0');
+INSERT INTO StatistiquesJoueurs VALUES(1,40,1,1,'120');
 //--- Insertion Match 2
 //--- Equipe 2 (6-10)
-INSERT INTO StatistiquesJoueurs VALUES(2,6,null,null,'02:00');
-INSERT INTO StatistiquesJoueurs VALUES(2,7,1,0,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(2,8,1,0,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(2,9,0,2,'04:00');
-INSERT INTO StatistiquesJoueurs VALUES(2,10,1,1,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(2,6,null,null,'120');
+INSERT INTO StatistiquesJoueurs VALUES(2,7,1,0,'0');
+INSERT INTO StatistiquesJoueurs VALUES(2,8,1,0,'0');
+INSERT INTO StatistiquesJoueurs VALUES(2,9,0,2,'240');
+INSERT INTO StatistiquesJoueurs VALUES(2,10,1,1,'0');
 //--- Equipe 7 (31-35)
-INSERT INTO StatistiquesJoueurs VALUES(2,31,null,null,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(2,32,2,0,'06:00');
-INSERT INTO StatistiquesJoueurs VALUES(2,33,0,0,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(2,34,0,1,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(2,35,0,1,'05:00');
+INSERT INTO StatistiquesJoueurs VALUES(2,31,null,null,'0');
+INSERT INTO StatistiquesJoueurs VALUES(2,32,2,0,'600');
+INSERT INTO StatistiquesJoueurs VALUES(2,33,0,0,'0');
+INSERT INTO StatistiquesJoueurs VALUES(2,34,0,1,'0');
+INSERT INTO StatistiquesJoueurs VALUES(2,35,0,1,'300');
 //--- Insertion Match 3
 //--- Equipe 6  (26-30) 1 - 2 
-INSERT INTO StatistiquesJoueurs VALUES(3,26,null,null,'04:00');
-INSERT INTO StatistiquesJoueurs VALUES(3,27,1,0,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(3,28,0,1,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(3,29,0,1,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(3,30,0,0,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(3,26,null,null,'300');
+INSERT INTO StatistiquesJoueurs VALUES(3,27,1,0,'30');
+INSERT INTO StatistiquesJoueurs VALUES(3,28,0,1,'0');
+INSERT INTO StatistiquesJoueurs VALUES(3,29,0,1,'0');
+INSERT INTO StatistiquesJoueurs VALUES(3,30,0,0,'300');
 //--- Equipe 3 (11-15)
-INSERT INTO StatistiquesJoueurs VALUES(3,11,null,null,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(3,12,1,0,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(3,13,1,0,'02:00');
-INSERT INTO StatistiquesJoueurs VALUES(3,14,0,2,'00:00');
-INSERT INTO StatistiquesJoueurs VALUES(3,15,0,1,'00:00');
+INSERT INTO StatistiquesJoueurs VALUES(3,11,null,null,'0');
+INSERT INTO StatistiquesJoueurs VALUES(3,12,1,0,'0');
+INSERT INTO StatistiquesJoueurs VALUES(3,13,1,0,'300');
+INSERT INTO StatistiquesJoueurs VALUES(3,14,0,2,'0');
+INSERT INTO StatistiquesJoueurs VALUES(3,15,0,1,'0');
 //--- Insertion Match 4
 //--- Equipe 5 (21-25) 2 - 5 
-INSERT INTO StatistiquesJoueurs VALUES(4,21,null,null,'02:00');
-INSERT INTO StatistiquesJoueurs VALUES(4,22,1,1,'04:00');
-INSERT INTO StatistiquesJoueurs VALUES(4,23,0,1,'02:00');
-INSERT INTO StatistiquesJoueurs VALUES(4,24,1,0,'02:00');
-INSERT INTO StatistiquesJoueurs VALUES(4,25,0,1,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(4,21,null,null,'120');
+INSERT INTO StatistiquesJoueurs VALUES(4,22,1,1,'300');
+INSERT INTO StatistiquesJoueurs VALUES(4,23,0,1,'120');
+INSERT INTO StatistiquesJoueurs VALUES(4,24,1,0,'120');
+INSERT INTO StatistiquesJoueurs VALUES(4,25,0,1,'120');
 //--- Equipe 4 (16-20)
-INSERT INTO StatistiquesJoueurs VALUES(4,16,null,null,'02:00');
-INSERT INTO StatistiquesJoueurs VALUES(4,17,4,1,'04:00');
-INSERT INTO StatistiquesJoueurs VALUES(4,18,1,1,'02:00');
-INSERT INTO StatistiquesJoueurs VALUES(4,19,0,2,'02:00');
-INSERT INTO StatistiquesJoueurs VALUES(4,20,0,1,'02:00');
+INSERT INTO StatistiquesJoueurs VALUES(4,16,null,null,'120');
+INSERT INTO StatistiquesJoueurs VALUES(4,17,4,1,'300');
+INSERT INTO StatistiquesJoueurs VALUES(4,18,1,1,'120');
+INSERT INTO StatistiquesJoueurs VALUES(4,19,0,2,'120');
+INSERT INTO StatistiquesJoueurs VALUES(4,20,0,1,'120');
 
 commit;
 
@@ -126,9 +126,4 @@ select * from Equipes;
 select * from divisions;
 select * from StatistiquesJoueurs;
 
-drop table statistiquesjoueurs;
-drop table matchs;
-drop table joueurs;
-drop table equipes;
-drop table divisions;
 
