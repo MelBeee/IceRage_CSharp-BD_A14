@@ -84,15 +84,15 @@
             // 
             this.FB_Quitter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FB_Quitter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.BackgroundImage")));
-            this.FB_Quitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Quitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.FB_Quitter.ImageClick = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageClick")));
             this.FB_Quitter.ImageDisable = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageDisable")));
             this.FB_Quitter.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageNeutral")));
             this.FB_Quitter.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageOver")));
             this.FB_Quitter.Location = new System.Drawing.Point(221, 2);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FB_Quitter.Name = "FB_Quitter";
-            this.FB_Quitter.Size = new System.Drawing.Size(20, 21);
+            this.FB_Quitter.Size = new System.Drawing.Size(20, 22);
             this.FB_Quitter.TabIndex = 8;
             this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
