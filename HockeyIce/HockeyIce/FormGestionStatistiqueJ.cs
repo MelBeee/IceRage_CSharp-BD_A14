@@ -23,6 +23,7 @@ namespace HockeyIce
             InitializeComponent();
             oraconnStats = oraconn;
         }
+
         // Load et Closing
         private void FormGestionStatistiqueJ_Load(object sender, EventArgs e)
         {
@@ -31,7 +32,12 @@ namespace HockeyIce
             TT_Punition.SetToolTip(this.TB_Punition, "Le temps en seconde !");
             FB_Ajouter.Enabled = false;
         }
+        private void FormGestionStatistiqueJ_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.PosFormGestStat = this.Location;
+        }
 
+        // Fonctions pour les chiffres seulement
         bool EstChiffre(char c)
         {
             String chiffres = "0123456789";
@@ -42,7 +48,7 @@ namespace HockeyIce
             if (e.KeyChar != BACKSPACE)
                 e.Handled = !EstChiffre(e.KeyChar);
         }
-
+        // Change les boutons
         private void UpdateControl()
         {
             FB_Ajouter.Enabled = (CB_Joueur.Text == "" ||
@@ -52,10 +58,6 @@ namespace HockeyIce
                                   TB_Passes.Text == "") ? false : true;
         }
 
-        private void FormGestionStatistiqueJ_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Properties.Settings.Default.PosFormGestStat = this.Location;
-        }
         // Form movable
         private void FormGestionStatistiqueJ_MouseDown(object sender, MouseEventArgs e)
         {
@@ -98,7 +100,6 @@ namespace HockeyIce
                          "from matchs m " +
                          "inner join equipes ev on ev.numequipe = m.numequipevis " +
                          "inner join equipes em on em.numequipe = m.numequipemai " ; 
-
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql, oraconnStats);
@@ -150,10 +151,6 @@ namespace HockeyIce
             }
         }
 
-        private void FB_Quitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         // Gestion des erreurs
         private void SwitchException(OracleException ex)
@@ -223,20 +220,6 @@ namespace HockeyIce
             RempliComboBoxJoueur();
         }
 
-        private void FB_Fermer_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void FB_Ajouter_Click(object sender, EventArgs e)
-        {
-            if(AjoutStats())
-            {
-                MessageBox.Show("Insertion réussi");
-            }
-            
-        }
-
         private bool AjoutStats()
         {
             bool reussi = true; 
@@ -285,6 +268,7 @@ namespace HockeyIce
         {
             CB_InvisibleJ.SelectedIndex = CB_Joueur.SelectedIndex;
             UpdateControl();
+            UpdateTextBox();
         }
 
         private void CB_Joueur_TextChanged(object sender, EventArgs e)
@@ -293,5 +277,58 @@ namespace HockeyIce
             UpdateControl();
         }
 
+        private void UpdateTextBox()
+        {
+            TB_Buts.Enabled = true;
+            TB_Passes.Enabled = true;
+            TB_Buts.BackColor = SystemColors.Window;
+            TB_Passes.BackColor = SystemColors.Window;
+            string Sql = "select typejoueur from joueurs where numjoueur = " + CB_InvisibleJ.Text;
+            try
+            {
+                OracleCommand orcd = new OracleCommand(Sql, oraconnStats);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                while(oraRead.Read())
+                {
+                    LB_Invisible.Text = oraRead.GetString(0).ToString();
+                }
+
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                SwitchException(ex);
+            }
+
+            if (LB_Invisible.Text == "Gardien")
+            {
+                TB_Buts.Enabled = false;
+                TB_Passes.Enabled = false;
+                TB_Buts.BackColor = Color.FromArgb(95,124,143);
+                TB_Passes.BackColor = Color.FromArgb(95, 124, 143);
+                TB_Buts.Text = null;
+                TB_Passes.Text = null;
+            }
+        }
+
+        // Events de closing
+        private void FB_Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void FB_Fermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void FB_Ajouter_Click(object sender, EventArgs e)
+        {
+            if (AjoutStats())
+            {
+                MessageBox.Show("Insertion réussi");
+            }
+
+        }
     }
 }
