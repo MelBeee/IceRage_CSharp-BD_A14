@@ -25,6 +25,9 @@ namespace HockeyIce
                      "inner join STATISTIQUESJOUEURS s on j.NUMJOUEUR = s.NUMJOUEUR " +
                      "where s.NBREBUTS*2 + s.NBREPASSES  is not null " +
                      "order by Score desc";
+        string SqlEquipe = "select Logo,NumEquipe,Nom,Ville,DateIntroduction " +
+                           "from equipes " +
+                           "where NumDivision = ";
 
         public FormClassement(OracleConnection oraconn)
         {
@@ -59,7 +62,33 @@ namespace HockeyIce
 
         private void InitDivisionEquipe()
         {
+            try
+            {
+                
+               
+                OracleCommand orcd = new OracleCommand(Sql, oraconnClassement);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
 
+                //Joueur #1
+                while (oraRead.Read())
+                {
+
+                    Image Photo = GetImageFromUrl(oraRead.GetString(4));
+                    Photo = resizeImage(Photo, new Size(50, 75));
+                    Image Logo = Image.FromStream(oraRead.GetOracleBlob(5));
+                    Logo = resizeImage(Logo, new Size(50, 45));
+                    //0,1,2,3,4
+                    DGV_Divison.Rows.Add();
+                }
+
+                oraRead.Close();
+
+            }
+            catch (OracleException exsqlajout)
+            {
+                MessageBox.Show(exsqlajout.Message.ToString());
+            }
         }
 
         private void InitListJoueur()
