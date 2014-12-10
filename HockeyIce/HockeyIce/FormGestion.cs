@@ -28,6 +28,13 @@ namespace HockeyIce
         {
             EnabledVisibleLesPanels();
             this.Location = Properties.Settings.Default.PosFormGestion;
+            if (Properties.Settings.Default.ModifierAjouter)  // True = modifier  false = ajouter
+            {
+                LB_Division.Text = "Modifier";
+                LB_Equipe.Text = "Modifier";
+                LB_Joueurs.Text = "Modifier";
+                LB_Match.Text = "Modifier";
+            }
         }
         private void FB_Quitter_Click(object sender, EventArgs e)
         {

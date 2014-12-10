@@ -84,6 +84,11 @@
             this.FB_FermerM = new FlashButton.FlashButton();
             this.FB_Quitter = new FlashButton.FlashButton();
             this.PB_Logo = new System.Windows.Forms.PictureBox();
+            this.LB_Match = new System.Windows.Forms.Label();
+            this.LB_Division = new System.Windows.Forms.Label();
+            this.LB_Equipe = new System.Windows.Forms.Label();
+            this.LB_Joueurs = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.PN_Division.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PN_Equipe.SuspendLayout();
@@ -102,9 +107,10 @@
             this.LB_Text.AutoSize = true;
             this.LB_Text.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Text.ForeColor = System.Drawing.Color.White;
-            this.LB_Text.Location = new System.Drawing.Point(32, 4);
+            this.LB_Text.Location = new System.Drawing.Point(24, 3);
+            this.LB_Text.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Text.Name = "LB_Text";
-            this.LB_Text.Size = new System.Drawing.Size(88, 28);
+            this.LB_Text.Size = new System.Drawing.Size(71, 23);
             this.LB_Text.TabIndex = 4;
             this.LB_Text.Text = "Gestion";
             this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseDown);
@@ -114,6 +120,7 @@
             // PN_Division
             // 
             this.PN_Division.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Division.Controls.Add(this.LB_Division);
             this.PN_Division.Controls.Add(this.FB_DateDivision);
             this.PN_Division.Controls.Add(this.TB_NomDivision);
             this.PN_Division.Controls.Add(this.pictureBox1);
@@ -121,10 +128,9 @@
             this.PN_Division.Controls.Add(this.label4);
             this.PN_Division.Controls.Add(this.label3);
             this.PN_Division.Enabled = false;
-            this.PN_Division.Location = new System.Drawing.Point(841, 32);
-            this.PN_Division.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PN_Division.Location = new System.Drawing.Point(380, 26);
             this.PN_Division.Name = "PN_Division";
-            this.PN_Division.Size = new System.Drawing.Size(835, 443);
+            this.PN_Division.Size = new System.Drawing.Size(360, 360);
             this.PN_Division.TabIndex = 7;
             this.PN_Division.Visible = false;
             // 
@@ -136,30 +142,28 @@
             this.FB_DateDivision.ImageDisable = global::HockeyIce.Properties.Resources.ChoisirDateDisable;
             this.FB_DateDivision.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
             this.FB_DateDivision.ImageOver = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.FB_DateDivision.Location = new System.Drawing.Point(143, 197);
-            this.FB_DateDivision.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_DateDivision.Location = new System.Drawing.Point(148, 160);
+            this.FB_DateDivision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FB_DateDivision.Name = "FB_DateDivision";
-            this.FB_DateDivision.Size = new System.Drawing.Size(135, 23);
+            this.FB_DateDivision.Size = new System.Drawing.Size(101, 19);
             this.FB_DateDivision.TabIndex = 14;
             this.FB_DateDivision.Click += new System.EventHandler(this.BTN_Date_Click);
             // 
             // TB_NomDivision
             // 
-            this.TB_NomDivision.Location = new System.Drawing.Point(143, 165);
-            this.TB_NomDivision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TB_NomDivision.Location = new System.Drawing.Point(148, 134);
             this.TB_NomDivision.Name = "TB_NomDivision";
-            this.TB_NomDivision.Size = new System.Drawing.Size(101, 22);
+            this.TB_NomDivision.Size = new System.Drawing.Size(101, 20);
             this.TB_NomDivision.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::HockeyIce.Properties.Resources.Baton_de_Hockey2;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(582, 62);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.Size = new System.Drawing.Size(316, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
@@ -171,10 +175,10 @@
             this.FB_FermerD.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
             this.FB_FermerD.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerD.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerD.Location = new System.Drawing.Point(693, 415);
-            this.FB_FermerD.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_FermerD.Location = new System.Drawing.Point(196, 320);
+            this.FB_FermerD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FB_FermerD.Name = "FB_FermerD";
-            this.FB_FermerD.Size = new System.Drawing.Size(136, 23);
+            this.FB_FermerD.Size = new System.Drawing.Size(102, 19);
             this.FB_FermerD.TabIndex = 6;
             this.FB_FermerD.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
@@ -182,10 +186,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(69, 201);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(93, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 17);
+            this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Date : ";
             // 
@@ -193,16 +196,16 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(80, 170);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(101, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Nom : ";
             // 
             // PN_Equipe
             // 
             this.PN_Equipe.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Equipe.Controls.Add(this.LB_Equipe);
             this.PN_Equipe.Controls.Add(this.FB_Parcourir);
             this.PN_Equipe.Controls.Add(this.FB_DateEquipe);
             this.PN_Equipe.Controls.Add(this.FB_FermerE);
@@ -216,10 +219,9 @@
             this.PN_Equipe.Controls.Add(this.TB_NomEquipe);
             this.PN_Equipe.Controls.Add(this.pictureBox2);
             this.PN_Equipe.Enabled = false;
-            this.PN_Equipe.Location = new System.Drawing.Point(4, 479);
-            this.PN_Equipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PN_Equipe.Location = new System.Drawing.Point(3, 389);
             this.PN_Equipe.Name = "PN_Equipe";
-            this.PN_Equipe.Size = new System.Drawing.Size(835, 443);
+            this.PN_Equipe.Size = new System.Drawing.Size(626, 360);
             this.PN_Equipe.TabIndex = 8;
             this.PN_Equipe.Visible = false;
             // 
@@ -231,10 +233,10 @@
             this.FB_Parcourir.ImageDisable = global::HockeyIce.Properties.Resources.ParcourirDisable;
             this.FB_Parcourir.ImageNeutral = global::HockeyIce.Properties.Resources.ParcourirNormal;
             this.FB_Parcourir.ImageOver = global::HockeyIce.Properties.Resources.ParcourirHover;
-            this.FB_Parcourir.Location = new System.Drawing.Point(260, 293);
-            this.FB_Parcourir.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Parcourir.Location = new System.Drawing.Point(195, 238);
+            this.FB_Parcourir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FB_Parcourir.Name = "FB_Parcourir";
-            this.FB_Parcourir.Size = new System.Drawing.Size(135, 23);
+            this.FB_Parcourir.Size = new System.Drawing.Size(101, 19);
             this.FB_Parcourir.TabIndex = 29;
             // 
             // FB_DateEquipe
@@ -245,10 +247,10 @@
             this.FB_DateEquipe.ImageDisable = global::HockeyIce.Properties.Resources.ChoisirDateDisable;
             this.FB_DateEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
             this.FB_DateEquipe.ImageOver = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.FB_DateEquipe.Location = new System.Drawing.Point(259, 325);
-            this.FB_DateEquipe.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_DateEquipe.Location = new System.Drawing.Point(194, 264);
+            this.FB_DateEquipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FB_DateEquipe.Name = "FB_DateEquipe";
-            this.FB_DateEquipe.Size = new System.Drawing.Size(135, 23);
+            this.FB_DateEquipe.Size = new System.Drawing.Size(101, 19);
             this.FB_DateEquipe.TabIndex = 28;
             // 
             // FB_FermerE
@@ -259,10 +261,10 @@
             this.FB_FermerE.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
             this.FB_FermerE.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerE.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerE.Location = new System.Drawing.Point(693, 415);
-            this.FB_FermerE.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_FermerE.Location = new System.Drawing.Point(520, 337);
+            this.FB_FermerE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FB_FermerE.Name = "FB_FermerE";
-            this.FB_FermerE.Size = new System.Drawing.Size(136, 23);
+            this.FB_FermerE.Size = new System.Drawing.Size(102, 19);
             this.FB_FermerE.TabIndex = 27;
             this.FB_FermerE.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
@@ -270,20 +272,18 @@
             // 
             this.CB_DivisionEquipe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_DivisionEquipe.FormattingEnabled = true;
-            this.CB_DivisionEquipe.Location = new System.Drawing.Point(259, 357);
-            this.CB_DivisionEquipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CB_DivisionEquipe.Location = new System.Drawing.Point(194, 290);
             this.CB_DivisionEquipe.Name = "CB_DivisionEquipe";
-            this.CB_DivisionEquipe.Size = new System.Drawing.Size(132, 24);
+            this.CB_DivisionEquipe.Size = new System.Drawing.Size(100, 21);
             this.CB_DivisionEquipe.TabIndex = 20;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(93, 229);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(70, 186);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 17);
+            this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 25;
             this.label11.Text = "Nom :";
             // 
@@ -291,10 +291,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(76, 261);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(57, 212);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 17);
+            this.label10.Size = new System.Drawing.Size(63, 13);
             this.label10.TabIndex = 24;
             this.label10.Text = "Ville :";
             // 
@@ -302,10 +301,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(91, 288);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(68, 234);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 17);
+            this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 23;
             this.label9.Text = "Logo :";
             // 
@@ -313,10 +311,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(95, 319);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(71, 259);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 17);
+            this.label8.Size = new System.Drawing.Size(55, 13);
             this.label8.TabIndex = 22;
             this.label8.Text = "Date :";
             // 
@@ -324,35 +321,31 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(76, 348);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(57, 283);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 17);
+            this.label7.Size = new System.Drawing.Size(87, 13);
             this.label7.TabIndex = 21;
             this.label7.Text = "Division :";
             // 
             // TB_LieuxEquipe
             // 
-            this.TB_LieuxEquipe.Location = new System.Drawing.Point(260, 261);
-            this.TB_LieuxEquipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TB_LieuxEquipe.Location = new System.Drawing.Point(195, 212);
             this.TB_LieuxEquipe.Name = "TB_LieuxEquipe";
-            this.TB_LieuxEquipe.Size = new System.Drawing.Size(132, 22);
+            this.TB_LieuxEquipe.Size = new System.Drawing.Size(100, 20);
             this.TB_LieuxEquipe.TabIndex = 18;
             // 
             // TB_NomEquipe
             // 
-            this.TB_NomEquipe.Location = new System.Drawing.Point(260, 229);
-            this.TB_NomEquipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TB_NomEquipe.Location = new System.Drawing.Point(195, 186);
             this.TB_NomEquipe.Name = "TB_NomEquipe";
-            this.TB_NomEquipe.Size = new System.Drawing.Size(132, 22);
+            this.TB_NomEquipe.Size = new System.Drawing.Size(100, 20);
             this.TB_NomEquipe.TabIndex = 16;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = global::HockeyIce.Properties.Resources.ImageGEquipe;
-            this.pictureBox2.Location = new System.Drawing.Point(29, 27);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(22, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(584, 64);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -362,6 +355,7 @@
             // PN_Joueurs
             // 
             this.PN_Joueurs.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Joueurs.Controls.Add(this.LB_Joueurs);
             this.PN_Joueurs.Controls.Add(this.label28);
             this.PN_Joueurs.Controls.Add(this.label27);
             this.PN_Joueurs.Controls.Add(this.label26);
@@ -379,10 +373,9 @@
             this.PN_Joueurs.Controls.Add(this.FB_FermerJ);
             this.PN_Joueurs.Controls.Add(this.pictureBox3);
             this.PN_Joueurs.Enabled = false;
-            this.PN_Joueurs.Location = new System.Drawing.Point(847, 479);
-            this.PN_Joueurs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PN_Joueurs.Location = new System.Drawing.Point(635, 389);
             this.PN_Joueurs.Name = "PN_Joueurs";
-            this.PN_Joueurs.Size = new System.Drawing.Size(835, 443);
+            this.PN_Joueurs.Size = new System.Drawing.Size(626, 360);
             this.PN_Joueurs.TabIndex = 8;
             this.PN_Joueurs.Visible = false;
             this.PN_Joueurs.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_Joueurs_Paint);
@@ -391,10 +384,9 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(44, 348);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Location = new System.Drawing.Point(33, 283);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(108, 17);
+            this.label28.Size = new System.Drawing.Size(87, 13);
             this.label28.TabIndex = 35;
             this.label28.Text = "Position :";
             // 
@@ -402,10 +394,9 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(64, 316);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Location = new System.Drawing.Point(48, 257);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(88, 17);
+            this.label27.Size = new System.Drawing.Size(71, 13);
             this.label27.TabIndex = 34;
             this.label27.Text = "Équipe :";
             // 
@@ -413,10 +404,9 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(24, 251);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Location = new System.Drawing.Point(18, 204);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(128, 17);
+            this.label26.Size = new System.Drawing.Size(103, 13);
             this.label26.TabIndex = 33;
             this.label26.Text = "Lien photo :";
             // 
@@ -424,10 +414,9 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(65, 222);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Location = new System.Drawing.Point(49, 180);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(88, 17);
+            this.label25.Size = new System.Drawing.Size(71, 13);
             this.label25.TabIndex = 30;
             this.label25.Text = "Numero :";
             // 
@@ -435,10 +424,9 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(5, 286);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Location = new System.Drawing.Point(4, 232);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(148, 17);
+            this.label24.Size = new System.Drawing.Size(119, 13);
             this.label24.TabIndex = 32;
             this.label24.Text = "Anniversaire :";
             // 
@@ -446,10 +434,9 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(65, 190);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Location = new System.Drawing.Point(49, 154);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(88, 17);
+            this.label23.Size = new System.Drawing.Size(71, 13);
             this.label23.TabIndex = 31;
             this.label23.Text = "Prenom :";
             this.label23.Click += new System.EventHandler(this.label23_Click);
@@ -458,63 +445,56 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(93, 158);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Location = new System.Drawing.Point(70, 128);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(58, 17);
+            this.label22.Size = new System.Drawing.Size(47, 13);
             this.label22.TabIndex = 30;
             this.label22.Text = "Nom :";
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(161, 249);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Location = new System.Drawing.Point(121, 202);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(133, 22);
+            this.textBox8.Size = new System.Drawing.Size(101, 20);
             this.textBox8.TabIndex = 21;
             // 
             // comboBox3
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(161, 346);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox3.Location = new System.Drawing.Point(121, 281);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(140, 24);
+            this.comboBox3.Size = new System.Drawing.Size(106, 21);
             this.comboBox3.TabIndex = 20;
             // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(161, 313);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Location = new System.Drawing.Point(121, 254);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(140, 24);
+            this.comboBox2.Size = new System.Drawing.Size(106, 21);
             this.comboBox2.TabIndex = 15;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(161, 187);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Location = new System.Drawing.Point(121, 152);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(133, 22);
+            this.textBox7.Size = new System.Drawing.Size(101, 20);
             this.textBox7.TabIndex = 19;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(161, 218);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Location = new System.Drawing.Point(121, 177);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(133, 22);
+            this.textBox6.Size = new System.Drawing.Size(101, 20);
             this.textBox6.TabIndex = 18;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(161, 155);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Location = new System.Drawing.Point(121, 126);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(133, 22);
+            this.textBox5.Size = new System.Drawing.Size(101, 20);
             this.textBox5.TabIndex = 17;
             // 
             // flashButton5
@@ -525,10 +505,10 @@
             this.flashButton5.ImageDisable = global::HockeyIce.Properties.Resources.ChoisirDateDisable;
             this.flashButton5.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
             this.flashButton5.ImageOver = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.flashButton5.Location = new System.Drawing.Point(161, 281);
-            this.flashButton5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flashButton5.Location = new System.Drawing.Point(121, 228);
+            this.flashButton5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flashButton5.Name = "flashButton5";
-            this.flashButton5.Size = new System.Drawing.Size(135, 23);
+            this.flashButton5.Size = new System.Drawing.Size(101, 19);
             this.flashButton5.TabIndex = 16;
             // 
             // FB_FermerJ
@@ -539,10 +519,10 @@
             this.FB_FermerJ.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
             this.FB_FermerJ.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerJ.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerJ.Location = new System.Drawing.Point(693, 415);
-            this.FB_FermerJ.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_FermerJ.Location = new System.Drawing.Point(520, 337);
+            this.FB_FermerJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FB_FermerJ.Name = "FB_FermerJ";
-            this.FB_FermerJ.Size = new System.Drawing.Size(136, 23);
+            this.FB_FermerJ.Size = new System.Drawing.Size(102, 19);
             this.FB_FermerJ.TabIndex = 15;
             this.FB_FermerJ.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
@@ -550,8 +530,7 @@
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = global::HockeyIce.Properties.Resources.sl_yog_winter_icehockey;
-            this.pictureBox3.Location = new System.Drawing.Point(27, 34);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(20, 28);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(584, 68);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -561,6 +540,8 @@
             // PN_Matchs
             // 
             this.PN_Matchs.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Matchs.Controls.Add(this.button1);
+            this.PN_Matchs.Controls.Add(this.LB_Match);
             this.PN_Matchs.Controls.Add(this.label21);
             this.PN_Matchs.Controls.Add(this.label20);
             this.PN_Matchs.Controls.Add(this.label19);
@@ -576,10 +557,9 @@
             this.PN_Matchs.Controls.Add(this.pictureBox4);
             this.PN_Matchs.Controls.Add(this.FB_FermerM);
             this.PN_Matchs.Enabled = false;
-            this.PN_Matchs.Location = new System.Drawing.Point(4, 32);
-            this.PN_Matchs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PN_Matchs.Location = new System.Drawing.Point(3, 26);
             this.PN_Matchs.Name = "PN_Matchs";
-            this.PN_Matchs.Size = new System.Drawing.Size(835, 443);
+            this.PN_Matchs.Size = new System.Drawing.Size(360, 360);
             this.PN_Matchs.TabIndex = 9;
             this.PN_Matchs.Visible = false;
             // 
@@ -587,10 +567,9 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(41, 386);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Location = new System.Drawing.Point(29, 269);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(198, 17);
+            this.label21.Size = new System.Drawing.Size(159, 13);
             this.label21.TabIndex = 28;
             this.label21.Text = "Pointage visiteur :";
             // 
@@ -598,10 +577,9 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(63, 356);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(45, 244);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(178, 17);
+            this.label20.Size = new System.Drawing.Size(143, 13);
             this.label20.TabIndex = 27;
             this.label20.Text = "Pointage maison :";
             // 
@@ -609,10 +587,9 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(84, 322);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(61, 217);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(158, 17);
+            this.label19.Size = new System.Drawing.Size(127, 13);
             this.label19.TabIndex = 26;
             this.label19.Text = "Date et Heure :";
             // 
@@ -620,10 +597,9 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(148, 290);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(109, 191);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(98, 17);
+            this.label18.Size = new System.Drawing.Size(79, 13);
             this.label18.TabIndex = 25;
             this.label18.Text = "Endroit :";
             // 
@@ -631,10 +607,9 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(64, 258);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(46, 165);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(178, 17);
+            this.label17.Size = new System.Drawing.Size(143, 13);
             this.label17.TabIndex = 24;
             this.label17.Text = "Équipe visiteur :";
             // 
@@ -642,75 +617,67 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(84, 225);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(61, 138);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(158, 17);
+            this.label6.Size = new System.Drawing.Size(127, 13);
             this.label6.TabIndex = 23;
             this.label6.Text = "Équipe maison :";
             // 
             // DTP_DateMatch
             // 
             this.DTP_DateMatch.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DTP_DateMatch.Location = new System.Drawing.Point(260, 318);
-            this.DTP_DateMatch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DTP_DateMatch.Location = new System.Drawing.Point(193, 213);
             this.DTP_DateMatch.Name = "DTP_DateMatch";
-            this.DTP_DateMatch.Size = new System.Drawing.Size(132, 22);
+            this.DTP_DateMatch.Size = new System.Drawing.Size(103, 20);
             this.DTP_DateMatch.TabIndex = 22;
             // 
             // CB_EVisiteur
             // 
             this.CB_EVisiteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_EVisiteur.FormattingEnabled = true;
-            this.CB_EVisiteur.Location = new System.Drawing.Point(260, 254);
-            this.CB_EVisiteur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CB_EVisiteur.Location = new System.Drawing.Point(193, 161);
             this.CB_EVisiteur.Name = "CB_EVisiteur";
-            this.CB_EVisiteur.Size = new System.Drawing.Size(132, 24);
+            this.CB_EVisiteur.Size = new System.Drawing.Size(103, 21);
             this.CB_EVisiteur.TabIndex = 21;
             // 
             // CB_EMaison
             // 
             this.CB_EMaison.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_EMaison.FormattingEnabled = true;
-            this.CB_EMaison.Location = new System.Drawing.Point(260, 220);
-            this.CB_EMaison.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CB_EMaison.Location = new System.Drawing.Point(193, 134);
             this.CB_EMaison.Name = "CB_EMaison";
-            this.CB_EMaison.Size = new System.Drawing.Size(133, 24);
+            this.CB_EMaison.Size = new System.Drawing.Size(103, 21);
             this.CB_EMaison.TabIndex = 20;
             // 
             // NUD_PMaison
             // 
-            this.NUD_PMaison.Location = new System.Drawing.Point(260, 351);
-            this.NUD_PMaison.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NUD_PMaison.Location = new System.Drawing.Point(193, 240);
             this.NUD_PMaison.Name = "NUD_PMaison";
-            this.NUD_PMaison.Size = new System.Drawing.Size(53, 22);
+            this.NUD_PMaison.Size = new System.Drawing.Size(53, 20);
             this.NUD_PMaison.TabIndex = 19;
             // 
             // NUD_PVisiteur
             // 
-            this.NUD_PVisiteur.Location = new System.Drawing.Point(260, 383);
-            this.NUD_PVisiteur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NUD_PVisiteur.Location = new System.Drawing.Point(193, 266);
             this.NUD_PVisiteur.Name = "NUD_PVisiteur";
-            this.NUD_PVisiteur.Size = new System.Drawing.Size(53, 22);
+            this.NUD_PVisiteur.Size = new System.Drawing.Size(53, 20);
             this.NUD_PVisiteur.TabIndex = 18;
             // 
             // TB_Endroit
             // 
-            this.TB_Endroit.Location = new System.Drawing.Point(260, 286);
-            this.TB_Endroit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TB_Endroit.Location = new System.Drawing.Point(193, 187);
             this.TB_Endroit.Name = "TB_Endroit";
-            this.TB_Endroit.Size = new System.Drawing.Size(133, 22);
+            this.TB_Endroit.Size = new System.Drawing.Size(103, 20);
             this.TB_Endroit.TabIndex = 17;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Image = global::HockeyIce.Properties.Resources.hockey_wallpaper_hd_4_742195;
-            this.pictureBox4.Location = new System.Drawing.Point(29, 26);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(22, 21);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(582, 63);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.Size = new System.Drawing.Size(316, 63);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
             // 
@@ -722,10 +689,10 @@
             this.FB_FermerM.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
             this.FB_FermerM.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerM.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerM.Location = new System.Drawing.Point(693, 415);
-            this.FB_FermerM.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_FermerM.Location = new System.Drawing.Point(165, 320);
+            this.FB_FermerM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FB_FermerM.Name = "FB_FermerM";
-            this.FB_FermerM.Size = new System.Drawing.Size(136, 23);
+            this.FB_FermerM.Size = new System.Drawing.Size(102, 19);
             this.FB_FermerM.TabIndex = 7;
             this.FB_FermerM.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
@@ -738,30 +705,79 @@
             this.FB_Quitter.ImageDisable = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageDisable")));
             this.FB_Quitter.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageNeutral")));
             this.FB_Quitter.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageOver")));
-            this.FB_Quitter.Location = new System.Drawing.Point(812, 4);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Quitter.Location = new System.Drawing.Point(609, 3);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FB_Quitter.Name = "FB_Quitter";
-            this.FB_Quitter.Size = new System.Drawing.Size(27, 26);
+            this.FB_Quitter.Size = new System.Drawing.Size(20, 21);
             this.FB_Quitter.TabIndex = 6;
             this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
             // PB_Logo
             // 
             this.PB_Logo.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
-            this.PB_Logo.Location = new System.Drawing.Point(4, 4);
-            this.PB_Logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PB_Logo.Location = new System.Drawing.Point(3, 3);
+            this.PB_Logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PB_Logo.Name = "PB_Logo";
-            this.PB_Logo.Size = new System.Drawing.Size(29, 26);
+            this.PB_Logo.Size = new System.Drawing.Size(22, 21);
             this.PB_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_Logo.TabIndex = 5;
             this.PB_Logo.TabStop = false;
             // 
+            // LB_Match
+            // 
+            this.LB_Match.AutoSize = true;
+            this.LB_Match.Font = new System.Drawing.Font("Kristen ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Match.Location = new System.Drawing.Point(129, 96);
+            this.LB_Match.Name = "LB_Match";
+            this.LB_Match.Size = new System.Drawing.Size(87, 27);
+            this.LB_Match.TabIndex = 29;
+            this.LB_Match.Text = "Ajouter";
+            // 
+            // LB_Division
+            // 
+            this.LB_Division.AutoSize = true;
+            this.LB_Division.Font = new System.Drawing.Font("Kristen ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Division.Location = new System.Drawing.Point(142, 96);
+            this.LB_Division.Name = "LB_Division";
+            this.LB_Division.Size = new System.Drawing.Size(87, 27);
+            this.LB_Division.TabIndex = 30;
+            this.LB_Division.Text = "Ajouter";
+            // 
+            // LB_Equipe
+            // 
+            this.LB_Equipe.AutoSize = true;
+            this.LB_Equipe.Font = new System.Drawing.Font("Kristen ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Equipe.Location = new System.Drawing.Point(180, 121);
+            this.LB_Equipe.Name = "LB_Equipe";
+            this.LB_Equipe.Size = new System.Drawing.Size(87, 27);
+            this.LB_Equipe.TabIndex = 30;
+            this.LB_Equipe.Text = "Ajouter";
+            // 
+            // LB_Joueurs
+            // 
+            this.LB_Joueurs.AutoSize = true;
+            this.LB_Joueurs.Font = new System.Drawing.Font("Kristen ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Joueurs.Location = new System.Drawing.Point(287, 154);
+            this.LB_Joueurs.Name = "LB_Joueurs";
+            this.LB_Joueurs.Size = new System.Drawing.Size(87, 27);
+            this.LB_Joueurs.TabIndex = 36;
+            this.LB_Joueurs.Text = "Ajouter";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(82, 317);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Appliquer";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormGestion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(1699, 912);
+            this.ClientSize = new System.Drawing.Size(1215, 741);
             this.Controls.Add(this.PN_Equipe);
             this.Controls.Add(this.PN_Division);
             this.Controls.Add(this.PN_Joueurs);
@@ -770,7 +786,6 @@
             this.Controls.Add(this.PB_Logo);
             this.Controls.Add(this.LB_Text);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormGestion";
             this.Text = "FormGestion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormGestion_FormClosing);
@@ -855,5 +870,10 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label LB_Division;
+        private System.Windows.Forms.Label LB_Equipe;
+        private System.Windows.Forms.Label LB_Joueurs;
+        private System.Windows.Forms.Label LB_Match;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -48,14 +48,26 @@ namespace HockeyIce
             if (e.KeyChar != BACKSPACE)
                 e.Handled = !EstChiffre(e.KeyChar);
         }
+
         // Change les boutons
         private void UpdateControl()
         {
-            FB_Ajouter.Enabled = (CB_Joueur.Text == "" ||
-                                  CB_Match.Text == "" ||
-                                  TB_Punition.Text == "" ||
-                                  TB_Buts.Text == "" ||
-                                  TB_Passes.Text == "") ? false : true;
+            if(LB_Invisible.Text == "Gardien")
+            {
+                FB_Ajouter.Enabled = (CB_Joueur.Text == "" ||
+                                      CB_Match.Text == "" ||
+                                      TB_Punition.Text == "" ||
+                                      TB_Buts.Enabled       ||
+                                      TB_Passes.Enabled) ? false : true;
+            }
+            else
+            {
+                FB_Ajouter.Enabled = (CB_Joueur.Text == "" ||
+                      CB_Match.Text == "" ||
+                      TB_Punition.Text == "" ||
+                      TB_Buts.Text == "" ||
+                      TB_Passes.Text == "") ? false : true;
+            }
         }
 
         // Form movable

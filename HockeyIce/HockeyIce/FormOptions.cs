@@ -23,6 +23,8 @@ namespace HockeyIce
             InitializeComponent();
             oraconnGestion = oraconn;
         }
+
+        // Form loading et closing
         private void FormOptions_Load(object sender, EventArgs e)
         {
             this.Location = Properties.Settings.Default.PosFormOptions;
@@ -30,84 +32,9 @@ namespace HockeyIce
             FB_Annuler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             FB_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
         }
-
-        private void SwitchCommandeComboBox()
+        private void FormOptions_FormClosing(object sender, FormClosingEventArgs e)
         {
-            switch (Properties.Settings.Default.FenetreAOuvrir)
-            {
-                case "Équipes":
-                    sqlcommande = "select numequipe, nom from equipes";
-                    nomtable = "equipes";
-                    primarykey = "numequipe";
-                    LB_Text.Text = "Équipes";
-                    break;
-                case "Joueurs":
-                    sqlcommande = "select numjoueur, prenom, nom from joueurs";
-                    nomtable = "joueurs";
-                    primarykey = "numjoueur";
-                    LB_Text.Text = "Joueurs";
-                    break;
-                case "Division":
-                    sqlcommande = "select numdivision, nom from divisions";
-                    nomtable = "divisions";
-                    primarykey = "numdivision";
-                    LB_Text.Text = "Divisions";
-                    break;
-                case "Matchs":
-                    sqlcommande = "select m.nummatch, ev.nom, em.nom from matchs m " +
-                                  "inner join equipes ev on ev.numequipe = m.numequipevis " +
-                                  "inner join equipes em on em.numequipe = m.numequipemai ";
-                    nomtable = "matchs";
-                    primarykey = "nummatch";
-                    LB_Text.Text = "Matchs";
-                    break;
-            }
-            RemplirComboBox();
-        }
-
-        private void RemplirComboBox()
-        {
-            try
-            {
-                OracleCommand orcd = new OracleCommand(sqlcommande, oraconnGestion);
-                orcd.CommandType = CommandType.Text;
-                OracleDataReader oraRead = orcd.ExecuteReader();
-
-                while (oraRead.Read())
-                {
-                    CB_Invisible.Items.Add(oraRead.GetInt32(0).ToString());
-                    switch (Properties.Settings.Default.FenetreAOuvrir)
-                    {
-                        case "Équipes":
-                            CB_Value.Items.Add(oraRead.GetString(1).ToString());
-                            break;
-                        case "Joueurs":
-                            CB_Value.Items.Add(oraRead.GetString(1).ToString() + " " + oraRead.GetString(2).ToString());
-                            break;
-                        case "Division":
-                            CB_Value.Items.Add(oraRead.GetString(1).ToString());
-                            break;
-                        case "Matchs":
-                            CB_Value.Items.Add(oraRead.GetString(1).ToString() + " vs " + oraRead.GetString(2).ToString());
-                            break;
-                    }
-                }
-                oraRead.Close();
-            }
-            catch (OracleException ex)
-            {
-                SwitchException(ex);
-            }
-        }
-
-        private void FB_Quitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void FB_Annuler_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            Properties.Settings.Default.PosFormOptions = this.Location;
         }
 
         // Events pour pouvoir faire bouger le form 
@@ -145,6 +72,7 @@ namespace HockeyIce
         {
             _dragging = false;
         }
+
         // Execption
         private void SwitchException(OracleException ex)
         {
@@ -205,12 +133,117 @@ namespace HockeyIce
             }
         }
 
-        private void FB_Ok_Click(object sender, EventArgs e)
+        // Fonctions Ajout/Remplissage
+        private void SwitchCommandeComboBox()
+        {
+            switch (Properties.Settings.Default.FenetreAOuvrir)
+            {
+                case "Équipes":
+                    sqlcommande = "select numequipe, nom from equipes order by nom";
+                    nomtable = "equipes";
+                    primarykey = "numequipe";
+                    LB_Text.Text = "Équipes";
+                    break;
+                case "Joueurs":
+                    sqlcommande = "select numjoueur, prenom, nom from joueurs order by prenom";
+                    nomtable = "joueurs";
+                    primarykey = "numjoueur";
+                    LB_Text.Text = "Joueurs";
+                    break;
+                case "Division":
+                    sqlcommande = "select numdivision, nom from divisions order by nom";
+                    nomtable = "divisions";
+                    primarykey = "numdivision";
+                    LB_Text.Text = "Divisions";
+                    break;
+                case "Matchs":
+                    sqlcommande = "select m.nummatch, ev.nom, em.nom from matchs m " +
+                                  "inner join equipes ev on ev.numequipe = m.numequipevis " +
+                                  "inner join equipes em on em.numequipe = m.numequipemai " + " order by ev.nom ";
+                    nomtable = "matchs";
+                    primarykey = "nummatch";
+                    LB_Text.Text = "Matchs";
+                    break;
+            }
+            RemplirComboBox();
+        }
+        private void RemplirComboBox()
+        {
+            try
+            {
+                OracleCommand orcd = new OracleCommand(sqlcommande, oraconnGestion);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                while (oraRead.Read())
+                {
+                    CB_Invisible.Items.Add(oraRead.GetInt32(0).ToString());
+                    switch (Properties.Settings.Default.FenetreAOuvrir)
+                    {
+                        case "Équipes":
+                            CB_Value.Items.Add(oraRead.GetString(1).ToString());
+                            break;
+                        case "Joueurs":
+                            CB_Value.Items.Add(oraRead.GetString(1).ToString() + " " + oraRead.GetString(2).ToString());
+                            break;
+                        case "Division":
+                            CB_Value.Items.Add(oraRead.GetString(1).ToString());
+                            break;
+                        case "Matchs":
+                            CB_Value.Items.Add(oraRead.GetString(1).ToString() + " vs " + oraRead.GetString(2).ToString());
+                            break;
+                    }
+                }
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                SwitchException(ex);
+            }
+        }
+        private bool DeleteThing()
+        {
+            bool reussi = true;
+            OracleCommand orcd = new OracleCommand(sqlcommande, oraconnGestion);
+            try
+            {
+                orcd.CommandType = CommandType.Text;
+                orcd.ExecuteNonQuery();
+            }
+            catch (OracleException ex)
+            {
+                SwitchException(ex);
+                reussi = false;
+            }
+            return reussi;
+        }
+        private void AfficherGestion()
+        {
+            FormGestion dlg = new FormGestion(oraconnGestion);
+
+            dlg.ShowDialog();
+        }
+        private void UpdateControl()
+        {
+            FB_Ok.Enabled = false;
+            if (RB_Ajouter.Checked)
+            {
+                FB_Ok.Enabled = true;
+            }
+            else if (RB_Modifier.Checked || RB_Supprimer.Checked)
+            {
+                if (CB_Value.Text != "")
+                {
+                    FB_Ok.Enabled = true;
+                }
+            }
+        }
+        private void VerifierRadioButton()
         {
             if (RB_Supprimer.Checked)
             {
                 sqlcommande = "delete from " + nomtable + " where " + primarykey + " = " + CB_Invisible.Text;
-                if(DeleteThing())
+                if (DeleteThing())
                 {
                     MessageBox.Show("Suppression réussi");
                 }
@@ -236,82 +269,45 @@ namespace HockeyIce
             }
         }
 
-        private bool DeleteThing()
+        private void FB_Ok_Click(object sender, EventArgs e)
         {
-            bool reussi = true; 
-            OracleCommand orcd = new OracleCommand(sqlcommande, oraconnGestion);
-            try
-            {
-                orcd.CommandType = CommandType.Text;
-                orcd.ExecuteNonQuery();
-            }
-            catch (OracleException ex)
-            {
-                SwitchException(ex);
-                reussi = false;
-            }
-            return reussi;
+            VerifierRadioButton();
         }
-
-        private void AfficherGestion()
-        {
-            FormGestion dlg = new FormGestion(oraconnGestion);
-
-            dlg.ShowDialog();
-        }
-
         private void CB_Value_TextChanged(object sender, EventArgs e)
         {
             CB_Invisible.SelectedIndex = CB_Value.SelectedIndex;
             UpdateControl();
         }
-
         private void CB_Value_SelectedIndexChanged(object sender, EventArgs e)
         {
             CB_Invisible.SelectedIndex = CB_Value.SelectedIndex;
             UpdateControl();
         }
-
         private void RB_Ajouter_CheckedChanged(object sender, EventArgs e)
         {
             CB_Value.Enabled = false;
             CB_Value.Visible = false;
             UpdateControl();
         }
-
         private void RB_Modifier_CheckedChanged(object sender, EventArgs e)
         {
             CB_Value.Enabled = true;
             CB_Value.Visible = true;
             UpdateControl();
         }
-
         private void RB_Supprimer_CheckedChanged(object sender, EventArgs e)
         {
             CB_Value.Enabled = true;
             CB_Value.Visible = true;
             UpdateControl();
         }
-
-        private void UpdateControl()
+        private void FB_Quitter_Click(object sender, EventArgs e)
         {
-            FB_Ok.Enabled = false;
-            if (RB_Ajouter.Checked)
-            {
-                FB_Ok.Enabled = true; 
-            }
-            else if(RB_Modifier.Checked || RB_Supprimer.Checked)
-            {
-                if (CB_Value.Text != "")
-                {
-                    FB_Ok.Enabled = true;
-                }
-            }
+            this.Close();
         }
-
-        private void FormOptions_FormClosing(object sender, FormClosingEventArgs e)
+        private void FB_Annuler_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.PosFormOptions = this.Location;
+            this.Close();
         }
     }
 }
