@@ -217,6 +217,7 @@ namespace HockeyIce
                 CB_Invisible.Items.Clear();
                 CB_Value.Items.Clear();
                 SwitchCommandeComboBox();
+                this.Close();
             }
             else if (RB_Modifier.Checked)
             {
