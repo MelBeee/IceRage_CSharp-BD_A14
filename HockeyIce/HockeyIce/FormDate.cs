@@ -33,8 +33,7 @@ namespace HockeyIce
 
         private void FormDate_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.PosFormDate = this.Location;
-            Properties.Settings.Default.Save();
+
         }
 
         // Events pour pouvoir faire bouger le form 
@@ -73,15 +72,16 @@ namespace HockeyIce
             _dragging = false; 
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            Properties.Settings.Default.DateChoisi = MC_Date.SelectionRange.Start;
-            Properties.Settings.Default.Save();
-        }
-
         private void FB_Fermer_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FB_Appliquer_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.DateChoisi = MC_Date.SelectionRange.Start;
+            Properties.Settings.Default.Save();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

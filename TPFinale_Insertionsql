@@ -1,5 +1,8 @@
 INSERT INTO Divisions VALUES(1, 'Est','01-01-14');
 INSERT INTO Divisions VALUES(1, 'Ouest','01-01-14');
+
+INSERT INTO Divisions VALUES(1, 'Nord','01-01-2014');
+
       /*Blob initialisé a null*/
 INSERT INTO Equipes VALUES(1, 'Canadiens',  '',     'Montreal', 1,'01-01-14');
 INSERT INTO equipes VALUES(1, 'Maple Leaf', '',     'Toronto',  1,'01-01-14');

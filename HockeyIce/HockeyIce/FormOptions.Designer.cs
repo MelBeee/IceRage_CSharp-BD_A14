@@ -87,11 +87,10 @@
             // 
             this.CB_Invisible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_Invisible.FormattingEnabled = true;
-            this.CB_Invisible.Location = new System.Drawing.Point(144, 36);
+            this.CB_Invisible.Location = new System.Drawing.Point(64, 49);
             this.CB_Invisible.Name = "CB_Invisible";
             this.CB_Invisible.Size = new System.Drawing.Size(133, 21);
             this.CB_Invisible.TabIndex = 3;
-            this.CB_Invisible.Visible = false;
             // 
             // CB_Value
             // 
@@ -115,7 +114,7 @@
             this.panel1.Controls.Add(this.RB_Ajouter);
             this.panel1.Controls.Add(this.RB_Supprimer);
             this.panel1.Controls.Add(this.RB_Modifier);
-            this.panel1.Location = new System.Drawing.Point(3, 26);
+            this.panel1.Location = new System.Drawing.Point(3, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(403, 102);
             this.panel1.TabIndex = 5;
@@ -123,7 +122,7 @@
             // FB_Ok
             // 
             this.FB_Ok.BackgroundImage = global::HockeyIce.Properties.Resources.ContinuerNormal;
-            this.FB_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FB_Ok.ImageClick = global::HockeyIce.Properties.Resources.ContinuerClick;
             this.FB_Ok.ImageDisable = global::HockeyIce.Properties.Resources.ContinuerDisable;
             this.FB_Ok.ImageNeutral = global::HockeyIce.Properties.Resources.ContinuerNormal;
@@ -137,7 +136,7 @@
             // FB_Annuler
             // 
             this.FB_Annuler.BackgroundImage = global::HockeyIce.Properties.Resources.AnnulerNormal;
-            this.FB_Annuler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Annuler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FB_Annuler.ImageClick = global::HockeyIce.Properties.Resources.AnnulerClick;
             this.FB_Annuler.ImageDisable = global::HockeyIce.Properties.Resources.AnnulerDisable;
             this.FB_Annuler.ImageNeutral = global::HockeyIce.Properties.Resources.AnnulerNormal;
@@ -183,7 +182,7 @@
             this.FB_Quitter.ImageDisable = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageDisable")));
             this.FB_Quitter.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageNeutral")));
             this.FB_Quitter.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageOver")));
-            this.FB_Quitter.Location = new System.Drawing.Point(386, 2);
+            this.FB_Quitter.Location = new System.Drawing.Point(385, 2);
             this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Quitter.Name = "FB_Quitter";
             this.FB_Quitter.Size = new System.Drawing.Size(20, 21);
@@ -195,7 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(410, 131);
+            this.ClientSize = new System.Drawing.Size(409, 130);
             this.Controls.Add(this.FB_Quitter);
             this.Controls.Add(this.PB_Logo);
             this.Controls.Add(this.LB_Text);
