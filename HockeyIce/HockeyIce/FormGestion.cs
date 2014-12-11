@@ -107,68 +107,70 @@ namespace HockeyIce
             }
         }
 
-        // MATCHS
-        private void AjoutMatch()
+        // MATCHS (RESTE JUSTE A GERER LES HEURES ET LA DATE)
+        private void ExecuteCommandeMatch()
         {
-            commandesql = "insert into matchs values(1," + CB_EVisiteur.Text
-                                                        + ", " + CB_EMaison.Text
-                                                        + ", '" + DTP_DateMatch.Text
-                                                        + "', '" + TB_Endroit
-                                                        + "', " + NUD_PMaison.Value
-                                                        + ", " + NUD_PVisiteur.Value + ")";
             try
             {
-                // la requête SQLajout est paramétrée. Elle a 4 paramètres.
-                //les paramètres pour Oracle et C # sont précédés de deux points : 
-                string sqlajout = " insert into matchs " +
-                "(NUMMATCH, NUMEQUIPEVIS, NUMEQUIPEMAI, DATEHEURE, LIEU, POINTAGEMAISON, POINTAGEVISITEUR) values " +
-                "(:NumMatch,:NumEquipeVis,:NumEquipeMai,:DateHeure,:Lieu,:PointageMaison, :PointageVisiteur)";
-                // On déclare les paramètres pour chaque paramètre de la requête
-                OracleParameter oraNum = new OracleParameter(":NumMatch", OracleDbType.Int32);
-                OracleParameter oraNumVis = new OracleParameter(":NumEquipeVis", OracleDbType.Int32);
-                OracleParameter oraNumMai = new OracleParameter(":NumEquipeMai", OracleDbType.Int32);
-                OracleParameter oraDate = new OracleParameter(":DateHeure", OracleDbType.Date);
-                OracleParameter oraLieu = new OracleParameter(":Lieu", OracleDbType.Varchar2, 30);
-                OracleParameter oraPointMai = new OracleParameter(":PointageMaison", OracleDbType.Int32);
-                OracleParameter oraPointVis = new OracleParameter(":PointageVisiteur)", OracleDbType.Int32);
                 // on affecte les valeurs aux paramètres.
-                oraNum.Value = 1;
-                oraNumVis.Value = CB_Invisible.Text;
-                oraNumMai.Value = CB_Invisible2.Text;
-                oraDate.Value = DTP_DateMatch.Value;
-                oraLieu.Value = TB_Endroit.Text;
-                oraPointMai.Value = NUD_PMaison.Value;
-                oraPointVis.Value = NUD_PVisiteur.Value;
+                OracleParameter oranummatch = new OracleParameter(":NumMatch", OracleDbType.Int32);
+                OracleParameter oranumevis = new OracleParameter(":NumEquipeVis", OracleDbType.Int32);
+                OracleParameter oranumemai = new OracleParameter(":NumEquipeMai", OracleDbType.Int32);
+                OracleParameter oradate = new OracleParameter(":DateHeure", OracleDbType.Date);
+                OracleParameter oralieu = new OracleParameter(":Lieu", OracleDbType.Varchar2, 20);
+                OracleParameter orapointmai = new OracleParameter(":PointageMaison", OracleDbType.Int32);
+                OracleParameter orapointvis = new OracleParameter(":PointageVisiteur", OracleDbType.Int32);
+                // lalblablabla
+                OracleCommand oraModif = new OracleCommand(commandesql, oraconnGestion);
+                oraModif.CommandType = CommandType.Text;
 
-                // En crée un Objet OracleCommand pour passer la requête à la bD 
-                OracleCommand oraAjout = new OracleCommand(sqlajout, oraconnGestion);
-                oraAjout.CommandType = CommandType.Text;
-                // En utilisant la propriété Paramètres de OracleCommand, on spécifie les 
-                // Paramètre de la requête SQLajout.
-
-                oraAjout.Parameters.Add(oraNum);
-                oraAjout.Parameters.Add(oraNumVis);
-                oraAjout.Parameters.Add(oraNumMai);
-                oraAjout.Parameters.Add(oraDate);
-                oraAjout.Parameters.Add(oraLieu);
-                oraAjout.Parameters.Add(oraPointMai);
-                oraAjout.Parameters.Add(oraPointVis);
-                // on execute la requete 
-                oraAjout.ExecuteNonQuery();
-                MessageBox.Show("Insertion reussi");
+                oranummatch.Value = Properties.Settings.Default.NumValue;
+                oranumevis.Value = Int32.Parse(CB_Invisible.Text);
+                oranumemai.Value = Int32.Parse(CB_Invisible2.Text);
+                oradate.Value = DTP_DateMatch.Value;
+                oralieu.Value = TB_Endroit.Text;
+                orapointmai.Value = NUD_PMaison.Value;
+                orapointvis.Value = NUD_PVisiteur.Value;
+                // En utilisant la propriété Paramètres de OracleCommand, on spécifie les paramètres de la requête SQL.
+                oraModif.Parameters.Add(oranummatch);
+                oraModif.Parameters.Add(oranumevis);
+                oraModif.Parameters.Add(oranumemai);
+                oraModif.Parameters.Add(oradate);
+                oraModif.Parameters.Add(oralieu);
+                oraModif.Parameters.Add(orapointmai);
+                oraModif.Parameters.Add(orapointvis);
+                // on exécute la requête
+                oraModif.ExecuteNonQuery();
+                // on appelle la fonction dissocier pour pouvoir insérer une deuxième fois.
+                MessageBox.Show("Application reussie");
             }
-            catch (OracleException ex)
+            catch (Exception exsqlModif)
             {
-                SwitchException(ex);
+                MessageBox.Show(exsqlModif.Message.ToString());
             }
+        }
+        private void AjoutMatch()
+        {
+            commandesql = " insert into matchs " +
+            "(NUMMATCH, NUMEQUIPEVIS, NUMEQUIPEMAI, DATEHEURE, LIEU, POINTAGEMAISON, POINTAGEVISITEUR) values " +
+            "(:NumMatch,:NumEquipeVis,:NumEquipeMai,:DateHeure,:Lieu,:PointageMaison, :PointageVisiteur)";
+            ExecuteCommandeMatch();
         }
         private void ModifierMatch()
         {
-
+            commandesql = "update matchs set nummatch = :NumMatch," +
+                                        " numequipevis = :NumEquipeVis, " +
+                                        " numequipemai = :NumEquipeMai, " +
+                                        " dateheure = :DateHeure," +
+                                        " lieu = :Lieu, " +
+                                        " pointagemaison = :PointageMaison, " +
+                                        " pointagevisiteur = :PointageVisiteur " +
+                                        " where nummatch = " + Properties.Settings.Default.NumValue;
+            ExecuteCommandeMatch();
         }
         private void LoadInfoMatch()
         {
-            commandesql = "select ev.nom, em.nom, dateheure, lieu, pointagemaison, pointagevisiteur " +
+            commandesql = "select ev.nom, em.nom, dateheure, lieu, pointagemaison, pointagevisiteur, numequipevis, numequipemai " +
                            "from matchs m " +
                            "inner join EQUIPES ev on ev.NUMEQUIPE = m.NUMEQUIPEVIS " +
                            "inner join EQUIPES em on em.NUMEQUIPE = m.NUMEQUIPEMAI " +
@@ -185,6 +187,8 @@ namespace HockeyIce
             TB_Endroit.Text = oraRead.GetString(3);
             NUD_PMaison.Value = oraRead.GetInt32(4);
             NUD_PVisiteur.Value = oraRead.GetInt32(5);
+            CB_Invisible.Text = oraRead.GetInt32(6).ToString();
+            CB_Invisible2.Text = oraRead.GetInt32(7).ToString();
 
             oraRead.Close();
         }
@@ -438,39 +442,39 @@ namespace HockeyIce
             {
                 case "Équipes":
                     if (!Properties.Settings.Default.ModifierAjouter)
-                        FB_AppliquerEquipe.Enabled = (  TB_NomEquipe.Text == "" || 
-                                                        TB_LieuxEquipe.Text == "" || 
-                                                        CB_DivisionEquipe.Text == "" || 
+                        FB_AppliquerEquipe.Enabled = (TB_NomEquipe.Text == "" ||
+                                                        TB_LieuxEquipe.Text == "" ||
+                                                        CB_DivisionEquipe.Text == "" ||
                                                         LB_DateEquipe.Text == "Date") ? false : true;
                     else
-                        FB_AppliquerEquipe.Enabled = (  TB_NomEquipe.Text == "" || 
-                                                        TB_LieuxEquipe.Text == "" || 
+                        FB_AppliquerEquipe.Enabled = (TB_NomEquipe.Text == "" ||
+                                                        TB_LieuxEquipe.Text == "" ||
                                                         LB_DateEquipe.Text == "Date") ? false : true;
                     break;
                 case "Joueurs":
                     if (!Properties.Settings.Default.ModifierAjouter)
-                        FB_AppliquerJoueur.Enabled = (  TB_NomJ.Text == "" || 
-                                                        TB_PrenomJ.Text == "" || 
-                                                        TB_NumeroJ.Text == "" || 
-                                                        TB_PhotoJ.Text == "" || 
-                                                        CB_ChoixEquipeJ.Text == "" || 
-                                                        CB_PositionJ.Text == "" || 
+                        FB_AppliquerJoueur.Enabled = (TB_NomJ.Text == "" ||
+                                                        TB_PrenomJ.Text == "" ||
+                                                        TB_NumeroJ.Text == "" ||
+                                                        TB_PhotoJ.Text == "" ||
+                                                        CB_ChoixEquipeJ.Text == "" ||
+                                                        CB_PositionJ.Text == "" ||
                                                         LB_DateJ.Text == "Date") ? false : true;
                     else
-                        FB_AppliquerJoueur.Enabled = (  TB_NomJ.Text == "" || 
-                                                        TB_PrenomJ.Text == "" || 
-                                                        TB_NumeroJ.Text == "" || 
-                                                        TB_PhotoJ.Text == "" || 
+                        FB_AppliquerJoueur.Enabled = (TB_NomJ.Text == "" ||
+                                                        TB_PrenomJ.Text == "" ||
+                                                        TB_NumeroJ.Text == "" ||
+                                                        TB_PhotoJ.Text == "" ||
                                                         LB_DateJ.Text == "Date") ? false : true;
                     break;
                 case "Division":
-                    FB_AppliquerDivision.Enabled = (TB_NomDivision.Text == "" || 
+                    FB_AppliquerDivision.Enabled = (TB_NomDivision.Text == "" ||
                                                     LB_DateDivision.Text == "Date") ? false : true;
                     break;
                 case "Matchs":
                     if (!Properties.Settings.Default.ModifierAjouter)
-                        FB_AppliquerMatch.Enabled = (   CB_EMaison.Text == "" || 
-                                                        CB_EVisiteur.Text == "" || 
+                        FB_AppliquerMatch.Enabled = (CB_EMaison.Text == "" ||
+                                                        CB_EVisiteur.Text == "" ||
                                                         TB_Endroit.Text == "") ? false : true;
                     else
                         FB_AppliquerMatch.Enabled = (TB_Endroit.Text == "") ? false : true;

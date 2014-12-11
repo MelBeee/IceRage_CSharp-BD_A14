@@ -73,7 +73,7 @@
             this.TB_PrenomJ = new System.Windows.Forms.TextBox();
             this.TB_NumeroJ = new System.Windows.Forms.TextBox();
             this.TB_NomJ = new System.Windows.Forms.TextBox();
-            this.flashButton5 = new FlashButton.FlashButton();
+            this.FB_NaissanceJ = new FlashButton.FlashButton();
             this.FB_FermerJ = new FlashButton.FlashButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PN_Matchs = new System.Windows.Forms.Panel();
@@ -462,7 +462,7 @@
             this.PN_Joueurs.Controls.Add(this.TB_PrenomJ);
             this.PN_Joueurs.Controls.Add(this.TB_NumeroJ);
             this.PN_Joueurs.Controls.Add(this.TB_NomJ);
-            this.PN_Joueurs.Controls.Add(this.flashButton5);
+            this.PN_Joueurs.Controls.Add(this.FB_NaissanceJ);
             this.PN_Joueurs.Controls.Add(this.FB_FermerJ);
             this.PN_Joueurs.Controls.Add(this.pictureBox3);
             this.PN_Joueurs.Enabled = false;
@@ -634,20 +634,20 @@
             this.TB_NomJ.TabIndex = 17;
             this.TB_NomJ.TextChanged += new System.EventHandler(this.TB_TextChanged);
             // 
-            // flashButton5
+            // FB_NaissanceJ
             // 
-            this.flashButton5.BackgroundImage = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.flashButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton5.ImageClick = global::HockeyIce.Properties.Resources.ChoisirDateClick;
-            this.flashButton5.ImageDisable = global::HockeyIce.Properties.Resources.ChoisirDateDisable;
-            this.flashButton5.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.flashButton5.ImageOver = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.flashButton5.Location = new System.Drawing.Point(164, 228);
-            this.flashButton5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.flashButton5.Name = "flashButton5";
-            this.flashButton5.Size = new System.Drawing.Size(101, 19);
-            this.flashButton5.TabIndex = 16;
-            this.flashButton5.Click += new System.EventHandler(this.BTN_Date_Click);
+            this.FB_NaissanceJ.BackgroundImage = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
+            this.FB_NaissanceJ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_NaissanceJ.ImageClick = global::HockeyIce.Properties.Resources.ChoisirDateClick;
+            this.FB_NaissanceJ.ImageDisable = global::HockeyIce.Properties.Resources.ChoisirDateDisable;
+            this.FB_NaissanceJ.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
+            this.FB_NaissanceJ.ImageOver = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
+            this.FB_NaissanceJ.Location = new System.Drawing.Point(164, 228);
+            this.FB_NaissanceJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_NaissanceJ.Name = "FB_NaissanceJ";
+            this.FB_NaissanceJ.Size = new System.Drawing.Size(101, 19);
+            this.FB_NaissanceJ.TabIndex = 16;
+            this.FB_NaissanceJ.Click += new System.EventHandler(this.BTN_Date_Click);
             // 
             // FB_FermerJ
             // 
@@ -866,9 +866,8 @@
             // 
             // CB_Invisible
             // 
-            this.CB_Invisible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_Invisible.FormattingEnabled = true;
-            this.CB_Invisible.Location = new System.Drawing.Point(120, 67);
+            this.CB_Invisible.Location = new System.Drawing.Point(215, 76);
             this.CB_Invisible.Name = "CB_Invisible";
             this.CB_Invisible.Size = new System.Drawing.Size(121, 21);
             this.CB_Invisible.TabIndex = 10;
@@ -997,7 +996,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox3;
         private FlashButton.FlashButton FB_DateDivision;
-        private FlashButton.FlashButton flashButton5;
+        private FlashButton.FlashButton FB_NaissanceJ;
         private FlashButton.FlashButton FB_DateEquipe;
         private FlashButton.FlashButton FB_FermerE;
         private FlashButton.FlashButton FB_FermerJ;
