@@ -230,10 +230,10 @@
             this.FB_FermerD.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
             this.FB_FermerD.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerD.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerD.Location = new System.Drawing.Point(182, 320);
+            this.FB_FermerD.Location = new System.Drawing.Point(182, 318);
             this.FB_FermerD.Margin = new System.Windows.Forms.Padding(4);
             this.FB_FermerD.Name = "FB_FermerD";
-            this.FB_FermerD.Size = new System.Drawing.Size(102, 19);
+            this.FB_FermerD.Size = new System.Drawing.Size(102, 20);
             this.FB_FermerD.TabIndex = 6;
             this.FB_FermerD.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
@@ -359,7 +359,7 @@
             this.FB_FermerE.Location = new System.Drawing.Point(182, 308);
             this.FB_FermerE.Margin = new System.Windows.Forms.Padding(4);
             this.FB_FermerE.Name = "FB_FermerE";
-            this.FB_FermerE.Size = new System.Drawing.Size(102, 19);
+            this.FB_FermerE.Size = new System.Drawing.Size(102, 20);
             this.FB_FermerE.TabIndex = 27;
             this.FB_FermerE.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
@@ -964,7 +964,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(245, 149);
+            this.pictureBox5.Location = new System.Drawing.Point(246, 149);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(92, 117);
             this.pictureBox5.TabIndex = 40;

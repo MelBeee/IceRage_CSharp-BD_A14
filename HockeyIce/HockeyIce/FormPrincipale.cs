@@ -15,10 +15,11 @@ using Oracle.DataAccess.Client;
 //      label1.Text = (Int32.Parse(TB_ChiffreUn.Text) + Int32.Parse(TB_Chiffre2.Text)).ToString(); 
 
 /*  Erreurs à gérer
-        00947
-        00936
-        00904
-        00933
+ * 00947
+ * 00936
+ * 00904
+ * 00933
+ * 01036
  */
 
 namespace HockeyIce

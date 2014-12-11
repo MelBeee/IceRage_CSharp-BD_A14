@@ -23,6 +23,7 @@ namespace HockeyIce
         private Point basePanel = new Point(3, 27);
         public OracleConnection oraconnGestion = new OracleConnection();
         string commandesql;
+        int base_ = 1;
 
         public FormGestion(OracleConnection oraconn)
         {
@@ -167,9 +168,9 @@ namespace HockeyIce
                 // on appelle la fonction dissocier pour pouvoir insérer une deuxième fois.
                 MessageBox.Show("Application reussie");
             }
-            catch (Exception exsqlModif)
+            catch (OracleException ex)
             {
-                MessageBox.Show(exsqlModif.Message.ToString());
+                SwitchException(ex);
             }
         }
         private void AjoutMatch()
@@ -177,6 +178,7 @@ namespace HockeyIce
             commandesql = " insert into matchs " +
             "(NUMMATCH, NUMEQUIPEVIS, NUMEQUIPEMAI, DATEHEURE, LIEU, POINTAGEMAISON, POINTAGEVISITEUR) values " +
             "(:NumMatch,:NumEquipeVis,:NumEquipeMai,:DateHeure,:Lieu,:PointageMaison, :PointageVisiteur)";
+            Properties.Settings.Default.NumValue = base_.ToString();
             ExecuteCommandeMatch();
         }
         private void ModifierMatch()
@@ -235,10 +237,10 @@ namespace HockeyIce
             LB_EVisiteur.Visible = true;
             LB_EVisiteur.Text = equipe;
         }
-
         // EQUIPES
         private void AjoutEquipe()
         {
+            Properties.Settings.Default.NumValue = base_.ToString();
             try
             {
                 // la requête SQLajout est paramétrée. Elle a 4 paramètres.
@@ -289,7 +291,7 @@ namespace HockeyIce
         }
         private void LoadInfoEquipe()
         {
-            commandesql = "select e.*, d.nom from equipes e "+
+            commandesql = "select e.*, d.nom from equipes e " +
                           "inner join divisions d on d.numdivision = e.numdivision " +
                           "where numequipe = " + Properties.Settings.Default.NumValue;
 
@@ -317,26 +319,21 @@ namespace HockeyIce
             }
         }
         // DIVISIONS
-        private void AjoutDivision()
+        private void ExecuteCommandeDivision()
         {
             try
             {
-                // la requête SQLajout est paramétrée. Elle a 4 paramètres.
-                //les paramètres pour Oracle et C # sont précédés de deux points : 
-                string sqlajout = " insert into divisions " +
-                "(NUMDIVISION, NOM, DATECREATION) values " +
-                "(:NumDivision,:Nom,:DateValue)";
                 // On déclare les paramètres pour chaque paramètre de la requête
                 OracleParameter oraNum = new OracleParameter(":NumDivision", OracleDbType.Int32);
                 OracleParameter oraNom = new OracleParameter(":Nom", OracleDbType.Varchar2, 50);
                 OracleParameter oraDate = new OracleParameter(":DateValue", OracleDbType.Date);
                 // on affecte les valeurs aux paramètres.
-                oraNum.Value = 1;
+                oraNum.Value = Properties.Settings.Default.NumValue;
                 oraNom.Value = TB_NomDivision.Text;
                 oraDate.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
 
                 // En crée un Objet OracleCommand pour passer la requête à la bD 
-                OracleCommand oraAjout = new OracleCommand(sqlajout, oraconnGestion);
+                OracleCommand oraAjout = new OracleCommand(commandesql, oraconnGestion);
                 oraAjout.CommandType = CommandType.Text;
                 // En utilisant la propriété Paramètres de OracleCommand, on spécifie les 
                 // Paramètre de la requête SQLajout.
@@ -346,31 +343,57 @@ namespace HockeyIce
                 oraAjout.Parameters.Add(oraDate);
                 // on execute la requete 
                 oraAjout.ExecuteNonQuery();
-                MessageBox.Show("Insertion reussi");
+                MessageBox.Show("Application reussie");
+
             }
             catch (OracleException ex)
             {
                 SwitchException(ex);
             }
         }
+        private void AjoutDivision()
+        {
+            commandesql = " insert into divisions " +
+                          "(NUMDIVISION, NOM, DATECREATION) values " +
+                          "(:NumDivision,:Nom,:DateValue)";
+            Properties.Settings.Default.NumValue = base_.ToString();
+            ExecuteCommandeDivision();
+        }
         private void ModifierDivision()
         {
-            commandesql = "";
+            commandesql = "update divisions set " +
+                          "numdivision = :NumDivision, "+
+                          "NOM = :Nom, " +
+                          "DATECREATION = :DateValue " +
+                          "where numdivision = " + Properties.Settings.Default.NumValue;
+            ExecuteCommandeDivision();
         }
         private void LoadInfoDivision()
         {
+            commandesql = "select * from divisions where numdivision = " + Properties.Settings.Default.NumValue;
 
+            try
+            {
+                OracleCommand orcd = new OracleCommand(commandesql, oraconnGestion);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                oraRead.Read();
+                TB_NomDivision.Text = oraRead.GetString(1);
+                LB_DateDivision.Text = oraRead.GetDateTime(2).ToString();
+
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                SwitchException(ex);
+            }
         }
         // JOUEURS
-        private void AjoutJoueur()
+        private void ExecuteCommandeJoueur()
         {
             try
             {
-                // la requête SQLajout est paramétrée. Elle a 4 paramètres.
-                //les paramètres pour Oracle et C # sont précédés de deux points : 
-                string sqlajout = " insert into joueurs " +
-                "(NUMJOUEUR, NOM, PRENOM, NAISSANCE, NUMEROMAILLOT, TYPEJOUEUR, PHOTO, NUMEQUIPE) values " +
-                "(:NumJoueur, :Nom, :Prenom, :Naissance, :NumMaillot, :TypeJoueur, :Photo, :NumEquipe)";
                 // On déclare les paramètres pour chaque paramètre de la requête
                 OracleParameter oraNum = new OracleParameter(":NumJoueur", OracleDbType.Int32);
                 OracleParameter oraNom = new OracleParameter(":Nom", OracleDbType.Varchar2, 20);
@@ -381,7 +404,7 @@ namespace HockeyIce
                 OracleParameter oraPhoto = new OracleParameter(":Photo", OracleDbType.Varchar2, 100);
                 OracleParameter oraNumEquipe = new OracleParameter(":NumEquipe", OracleDbType.Int32);
                 // on affecte les valeurs aux paramètres.
-                oraNum.Value = 1;
+                oraNum.Value = Properties.Settings.Default.NumValue;
                 oraNom.Value = TB_NomJ.Text;
                 oraPrenom.Value = TB_PrenomJ.Text;
                 oraNaissance.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
@@ -391,7 +414,7 @@ namespace HockeyIce
                 oraNumEquipe.Value = CB_Invisible.Text;
 
                 // En crée un Objet OracleCommand pour passer la requête à la bD 
-                OracleCommand oraAjout = new OracleCommand(sqlajout, oraconnGestion);
+                OracleCommand oraAjout = new OracleCommand(commandesql, oraconnGestion);
                 oraAjout.CommandType = CommandType.Text;
                 // En utilisant la propriété Paramètres de OracleCommand, on spécifie les 
                 // Paramètre de la requête SQLajout.
@@ -406,20 +429,58 @@ namespace HockeyIce
                 oraAjout.Parameters.Add(oraNumEquipe);
                 // on execute la requete 
                 oraAjout.ExecuteNonQuery();
-                MessageBox.Show("Insertion reussi");
+                MessageBox.Show("Application reussie");
             }
             catch (OracleException ex)
             {
                 SwitchException(ex);
             }
         }
+        private void AjoutJoueur()
+        {
+            commandesql = "insert into joueurs " +
+                          "(NUMJOUEUR, NOM, PRENOM, NAISSANCE, NUMEROMAILLOT, TYPEJOUEUR, PHOTO, NUMEQUIPE) values " +
+                          "(:NumJoueur, :Nom, :Prenom, :Naissance, :NumMaillot, :TypeJoueur, :Photo, :NumEquipe)";
+            Properties.Settings.Default.NumValue = base_.ToString();
+
+            ExecuteCommandeJoueur();
+        }
         private void ModifierJoueur()
         {
-            commandesql = "";
+            commandesql = "update joueurs set " +
+                          "NUMJOUEUR = :NumJoueur, " +
+                          "NOM = :Nom, " +
+                          "PRENOM = :Prenom, " +
+                          "NAISSANCE = :Naissance, " +
+                          "NUMEROMAILLOT = :NumMaillot, " +
+                          "TYPEJOUEUR = :TypeJoueur, " +
+                          "PHOTO = :Photo, " +
+                          "NUMEQUIPE = :NumEquipe " +
+                          "where NUMJOUEUR = " + Properties.Settings.Default.NumValue;
+            ExecuteCommandeJoueur();
         }
         private void LoadInfoJoueur()
         {
+            commandesql =   "select * from joueurs where numjoueur = " + Properties.Settings.Default.NumValue;
 
+            try
+            {
+                OracleCommand orcd = new OracleCommand(commandesql, oraconnGestion);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                oraRead.Read();
+                TB_NomJ.Text = oraRead.GetString(1);
+                TB_PrenomJ.Text = oraRead.GetString(2);
+                LB_DateJ.Text = oraRead.GetDateTime(3).ToString();
+                TB_NumeroJ.Text = oraRead.GetInt32(4).ToString();
+
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                SwitchException(ex);
+            }
         }
 
         // Gestion des erreurs
@@ -654,7 +715,7 @@ namespace HockeyIce
             }
             else
             {
-                ModifierMatch();
+                ModifierDivision();
             }
             this.Close();
         }
