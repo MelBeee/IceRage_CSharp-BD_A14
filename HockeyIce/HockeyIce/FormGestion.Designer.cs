@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PN_Equipe = new System.Windows.Forms.Panel();
+            this.PB_LogoE = new System.Windows.Forms.PictureBox();
             this.FB_AppliquerEquipe = new FlashButton.FlashButton();
             this.LB_DateEquipe = new System.Windows.Forms.Label();
             this.LB_Equipe = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             this.TB_NomEquipe = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PN_Joueurs = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.FB_AppliquerJoueur = new FlashButton.FlashButton();
             this.LB_DateJ = new System.Windows.Forms.Label();
             this.LB_Joueurs = new System.Windows.Forms.Label();
@@ -99,23 +101,21 @@
             this.CB_Invisible2 = new System.Windows.Forms.ComboBox();
             this.FB_Quitter = new FlashButton.FlashButton();
             this.PB_Logo = new System.Windows.Forms.PictureBox();
-            this.PB_LogoE = new System.Windows.Forms.PictureBox();
             this.LB_Invisible = new System.Windows.Forms.Label();
             this.CB_InvisibleDiv = new System.Windows.Forms.ComboBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.PN_Division.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PN_Equipe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.PN_Joueurs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.PN_Matchs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PMaison)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Text
@@ -206,10 +206,12 @@
             // TB_NomDivision
             // 
             this.TB_NomDivision.Location = new System.Drawing.Point(168, 131);
+            this.TB_NomDivision.MaxLength = 30;
             this.TB_NomDivision.Name = "TB_NomDivision";
             this.TB_NomDivision.Size = new System.Drawing.Size(101, 20);
             this.TB_NomDivision.TabIndex = 1;
             this.TB_NomDivision.TextChanged += new System.EventHandler(this.TB_TextChanged);
+            this.TB_NomDivision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
             // 
             // pictureBox1
             // 
@@ -282,6 +284,14 @@
             this.PN_Equipe.Size = new System.Drawing.Size(360, 360);
             this.PN_Equipe.TabIndex = 8;
             this.PN_Equipe.Visible = false;
+            // 
+            // PB_LogoE
+            // 
+            this.PB_LogoE.Location = new System.Drawing.Point(253, 153);
+            this.PB_LogoE.Name = "PB_LogoE";
+            this.PB_LogoE.Size = new System.Drawing.Size(84, 79);
+            this.PB_LogoE.TabIndex = 39;
+            this.PB_LogoE.TabStop = false;
             // 
             // FB_AppliquerEquipe
             // 
@@ -426,18 +436,22 @@
             // TB_LieuxEquipe
             // 
             this.TB_LieuxEquipe.Location = new System.Drawing.Point(135, 153);
+            this.TB_LieuxEquipe.MaxLength = 30;
             this.TB_LieuxEquipe.Name = "TB_LieuxEquipe";
             this.TB_LieuxEquipe.Size = new System.Drawing.Size(100, 20);
             this.TB_LieuxEquipe.TabIndex = 18;
             this.TB_LieuxEquipe.TextChanged += new System.EventHandler(this.TB_TextChanged);
+            this.TB_LieuxEquipe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
             // 
             // TB_NomEquipe
             // 
             this.TB_NomEquipe.Location = new System.Drawing.Point(135, 127);
+            this.TB_NomEquipe.MaxLength = 50;
             this.TB_NomEquipe.Name = "TB_NomEquipe";
             this.TB_NomEquipe.Size = new System.Drawing.Size(100, 20);
             this.TB_NomEquipe.TabIndex = 16;
             this.TB_NomEquipe.TextChanged += new System.EventHandler(this.TB_TextChanged);
+            this.TB_NomEquipe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
             // 
             // pictureBox2
             // 
@@ -479,6 +493,14 @@
             this.PN_Joueurs.Size = new System.Drawing.Size(360, 360);
             this.PN_Joueurs.TabIndex = 8;
             this.PN_Joueurs.Visible = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(246, 149);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(92, 117);
+            this.pictureBox5.TabIndex = 40;
+            this.pictureBox5.TabStop = false;
             // 
             // FB_AppliquerJoueur
             // 
@@ -589,6 +611,7 @@
             // TB_PhotoJ
             // 
             this.TB_PhotoJ.Location = new System.Drawing.Point(138, 199);
+            this.TB_PhotoJ.MaxLength = 100;
             this.TB_PhotoJ.Name = "TB_PhotoJ";
             this.TB_PhotoJ.Size = new System.Drawing.Size(101, 20);
             this.TB_PhotoJ.TabIndex = 21;
@@ -621,26 +644,32 @@
             // TB_PrenomJ
             // 
             this.TB_PrenomJ.Location = new System.Drawing.Point(138, 149);
+            this.TB_PrenomJ.MaxLength = 20;
             this.TB_PrenomJ.Name = "TB_PrenomJ";
             this.TB_PrenomJ.Size = new System.Drawing.Size(101, 20);
             this.TB_PrenomJ.TabIndex = 19;
             this.TB_PrenomJ.TextChanged += new System.EventHandler(this.TB_TextChanged);
+            this.TB_PrenomJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
             // 
             // TB_NumeroJ
             // 
             this.TB_NumeroJ.Location = new System.Drawing.Point(138, 174);
+            this.TB_NumeroJ.MaxLength = 2;
             this.TB_NumeroJ.Name = "TB_NumeroJ";
             this.TB_NumeroJ.Size = new System.Drawing.Size(101, 20);
             this.TB_NumeroJ.TabIndex = 18;
             this.TB_NumeroJ.TextChanged += new System.EventHandler(this.TB_TextChanged);
+            this.TB_NumeroJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NumeroJ_KeyPress);
             // 
             // TB_NomJ
             // 
             this.TB_NomJ.Location = new System.Drawing.Point(138, 123);
+            this.TB_NomJ.MaxLength = 20;
             this.TB_NomJ.Name = "TB_NomJ";
             this.TB_NomJ.Size = new System.Drawing.Size(101, 20);
             this.TB_NomJ.TabIndex = 17;
             this.TB_NomJ.TextChanged += new System.EventHandler(this.TB_TextChanged);
+            this.TB_NomJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
             // 
             // FB_NaissanceJ
             // 
@@ -861,10 +890,12 @@
             // TB_Endroit
             // 
             this.TB_Endroit.Location = new System.Drawing.Point(193, 195);
+            this.TB_Endroit.MaxLength = 30;
             this.TB_Endroit.Name = "TB_Endroit";
             this.TB_Endroit.Size = new System.Drawing.Size(103, 20);
             this.TB_Endroit.TabIndex = 17;
             this.TB_Endroit.TextChanged += new System.EventHandler(this.TB_TextChanged);
+            this.TB_Endroit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
             // 
             // pictureBox4
             // 
@@ -918,7 +949,7 @@
             this.FB_Quitter.ImageDisable = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageDisable")));
             this.FB_Quitter.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageNeutral")));
             this.FB_Quitter.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageOver")));
-            this.FB_Quitter.Location = new System.Drawing.Point(343, 3);
+            this.FB_Quitter.Location = new System.Drawing.Point(342, 3);
             this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Quitter.Name = "FB_Quitter";
             this.FB_Quitter.Size = new System.Drawing.Size(20, 21);
@@ -936,14 +967,6 @@
             this.PB_Logo.TabIndex = 5;
             this.PB_Logo.TabStop = false;
             // 
-            // PB_LogoE
-            // 
-            this.PB_LogoE.Location = new System.Drawing.Point(253, 153);
-            this.PB_LogoE.Name = "PB_LogoE";
-            this.PB_LogoE.Size = new System.Drawing.Size(84, 79);
-            this.PB_LogoE.TabIndex = 39;
-            this.PB_LogoE.TabStop = false;
-            // 
             // LB_Invisible
             // 
             this.LB_Invisible.AutoSize = true;
@@ -956,19 +979,11 @@
             // CB_InvisibleDiv
             // 
             this.CB_InvisibleDiv.FormattingEnabled = true;
-            this.CB_InvisibleDiv.Location = new System.Drawing.Point(88, 49);
+            this.CB_InvisibleDiv.Location = new System.Drawing.Point(100, 70);
             this.CB_InvisibleDiv.Name = "CB_InvisibleDiv";
             this.CB_InvisibleDiv.Size = new System.Drawing.Size(121, 21);
             this.CB_InvisibleDiv.TabIndex = 40;
             this.CB_InvisibleDiv.Visible = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Location = new System.Drawing.Point(246, 149);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(92, 117);
-            this.pictureBox5.TabIndex = 40;
-            this.pictureBox5.TabStop = false;
             // 
             // FormGestion
             // 
@@ -976,7 +991,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(748, 741);
-            this.Controls.Add(this.CB_InvisibleDiv);
             this.Controls.Add(this.PN_Equipe);
             this.Controls.Add(this.PN_Division);
             this.Controls.Add(this.PN_Joueurs);
@@ -987,6 +1001,7 @@
             this.Controls.Add(this.CB_Invisible);
             this.Controls.Add(this.CB_Invisible2);
             this.Controls.Add(this.LB_Invisible);
+            this.Controls.Add(this.CB_InvisibleDiv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormGestion";
             this.Text = "FormGestion";
@@ -1000,9 +1015,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PN_Equipe.ResumeLayout(false);
             this.PN_Equipe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.PN_Joueurs.ResumeLayout(false);
             this.PN_Joueurs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.PN_Matchs.ResumeLayout(false);
             this.PN_Matchs.PerformLayout();
@@ -1010,8 +1027,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

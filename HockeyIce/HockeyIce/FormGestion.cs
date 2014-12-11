@@ -59,9 +59,9 @@ namespace HockeyIce
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                LB_DateDivision.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yy");
-                LB_DateEquipe.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yy");
-                LB_DateJ.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yy");
+                LB_DateDivision.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yyyy");
+                LB_DateEquipe.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yyyy");
+                LB_DateJ.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yyyy");
             }
         }
 
@@ -775,7 +775,5 @@ namespace HockeyIce
             if (e.KeyChar != BACKSPACE)
                 e.Handled = !EstAlpha(e.KeyChar);
         }
-
-
     }
 }
