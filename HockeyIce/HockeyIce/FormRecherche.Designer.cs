@@ -247,9 +247,9 @@
             this.LB_But.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_But.Location = new System.Drawing.Point(79, 23);
             this.LB_But.Name = "LB_But";
-            this.LB_But.Size = new System.Drawing.Size(21, 18);
+            this.LB_But.Size = new System.Drawing.Size(16, 18);
             this.LB_But.TabIndex = 11;
-            this.LB_But.Text = "12";
+            this.LB_But.Text = "0";
             // 
             // LB_Punition
             // 
@@ -257,9 +257,9 @@
             this.LB_Punition.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Punition.Location = new System.Drawing.Point(79, 60);
             this.LB_Punition.Name = "LB_Punition";
-            this.LB_Punition.Size = new System.Drawing.Size(89, 18);
+            this.LB_Punition.Size = new System.Drawing.Size(78, 18);
             this.LB_Punition.TabIndex = 13;
-            this.LB_Punition.Text = "324 secondes";
+            this.LB_Punition.Text = "0 secondes";
             // 
             // LB_Passe
             // 
@@ -267,9 +267,9 @@
             this.LB_Passe.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Passe.Location = new System.Drawing.Point(79, 41);
             this.LB_Passe.Name = "LB_Passe";
-            this.LB_Passe.Size = new System.Drawing.Size(20, 18);
+            this.LB_Passe.Size = new System.Drawing.Size(16, 18);
             this.LB_Passe.TabIndex = 12;
-            this.LB_Passe.Text = "14";
+            this.LB_Passe.Text = "0";
             // 
             // csadf56
             // 

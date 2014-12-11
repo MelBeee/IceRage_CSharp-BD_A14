@@ -80,9 +80,7 @@ namespace HockeyIce
 
         private void ChangerLogoEquipe()
         {
-            string commandesql = "select sum(NbreButs), sum(NbrePasses), sum(TO_NUMBER(TempsPunition))"+
-                                 "from StatistiquesJoueurs"+
-                                 "where numjoueur = " + LB_NumJoueur.Text ;
+            string commandesql = "select e.logo from equipes e inner join joueurs j on j.NUMEQUIPE = e.NUMEQUIPE where j.numjoueur = " + LB_NumJoueur.Text;
             try
             {
                 OracleCommand orcd = new OracleCommand(commandesql, oraconnRecherche);
@@ -90,9 +88,8 @@ namespace HockeyIce
                 OracleDataReader oraRead = orcd.ExecuteReader();
 
                 oraRead.Read();
-
-                LB_But.Text = oraRead.GetInt32(0).ToString();
-                LB_Passe.Text = oraRead.GetInt32(1).ToString();
+                PB_Equipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                PB_Equipe.Image = Image.FromStream(oraRead.GetOracleBlob(0));
 
                 oraRead.Close();
             }
@@ -103,7 +100,33 @@ namespace HockeyIce
         }
         private void ChangerStatistiques()
         {
-            string commandesql = "";
+            string commandesql = " select TO_CHAR(sum(NbreButs)), TO_CHAR(sum(NbrePasses)), TO_CHAR(sum(TO_NUMBER(TempsPunition))) " +
+                                  " from StatistiquesJoueurs " +
+                                  " where numjoueur = " + LB_NumJoueur.Text;
+            try
+            {
+                OracleCommand orcd = new OracleCommand(commandesql, oraconnRecherche);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                oraRead.Read();
+
+                if (!oraRead.IsDBNull(0))
+                    LB_But.Text = oraRead.GetString(0);
+                else
+                    LB_But.Text = "0";
+                if (!oraRead.IsDBNull(1))
+                    LB_Passe.Text = oraRead.GetString(1);
+                else
+                    LB_Passe.Text = "0";
+                LB_Punition.Text = oraRead.GetString(2) + " secondes";
+
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                SwitchException(ex);
+            }
         }
 
         private void AffichageJoueur()
@@ -132,6 +155,8 @@ namespace HockeyIce
                     PN_Joueurs.Location = basePanel;
                     LB_Text.Text = "Joueurs";
                     InitJoueur();
+                    ChangerLogoEquipe();
+                    ChangerStatistiques();
                     break;
                 case "Matchs":
                     PN_Matchs.Parent = this;
