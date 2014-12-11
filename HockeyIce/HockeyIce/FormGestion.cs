@@ -44,6 +44,7 @@ namespace HockeyIce
             }
             UpdateControl();
             RemplirComboBoxEquipe();
+            RemplirComboBoxDivision();
         }
         private void FormGestion_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -81,6 +82,28 @@ namespace HockeyIce
                     CB_EMaison.Items.Add(oraRead.GetString(1).ToString());
                 }
 
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                SwitchException(ex);
+            }
+        }
+        private void RemplirComboBoxDivision()
+        {
+            string sqlremplir = "select numdivision, nom from divisions";
+
+            try
+            {
+                OracleCommand orcd = new OracleCommand(sqlremplir, oraconnGestion);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                while (oraRead.Read())
+                {
+                    CB_InvisibleDiv.Items.Add(oraRead.GetInt32(0));
+                    CB_DivisionEquipe.Items.Add(oraRead.GetString(1));
+                }
                 oraRead.Close();
             }
             catch (OracleException ex)
@@ -175,22 +198,28 @@ namespace HockeyIce
                            "inner join EQUIPES ev on ev.NUMEQUIPE = m.NUMEQUIPEVIS " +
                            "inner join EQUIPES em on em.NUMEQUIPE = m.NUMEQUIPEMAI " +
                            "where nummatch = " + Properties.Settings.Default.NumValue;
+            try
+            {
+                OracleCommand orcd = new OracleCommand(commandesql, oraconnGestion);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
 
-            OracleCommand orcd = new OracleCommand(commandesql, oraconnGestion);
-            orcd.CommandType = CommandType.Text;
-            OracleDataReader oraRead = orcd.ExecuteReader();
+                oraRead.Read();
+                SetSelectedIndexVisiteur(oraRead.GetString(0));
+                SetSelectedIndexMaison(oraRead.GetString(1));
+                DTP_DateMatch.Value = oraRead.GetDateTime(2);
+                TB_Endroit.Text = oraRead.GetString(3);
+                NUD_PMaison.Value = oraRead.GetInt32(4);
+                NUD_PVisiteur.Value = oraRead.GetInt32(5);
+                CB_Invisible.Text = oraRead.GetInt32(6).ToString();
+                CB_Invisible2.Text = oraRead.GetInt32(7).ToString();
 
-            oraRead.Read();
-            SetSelectedIndexVisiteur(oraRead.GetString(0));
-            SetSelectedIndexMaison(oraRead.GetString(1));
-            DTP_DateMatch.Value = oraRead.GetDateTime(2);
-            TB_Endroit.Text = oraRead.GetString(3);
-            NUD_PMaison.Value = oraRead.GetInt32(4);
-            NUD_PVisiteur.Value = oraRead.GetInt32(5);
-            CB_Invisible.Text = oraRead.GetInt32(6).ToString();
-            CB_Invisible2.Text = oraRead.GetInt32(7).ToString();
-
-            oraRead.Close();
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                SwitchException(ex);
+            }
         }
         private void SetSelectedIndexMaison(string equipe)
         {
@@ -260,15 +289,32 @@ namespace HockeyIce
         }
         private void LoadInfoEquipe()
         {
-            commandesql = "select * from equipes where numequipe = " + Properties.Settings.Default.NumValue;
+            commandesql = "select e.*, d.nom from equipes e "+
+                          "inner join divisions d on d.numdivision = e.numdivision " +
+                          "where numequipe = " + Properties.Settings.Default.NumValue;
 
-            OracleCommand orcd = new OracleCommand(commandesql, oraconnGestion);
-            orcd.CommandType = CommandType.Text;
-            OracleDataReader oraRead = orcd.ExecuteReader();
+            try
+            {
+                OracleCommand orcd = new OracleCommand(commandesql, oraconnGestion);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
 
-            oraRead.Read();
+                oraRead.Read();
+                TB_NomEquipe.Text = oraRead.GetString(1);
+                PB_LogoE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                PB_LogoE.Image = Image.FromStream(oraRead.GetOracleBlob(2));
+                TB_LieuxEquipe.Text = oraRead.GetString(3);
+                LB_Invisible.Text = oraRead.GetInt32(4).ToString();
+                LB_DateEquipe.Text = oraRead.GetDateTime(5).ToString();
+                CB_DivisionEquipe.DropDownStyle = ComboBoxStyle.DropDown;
+                CB_DivisionEquipe.Text = oraRead.GetString(6).ToString();
 
-
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                SwitchException(ex);
+            }
         }
         // DIVISIONS
         private void AjoutDivision()
@@ -502,6 +548,11 @@ namespace HockeyIce
             UpdateControl();
             CB_Invisible.SelectedIndex = CB_ChoixEquipeJ.SelectedIndex;
         }
+        private void CB_DivisionEquipe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateControl();
+            CB_InvisibleDiv.SelectedIndex = CB_DivisionEquipe.SelectedIndex;
+        }
         // Enabled ou Disable les panels lors du load du form 
         private void EnabledVisibleLesPanels()
         {
@@ -631,5 +682,7 @@ namespace HockeyIce
             }
             this.Close();
         }
+
+
     }
 }
