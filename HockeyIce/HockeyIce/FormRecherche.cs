@@ -17,17 +17,61 @@ namespace HockeyIce
         private Point _start_point = new Point(0, 0);
         private Point basePanel = new Point(3, 36);
         private OracleConnection oraconnRecherche = new OracleConnection();
+        private DataSet monDataSet = new DataSet();
 
         public FormRecherche(OracleConnection oraconn)
         {
             InitializeComponent();
             oraconnRecherche = oraconn;
+            LabelTransparent();
+        }
+
+        private void LabelTransparent()
+        {
+            Point pos = new Point(105, 220);
+            pos = PB_Joueur.PointToClient(pos);
+            LB_Mailot.Parent = PB_Joueur;
+            LB_Mailot.Location = pos;
+            LB_Mailot.BackColor = Color.Transparent;
         }
 
         private void FormRecherche_Load(object sender, EventArgs e)
         {
             this.Location = Properties.Settings.Default.PosFormRecherche;
             EnabledVisibleLesPanels();
+        }
+
+        private void InitJoueur()
+        {
+            try
+            {
+                string sql2 = "select * from joueurs";
+                OracleDataAdapter Adapter2 = new OracleDataAdapter(sql2, oraconnRecherche);
+                if (monDataSet.Tables.Contains("joueurs"))
+                {
+                    monDataSet.Tables["joueurs"].Clear();
+                }
+                Adapter2.Fill(monDataSet, "joueurs");
+                Adapter2.Dispose();
+                // on apelle la fonction lier pour faire
+                // la liaison des données du DataSet avec les zones de text.
+                lier();
+            }
+            catch (OracleException exsql2)
+            {
+                MessageBox.Show(exsql2.Message.ToString());
+            }
+        }
+
+        private void lier()
+        {
+            LB_Nom.DataBindings.Add("text", monDataSet, "joueurs.nom");
+            LB_Prenom.DataBindings.Add("text", monDataSet, "joueurs.prenom");
+            LB_Type.DataBindings.Add("text", monDataSet, "joueurs.typejoueur");
+            LB_Tempo.DataBindings.Add("text", monDataSet, "joueurs.numeromaillot");
+            LB_Mailot.Text = "#" + LB_Tempo.Text;
+            LB_Tempo2.DataBindings.Add("text", monDataSet, "joueur.Naissance").ToString();
+
         }
 
         private void EnabledVisibleLesPanels()
@@ -47,6 +91,7 @@ namespace HockeyIce
                     PN_Joueurs.Enabled = true;
                     PN_Joueurs.Location = basePanel;
                     LB_Text.Text = "Joueurs";
+                    InitJoueur();
                     break;
                 case "Matchs":
                     PN_Matchs.Parent = this;

@@ -491,6 +491,21 @@
   <ItemGroup>
     <None Include="Resources\AppliquerNormal.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Burns.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetourClickDoite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetourDisableDoite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetourHoverDoite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetourNormalDoite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
