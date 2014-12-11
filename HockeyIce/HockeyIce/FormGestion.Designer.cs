@@ -342,6 +342,7 @@
             this.FB_Parcourir.Name = "FB_Parcourir";
             this.FB_Parcourir.Size = new System.Drawing.Size(100, 19);
             this.FB_Parcourir.TabIndex = 29;
+            this.FB_Parcourir.Click += new System.EventHandler(this.FB_Parcourir_Click);
             // 
             // FB_DateEquipe
             // 

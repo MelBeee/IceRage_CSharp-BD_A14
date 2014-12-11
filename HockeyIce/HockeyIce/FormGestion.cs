@@ -18,6 +18,7 @@ namespace HockeyIce
 {
     public partial class FormGestion : Form
     {
+        string nomFichier;
         private bool _dragging = false;
         private Point _start_point = new Point(0, 0);
         private Point basePanel = new Point(3, 27);
@@ -775,5 +776,46 @@ namespace HockeyIce
             if (e.KeyChar != BACKSPACE)
                 e.Handled = !EstAlpha(e.KeyChar);
         }
+
+        private void FB_Parcourir_Click(object sender, EventArgs e)
+        {
+            ParcourirImage();
+            
+        }
+
+        private void ParcourirImage()
+        {
+            nomFichier = RechercherFichier();
+            if (nomFichier != null)
+            {
+
+                PB_LogoE.Image = System.Drawing.Image.FromFile(nomFichier);
+                PB_LogoE.ImageLocation = nomFichier;
+            }
+        }
+
+        private string RechercherFichier()
+        {
+            OpenFileDialog fImage = new OpenFileDialog();
+            fImage.Title = "sélectionner une image";
+            fImage.CheckFileExists = true;
+            fImage.InitialDirectory = @":C\";
+            //fImage.InitialDirectory = Application.StartupPath;
+            fImage.Filter = "Fichiers images (*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG;|All files (*.*)|*.*";
+            fImage.FilterIndex = 1;
+            fImage.RestoreDirectory = true;
+            if (fImage.ShowDialog() == DialogResult.OK)
+            {
+                nomFichier = fImage.FileName;
+                Bitmap bitmap1 = new Bitmap(nomFichier);
+            }
+            else
+            {
+                nomFichier = null;
+            }
+            return nomFichier;
+        }
+
+
     }
 }
