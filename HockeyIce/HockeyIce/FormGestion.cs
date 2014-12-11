@@ -751,17 +751,12 @@ namespace HockeyIce
             this.Close();
         }
 
+        // Verifier les caracteres entré
         bool EstChiffre(char c)
         {
             String chiffres = "0123456789";
             return (chiffres.IndexOf(c.ToString()) != -1);
         }
-        private void TB_NumeroJ_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != BACKSPACE)
-                e.Handled = !EstChiffre(e.KeyChar);
-        }
-
         bool EstAlpha(char c)
         {
             String alpha = "abcdefghijklmnopqrstuvwzyzàâäéèêëìîïòôöùûüç -_";
@@ -770,6 +765,11 @@ namespace HockeyIce
             return (alpha.IndexOf(car) != -1);
         }
 
+        private void TB_NumeroJ_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != BACKSPACE)
+                e.Handled = !EstChiffre(e.KeyChar);
+        }
         private void TB_NomEquipe_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != BACKSPACE)

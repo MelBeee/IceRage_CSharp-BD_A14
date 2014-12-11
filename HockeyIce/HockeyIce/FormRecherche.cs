@@ -58,7 +58,7 @@ namespace HockeyIce
                 Adapter2.Dispose();
                 // on apelle la fonction lier pour faire
                 // la liaison des données du DataSet avec les zones de text.
-                lier();
+                Lier();
                 AffichageJoueur();
             }
             catch (OracleException exsql2)
@@ -67,22 +67,46 @@ namespace HockeyIce
             }
         }
 
-        private void lier()
+        private void Lier()
         {
             LB_Nom.DataBindings.Add("text", monDataSet, "joueurs.nom");
             LB_Prenom.DataBindings.Add("text", monDataSet, "joueurs.prenom");
             LB_Type.DataBindings.Add("text", monDataSet, "joueurs.typejoueur");
-            LB_Tempo.DataBindings.Add("text", monDataSet, "joueurs.numeromaillot");            
-            LB_Tempo2.DataBindings.Add("text", monDataSet, "joueurs.photo");            
+            LB_Tempo.DataBindings.Add("text", monDataSet, "joueurs.numeromaillot");
+            LB_Tempo2.DataBindings.Add("text", monDataSet, "joueurs.photo");
             LB_Tempo3.DataBindings.Add("text", monDataSet, "joueurs.numjoueur");
             DTP_Tempo.DataBindings.Add("text", monDataSet, "joueurs.Naissance");
+        }
+
+        private void ChangerLogoEquipe()
+        {
+            string commandesql = "";
+            try
+            {
+                OracleCommand orcd = new OracleCommand(commandesql, oraconnRecherche);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                oraRead.Read();
+
+
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                SwitchException(ex);
+            }
+        }
+        private void ChangerStatistiques()
+        {
+            string commandesql = "";
         }
 
         private void AffichageJoueur()
         {
             LB_Mailot.Text = "#" + LB_Tempo.Text;
             PB_Joueur.ImageLocation = LB_Tempo2.Text;
-            
+
             LB_DateNais.Text = DTP_Tempo.Text;
         }
 
@@ -135,7 +159,7 @@ namespace HockeyIce
         }
         private void FormRecherche_MouseDown(object sender, MouseEventArgs e)
         {
-            _dragging = true;  
+            _dragging = true;
             _start_point = new Point(e.X, e.Y);
         }
         private void FormRecherche_MouseUp(object sender, MouseEventArgs e)
@@ -173,12 +197,16 @@ namespace HockeyIce
         {
             this.BindingContext[monDataSet, "joueurs"].Position += 1;
             AffichageJoueur();
+            ChangerLogoEquipe();
+            ChangerStatistiques();
         }
 
         private void FB_Back_Click(object sender, EventArgs e)
         {
             this.BindingContext[monDataSet, "joueurs"].Position -= 1;
             AffichageJoueur();
+            ChangerLogoEquipe();
+            ChangerStatistiques();
         }
 
         private void FB_FermerD_Click(object sender, EventArgs e)
