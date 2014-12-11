@@ -479,6 +479,18 @@
   <ItemGroup>
     <None Include="Resources\ParcourirNormal.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppliquerClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppliquerDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppliquerHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppliquerNormal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

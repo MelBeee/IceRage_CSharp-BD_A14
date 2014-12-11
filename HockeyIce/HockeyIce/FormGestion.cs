@@ -36,6 +36,7 @@ namespace HockeyIce
             this.Location = Properties.Settings.Default.PosFormGestion;
             if (Properties.Settings.Default.ModifierAjouter)  // True = modifier  false = ajouter
             {
+                RemplirInformation();
                 LB_Division.Text = "Modifier";
                 LB_Equipe.Text = "Modifier";
                 LB_Joueurs.Text = "Modifier";
@@ -85,6 +86,24 @@ namespace HockeyIce
             catch (OracleException ex)
             {
                 SwitchException(ex);
+            }
+        }
+        private void RemplirInformation()
+        {
+            switch (Properties.Settings.Default.FenetreAOuvrir)
+            {
+                case "Équipes":
+                    LoadInfoEquipe();
+                    break;
+                case "Joueurs":
+                    LoadInfoJoueur();
+                    break;
+                case "Division":
+                    LoadInfoDivision();
+                    break;
+                case "Matchs":
+                    LoadInfoMatch();
+                    break;
             }
         }
         
@@ -145,7 +164,43 @@ namespace HockeyIce
         }
         private void ModifierMatch()
         {
-            commandesql = "";
+
+        }
+        private void LoadInfoMatch()
+        {
+            commandesql = "select ev.nom, em.nom, dateheure, lieu, pointagemaison, pointagevisiteur " +
+                           "from matchs m " +
+                           "inner join EQUIPES ev on ev.NUMEQUIPE = m.NUMEQUIPEVIS " +
+                           "inner join EQUIPES em on em.NUMEQUIPE = m.NUMEQUIPEMAI " +
+                           "where nummatch = " + Properties.Settings.Default.NumValue ;
+
+            OracleCommand orcd = new OracleCommand(commandesql, oraconnGestion);
+            orcd.CommandType = CommandType.Text;
+            OracleDataReader oraRead = orcd.ExecuteReader();
+
+            oraRead.Read();
+            SetSelectedIndexVisiteur(oraRead.GetString(0));
+            SetSelectedIndexMaison(oraRead.GetString(1));
+            DTP_DateMatch.Value = oraRead.GetDateTime(2);
+            TB_Endroit.Text = oraRead.GetString(3);
+            NUD_PMaison.Value = oraRead.GetInt32(4);
+            NUD_PVisiteur.Value = oraRead.GetInt32(5);
+
+            oraRead.Close();
+        }
+        private void SetSelectedIndexMaison(string equipe)
+        {
+            int index = CB_EMaison.FindString(equipe);
+            CB_EMaison.SelectedIndex = index;
+            CB_EMaison.SelectedText = equipe;
+            CB_EMaison.SelectedItem = equipe;
+            CB_EMaison.SelectedValue = equipe;
+            CB_EMaison.Text = equipe;
+        }
+        private void SetSelectedIndexVisiteur(string equipe)
+        {
+            int index = CB_EVisiteur.FindString(equipe);
+            CB_EVisiteur.SelectedIndex = index;
         }
         // EQUIPES
         private void AjoutEquipe()
@@ -198,6 +253,18 @@ namespace HockeyIce
         {
             commandesql = "";
         }
+        private void LoadInfoEquipe()
+        {
+            commandesql = "select * from equipes where numequipe = " + Properties.Settings.Default.NumValue;
+
+            OracleCommand orcd = new OracleCommand(commandesql, oraconnGestion);
+            orcd.CommandType = CommandType.Text;
+            OracleDataReader oraRead = orcd.ExecuteReader();
+
+            oraRead.Read();
+
+
+        }
         // DIVISIONS
         private void AjoutDivision()
         {
@@ -238,6 +305,10 @@ namespace HockeyIce
         private void ModifierDivision()
         {
             commandesql = "";
+        }
+        private void LoadInfoDivision()
+        {
+
         }
         // JOUEURS
         private void AjoutJoueur()
@@ -294,6 +365,10 @@ namespace HockeyIce
         private void ModifierJoueur()
         {
             commandesql = "";
+        }
+        private void LoadInfoJoueur()
+        {
+
         }
 
         // Gestion des erreurs
@@ -492,7 +567,6 @@ namespace HockeyIce
             if (!Properties.Settings.Default.ModifierAjouter)
             {
                 AjoutDivision();
-
             }
             else
             {
@@ -526,9 +600,5 @@ namespace HockeyIce
             }
             this.Close();
         }
-
-
-
-
     }
 }

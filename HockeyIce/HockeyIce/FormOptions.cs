@@ -35,6 +35,7 @@ namespace HockeyIce
         private void FormOptions_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.PosFormOptions = this.Location;
+            Properties.Settings.Default.Save();
         }
 
         // Events pour pouvoir faire bouger le form 
