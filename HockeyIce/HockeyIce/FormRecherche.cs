@@ -82,6 +82,7 @@ namespace HockeyIce
         {
             LB_Mailot.Text = "#" + LB_Tempo.Text;
             PB_Joueur.ImageLocation = LB_Tempo2.Text;
+            
             LB_DateNais.Text = DTP_Tempo.Text;
         }
 
