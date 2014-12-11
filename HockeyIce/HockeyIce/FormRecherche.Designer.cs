@@ -32,31 +32,33 @@
             this.LB_Text = new System.Windows.Forms.Label();
             this.PN_Equipe = new System.Windows.Forms.Panel();
             this.PN_Matchs = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.PN_Joueurs = new System.Windows.Forms.Panel();
+            this.LB_Type = new System.Windows.Forms.Label();
+            this.LB_DateNais = new System.Windows.Forms.Label();
+            this.LB_Prenom = new System.Windows.Forms.Label();
+            this.LB_Nom = new System.Windows.Forms.Label();
+            this.FB_Next = new FlashButton.FlashButton();
+            this.FB_Back = new FlashButton.FlashButton();
+            this.FB_FermerD = new FlashButton.FlashButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LB_But = new System.Windows.Forms.Label();
+            this.LB_Punition = new System.Windows.Forms.Label();
+            this.LB_Passe = new System.Windows.Forms.Label();
             this.csadf56 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.f4g5d = new System.Windows.Forms.Label();
             this.sascfer = new System.Windows.Forms.Label();
-            this.LB_Mailot = new System.Windows.Forms.Label();
-            this.labrlds = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.flashButton1 = new FlashButton.FlashButton();
-            this.FB_FermerD = new FlashButton.FlashButton();
             this.PB_Equipe = new System.Windows.Forms.PictureBox();
+            this.LB_Mailot = new System.Windows.Forms.Label();
             this.PB_Joueur = new System.Windows.Forms.PictureBox();
+            this.labrlds = new System.Windows.Forms.Label();
             this.PB_Logo = new System.Windows.Forms.PictureBox();
             this.FB_Fermer = new FlashButton.FlashButton();
-            this.flashButton2 = new FlashButton.FlashButton();
-            this.LB_Nom = new System.Windows.Forms.Label();
-            this.LB_Prenom = new System.Windows.Forms.Label();
-            this.LB_Type = new System.Windows.Forms.Label();
-            this.LB_DateNais = new System.Windows.Forms.Label();
-            this.LB_But = new System.Windows.Forms.Label();
-            this.LB_Punition = new System.Windows.Forms.Label();
-            this.LB_Passe = new System.Windows.Forms.Label();
             this.LB_Tempo = new System.Windows.Forms.Label();
+            this.DTP_Tempo = new System.Windows.Forms.DateTimePicker();
             this.LB_Tempo2 = new System.Windows.Forms.Label();
+            this.LB_Tempo3 = new System.Windows.Forms.Label();
             this.PN_Equipe.SuspendLayout();
             this.PN_Matchs.SuspendLayout();
             this.PN_Joueurs.SuspendLayout();
@@ -105,17 +107,25 @@
             this.PN_Matchs.TabIndex = 9;
             this.PN_Matchs.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(240, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // PN_Joueurs
             // 
             this.PN_Joueurs.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_Joueurs.Controls.Add(this.LB_Tempo2);
-            this.PN_Joueurs.Controls.Add(this.LB_Tempo);
             this.PN_Joueurs.Controls.Add(this.LB_Type);
             this.PN_Joueurs.Controls.Add(this.LB_DateNais);
             this.PN_Joueurs.Controls.Add(this.LB_Prenom);
             this.PN_Joueurs.Controls.Add(this.LB_Nom);
-            this.PN_Joueurs.Controls.Add(this.flashButton2);
-            this.PN_Joueurs.Controls.Add(this.flashButton1);
+            this.PN_Joueurs.Controls.Add(this.FB_Next);
+            this.PN_Joueurs.Controls.Add(this.FB_Back);
             this.PN_Joueurs.Controls.Add(this.FB_FermerD);
             this.PN_Joueurs.Controls.Add(this.groupBox1);
             this.PN_Joueurs.Controls.Add(this.sascfer);
@@ -130,6 +140,90 @@
             this.PN_Joueurs.Size = new System.Drawing.Size(371, 255);
             this.PN_Joueurs.TabIndex = 9;
             this.PN_Joueurs.Visible = false;
+            // 
+            // LB_Type
+            // 
+            this.LB_Type.AutoSize = true;
+            this.LB_Type.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Type.Location = new System.Drawing.Point(249, 102);
+            this.LB_Type.Name = "LB_Type";
+            this.LB_Type.Size = new System.Drawing.Size(76, 18);
+            this.LB_Type.TabIndex = 17;
+            this.LB_Type.Text = "Attaquant";
+            // 
+            // LB_DateNais
+            // 
+            this.LB_DateNais.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_DateNais.Location = new System.Drawing.Point(249, 79);
+            this.LB_DateNais.Name = "LB_DateNais";
+            this.LB_DateNais.Size = new System.Drawing.Size(111, 18);
+            this.LB_DateNais.TabIndex = 16;
+            this.LB_DateNais.Text = "3 fevrier 1923";
+            // 
+            // LB_Prenom
+            // 
+            this.LB_Prenom.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Prenom.Location = new System.Drawing.Point(244, 13);
+            this.LB_Prenom.Name = "LB_Prenom";
+            this.LB_Prenom.Size = new System.Drawing.Size(116, 18);
+            this.LB_Prenom.TabIndex = 15;
+            this.LB_Prenom.Text = "Jaroslav";
+            // 
+            // LB_Nom
+            // 
+            this.LB_Nom.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Nom.Location = new System.Drawing.Point(244, 35);
+            this.LB_Nom.Name = "LB_Nom";
+            this.LB_Nom.Size = new System.Drawing.Size(116, 18);
+            this.LB_Nom.TabIndex = 14;
+            this.LB_Nom.Text = "Halak";
+            // 
+            // FB_Next
+            // 
+            this.FB_Next.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Next.BackgroundImage = global::HockeyIce.Properties.Resources.RetourNormalDoite;
+            this.FB_Next.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Next.ImageClick = global::HockeyIce.Properties.Resources.RetourClickDoite;
+            this.FB_Next.ImageDisable = global::HockeyIce.Properties.Resources.RetourDisableDoite;
+            this.FB_Next.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormalDoite;
+            this.FB_Next.ImageOver = global::HockeyIce.Properties.Resources.RetourHoverDoite;
+            this.FB_Next.Location = new System.Drawing.Point(85, 226);
+            this.FB_Next.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Next.Name = "FB_Next";
+            this.FB_Next.Size = new System.Drawing.Size(20, 21);
+            this.FB_Next.TabIndex = 13;
+            this.FB_Next.Click += new System.EventHandler(this.FB_Next_Click);
+            // 
+            // FB_Back
+            // 
+            this.FB_Back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Back.BackgroundImage = global::HockeyIce.Properties.Resources.RetourNormal;
+            this.FB_Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Back.ImageClick = global::HockeyIce.Properties.Resources.RetourClick;
+            this.FB_Back.ImageDisable = global::HockeyIce.Properties.Resources.RetourDisable;
+            this.FB_Back.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormal;
+            this.FB_Back.ImageOver = global::HockeyIce.Properties.Resources.RetourHover;
+            this.FB_Back.Location = new System.Drawing.Point(57, 226);
+            this.FB_Back.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Back.Name = "FB_Back";
+            this.FB_Back.Size = new System.Drawing.Size(20, 21);
+            this.FB_Back.TabIndex = 10;
+            this.FB_Back.Click += new System.EventHandler(this.FB_Back_Click);
+            // 
+            // FB_FermerD
+            // 
+            this.FB_FermerD.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_FermerD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_FermerD.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
+            this.FB_FermerD.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
+            this.FB_FermerD.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_FermerD.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
+            this.FB_FermerD.Location = new System.Drawing.Point(258, 227);
+            this.FB_FermerD.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_FermerD.Name = "FB_FermerD";
+            this.FB_FermerD.Size = new System.Drawing.Size(102, 19);
+            this.FB_FermerD.TabIndex = 12;
+            this.FB_FermerD.Click += new System.EventHandler(this.FB_FermerD_Click);
             // 
             // groupBox1
             // 
@@ -146,6 +240,36 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Statistiques";
+            // 
+            // LB_But
+            // 
+            this.LB_But.AutoSize = true;
+            this.LB_But.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_But.Location = new System.Drawing.Point(79, 23);
+            this.LB_But.Name = "LB_But";
+            this.LB_But.Size = new System.Drawing.Size(21, 18);
+            this.LB_But.TabIndex = 11;
+            this.LB_But.Text = "12";
+            // 
+            // LB_Punition
+            // 
+            this.LB_Punition.AutoSize = true;
+            this.LB_Punition.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Punition.Location = new System.Drawing.Point(79, 60);
+            this.LB_Punition.Name = "LB_Punition";
+            this.LB_Punition.Size = new System.Drawing.Size(89, 18);
+            this.LB_Punition.TabIndex = 13;
+            this.LB_Punition.Text = "324 secondes";
+            // 
+            // LB_Passe
+            // 
+            this.LB_Passe.AutoSize = true;
+            this.LB_Passe.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Passe.Location = new System.Drawing.Point(79, 41);
+            this.LB_Passe.Name = "LB_Passe";
+            this.LB_Passe.Size = new System.Drawing.Size(20, 18);
+            this.LB_Passe.TabIndex = 12;
+            this.LB_Passe.Text = "14";
             // 
             // csadf56
             // 
@@ -187,6 +311,16 @@
             this.sascfer.TabIndex = 8;
             this.sascfer.Text = "Position :";
             // 
+            // PB_Equipe
+            // 
+            this.PB_Equipe.Image = global::HockeyIce.Properties.Resources._1280px_Montreal_Canadiens_svg;
+            this.PB_Equipe.Location = new System.Drawing.Point(156, 10);
+            this.PB_Equipe.Name = "PB_Equipe";
+            this.PB_Equipe.Size = new System.Drawing.Size(87, 51);
+            this.PB_Equipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PB_Equipe.TabIndex = 9;
+            this.PB_Equipe.TabStop = false;
+            // 
             // LB_Mailot
             // 
             this.LB_Mailot.AutoSize = true;
@@ -198,6 +332,17 @@
             this.LB_Mailot.TabIndex = 7;
             this.LB_Mailot.Text = "#21";
             // 
+            // PB_Joueur
+            // 
+            this.PB_Joueur.ErrorImage = global::HockeyIce.Properties.Resources.no_photo_available;
+            this.PB_Joueur.Image = global::HockeyIce.Properties.Resources.Burns;
+            this.PB_Joueur.Location = new System.Drawing.Point(10, 10);
+            this.PB_Joueur.Name = "PB_Joueur";
+            this.PB_Joueur.Size = new System.Drawing.Size(140, 210);
+            this.PB_Joueur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PB_Joueur.TabIndex = 1;
+            this.PB_Joueur.TabStop = false;
+            // 
             // labrlds
             // 
             this.labrlds.AutoSize = true;
@@ -207,65 +352,6 @@
             this.labrlds.Size = new System.Drawing.Size(98, 18);
             this.labrlds.TabIndex = 6;
             this.labrlds.Text = "Anniversaire :";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(240, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // flashButton1
-            // 
-            this.flashButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flashButton1.BackgroundImage = global::HockeyIce.Properties.Resources.RetourNormal;
-            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton1.ImageClick = global::HockeyIce.Properties.Resources.RetourClick;
-            this.flashButton1.ImageDisable = global::HockeyIce.Properties.Resources.RetourDisable;
-            this.flashButton1.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormal;
-            this.flashButton1.ImageOver = global::HockeyIce.Properties.Resources.RetourHover;
-            this.flashButton1.Location = new System.Drawing.Point(57, 226);
-            this.flashButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.flashButton1.Name = "flashButton1";
-            this.flashButton1.Size = new System.Drawing.Size(20, 21);
-            this.flashButton1.TabIndex = 10;
-            // 
-            // FB_FermerD
-            // 
-            this.FB_FermerD.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_FermerD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_FermerD.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
-            this.FB_FermerD.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
-            this.FB_FermerD.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_FermerD.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerD.Location = new System.Drawing.Point(258, 227);
-            this.FB_FermerD.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_FermerD.Name = "FB_FermerD";
-            this.FB_FermerD.Size = new System.Drawing.Size(102, 19);
-            this.FB_FermerD.TabIndex = 12;
-            // 
-            // PB_Equipe
-            // 
-            this.PB_Equipe.Image = global::HockeyIce.Properties.Resources._1280px_Montreal_Canadiens_svg;
-            this.PB_Equipe.Location = new System.Drawing.Point(156, 10);
-            this.PB_Equipe.Name = "PB_Equipe";
-            this.PB_Equipe.Size = new System.Drawing.Size(87, 51);
-            this.PB_Equipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PB_Equipe.TabIndex = 9;
-            this.PB_Equipe.TabStop = false;
-            // 
-            // PB_Joueur
-            // 
-            this.PB_Joueur.Image = global::HockeyIce.Properties.Resources.Burns;
-            this.PB_Joueur.Location = new System.Drawing.Point(10, 10);
-            this.PB_Joueur.Name = "PB_Joueur";
-            this.PB_Joueur.Size = new System.Drawing.Size(140, 210);
-            this.PB_Joueur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PB_Joueur.TabIndex = 1;
-            this.PB_Joueur.TabStop = false;
             // 
             // PB_Logo
             // 
@@ -294,106 +380,39 @@
             this.FB_Fermer.TabIndex = 5;
             this.FB_Fermer.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
-            // flashButton2
-            // 
-            this.flashButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flashButton2.BackgroundImage = global::HockeyIce.Properties.Resources.RetourNormalDoite;
-            this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton2.ImageClick = global::HockeyIce.Properties.Resources.RetourClickDoite;
-            this.flashButton2.ImageDisable = global::HockeyIce.Properties.Resources.RetourDisableDoite;
-            this.flashButton2.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormalDoite;
-            this.flashButton2.ImageOver = global::HockeyIce.Properties.Resources.RetourHoverDoite;
-            this.flashButton2.Location = new System.Drawing.Point(85, 226);
-            this.flashButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.flashButton2.Name = "flashButton2";
-            this.flashButton2.Size = new System.Drawing.Size(20, 21);
-            this.flashButton2.TabIndex = 13;
-            // 
-            // LB_Nom
-            // 
-            this.LB_Nom.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Nom.Location = new System.Drawing.Point(244, 35);
-            this.LB_Nom.Name = "LB_Nom";
-            this.LB_Nom.Size = new System.Drawing.Size(116, 18);
-            this.LB_Nom.TabIndex = 14;
-            this.LB_Nom.Text = "Halak";
-            // 
-            // LB_Prenom
-            // 
-            this.LB_Prenom.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Prenom.Location = new System.Drawing.Point(244, 13);
-            this.LB_Prenom.Name = "LB_Prenom";
-            this.LB_Prenom.Size = new System.Drawing.Size(116, 18);
-            this.LB_Prenom.TabIndex = 15;
-            this.LB_Prenom.Text = "Jaroslav";
-            // 
-            // LB_Type
-            // 
-            this.LB_Type.AutoSize = true;
-            this.LB_Type.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Type.Location = new System.Drawing.Point(260, 102);
-            this.LB_Type.Name = "LB_Type";
-            this.LB_Type.Size = new System.Drawing.Size(76, 18);
-            this.LB_Type.TabIndex = 17;
-            this.LB_Type.Text = "Attaquant";
-            // 
-            // LB_DateNais
-            // 
-            this.LB_DateNais.AutoSize = true;
-            this.LB_DateNais.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_DateNais.Location = new System.Drawing.Point(260, 79);
-            this.LB_DateNais.Name = "LB_DateNais";
-            this.LB_DateNais.Size = new System.Drawing.Size(91, 18);
-            this.LB_DateNais.TabIndex = 16;
-            this.LB_DateNais.Text = "3 fevrier 1923";
-            // 
-            // LB_But
-            // 
-            this.LB_But.AutoSize = true;
-            this.LB_But.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_But.Location = new System.Drawing.Point(79, 23);
-            this.LB_But.Name = "LB_But";
-            this.LB_But.Size = new System.Drawing.Size(21, 18);
-            this.LB_But.TabIndex = 11;
-            this.LB_But.Text = "12";
-            // 
-            // LB_Punition
-            // 
-            this.LB_Punition.AutoSize = true;
-            this.LB_Punition.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Punition.Location = new System.Drawing.Point(79, 60);
-            this.LB_Punition.Name = "LB_Punition";
-            this.LB_Punition.Size = new System.Drawing.Size(89, 18);
-            this.LB_Punition.TabIndex = 13;
-            this.LB_Punition.Text = "324 secondes";
-            // 
-            // LB_Passe
-            // 
-            this.LB_Passe.AutoSize = true;
-            this.LB_Passe.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Passe.Location = new System.Drawing.Point(79, 41);
-            this.LB_Passe.Name = "LB_Passe";
-            this.LB_Passe.Size = new System.Drawing.Size(20, 18);
-            this.LB_Passe.TabIndex = 12;
-            this.LB_Passe.Text = "14";
-            // 
             // LB_Tempo
             // 
             this.LB_Tempo.AutoSize = true;
-            this.LB_Tempo.Location = new System.Drawing.Point(260, 120);
+            this.LB_Tempo.Location = new System.Drawing.Point(518, 202);
             this.LB_Tempo.Name = "LB_Tempo";
             this.LB_Tempo.Size = new System.Drawing.Size(35, 13);
             this.LB_Tempo.TabIndex = 18;
             this.LB_Tempo.Text = "label2";
             // 
+            // DTP_Tempo
+            // 
+            this.DTP_Tempo.Location = new System.Drawing.Point(513, 179);
+            this.DTP_Tempo.Name = "DTP_Tempo";
+            this.DTP_Tempo.Size = new System.Drawing.Size(92, 20);
+            this.DTP_Tempo.TabIndex = 19;
+            // 
             // LB_Tempo2
             // 
             this.LB_Tempo2.AutoSize = true;
-            this.LB_Tempo2.Location = new System.Drawing.Point(219, 118);
+            this.LB_Tempo2.Location = new System.Drawing.Point(518, 163);
             this.LB_Tempo2.Name = "LB_Tempo2";
             this.LB_Tempo2.Size = new System.Drawing.Size(35, 13);
-            this.LB_Tempo2.TabIndex = 19;
+            this.LB_Tempo2.TabIndex = 20;
             this.LB_Tempo2.Text = "label2";
+            // 
+            // LB_Tempo3
+            // 
+            this.LB_Tempo3.AutoSize = true;
+            this.LB_Tempo3.Location = new System.Drawing.Point(513, 147);
+            this.LB_Tempo3.Name = "LB_Tempo3";
+            this.LB_Tempo3.Size = new System.Drawing.Size(35, 13);
+            this.LB_Tempo3.TabIndex = 21;
+            this.LB_Tempo3.Text = "label2";
             // 
             // FormRecherche
             // 
@@ -401,8 +420,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(999, 506);
+            this.Controls.Add(this.LB_Tempo3);
             this.Controls.Add(this.PN_Joueurs);
+            this.Controls.Add(this.LB_Tempo2);
+            this.Controls.Add(this.DTP_Tempo);
             this.Controls.Add(this.PN_Equipe);
+            this.Controls.Add(this.LB_Tempo);
             this.Controls.Add(this.PB_Logo);
             this.Controls.Add(this.LB_Text);
             this.Controls.Add(this.FB_Fermer);
@@ -447,9 +470,9 @@
         private System.Windows.Forms.PictureBox PB_Equipe;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private FlashButton.FlashButton flashButton1;
+        private FlashButton.FlashButton FB_Back;
         private FlashButton.FlashButton FB_FermerD;
-        private FlashButton.FlashButton flashButton2;
+        private FlashButton.FlashButton FB_Next;
         private System.Windows.Forms.Label LB_Type;
         private System.Windows.Forms.Label LB_DateNais;
         private System.Windows.Forms.Label LB_Prenom;
@@ -458,6 +481,8 @@
         private System.Windows.Forms.Label LB_Punition;
         private System.Windows.Forms.Label LB_Passe;
         private System.Windows.Forms.Label LB_Tempo;
+        private System.Windows.Forms.DateTimePicker DTP_Tempo;
         private System.Windows.Forms.Label LB_Tempo2;
+        private System.Windows.Forms.Label LB_Tempo3;
     }
 }
