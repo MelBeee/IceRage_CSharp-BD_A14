@@ -77,6 +77,8 @@
             this.FB_FermerJ = new FlashButton.FlashButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PN_Matchs = new System.Windows.Forms.Panel();
+            this.LB_EVisiteur = new System.Windows.Forms.Label();
+            this.LB_EMaison = new System.Windows.Forms.Label();
             this.FB_AppliquerMatch = new FlashButton.FlashButton();
             this.LB_Match = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -97,8 +99,10 @@
             this.CB_Invisible2 = new System.Windows.Forms.ComboBox();
             this.FB_Quitter = new FlashButton.FlashButton();
             this.PB_Logo = new System.Windows.Forms.PictureBox();
-            this.LB_EMaison = new System.Windows.Forms.Label();
-            this.LB_EVisiteur = new System.Windows.Forms.Label();
+            this.PB_LogoE = new System.Windows.Forms.PictureBox();
+            this.LB_Invisible = new System.Windows.Forms.Label();
+            this.CB_InvisibleDiv = new System.Windows.Forms.ComboBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.PN_Division.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PN_Equipe.SuspendLayout();
@@ -110,6 +114,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Text
@@ -191,7 +197,7 @@
             this.FB_DateDivision.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
             this.FB_DateDivision.ImageOver = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
             this.FB_DateDivision.Location = new System.Drawing.Point(168, 158);
-            this.FB_DateDivision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_DateDivision.Margin = new System.Windows.Forms.Padding(4);
             this.FB_DateDivision.Name = "FB_DateDivision";
             this.FB_DateDivision.Size = new System.Drawing.Size(101, 19);
             this.FB_DateDivision.TabIndex = 14;
@@ -225,7 +231,7 @@
             this.FB_FermerD.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerD.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
             this.FB_FermerD.Location = new System.Drawing.Point(182, 320);
-            this.FB_FermerD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_FermerD.Margin = new System.Windows.Forms.Padding(4);
             this.FB_FermerD.Name = "FB_FermerD";
             this.FB_FermerD.Size = new System.Drawing.Size(102, 19);
             this.FB_FermerD.TabIndex = 6;
@@ -254,6 +260,7 @@
             // PN_Equipe
             // 
             this.PN_Equipe.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Equipe.Controls.Add(this.PB_LogoE);
             this.PN_Equipe.Controls.Add(this.FB_AppliquerEquipe);
             this.PN_Equipe.Controls.Add(this.LB_DateEquipe);
             this.PN_Equipe.Controls.Add(this.LB_Equipe);
@@ -270,7 +277,7 @@
             this.PN_Equipe.Controls.Add(this.TB_NomEquipe);
             this.PN_Equipe.Controls.Add(this.pictureBox2);
             this.PN_Equipe.Enabled = false;
-            this.PN_Equipe.Location = new System.Drawing.Point(3, 389);
+            this.PN_Equipe.Location = new System.Drawing.Point(3, 26);
             this.PN_Equipe.Name = "PN_Equipe";
             this.PN_Equipe.Size = new System.Drawing.Size(360, 360);
             this.PN_Equipe.TabIndex = 8;
@@ -294,7 +301,7 @@
             // LB_DateEquipe
             // 
             this.LB_DateEquipe.Font = new System.Drawing.Font("Lucida Console", 9.75F);
-            this.LB_DateEquipe.Location = new System.Drawing.Point(167, 228);
+            this.LB_DateEquipe.Location = new System.Drawing.Point(135, 228);
             this.LB_DateEquipe.Name = "LB_DateEquipe";
             this.LB_DateEquipe.Size = new System.Drawing.Size(100, 16);
             this.LB_DateEquipe.TabIndex = 32;
@@ -320,8 +327,8 @@
             this.FB_Parcourir.ImageDisable = global::HockeyIce.Properties.Resources.ParcourirDisable;
             this.FB_Parcourir.ImageNeutral = global::HockeyIce.Properties.Resources.ParcourirNormal;
             this.FB_Parcourir.ImageOver = global::HockeyIce.Properties.Resources.ParcourirHover;
-            this.FB_Parcourir.Location = new System.Drawing.Point(167, 179);
-            this.FB_Parcourir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_Parcourir.Location = new System.Drawing.Point(135, 179);
+            this.FB_Parcourir.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Parcourir.Name = "FB_Parcourir";
             this.FB_Parcourir.Size = new System.Drawing.Size(100, 19);
             this.FB_Parcourir.TabIndex = 29;
@@ -334,8 +341,8 @@
             this.FB_DateEquipe.ImageDisable = global::HockeyIce.Properties.Resources.ChoisirDateDisable;
             this.FB_DateEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
             this.FB_DateEquipe.ImageOver = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.FB_DateEquipe.Location = new System.Drawing.Point(167, 205);
-            this.FB_DateEquipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_DateEquipe.Location = new System.Drawing.Point(135, 205);
+            this.FB_DateEquipe.Margin = new System.Windows.Forms.Padding(4);
             this.FB_DateEquipe.Name = "FB_DateEquipe";
             this.FB_DateEquipe.Size = new System.Drawing.Size(100, 19);
             this.FB_DateEquipe.TabIndex = 28;
@@ -350,7 +357,7 @@
             this.FB_FermerE.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerE.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
             this.FB_FermerE.Location = new System.Drawing.Point(182, 308);
-            this.FB_FermerE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_FermerE.Margin = new System.Windows.Forms.Padding(4);
             this.FB_FermerE.Name = "FB_FermerE";
             this.FB_FermerE.Size = new System.Drawing.Size(102, 19);
             this.FB_FermerE.TabIndex = 27;
@@ -360,17 +367,17 @@
             // 
             this.CB_DivisionEquipe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_DivisionEquipe.FormattingEnabled = true;
-            this.CB_DivisionEquipe.Location = new System.Drawing.Point(166, 249);
+            this.CB_DivisionEquipe.Location = new System.Drawing.Point(134, 249);
             this.CB_DivisionEquipe.Name = "CB_DivisionEquipe";
             this.CB_DivisionEquipe.Size = new System.Drawing.Size(100, 21);
             this.CB_DivisionEquipe.TabIndex = 20;
-            this.CB_DivisionEquipe.SelectedIndexChanged += new System.EventHandler(this.CB_SelectedIndexChanged);
+            this.CB_DivisionEquipe.SelectedIndexChanged += new System.EventHandler(this.CB_DivisionEquipe_SelectedIndexChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(114, 131);
+            this.label11.Location = new System.Drawing.Point(82, 131);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 25;
@@ -380,7 +387,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(98, 157);
+            this.label10.Location = new System.Drawing.Point(66, 157);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 13);
             this.label10.TabIndex = 24;
@@ -390,7 +397,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(105, 182);
+            this.label9.Location = new System.Drawing.Point(73, 182);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 23;
@@ -400,7 +407,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(56, 207);
+            this.label8.Location = new System.Drawing.Point(24, 207);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 13);
             this.label8.TabIndex = 22;
@@ -410,7 +417,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(72, 253);
+            this.label7.Location = new System.Drawing.Point(40, 253);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 13);
             this.label7.TabIndex = 21;
@@ -418,7 +425,7 @@
             // 
             // TB_LieuxEquipe
             // 
-            this.TB_LieuxEquipe.Location = new System.Drawing.Point(167, 153);
+            this.TB_LieuxEquipe.Location = new System.Drawing.Point(135, 153);
             this.TB_LieuxEquipe.Name = "TB_LieuxEquipe";
             this.TB_LieuxEquipe.Size = new System.Drawing.Size(100, 20);
             this.TB_LieuxEquipe.TabIndex = 18;
@@ -426,7 +433,7 @@
             // 
             // TB_NomEquipe
             // 
-            this.TB_NomEquipe.Location = new System.Drawing.Point(167, 127);
+            this.TB_NomEquipe.Location = new System.Drawing.Point(135, 127);
             this.TB_NomEquipe.Name = "TB_NomEquipe";
             this.TB_NomEquipe.Size = new System.Drawing.Size(100, 20);
             this.TB_NomEquipe.TabIndex = 16;
@@ -446,6 +453,7 @@
             // PN_Joueurs
             // 
             this.PN_Joueurs.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Joueurs.Controls.Add(this.pictureBox5);
             this.PN_Joueurs.Controls.Add(this.FB_AppliquerJoueur);
             this.PN_Joueurs.Controls.Add(this.LB_DateJ);
             this.PN_Joueurs.Controls.Add(this.LB_Joueurs);
@@ -490,7 +498,7 @@
             // LB_DateJ
             // 
             this.LB_DateJ.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_DateJ.Location = new System.Drawing.Point(164, 251);
+            this.LB_DateJ.Location = new System.Drawing.Point(138, 248);
             this.LB_DateJ.Name = "LB_DateJ";
             this.LB_DateJ.Size = new System.Drawing.Size(101, 16);
             this.LB_DateJ.TabIndex = 38;
@@ -512,7 +520,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(70, 302);
+            this.label28.Location = new System.Drawing.Point(44, 299);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(87, 13);
             this.label28.TabIndex = 35;
@@ -522,7 +530,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(87, 275);
+            this.label27.Location = new System.Drawing.Point(61, 272);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(71, 13);
             this.label27.TabIndex = 34;
@@ -532,7 +540,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(55, 206);
+            this.label26.Location = new System.Drawing.Point(29, 203);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(103, 13);
             this.label26.TabIndex = 33;
@@ -542,7 +550,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(87, 181);
+            this.label25.Location = new System.Drawing.Point(61, 178);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(71, 13);
             this.label25.TabIndex = 30;
@@ -552,7 +560,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(38, 231);
+            this.label24.Location = new System.Drawing.Point(12, 228);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(119, 13);
             this.label24.TabIndex = 32;
@@ -562,7 +570,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(87, 156);
+            this.label23.Location = new System.Drawing.Point(61, 153);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(71, 13);
             this.label23.TabIndex = 31;
@@ -572,7 +580,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(111, 130);
+            this.label22.Location = new System.Drawing.Point(85, 127);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(47, 13);
             this.label22.TabIndex = 30;
@@ -580,7 +588,7 @@
             // 
             // TB_PhotoJ
             // 
-            this.TB_PhotoJ.Location = new System.Drawing.Point(164, 202);
+            this.TB_PhotoJ.Location = new System.Drawing.Point(138, 199);
             this.TB_PhotoJ.Name = "TB_PhotoJ";
             this.TB_PhotoJ.Size = new System.Drawing.Size(101, 20);
             this.TB_PhotoJ.TabIndex = 21;
@@ -594,7 +602,7 @@
             "Gardien",
             "Attaquant",
             "Defenseur"});
-            this.CB_PositionJ.Location = new System.Drawing.Point(163, 298);
+            this.CB_PositionJ.Location = new System.Drawing.Point(137, 295);
             this.CB_PositionJ.Name = "CB_PositionJ";
             this.CB_PositionJ.Size = new System.Drawing.Size(102, 21);
             this.CB_PositionJ.TabIndex = 20;
@@ -604,7 +612,7 @@
             // 
             this.CB_ChoixEquipeJ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_ChoixEquipeJ.FormattingEnabled = true;
-            this.CB_ChoixEquipeJ.Location = new System.Drawing.Point(163, 271);
+            this.CB_ChoixEquipeJ.Location = new System.Drawing.Point(137, 268);
             this.CB_ChoixEquipeJ.Name = "CB_ChoixEquipeJ";
             this.CB_ChoixEquipeJ.Size = new System.Drawing.Size(102, 21);
             this.CB_ChoixEquipeJ.TabIndex = 15;
@@ -612,7 +620,7 @@
             // 
             // TB_PrenomJ
             // 
-            this.TB_PrenomJ.Location = new System.Drawing.Point(164, 152);
+            this.TB_PrenomJ.Location = new System.Drawing.Point(138, 149);
             this.TB_PrenomJ.Name = "TB_PrenomJ";
             this.TB_PrenomJ.Size = new System.Drawing.Size(101, 20);
             this.TB_PrenomJ.TabIndex = 19;
@@ -620,7 +628,7 @@
             // 
             // TB_NumeroJ
             // 
-            this.TB_NumeroJ.Location = new System.Drawing.Point(164, 177);
+            this.TB_NumeroJ.Location = new System.Drawing.Point(138, 174);
             this.TB_NumeroJ.Name = "TB_NumeroJ";
             this.TB_NumeroJ.Size = new System.Drawing.Size(101, 20);
             this.TB_NumeroJ.TabIndex = 18;
@@ -628,7 +636,7 @@
             // 
             // TB_NomJ
             // 
-            this.TB_NomJ.Location = new System.Drawing.Point(164, 126);
+            this.TB_NomJ.Location = new System.Drawing.Point(138, 123);
             this.TB_NomJ.Name = "TB_NomJ";
             this.TB_NomJ.Size = new System.Drawing.Size(101, 20);
             this.TB_NomJ.TabIndex = 17;
@@ -642,8 +650,8 @@
             this.FB_NaissanceJ.ImageDisable = global::HockeyIce.Properties.Resources.ChoisirDateDisable;
             this.FB_NaissanceJ.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
             this.FB_NaissanceJ.ImageOver = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.FB_NaissanceJ.Location = new System.Drawing.Point(164, 228);
-            this.FB_NaissanceJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_NaissanceJ.Location = new System.Drawing.Point(138, 225);
+            this.FB_NaissanceJ.Margin = new System.Windows.Forms.Padding(4);
             this.FB_NaissanceJ.Name = "FB_NaissanceJ";
             this.FB_NaissanceJ.Size = new System.Drawing.Size(101, 19);
             this.FB_NaissanceJ.TabIndex = 16;
@@ -658,7 +666,7 @@
             this.FB_FermerJ.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerJ.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
             this.FB_FermerJ.Location = new System.Drawing.Point(182, 330);
-            this.FB_FermerJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_FermerJ.Margin = new System.Windows.Forms.Padding(4);
             this.FB_FermerJ.Name = "FB_FermerJ";
             this.FB_FermerJ.Size = new System.Drawing.Size(102, 19);
             this.FB_FermerJ.TabIndex = 15;
@@ -697,11 +705,31 @@
             this.PN_Matchs.Controls.Add(this.pictureBox4);
             this.PN_Matchs.Controls.Add(this.FB_FermerM);
             this.PN_Matchs.Enabled = false;
-            this.PN_Matchs.Location = new System.Drawing.Point(3, 26);
+            this.PN_Matchs.Location = new System.Drawing.Point(3, 392);
             this.PN_Matchs.Name = "PN_Matchs";
             this.PN_Matchs.Size = new System.Drawing.Size(360, 360);
             this.PN_Matchs.TabIndex = 9;
             this.PN_Matchs.Visible = false;
+            // 
+            // LB_EVisiteur
+            // 
+            this.LB_EVisiteur.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_EVisiteur.Location = new System.Drawing.Point(190, 173);
+            this.LB_EVisiteur.Name = "LB_EVisiteur";
+            this.LB_EVisiteur.Size = new System.Drawing.Size(129, 13);
+            this.LB_EVisiteur.TabIndex = 38;
+            this.LB_EVisiteur.Text = "label2";
+            this.LB_EVisiteur.Visible = false;
+            // 
+            // LB_EMaison
+            // 
+            this.LB_EMaison.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_EMaison.Location = new System.Drawing.Point(190, 146);
+            this.LB_EMaison.Name = "LB_EMaison";
+            this.LB_EMaison.Size = new System.Drawing.Size(126, 13);
+            this.LB_EMaison.TabIndex = 37;
+            this.LB_EMaison.Text = "LB_EMaison";
+            this.LB_EMaison.Visible = false;
             // 
             // FB_AppliquerMatch
             // 
@@ -858,7 +886,7 @@
             this.FB_FermerM.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerM.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
             this.FB_FermerM.Location = new System.Drawing.Point(182, 320);
-            this.FB_FermerM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_FermerM.Margin = new System.Windows.Forms.Padding(4);
             this.FB_FermerM.Name = "FB_FermerM";
             this.FB_FermerM.Size = new System.Drawing.Size(102, 19);
             this.FB_FermerM.TabIndex = 7;
@@ -891,7 +919,7 @@
             this.FB_Quitter.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageNeutral")));
             this.FB_Quitter.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageOver")));
             this.FB_Quitter.Location = new System.Drawing.Point(343, 3);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Quitter.Name = "FB_Quitter";
             this.FB_Quitter.Size = new System.Drawing.Size(20, 21);
             this.FB_Quitter.TabIndex = 6;
@@ -901,32 +929,46 @@
             // 
             this.PB_Logo.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
             this.PB_Logo.Location = new System.Drawing.Point(3, 3);
-            this.PB_Logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PB_Logo.Margin = new System.Windows.Forms.Padding(2);
             this.PB_Logo.Name = "PB_Logo";
             this.PB_Logo.Size = new System.Drawing.Size(22, 21);
             this.PB_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_Logo.TabIndex = 5;
             this.PB_Logo.TabStop = false;
             // 
-            // LB_EMaison
+            // PB_LogoE
             // 
-            this.LB_EMaison.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_EMaison.Location = new System.Drawing.Point(190, 146);
-            this.LB_EMaison.Name = "LB_EMaison";
-            this.LB_EMaison.Size = new System.Drawing.Size(126, 13);
-            this.LB_EMaison.TabIndex = 37;
-            this.LB_EMaison.Text = "LB_EMaison";
-            this.LB_EMaison.Visible = false;
+            this.PB_LogoE.Location = new System.Drawing.Point(253, 153);
+            this.PB_LogoE.Name = "PB_LogoE";
+            this.PB_LogoE.Size = new System.Drawing.Size(84, 79);
+            this.PB_LogoE.TabIndex = 39;
+            this.PB_LogoE.TabStop = false;
             // 
-            // LB_EVisiteur
+            // LB_Invisible
             // 
-            this.LB_EVisiteur.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_EVisiteur.Location = new System.Drawing.Point(190, 173);
-            this.LB_EVisiteur.Name = "LB_EVisiteur";
-            this.LB_EVisiteur.Size = new System.Drawing.Size(129, 13);
-            this.LB_EVisiteur.TabIndex = 38;
-            this.LB_EVisiteur.Text = "label2";
-            this.LB_EVisiteur.Visible = false;
+            this.LB_Invisible.AutoSize = true;
+            this.LB_Invisible.Location = new System.Drawing.Point(264, 75);
+            this.LB_Invisible.Name = "LB_Invisible";
+            this.LB_Invisible.Size = new System.Drawing.Size(35, 13);
+            this.LB_Invisible.TabIndex = 39;
+            this.LB_Invisible.Text = "label1";
+            // 
+            // CB_InvisibleDiv
+            // 
+            this.CB_InvisibleDiv.FormattingEnabled = true;
+            this.CB_InvisibleDiv.Location = new System.Drawing.Point(88, 49);
+            this.CB_InvisibleDiv.Name = "CB_InvisibleDiv";
+            this.CB_InvisibleDiv.Size = new System.Drawing.Size(121, 21);
+            this.CB_InvisibleDiv.TabIndex = 40;
+            this.CB_InvisibleDiv.Visible = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(245, 149);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(92, 117);
+            this.pictureBox5.TabIndex = 40;
+            this.pictureBox5.TabStop = false;
             // 
             // FormGestion
             // 
@@ -934,6 +976,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(748, 741);
+            this.Controls.Add(this.CB_InvisibleDiv);
             this.Controls.Add(this.PN_Equipe);
             this.Controls.Add(this.PN_Division);
             this.Controls.Add(this.PN_Joueurs);
@@ -943,6 +986,7 @@
             this.Controls.Add(this.LB_Text);
             this.Controls.Add(this.CB_Invisible);
             this.Controls.Add(this.CB_Invisible2);
+            this.Controls.Add(this.LB_Invisible);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormGestion";
             this.Text = "FormGestion";
@@ -966,6 +1010,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1043,5 +1089,9 @@
         private FlashButton.FlashButton FB_AppliquerMatch;
         private System.Windows.Forms.Label LB_EVisiteur;
         private System.Windows.Forms.Label LB_EMaison;
+        private System.Windows.Forms.PictureBox PB_LogoE;
+        private System.Windows.Forms.Label LB_Invisible;
+        private System.Windows.Forms.ComboBox CB_InvisibleDiv;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
