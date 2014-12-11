@@ -96,6 +96,7 @@
             this.FB_Quitter = new FlashButton.FlashButton();
             this.PB_Logo = new System.Windows.Forms.PictureBox();
             this.CB_Invisible = new System.Windows.Forms.ComboBox();
+            this.CB_Invisible2 = new System.Windows.Forms.ComboBox();
             this.PN_Division.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PN_Equipe.SuspendLayout();
@@ -285,6 +286,7 @@
             this.FB_AppliquerEquipe.Name = "FB_AppliquerEquipe";
             this.FB_AppliquerEquipe.Size = new System.Drawing.Size(102, 19);
             this.FB_AppliquerEquipe.TabIndex = 33;
+            this.FB_AppliquerEquipe.Click += new System.EventHandler(this.FB_AppliquerEquipe_Click);
             // 
             // LB_DateEquipe
             // 
@@ -491,6 +493,7 @@
             this.FB_AppliquerJoueur.Name = "FB_AppliquerJoueur";
             this.FB_AppliquerJoueur.Size = new System.Drawing.Size(102, 19);
             this.FB_AppliquerJoueur.TabIndex = 37;
+            this.FB_AppliquerJoueur.Click += new System.EventHandler(this.FB_AppliquerJoueur_Click);
             // 
             // LB_Joueurs
             // 
@@ -602,7 +605,7 @@
             this.CB_ChoixEquipeJ.Name = "CB_ChoixEquipeJ";
             this.CB_ChoixEquipeJ.Size = new System.Drawing.Size(102, 21);
             this.CB_ChoixEquipeJ.TabIndex = 15;
-            this.CB_ChoixEquipeJ.SelectedIndexChanged += new System.EventHandler(this.CB_SelectedIndexChanged);
+            this.CB_ChoixEquipeJ.SelectedIndexChanged += new System.EventHandler(this.CB_ChoixEquipeJ_SelectedIndexChanged);
             // 
             // TB_PrenomJ
             // 
@@ -795,7 +798,7 @@
             this.CB_EVisiteur.Name = "CB_EVisiteur";
             this.CB_EVisiteur.Size = new System.Drawing.Size(103, 21);
             this.CB_EVisiteur.TabIndex = 21;
-            this.CB_EVisiteur.SelectedIndexChanged += new System.EventHandler(this.CB_SelectedIndexChanged);
+            this.CB_EVisiteur.SelectedIndexChanged += new System.EventHandler(this.CB_EVisiteur_SelectedIndexChanged);
             // 
             // CB_EMaison
             // 
@@ -891,6 +894,15 @@
             this.CB_Invisible.Size = new System.Drawing.Size(121, 21);
             this.CB_Invisible.TabIndex = 10;
             // 
+            // CB_Invisible2
+            // 
+            this.CB_Invisible2.FormattingEnabled = true;
+            this.CB_Invisible2.Location = new System.Drawing.Point(215, 49);
+            this.CB_Invisible2.Name = "CB_Invisible2";
+            this.CB_Invisible2.Size = new System.Drawing.Size(121, 21);
+            this.CB_Invisible2.TabIndex = 11;
+            this.CB_Invisible2.Visible = false;
+            // 
             // FormGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -905,6 +917,7 @@
             this.Controls.Add(this.PB_Logo);
             this.Controls.Add(this.LB_Text);
             this.Controls.Add(this.CB_Invisible);
+            this.Controls.Add(this.CB_Invisible2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormGestion";
             this.Text = "FormGestion";
@@ -1002,5 +1015,6 @@
         private FlashButton.FlashButton FB_AppliquerJoueur;
         private System.Windows.Forms.Label LB_DateJ;
         private System.Windows.Forms.ComboBox CB_Invisible;
+        private System.Windows.Forms.ComboBox CB_Invisible2;
     }
 }

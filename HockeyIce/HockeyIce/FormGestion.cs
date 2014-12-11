@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 
+// Ajout joueur/division/match fonctionne.  equipe a refaire pour le logo? 
+// suppression marchent pour les 4.
+// modifier a faire. 
+
+
 namespace HockeyIce
 {
     public partial class FormGestion : Form
@@ -69,6 +74,7 @@ namespace HockeyIce
                 while (oraRead.Read())
                 {
                     CB_Invisible.Items.Add(oraRead.GetInt32(0).ToString());
+                    CB_Invisible2.Items.Add(oraRead.GetInt32(0).ToString()); 
                     CB_ChoixEquipeJ.Items.Add(oraRead.GetString(1).ToString());
                     CB_EVisiteur.Items.Add(oraRead.GetString(1).ToString());
                     CB_EMaison.Items.Add(oraRead.GetString(1).ToString());
@@ -109,8 +115,8 @@ namespace HockeyIce
                 // on affecte les valeurs aux paramètres.
                 oraNum.Value = 1;
                 oraNumVis.Value = CB_Invisible.Text;
-                oraNumMai.Value = CB_Invisible.Text;
-                oraDate.Value = Properties.Settings.Default.DateChoisi;
+                oraNumMai.Value = CB_Invisible2.Text;
+                oraDate.Value = DTP_DateMatch.Value;
                 oraLieu.Value = TB_Endroit.Text;
                 oraPointMai.Value = NUD_PMaison.Value;
                 oraPointVis.Value = NUD_PVisiteur.Value;
@@ -130,7 +136,7 @@ namespace HockeyIce
                 oraAjout.Parameters.Add(oraPointVis);
                 // on execute la requete 
                 oraAjout.ExecuteNonQuery();
-                MessageBox.Show("Execution reussi");
+                MessageBox.Show("Insertion reussi");
             }
             catch (OracleException ex)
             {
@@ -181,7 +187,7 @@ namespace HockeyIce
                 oraAjout.Parameters.Add(oraDate);
                 // on execute la requete 
                 oraAjout.ExecuteNonQuery();
-                MessageBox.Show("Execution reussi");
+                MessageBox.Show("Insertion reussi");
             }
             catch (OracleException ex)
             {
@@ -222,7 +228,7 @@ namespace HockeyIce
                 oraAjout.Parameters.Add(oraDate);
                 // on execute la requete 
                 oraAjout.ExecuteNonQuery();
-                MessageBox.Show("Execution reussi");
+                MessageBox.Show("Insertion reussi");
             }
             catch (OracleException ex)
             {
@@ -236,13 +242,54 @@ namespace HockeyIce
         // JOUEURS
         private void AjoutJoueur()
         {
-            commandesql = "insert into joueurs values(1, '" + TB_NomJ.Text 
-                                                            + "', '" + TB_PrenomJ.Text 
-                                                            + "', '" + LB_DateJ.Text 
-                                                            + "', " + TB_NumeroJ.Text 
-                                                            + ", '" + CB_PositionJ.Text 
-                                                            + "', '" + TB_PhotoJ.Text 
-                                                            + "', " + CB_ChoixEquipeJ + ")";
+            try
+            {
+                // la requête SQLajout est paramétrée. Elle a 4 paramètres.
+                //les paramètres pour Oracle et C # sont précédés de deux points : 
+                string sqlajout = " insert into joueurs " +
+                "(NUMJOUEUR, NOM, PRENOM, NAISSANCE, NUMEROMAILLOT, TYPEJOUEUR, PHOTO, NUMEQUIPE) values " +
+                "(:NumJoueur, :Nom, :Prenom, :Naissance, :NumMaillot, :TypeJoueur, :Photo, :NumEquipe)";
+                // On déclare les paramètres pour chaque paramètre de la requête
+                OracleParameter oraNum = new OracleParameter(":NumJoueur", OracleDbType.Int32);
+                OracleParameter oraNom = new OracleParameter(":Nom", OracleDbType.Varchar2, 20);
+                OracleParameter oraPrenom = new OracleParameter(":Prenom", OracleDbType.Varchar2, 20);
+                OracleParameter oraNaissance = new OracleParameter(":Naissance", OracleDbType.Date);
+                OracleParameter oraNumMaillot = new OracleParameter(":NumMaillot", OracleDbType.Int32);
+                OracleParameter oraTypeJoueur = new OracleParameter(":TypeJoueur", OracleDbType.Varchar2, 15);
+                OracleParameter oraPhoto = new OracleParameter(":Photo", OracleDbType.Varchar2, 100);
+                OracleParameter oraNumEquipe = new OracleParameter(":NumEquipe", OracleDbType.Int32);
+                // on affecte les valeurs aux paramètres.
+                oraNum.Value = 1;
+                oraNom.Value = TB_NomJ.Text;
+                oraPrenom.Value = TB_PrenomJ.Text;
+                oraNaissance.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
+                oraNumMaillot.Value = TB_NumeroJ.Text;
+                oraTypeJoueur.Value = CB_PositionJ.Text;
+                oraPhoto.Value = TB_PhotoJ.Text;
+                oraNumEquipe.Value = CB_Invisible.Text;
+
+                // En crée un Objet OracleCommand pour passer la requête à la bD 
+                OracleCommand oraAjout = new OracleCommand(sqlajout, oraconnGestion);
+                oraAjout.CommandType = CommandType.Text;
+                // En utilisant la propriété Paramètres de OracleCommand, on spécifie les 
+                // Paramètre de la requête SQLajout.
+
+                oraAjout.Parameters.Add(oraNum);
+                oraAjout.Parameters.Add(oraNom);
+                oraAjout.Parameters.Add(oraPrenom);
+                oraAjout.Parameters.Add(oraNaissance);
+                oraAjout.Parameters.Add(oraNumMaillot);
+                oraAjout.Parameters.Add(oraTypeJoueur);
+                oraAjout.Parameters.Add(oraPhoto);
+                oraAjout.Parameters.Add(oraNumEquipe);
+                // on execute la requete 
+                oraAjout.ExecuteNonQuery();
+                MessageBox.Show("Insertion reussi");
+            }
+            catch (OracleException ex)
+            {
+                SwitchException(ex);
+            }
         }
         private void ModifierJoueur()
         {
@@ -335,7 +382,17 @@ namespace HockeyIce
         private void CB_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateControl();
+            CB_Invisible2.SelectedIndex = CB_EMaison.SelectedIndex;
         }
+        private void CB_EVisiteur_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CB_Invisible.SelectedIndex = CB_EVisiteur.SelectedIndex;
+        }
+        private void CB_ChoixEquipeJ_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CB_Invisible.SelectedIndex = CB_ChoixEquipeJ.SelectedIndex;
+        }
+
         private void EnabledVisibleLesPanels()
         {
             switch (Properties.Settings.Default.FenetreAOuvrir)
@@ -427,6 +484,7 @@ namespace HockeyIce
             {
                 ModifierMatch();
             }
+            this.Close();
         }
 
         private void FB_AppliquerDivision_Click(object sender, EventArgs e)
@@ -440,7 +498,36 @@ namespace HockeyIce
             {
                 ModifierMatch();
             }
+            this.Close();
         }
+
+        private void FB_AppliquerEquipe_Click(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.ModifierAjouter)
+            {
+                AjoutEquipe();
+            }
+            else
+            {
+                ModifierEquipe();
+            }
+            this.Close();
+        }
+
+        private void FB_AppliquerJoueur_Click(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.ModifierAjouter)
+            {
+                AjoutJoueur();
+            }
+            else
+            {
+                ModifierJoueur();
+            }
+            this.Close();
+        }
+
+
 
 
     }
