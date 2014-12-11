@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
+using System.IO;
 
 // Ajout joueur/division/match fonctionne.  equipe a refaire pour le logo? 
 // suppression marchent pour les 4.
@@ -258,11 +259,11 @@ namespace HockeyIce
                 OracleParameter oraDivision = new OracleParameter(":NumDivision", OracleDbType.Int32);
                 OracleParameter oraDate = new OracleParameter(":DateValue", OracleDbType.Date);
                 // on affecte les valeurs aux paramètres.
-                oraNum.Value = 1;
+                oraNum.Value = Properties.Settings.Default.NumValue;
                 oraNom.Value = TB_NomEquipe.Text;
-                //oraLogo.Value = PicToByte();
-                oraVille.Value = TB_Endroit.Text;
-                oraDivision.Value = CB_DivisionEquipe.Text;
+                oraLogo.Value = PicToByte();
+                oraVille.Value = TB_LieuxEquipe.Text;
+                oraDivision.Value = CB_InvisibleDiv.Text;
                 oraDate.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
                 //on fait du streaming (lecture en continue du fichier BLOB 
 
@@ -760,7 +761,7 @@ namespace HockeyIce
         }
         bool EstAlpha(char c)
         {
-            String alpha = "abcdefghijklmnopqrstuvwzyzàâäéèêëìîïòôöùûüç -_";
+            String alpha = "abcdefghijklmnopqrstuvwxzyzàâäéèêëìîïòôöùûüç -_";
             String car = c.ToString();
             car = car.ToLower();
             return (alpha.IndexOf(car) != -1);
@@ -816,6 +817,15 @@ namespace HockeyIce
             return nomFichier;
         }
 
+        private byte[] PicToByte()
+        {
+            // le résultat on le met dans une variable de type byte (octets).
+            FileStream Streamp = new FileStream(nomFichier, FileMode.Open, FileAccess.Read);
+            byte[] buffer1 = new byte[Streamp.Length];
+            Streamp.Read(buffer1, 0, System.Convert.ToInt32(Streamp.Length));
+            Streamp.Close();
+            return buffer1;
+        }
 
     }
 }

@@ -290,6 +290,7 @@
             this.PB_LogoE.Location = new System.Drawing.Point(253, 153);
             this.PB_LogoE.Name = "PB_LogoE";
             this.PB_LogoE.Size = new System.Drawing.Size(84, 79);
+            this.PB_LogoE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_LogoE.TabIndex = 39;
             this.PB_LogoE.TabStop = false;
             // 
