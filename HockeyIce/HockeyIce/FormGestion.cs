@@ -27,7 +27,7 @@ namespace HockeyIce
         public FormGestion(OracleConnection oraconn)
         {
             InitializeComponent();
-            oraconnGestion = oraconn; 
+            oraconnGestion = oraconn;
         }
 
         private void FormGestion_Load(object sender, EventArgs e)
@@ -54,18 +54,18 @@ namespace HockeyIce
         {
             FormDate dlg = new FormDate();
 
-            if(dlg.ShowDialog() == DialogResult.OK)
+            if (dlg.ShowDialog() == DialogResult.OK)
             {
                 LB_DateDivision.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yy");
                 LB_DateEquipe.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yy");
                 LB_DateJ.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yy");
             }
         }
-        
+
         private void RemplirComboBoxEquipe()
         {
             string sqlremplir = "select numequipe, nom from equipes";
-          
+
             try
             {
                 OracleCommand orcd = new OracleCommand(sqlremplir, oraconnGestion);
@@ -75,7 +75,7 @@ namespace HockeyIce
                 while (oraRead.Read())
                 {
                     CB_Invisible.Items.Add(oraRead.GetInt32(0).ToString());
-                    CB_Invisible2.Items.Add(oraRead.GetInt32(0).ToString()); 
+                    CB_Invisible2.Items.Add(oraRead.GetInt32(0).ToString());
                     CB_ChoixEquipeJ.Items.Add(oraRead.GetString(1).ToString());
                     CB_EVisiteur.Items.Add(oraRead.GetString(1).ToString());
                     CB_EMaison.Items.Add(oraRead.GetString(1).ToString());
@@ -106,16 +106,16 @@ namespace HockeyIce
                     break;
             }
         }
-        
+
         // MATCHS
         private void AjoutMatch()
         {
-            commandesql = "insert into matchs values(1,"+ CB_EVisiteur.Text 
-                                                        + ", "      + CB_EMaison.Text 
-                                                        + ", '"     + DTP_DateMatch.Text 
-                                                        + "', '"    + TB_Endroit 
-                                                        + "', "     + NUD_PMaison.Value 
-                                                        + ", "      + NUD_PVisiteur.Value + ")";
+            commandesql = "insert into matchs values(1," + CB_EVisiteur.Text
+                                                        + ", " + CB_EMaison.Text
+                                                        + ", '" + DTP_DateMatch.Text
+                                                        + "', '" + TB_Endroit
+                                                        + "', " + NUD_PMaison.Value
+                                                        + ", " + NUD_PVisiteur.Value + ")";
             try
             {
                 // la requête SQLajout est paramétrée. Elle a 4 paramètres.
@@ -139,7 +139,7 @@ namespace HockeyIce
                 oraLieu.Value = TB_Endroit.Text;
                 oraPointMai.Value = NUD_PMaison.Value;
                 oraPointVis.Value = NUD_PVisiteur.Value;
-                
+
                 // En crée un Objet OracleCommand pour passer la requête à la bD 
                 OracleCommand oraAjout = new OracleCommand(sqlajout, oraconnGestion);
                 oraAjout.CommandType = CommandType.Text;
@@ -172,7 +172,7 @@ namespace HockeyIce
                            "from matchs m " +
                            "inner join EQUIPES ev on ev.NUMEQUIPE = m.NUMEQUIPEVIS " +
                            "inner join EQUIPES em on em.NUMEQUIPE = m.NUMEQUIPEMAI " +
-                           "where nummatch = " + Properties.Settings.Default.NumValue ;
+                           "where nummatch = " + Properties.Settings.Default.NumValue;
 
             OracleCommand orcd = new OracleCommand(commandesql, oraconnGestion);
             orcd.CommandType = CommandType.Text;
@@ -190,18 +190,19 @@ namespace HockeyIce
         }
         private void SetSelectedIndexMaison(string equipe)
         {
-            int index = CB_EMaison.FindString(equipe);
-            CB_EMaison.SelectedIndex = index;
-            CB_EMaison.SelectedText = equipe;
-            CB_EMaison.SelectedItem = equipe;
-            CB_EMaison.SelectedValue = equipe;
-            CB_EMaison.Text = equipe;
+            CB_EMaison.Visible = false;
+            CB_EMaison.Enabled = false;
+            LB_EMaison.Visible = true;
+            LB_EMaison.Text = equipe;
         }
         private void SetSelectedIndexVisiteur(string equipe)
         {
-            int index = CB_EVisiteur.FindString(equipe);
-            CB_EVisiteur.SelectedIndex = index;
+            CB_EVisiteur.Visible = false;
+            CB_EVisiteur.Enabled = false;
+            LB_EVisiteur.Visible = true;
+            LB_EVisiteur.Text = equipe;
         }
+
         // EQUIPES
         private void AjoutEquipe()
         {
@@ -430,30 +431,58 @@ namespace HockeyIce
                 this.Close();
             }
         }
-
         // Event et methode pour updater les flashbuttons
         private void UpdateControl()
         {
             switch (Properties.Settings.Default.FenetreAOuvrir)
             {
                 case "Équipes":
-                    FB_AppliquerEquipe.Enabled = (TB_NomEquipe.Text == "" || TB_LieuxEquipe.Text == "" || CB_DivisionEquipe.Text == "" || LB_DateEquipe.Text == "Date" ) ? false : true;
+                    if (!Properties.Settings.Default.ModifierAjouter)
+                        FB_AppliquerEquipe.Enabled = (  TB_NomEquipe.Text == "" || 
+                                                        TB_LieuxEquipe.Text == "" || 
+                                                        CB_DivisionEquipe.Text == "" || 
+                                                        LB_DateEquipe.Text == "Date") ? false : true;
+                    else
+                        FB_AppliquerEquipe.Enabled = (  TB_NomEquipe.Text == "" || 
+                                                        TB_LieuxEquipe.Text == "" || 
+                                                        LB_DateEquipe.Text == "Date") ? false : true;
                     break;
                 case "Joueurs":
-                    FB_AppliquerJoueur.Enabled = (TB_NomJ.Text == "" || TB_PrenomJ.Text == "" || TB_NumeroJ.Text == "" || TB_PhotoJ.Text == "" || CB_ChoixEquipeJ.Text == "" || CB_PositionJ.Text == "" || LB_DateJ.Text == "Date") ? false : true;
+                    if (!Properties.Settings.Default.ModifierAjouter)
+                        FB_AppliquerJoueur.Enabled = (  TB_NomJ.Text == "" || 
+                                                        TB_PrenomJ.Text == "" || 
+                                                        TB_NumeroJ.Text == "" || 
+                                                        TB_PhotoJ.Text == "" || 
+                                                        CB_ChoixEquipeJ.Text == "" || 
+                                                        CB_PositionJ.Text == "" || 
+                                                        LB_DateJ.Text == "Date") ? false : true;
+                    else
+                        FB_AppliquerJoueur.Enabled = (  TB_NomJ.Text == "" || 
+                                                        TB_PrenomJ.Text == "" || 
+                                                        TB_NumeroJ.Text == "" || 
+                                                        TB_PhotoJ.Text == "" || 
+                                                        LB_DateJ.Text == "Date") ? false : true;
                     break;
                 case "Division":
-                    FB_AppliquerDivision.Enabled = (TB_NomDivision.Text == "" || LB_DateDivision.Text == "Date") ? false : true;
+                    FB_AppliquerDivision.Enabled = (TB_NomDivision.Text == "" || 
+                                                    LB_DateDivision.Text == "Date") ? false : true;
                     break;
                 case "Matchs":
-                    FB_AppliquerMatch.Enabled = (CB_EMaison.Text == "" || CB_EVisiteur.Text == "" || TB_Endroit.Text == "" ) ? false : true;
+                    if (!Properties.Settings.Default.ModifierAjouter)
+                        FB_AppliquerMatch.Enabled = (   CB_EMaison.Text == "" || 
+                                                        CB_EVisiteur.Text == "" || 
+                                                        TB_Endroit.Text == "") ? false : true;
+                    else
+                        FB_AppliquerMatch.Enabled = (TB_Endroit.Text == "") ? false : true;
                     break;
             }
         }
+        // Event pour updater les control lors d'un changement dans n'importe quel textbox
         private void TB_TextChanged(object sender, EventArgs e)
         {
             UpdateControl();
         }
+        // Selected Index changed dans les combobox d'equipe
         private void CB_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateControl();
@@ -461,13 +490,15 @@ namespace HockeyIce
         }
         private void CB_EVisiteur_SelectedIndexChanged(object sender, EventArgs e)
         {
+            UpdateControl();
             CB_Invisible.SelectedIndex = CB_EVisiteur.SelectedIndex;
         }
         private void CB_ChoixEquipeJ_SelectedIndexChanged(object sender, EventArgs e)
         {
+            UpdateControl();
             CB_Invisible.SelectedIndex = CB_ChoixEquipeJ.SelectedIndex;
         }
-
+        // Enabled ou Disable les panels lors du load du form 
         private void EnabledVisibleLesPanels()
         {
             switch (Properties.Settings.Default.FenetreAOuvrir)
@@ -502,7 +533,6 @@ namespace HockeyIce
                     break;
             }
         }
-
         // Events pour pouvoir faire bouger le form 
         private void FormGestion_MouseDown(object sender, MouseEventArgs e)
         {
@@ -519,7 +549,7 @@ namespace HockeyIce
         }
         private void FormGestion_MouseUp(object sender, MouseEventArgs e)
         {
-            _dragging = false; 
+            _dragging = false;
         }
         private void LB_Text_MouseDown(object sender, MouseEventArgs e)
         {
@@ -536,7 +566,7 @@ namespace HockeyIce
         }
         private void LB_Text_MouseUp(object sender, MouseEventArgs e)
         {
-            _dragging = false; 
+            _dragging = false;
         }
 
 
@@ -551,7 +581,7 @@ namespace HockeyIce
 
         private void FB_AppliquerMatch_Click(object sender, EventArgs e)
         {
-            if(!Properties.Settings.Default.ModifierAjouter)
+            if (!Properties.Settings.Default.ModifierAjouter)
             {
                 AjoutMatch();
             }
@@ -561,7 +591,6 @@ namespace HockeyIce
             }
             this.Close();
         }
-
         private void FB_AppliquerDivision_Click(object sender, EventArgs e)
         {
             if (!Properties.Settings.Default.ModifierAjouter)
@@ -574,7 +603,6 @@ namespace HockeyIce
             }
             this.Close();
         }
-
         private void FB_AppliquerEquipe_Click(object sender, EventArgs e)
         {
             if (!Properties.Settings.Default.ModifierAjouter)
@@ -587,7 +615,6 @@ namespace HockeyIce
             }
             this.Close();
         }
-
         private void FB_AppliquerJoueur_Click(object sender, EventArgs e)
         {
             if (!Properties.Settings.Default.ModifierAjouter)
