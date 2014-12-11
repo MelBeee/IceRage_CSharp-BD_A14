@@ -58,7 +58,7 @@
             this.LB_Tempo = new System.Windows.Forms.Label();
             this.DTP_Tempo = new System.Windows.Forms.DateTimePicker();
             this.LB_Tempo2 = new System.Windows.Forms.Label();
-            this.LB_Tempo3 = new System.Windows.Forms.Label();
+            this.LB_NumJoueur = new System.Windows.Forms.Label();
             this.PN_Equipe.SuspendLayout();
             this.PN_Matchs.SuspendLayout();
             this.PN_Joueurs.SuspendLayout();
@@ -405,14 +405,14 @@
             this.LB_Tempo2.TabIndex = 20;
             this.LB_Tempo2.Text = "label2";
             // 
-            // LB_Tempo3
+            // LB_NumJoueur
             // 
-            this.LB_Tempo3.AutoSize = true;
-            this.LB_Tempo3.Location = new System.Drawing.Point(513, 147);
-            this.LB_Tempo3.Name = "LB_Tempo3";
-            this.LB_Tempo3.Size = new System.Drawing.Size(35, 13);
-            this.LB_Tempo3.TabIndex = 21;
-            this.LB_Tempo3.Text = "label2";
+            this.LB_NumJoueur.AutoSize = true;
+            this.LB_NumJoueur.Location = new System.Drawing.Point(513, 147);
+            this.LB_NumJoueur.Name = "LB_NumJoueur";
+            this.LB_NumJoueur.Size = new System.Drawing.Size(35, 13);
+            this.LB_NumJoueur.TabIndex = 21;
+            this.LB_NumJoueur.Text = "label2";
             // 
             // FormRecherche
             // 
@@ -420,7 +420,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(999, 506);
-            this.Controls.Add(this.LB_Tempo3);
+            this.Controls.Add(this.LB_NumJoueur);
             this.Controls.Add(this.PN_Joueurs);
             this.Controls.Add(this.LB_Tempo2);
             this.Controls.Add(this.DTP_Tempo);
@@ -483,6 +483,6 @@
         private System.Windows.Forms.Label LB_Tempo;
         private System.Windows.Forms.DateTimePicker DTP_Tempo;
         private System.Windows.Forms.Label LB_Tempo2;
-        private System.Windows.Forms.Label LB_Tempo3;
+        private System.Windows.Forms.Label LB_NumJoueur;
     }
 }
