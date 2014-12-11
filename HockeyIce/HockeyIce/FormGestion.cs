@@ -24,6 +24,7 @@ namespace HockeyIce
         public OracleConnection oraconnGestion = new OracleConnection();
         string commandesql;
         int base_ = 1;
+        const char BACKSPACE = '\b';
 
         public FormGestion(OracleConnection oraconn)
         {
@@ -461,7 +462,9 @@ namespace HockeyIce
         }
         private void LoadInfoJoueur()
         {
-            commandesql =   "select * from joueurs where numjoueur = " + Properties.Settings.Default.NumValue;
+            commandesql =   "select j.*, e.nom from joueurs j "+
+                            "inner join equipes e on e.NUMEQUIPE = j.numequipe " +
+                            "where j.numjoueur = " + Properties.Settings.Default.NumValue;
 
             try
             {
@@ -474,6 +477,10 @@ namespace HockeyIce
                 TB_PrenomJ.Text = oraRead.GetString(2);
                 LB_DateJ.Text = oraRead.GetDateTime(3).ToString();
                 TB_NumeroJ.Text = oraRead.GetInt32(4).ToString();
+                CB_PositionJ.DropDownStyle = ComboBoxStyle.DropDown;
+                CB_PositionJ.Text = oraRead.GetString(5);
+                TB_PhotoJ.Text = oraRead.GetString(6);
+                CB_ChoixEquipeJ.Text = oraRead.GetInt32(7).ToString();
 
                 oraRead.Close();
             }
@@ -742,6 +749,31 @@ namespace HockeyIce
                 ModifierJoueur();
             }
             this.Close();
+        }
+
+        bool EstChiffre(char c)
+        {
+            String chiffres = "0123456789";
+            return (chiffres.IndexOf(c.ToString()) != -1);
+        }
+        private void TB_NumeroJ_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != BACKSPACE)
+                e.Handled = !EstChiffre(e.KeyChar);
+        }
+
+        bool EstAlpha(char c)
+        {
+            String alpha = "abcdefghijklmnopqrstuvwzyzàâäéèêëìîïòôöùûüç -_";
+            String car = c.ToString();
+            car = car.ToLower();
+            return (alpha.IndexOf(car) != -1);
+        }
+
+        private void TB_NomEquipe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != BACKSPACE)
+                e.Handled = !EstAlpha(e.KeyChar);
         }
 
 
