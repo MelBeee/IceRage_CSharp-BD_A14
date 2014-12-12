@@ -58,6 +58,12 @@
     <Compile Include="FormAPropos.Designer.cs">
       <DependentUpon>FormAPropos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormChoixStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChoixStats.Designer.cs">
+      <DependentUpon>FormChoixStats.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormClassement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAPropos.resx">
       <DependentUpon>FormAPropos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChoixStats.resx">
+      <DependentUpon>FormChoixStats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormClassement.resx">
       <DependentUpon>FormClassement.cs</DependentUpon>
