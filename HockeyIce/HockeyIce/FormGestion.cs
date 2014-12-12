@@ -51,6 +51,7 @@ namespace HockeyIce
             UpdateControl();
             RemplirComboBoxEquipe();
             RemplirComboBoxDivision();
+            TT_LogoEquipe.SetToolTip(this.PB_LogoE, "Clicker pour modifier le Logo!");
         }
         private void FormGestion_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -795,12 +796,6 @@ namespace HockeyIce
                 e.Handled = !EstAlpha(e.KeyChar);
         }
 
-        private void FB_Parcourir_Click(object sender, EventArgs e)
-        {
-            ParcourirImage();
-            
-        }
-
         private void ParcourirImage()
         {
             nomFichier = RechercherFichier();
@@ -841,6 +836,11 @@ namespace HockeyIce
             Streamp.Read(buffer1, 0, System.Convert.ToInt32(Streamp.Length));
             Streamp.Close();
             return buffer1;
+        }
+
+        private void PB_LogoE_Click(object sender, EventArgs e)
+        {
+            ParcourirImage();
         }
 
 
