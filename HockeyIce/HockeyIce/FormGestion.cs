@@ -838,8 +838,5 @@ namespace HockeyIce
         {
             ParcourirImage();
         }
-
-
-
     }
 }

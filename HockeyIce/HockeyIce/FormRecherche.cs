@@ -211,7 +211,6 @@ namespace HockeyIce
         {
             Properties.Settings.Default.PosFormRecherche = this.Location;
             Properties.Settings.Default.Save();
-            oraconnRecherche.Close();
         }
 
         private void FB_Fermer_Click(object sender, EventArgs e)

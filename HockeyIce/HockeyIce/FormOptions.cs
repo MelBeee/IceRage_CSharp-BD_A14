@@ -93,24 +93,20 @@ namespace HockeyIce
             {
                 case "Équipes":
                     sqlcommande = "select numequipe, nom from equipes order by nom";
-                    sqlcommandedelete = "delete from equipes where numequipe =";
                     LB_Text.Text = "Équipes";
                     break;
                 case "Joueurs":
                     sqlcommande = "select numjoueur, prenom, nom from joueurs order by prenom";
-                    sqlcommandedelete = "delete from joueurs where numjoueur =";
                     LB_Text.Text = "Joueurs";
                     break;
                 case "Division":
                     sqlcommande = "select numdivision, nom from divisions order by nom";
-                    sqlcommandedelete = "delete from division where numdivision =";
                     LB_Text.Text = "Divisions";
                     break;
                 case "Matchs":
                     sqlcommande = "select m.nummatch, ev.nom, em.nom from matchs m " +
                                   "inner join equipes ev on ev.numequipe = m.numequipevis " +
                                   "inner join equipes em on em.numequipe = m.numequipemai " + " order by ev.nom ";
-                    sqlcommandedelete = "delete from matchs where nummatch =";
                     LB_Text.Text = "Matchs";
                     break;
             }
@@ -152,8 +148,28 @@ namespace HockeyIce
             }
         }
 
+        private void WhattoDelete()
+        {
+            switch (Properties.Settings.Default.FenetreAOuvrir)
+            {
+                case "Équipes":
+                    sqlcommandedelete = "delete from equipes where numequipe =" + CB_Invisible.Text;
+                    break;
+                case "Joueurs":
+                    sqlcommandedelete = "delete from joueurs where numjoueur =" + CB_Invisible.Text;
+                    break;
+                case "Division":
+                    sqlcommandedelete = "delete from divisions where numdivision =" + CB_Invisible.Text;
+                    break;
+                case "Matchs":
+                    sqlcommandedelete = "delete from matchs where nummatch =" + CB_Invisible.Text;
+                    break;
+            }
+        }
+
         private bool DeleteThing()
         {
+            WhattoDelete();
             bool reussi = true;
             OracleCommand orcd = new OracleCommand(sqlcommandedelete, oraconnGestion);
             try
