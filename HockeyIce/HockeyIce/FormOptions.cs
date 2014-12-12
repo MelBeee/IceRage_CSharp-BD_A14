@@ -16,7 +16,7 @@ namespace HockeyIce
         private bool _dragging = false;
         private Point _start_point = new Point(0, 0);
         public OracleConnection oraconnGestion = new OracleConnection();
-        string sqlcommande, nomtable, primarykey;
+        string sqlcommande, sqlcommandedelete;
 
         public FormOptions(OracleConnection oraconn)
         {
@@ -75,7 +75,7 @@ namespace HockeyIce
             _dragging = false;
         }
 
-        // Execption
+        // Exception
         private void AfficherErreur(OracleException ex)
         {
             FormErreur dlg = new FormErreur(ex);
@@ -93,33 +93,30 @@ namespace HockeyIce
             {
                 case "Équipes":
                     sqlcommande = "select numequipe, nom from equipes order by nom";
-                    nomtable = "equipes";
-                    primarykey = "numequipe";
+                    sqlcommandedelete = "delete from equipes where numequipe =";
                     LB_Text.Text = "Équipes";
                     break;
                 case "Joueurs":
                     sqlcommande = "select numjoueur, prenom, nom from joueurs order by prenom";
-                    nomtable = "joueurs";
-                    primarykey = "numjoueur";
+                    sqlcommandedelete = "delete from joueurs where numjoueur =";
                     LB_Text.Text = "Joueurs";
                     break;
                 case "Division":
                     sqlcommande = "select numdivision, nom from divisions order by nom";
-                    nomtable = "divisions";
-                    primarykey = "numdivision";
+                    sqlcommandedelete = "delete from division where numdivision =";
                     LB_Text.Text = "Divisions";
                     break;
                 case "Matchs":
                     sqlcommande = "select m.nummatch, ev.nom, em.nom from matchs m " +
                                   "inner join equipes ev on ev.numequipe = m.numequipevis " +
                                   "inner join equipes em on em.numequipe = m.numequipemai " + " order by ev.nom ";
-                    nomtable = "matchs";
-                    primarykey = "nummatch";
+                    sqlcommandedelete = "delete from matchs where nummatch =";
                     LB_Text.Text = "Matchs";
                     break;
             }
             RemplirComboBox();
         }
+
         private void RemplirComboBox()
         {
             try
@@ -154,10 +151,11 @@ namespace HockeyIce
                 AfficherErreur(ex);
             }
         }
+
         private bool DeleteThing()
         {
             bool reussi = true;
-            OracleCommand orcd = new OracleCommand(sqlcommande, oraconnGestion);
+            OracleCommand orcd = new OracleCommand(sqlcommandedelete, oraconnGestion);
             try
             {
                 orcd.CommandType = CommandType.Text;
@@ -170,12 +168,14 @@ namespace HockeyIce
             }
             return reussi;
         }
+
         private void AfficherGestion()
         {
             FormGestion dlg = new FormGestion(oraconnGestion);
 
             dlg.ShowDialog();
         }
+
         private void UpdateControl()
         {
             FB_Ok.Enabled = false;
@@ -195,14 +195,14 @@ namespace HockeyIce
         {
             if (RB_Supprimer.Checked)
             {
-                sqlcommande = "delete from " + nomtable + " where " + primarykey + " = " + CB_Invisible.Text;
                 if (DeleteThing())
                 {
                     MessageBox.Show("Suppression réussi");
                 }
-                CB_Invisible.Items.Clear();
-                CB_Value.Items.Clear();
-                SwitchCommandeComboBox();
+                else
+                {
+                    MessageBox.Show("Suppression non réussi");
+                }
                 this.Close();
             }
             else if (RB_Modifier.Checked)
@@ -216,6 +216,7 @@ namespace HockeyIce
             else
             {
                 Properties.Settings.Default.ModifierAjouter = false;
+                Properties.Settings.Default.NumValue = "1";
                 Properties.Settings.Default.Save();
                 AfficherGestion();
                 this.Close();
