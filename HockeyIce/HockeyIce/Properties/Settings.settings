@@ -12,40 +12,40 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="PosFormPrincipale" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">100, 100</Value>
     </Setting>
     <Setting Name="PosFormRecherche" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">100, 100</Value>
     </Setting>
     <Setting Name="PosFormGestion" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">100, 100</Value>
     </Setting>
     <Setting Name="PosFormAPropos" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">100, 100</Value>
     </Setting>
     <Setting Name="PosFormClassement" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">100, 100</Value>
     </Setting>
     <Setting Name="PosFormErreur" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">100, 100</Value>
     </Setting>
     <Setting Name="PosFormDate" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">100, 100</Value>
     </Setting>
     <Setting Name="DateChoisi" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">2014-12-05</Value>
     </Setting>
     <Setting Name="PosFormGestStat" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">100, 100</Value>
     </Setting>
     <Setting Name="ModifierAjouter" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="NumValue" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="PosFormOptions" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">100, 100</Value>
     </Setting>
   </Settings>
 </SettingsFile>

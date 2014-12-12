@@ -15,7 +15,7 @@ namespace HockeyIce
     {
         private bool _dragging = false;
         private Point _start_point = new Point(0, 0);
-        private Point basePanel = new Point(3, 30);
+        private Point basePanel = new Point(3, 28);
         private OracleConnection oraconnRecherche = new OracleConnection();
         private DataSet monDataSet = new DataSet();
 
@@ -119,7 +119,10 @@ namespace HockeyIce
                     LB_Passe.Text = oraRead.GetString(1);
                 else
                     LB_Passe.Text = "0";
-                LB_Punition.Text = oraRead.GetString(2) + " secondes";
+                if (!oraRead.IsDBNull(2))
+                    LB_Punition.Text = oraRead.GetString(2) + " secondes";
+                else
+                    LB_Punition.Text = "0 secondes";
 
                 oraRead.Close();
             }

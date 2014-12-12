@@ -103,6 +103,7 @@
             this.PB_Logo = new System.Windows.Forms.PictureBox();
             this.LB_Invisible = new System.Windows.Forms.Label();
             this.CB_InvisibleDiv = new System.Windows.Forms.ComboBox();
+            this.FB_DateMatch = new FlashButton.FlashButton();
             this.PN_Division.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PN_Equipe.SuspendLayout();
@@ -717,6 +718,13 @@
             // PN_Matchs
             // 
             this.PN_Matchs.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Matchs.Controls.Add(this.FB_DateMatch);
+            this.PN_Matchs.Controls.Add(this.CB_EVisiteur);
+            this.PN_Matchs.Controls.Add(this.CB_EMaison);
+            this.PN_Matchs.Controls.Add(this.TB_Endroit);
+            this.PN_Matchs.Controls.Add(this.DTP_DateMatch);
+            this.PN_Matchs.Controls.Add(this.NUD_PMaison);
+            this.PN_Matchs.Controls.Add(this.NUD_PVisiteur);
             this.PN_Matchs.Controls.Add(this.LB_EVisiteur);
             this.PN_Matchs.Controls.Add(this.LB_EMaison);
             this.PN_Matchs.Controls.Add(this.FB_AppliquerMatch);
@@ -727,12 +735,6 @@
             this.PN_Matchs.Controls.Add(this.label18);
             this.PN_Matchs.Controls.Add(this.label17);
             this.PN_Matchs.Controls.Add(this.label6);
-            this.PN_Matchs.Controls.Add(this.DTP_DateMatch);
-            this.PN_Matchs.Controls.Add(this.CB_EVisiteur);
-            this.PN_Matchs.Controls.Add(this.CB_EMaison);
-            this.PN_Matchs.Controls.Add(this.NUD_PMaison);
-            this.PN_Matchs.Controls.Add(this.NUD_PVisiteur);
-            this.PN_Matchs.Controls.Add(this.TB_Endroit);
             this.PN_Matchs.Controls.Add(this.pictureBox4);
             this.PN_Matchs.Controls.Add(this.FB_FermerM);
             this.PN_Matchs.Enabled = false;
@@ -745,7 +747,7 @@
             // LB_EVisiteur
             // 
             this.LB_EVisiteur.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_EVisiteur.Location = new System.Drawing.Point(190, 173);
+            this.LB_EVisiteur.Location = new System.Drawing.Point(190, 155);
             this.LB_EVisiteur.Name = "LB_EVisiteur";
             this.LB_EVisiteur.Size = new System.Drawing.Size(129, 13);
             this.LB_EVisiteur.TabIndex = 38;
@@ -755,7 +757,7 @@
             // LB_EMaison
             // 
             this.LB_EMaison.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_EMaison.Location = new System.Drawing.Point(190, 146);
+            this.LB_EMaison.Location = new System.Drawing.Point(190, 128);
             this.LB_EMaison.Name = "LB_EMaison";
             this.LB_EMaison.Size = new System.Drawing.Size(126, 13);
             this.LB_EMaison.TabIndex = 37;
@@ -791,7 +793,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(29, 277);
+            this.label21.Location = new System.Drawing.Point(31, 284);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(159, 13);
             this.label21.TabIndex = 28;
@@ -801,7 +803,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(45, 252);
+            this.label20.Location = new System.Drawing.Point(47, 258);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(143, 13);
             this.label20.TabIndex = 27;
@@ -811,17 +813,17 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(61, 225);
+            this.label19.Location = new System.Drawing.Point(135, 207);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(127, 13);
+            this.label19.Size = new System.Drawing.Size(55, 13);
             this.label19.TabIndex = 26;
-            this.label19.Text = "Date et Heure :";
+            this.label19.Text = "Date :";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(109, 199);
+            this.label18.Location = new System.Drawing.Point(111, 181);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(79, 13);
             this.label18.TabIndex = 25;
@@ -831,7 +833,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(46, 173);
+            this.label17.Location = new System.Drawing.Point(47, 155);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(143, 13);
             this.label17.TabIndex = 24;
@@ -841,7 +843,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(61, 146);
+            this.label6.Location = new System.Drawing.Point(63, 128);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 13);
             this.label6.TabIndex = 23;
@@ -850,7 +852,7 @@
             // DTP_DateMatch
             // 
             this.DTP_DateMatch.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DTP_DateMatch.Location = new System.Drawing.Point(193, 221);
+            this.DTP_DateMatch.Location = new System.Drawing.Point(193, 229);
             this.DTP_DateMatch.Name = "DTP_DateMatch";
             this.DTP_DateMatch.Size = new System.Drawing.Size(103, 20);
             this.DTP_DateMatch.TabIndex = 22;
@@ -859,7 +861,7 @@
             // 
             this.CB_EVisiteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_EVisiteur.FormattingEnabled = true;
-            this.CB_EVisiteur.Location = new System.Drawing.Point(193, 169);
+            this.CB_EVisiteur.Location = new System.Drawing.Point(193, 151);
             this.CB_EVisiteur.Name = "CB_EVisiteur";
             this.CB_EVisiteur.Size = new System.Drawing.Size(103, 21);
             this.CB_EVisiteur.TabIndex = 21;
@@ -869,7 +871,7 @@
             // 
             this.CB_EMaison.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_EMaison.FormattingEnabled = true;
-            this.CB_EMaison.Location = new System.Drawing.Point(193, 142);
+            this.CB_EMaison.Location = new System.Drawing.Point(193, 124);
             this.CB_EMaison.Name = "CB_EMaison";
             this.CB_EMaison.Size = new System.Drawing.Size(103, 21);
             this.CB_EMaison.TabIndex = 20;
@@ -877,21 +879,21 @@
             // 
             // NUD_PMaison
             // 
-            this.NUD_PMaison.Location = new System.Drawing.Point(193, 248);
+            this.NUD_PMaison.Location = new System.Drawing.Point(193, 255);
             this.NUD_PMaison.Name = "NUD_PMaison";
             this.NUD_PMaison.Size = new System.Drawing.Size(53, 20);
             this.NUD_PMaison.TabIndex = 19;
             // 
             // NUD_PVisiteur
             // 
-            this.NUD_PVisiteur.Location = new System.Drawing.Point(193, 274);
+            this.NUD_PVisiteur.Location = new System.Drawing.Point(192, 281);
             this.NUD_PVisiteur.Name = "NUD_PVisiteur";
             this.NUD_PVisiteur.Size = new System.Drawing.Size(53, 20);
             this.NUD_PVisiteur.TabIndex = 18;
             // 
             // TB_Endroit
             // 
-            this.TB_Endroit.Location = new System.Drawing.Point(193, 195);
+            this.TB_Endroit.Location = new System.Drawing.Point(193, 177);
             this.TB_Endroit.MaxLength = 30;
             this.TB_Endroit.Name = "TB_Endroit";
             this.TB_Endroit.Size = new System.Drawing.Size(103, 20);
@@ -986,6 +988,20 @@
             this.CB_InvisibleDiv.Size = new System.Drawing.Size(121, 21);
             this.CB_InvisibleDiv.TabIndex = 40;
             this.CB_InvisibleDiv.Visible = false;
+            // 
+            // FB_DateMatch
+            // 
+            this.FB_DateMatch.BackgroundImage = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
+            this.FB_DateMatch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_DateMatch.ImageClick = global::HockeyIce.Properties.Resources.ChoisirDateClick;
+            this.FB_DateMatch.ImageDisable = global::HockeyIce.Properties.Resources.ChoisirDateDisable;
+            this.FB_DateMatch.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
+            this.FB_DateMatch.ImageOver = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
+            this.FB_DateMatch.Location = new System.Drawing.Point(192, 204);
+            this.FB_DateMatch.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_DateMatch.Name = "FB_DateMatch";
+            this.FB_DateMatch.Size = new System.Drawing.Size(104, 19);
+            this.FB_DateMatch.TabIndex = 39;
             // 
             // FormGestion
             // 
@@ -1110,5 +1126,6 @@
         private System.Windows.Forms.Label LB_Invisible;
         private System.Windows.Forms.ComboBox CB_InvisibleDiv;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private FlashButton.FlashButton FB_DateMatch;
     }
 }

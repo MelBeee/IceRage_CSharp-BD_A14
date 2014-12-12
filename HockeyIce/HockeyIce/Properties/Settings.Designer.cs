@@ -61,7 +61,7 @@ namespace HockeyIce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point PosFormPrincipale {
             get {
                 return ((global::System.Drawing.Point)(this["PosFormPrincipale"]));
@@ -73,7 +73,7 @@ namespace HockeyIce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point PosFormRecherche {
             get {
                 return ((global::System.Drawing.Point)(this["PosFormRecherche"]));
@@ -85,7 +85,7 @@ namespace HockeyIce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point PosFormGestion {
             get {
                 return ((global::System.Drawing.Point)(this["PosFormGestion"]));
@@ -97,7 +97,7 @@ namespace HockeyIce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point PosFormAPropos {
             get {
                 return ((global::System.Drawing.Point)(this["PosFormAPropos"]));
@@ -109,7 +109,7 @@ namespace HockeyIce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point PosFormClassement {
             get {
                 return ((global::System.Drawing.Point)(this["PosFormClassement"]));
@@ -121,7 +121,7 @@ namespace HockeyIce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point PosFormErreur {
             get {
                 return ((global::System.Drawing.Point)(this["PosFormErreur"]));
@@ -133,7 +133,7 @@ namespace HockeyIce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point PosFormDate {
             get {
                 return ((global::System.Drawing.Point)(this["PosFormDate"]));
@@ -157,7 +157,7 @@ namespace HockeyIce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point PosFormGestStat {
             get {
                 return ((global::System.Drawing.Point)(this["PosFormGestStat"]));
@@ -181,7 +181,7 @@ namespace HockeyIce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public string NumValue {
             get {
                 return ((string)(this["NumValue"]));
@@ -193,7 +193,7 @@ namespace HockeyIce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
         public global::System.Drawing.Point PosFormOptions {
             get {
                 return ((global::System.Drawing.Point)(this["PosFormOptions"]));

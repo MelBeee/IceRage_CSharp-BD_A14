@@ -31,6 +31,7 @@ namespace HockeyIce
             SwitchCommandeComboBox();
             FB_Annuler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             FB_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            UpdateControl();
         }
         private void FormOptions_FormClosing(object sender, FormClosingEventArgs e)
         {

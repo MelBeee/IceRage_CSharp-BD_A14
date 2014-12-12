@@ -59,8 +59,6 @@
             this.DTP_Tempo = new System.Windows.Forms.DateTimePicker();
             this.LB_Tempo2 = new System.Windows.Forms.Label();
             this.LB_NumJoueur = new System.Windows.Forms.Label();
-            this.PN_Equipe.SuspendLayout();
-            this.PN_Matchs.SuspendLayout();
             this.PN_Joueurs.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Equipe)).BeginInit();
@@ -73,7 +71,7 @@
             this.LB_Text.AutoSize = true;
             this.LB_Text.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Text.ForeColor = System.Drawing.Color.White;
-            this.LB_Text.Location = new System.Drawing.Point(23, 2);
+            this.LB_Text.Location = new System.Drawing.Point(28, 3);
             this.LB_Text.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Text.Name = "LB_Text";
             this.LB_Text.Size = new System.Drawing.Size(96, 23);
@@ -86,30 +84,28 @@
             // PN_Equipe
             // 
             this.PN_Equipe.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_Equipe.Controls.Add(this.PN_Matchs);
             this.PN_Equipe.Enabled = false;
-            this.PN_Equipe.Location = new System.Drawing.Point(307, 385);
+            this.PN_Equipe.Location = new System.Drawing.Point(377, 28);
             this.PN_Equipe.Margin = new System.Windows.Forms.Padding(2);
             this.PN_Equipe.Name = "PN_Equipe";
-            this.PN_Equipe.Size = new System.Drawing.Size(537, 403);
+            this.PN_Equipe.Size = new System.Drawing.Size(371, 255);
             this.PN_Equipe.TabIndex = 8;
             this.PN_Equipe.Visible = false;
             // 
             // PN_Matchs
             // 
             this.PN_Matchs.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_Matchs.Controls.Add(this.button1);
             this.PN_Matchs.Enabled = false;
-            this.PN_Matchs.Location = new System.Drawing.Point(52, 37);
+            this.PN_Matchs.Location = new System.Drawing.Point(2, 287);
             this.PN_Matchs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_Matchs.Name = "PN_Matchs";
-            this.PN_Matchs.Size = new System.Drawing.Size(537, 403);
+            this.PN_Matchs.Size = new System.Drawing.Size(371, 255);
             this.PN_Matchs.TabIndex = 9;
             this.PN_Matchs.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(240, 61);
+            this.button1.Location = new System.Drawing.Point(281, 53);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -120,6 +116,7 @@
             // PN_Joueurs
             // 
             this.PN_Joueurs.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Joueurs.Controls.Add(this.button1);
             this.PN_Joueurs.Controls.Add(this.LB_Type);
             this.PN_Joueurs.Controls.Add(this.LB_DateNais);
             this.PN_Joueurs.Controls.Add(this.LB_Prenom);
@@ -134,7 +131,7 @@
             this.PN_Joueurs.Controls.Add(this.PB_Joueur);
             this.PN_Joueurs.Controls.Add(this.labrlds);
             this.PN_Joueurs.Enabled = false;
-            this.PN_Joueurs.Location = new System.Drawing.Point(2, 29);
+            this.PN_Joueurs.Location = new System.Drawing.Point(2, 28);
             this.PN_Joueurs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_Joueurs.Name = "PN_Joueurs";
             this.PN_Joueurs.Size = new System.Drawing.Size(371, 255);
@@ -334,12 +331,14 @@
             // 
             // PB_Joueur
             // 
+            this.PB_Joueur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PB_Joueur.ErrorImage = global::HockeyIce.Properties.Resources.no_photo_available;
             this.PB_Joueur.Image = global::HockeyIce.Properties.Resources.Burns;
+            this.PB_Joueur.InitialImage = global::HockeyIce.Properties.Resources.no_photo_available;
             this.PB_Joueur.Location = new System.Drawing.Point(10, 10);
             this.PB_Joueur.Name = "PB_Joueur";
             this.PB_Joueur.Size = new System.Drawing.Size(140, 210);
-            this.PB_Joueur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PB_Joueur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Joueur.TabIndex = 1;
             this.PB_Joueur.TabStop = false;
             // 
@@ -383,7 +382,7 @@
             // LB_Tempo
             // 
             this.LB_Tempo.AutoSize = true;
-            this.LB_Tempo.Location = new System.Drawing.Point(518, 202);
+            this.LB_Tempo.Location = new System.Drawing.Point(271, 103);
             this.LB_Tempo.Name = "LB_Tempo";
             this.LB_Tempo.Size = new System.Drawing.Size(35, 13);
             this.LB_Tempo.TabIndex = 18;
@@ -391,7 +390,7 @@
             // 
             // DTP_Tempo
             // 
-            this.DTP_Tempo.Location = new System.Drawing.Point(513, 179);
+            this.DTP_Tempo.Location = new System.Drawing.Point(266, 80);
             this.DTP_Tempo.Name = "DTP_Tempo";
             this.DTP_Tempo.Size = new System.Drawing.Size(92, 20);
             this.DTP_Tempo.TabIndex = 19;
@@ -399,7 +398,7 @@
             // LB_Tempo2
             // 
             this.LB_Tempo2.AutoSize = true;
-            this.LB_Tempo2.Location = new System.Drawing.Point(518, 163);
+            this.LB_Tempo2.Location = new System.Drawing.Point(271, 64);
             this.LB_Tempo2.Name = "LB_Tempo2";
             this.LB_Tempo2.Size = new System.Drawing.Size(35, 13);
             this.LB_Tempo2.TabIndex = 20;
@@ -408,7 +407,7 @@
             // LB_NumJoueur
             // 
             this.LB_NumJoueur.AutoSize = true;
-            this.LB_NumJoueur.Location = new System.Drawing.Point(513, 147);
+            this.LB_NumJoueur.Location = new System.Drawing.Point(266, 48);
             this.LB_NumJoueur.Name = "LB_NumJoueur";
             this.LB_NumJoueur.Size = new System.Drawing.Size(35, 13);
             this.LB_NumJoueur.TabIndex = 21;
@@ -419,16 +418,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(999, 506);
-            this.Controls.Add(this.LB_NumJoueur);
+            this.ClientSize = new System.Drawing.Size(754, 506);
+            this.Controls.Add(this.PN_Matchs);
             this.Controls.Add(this.PN_Joueurs);
-            this.Controls.Add(this.LB_Tempo2);
-            this.Controls.Add(this.DTP_Tempo);
             this.Controls.Add(this.PN_Equipe);
-            this.Controls.Add(this.LB_Tempo);
             this.Controls.Add(this.PB_Logo);
             this.Controls.Add(this.LB_Text);
             this.Controls.Add(this.FB_Fermer);
+            this.Controls.Add(this.LB_NumJoueur);
+            this.Controls.Add(this.LB_Tempo2);
+            this.Controls.Add(this.DTP_Tempo);
+            this.Controls.Add(this.LB_Tempo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormRecherche";
@@ -438,8 +438,6 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormRecherche_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormRecherche_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormRecherche_MouseUp);
-            this.PN_Equipe.ResumeLayout(false);
-            this.PN_Matchs.ResumeLayout(false);
             this.PN_Joueurs.ResumeLayout(false);
             this.PN_Joueurs.PerformLayout();
             this.groupBox1.ResumeLayout(false);

@@ -33,7 +33,8 @@ namespace HockeyIce
 
         private void FormDate_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Properties.Settings.Default.PosFormDate = this.Location ;
+            Properties.Settings.Default.Save();
         }
 
         // Events pour pouvoir faire bouger le form 

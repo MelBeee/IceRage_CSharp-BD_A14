@@ -789,7 +789,6 @@ namespace HockeyIce
             nomFichier = RechercherFichier();
             if (nomFichier != null)
             {
-
                 PB_LogoE.Image = System.Drawing.Image.FromFile(nomFichier);
                 PB_LogoE.ImageLocation = nomFichier;
             }
@@ -826,6 +825,8 @@ namespace HockeyIce
             Streamp.Close();
             return buffer1;
         }
+
+
 
     }
 }

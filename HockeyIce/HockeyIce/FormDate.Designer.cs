@@ -74,7 +74,7 @@
             this.FB_Fermer.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_Fermer.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
             this.FB_Fermer.Location = new System.Drawing.Point(145, 196);
-            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(100, 20);
             this.FB_Fermer.TabIndex = 1;
@@ -109,7 +109,7 @@
             // 
             this.pictureBox2.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
             this.pictureBox2.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(22, 21);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -125,7 +125,7 @@
             this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
             this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
             this.FB_Quitter.Location = new System.Drawing.Point(263, 2);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Quitter.Name = "FB_Quitter";
             this.FB_Quitter.Size = new System.Drawing.Size(19, 20);
             this.FB_Quitter.TabIndex = 10;
