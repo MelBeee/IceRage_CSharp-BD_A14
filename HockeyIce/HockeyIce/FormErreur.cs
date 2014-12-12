@@ -93,38 +93,53 @@ namespace HockeyIce
             string DescriptionErreur;
             switch (ex.Number)
             {
-                case 2292:
-                    DescriptionErreur = "Tentative de suppression d'une clé lié à une clé étrangère";
+                case 00001:
+                    DescriptionErreur = "Erreur de valeur unique.";
                     break;
-                case 1407:
-                    DescriptionErreur = "Vous ne pouvez pas mettre a jour une colonne avec une valeur null";
+                case 00904:
+                    DescriptionErreur = "Nom de colonne invalide ou manquante.";
                     break;
-                case 1400:
-                    DescriptionErreur = "Vous ne pouvez pas ajouter une colonne avec une valeur null";
+                case 00933:
+                    DescriptionErreur = "Commande SQL invalide.";
                     break;
-                case 1:
-                    DescriptionErreur = "Le numero d'employé doit être unique";
+                case 00936:
+                    DescriptionErreur = "La commande sql exécuté est incorrecte.";
                     break;
-                case 1410:
-                    DescriptionErreur = "Vous ne pouvez pas mettre de valeur null";
+                case 00947:
+                    DescriptionErreur = "Il manque des informations dans la commande sql exécuté.";
                     break;
-                case 1017:
-                    DescriptionErreur = "Mot de passe ou nom d'utilisateur invalide. \nConnection non établi";
+                case 01017:
+                    DescriptionErreur = "Mot de passe ou nom d'utilisateur invalide. \nConnection non établi.";
+                    break;
+                case 01036:
+                    DescriptionErreur = "Nom de variable invalide ou manquante";
+                    break;
+                case 01400:
+                    DescriptionErreur = "Vous ne pouvez pas ajouter une colonne avec une valeur null.";
+                    break;
+                case 01407:
+                    DescriptionErreur = "Vous ne pouvez pas mettre a jour une colonne avec une valeur null.";
+                    break;
+                case 01410:
+                    DescriptionErreur = "Vous ne pouvez pas mettre de valeur null.";
+                    break;
+                case 02292:
+                    DescriptionErreur = "Tentative de suppression d'une clé lié à une clé étrangère.";
                     break;
                 case 12170:
-                    DescriptionErreur = "La base de données est indisponible, réessayer plus tard";
-                    break;
-                case 12543:
-                    DescriptionErreur = "Connexion impossible. \nVérifiez votre connection internet";
-                    break;
-                case 12533:
-                    DescriptionErreur = "Connexion impossible. \nLe parametre de connexion d'adresse est invalide";
+                    DescriptionErreur = "La base de données est indisponible, réessayer plus tard.";
                     break;
                 case 12504:
-                    DescriptionErreur = "Connexion impossible. \nLe nom d'instance Oracle est invalide";
+                    DescriptionErreur = "Connexion impossible. \nLe nom d'instance Oracle est invalide.";
+                    break;
+                case 12533:
+                    DescriptionErreur = "Connexion impossible. \nLe parametre de connexion d'adresse est invalide.";
                     break;
                 case 12541:
-                    DescriptionErreur = "Connexion impossible. \nLa destination est invalide ou pas rejoignable";
+                    DescriptionErreur = "Connexion impossible. \nLa destination est invalide ou pas rejoignable.";
+                    break;
+                case 12543:
+                    DescriptionErreur = "Connexion impossible. \nVérifiez votre connection internet.";
                     break;
                 default:
                     DescriptionErreur = ex.Message;
@@ -135,10 +150,6 @@ namespace HockeyIce
         }
     }
 }
-/*  Erreurs à gérer
- * 00947
- * 00936
- * 00904
- * 00933
- * 01036
+/*  Erreurs à gérer http://www.techonthenet.com/oracle/errors/
+
  */
