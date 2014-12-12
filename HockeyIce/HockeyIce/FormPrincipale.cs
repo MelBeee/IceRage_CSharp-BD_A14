@@ -71,7 +71,7 @@ namespace HockeyIce
                 string Dsource = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
                     "(HOST=205.237.244.251)(PORT=1521)))" +
                     "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)))";
-                string user = "boucerm";
+                string user = "boucherm";
                 string passwd = "ORACLE1";
 
                 string chaineconnection = "Data Source = " + Dsource + ";User Id =" + user + "; Password =" + passwd;

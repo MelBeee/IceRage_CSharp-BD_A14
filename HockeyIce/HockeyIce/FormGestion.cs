@@ -268,7 +268,6 @@ namespace HockeyIce
                 oraVille.Value = TB_LieuxEquipe.Text;
                 oraDivision.Value = CB_InvisibleDiv.Text;
                 oraDate.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
-                //on fait du streaming (lecture en continue du fichier BLOB 
 
                 // En crée un Objet OracleCommand pour passer la requête à la bD 
                 OracleCommand oraAjout = new OracleCommand(sqlajout, oraconnGestion);
@@ -298,25 +297,24 @@ namespace HockeyIce
             {
                 // la requête SQLajout est paramétrée. Elle a 4 paramètres.
                 //les paramètres pour Oracle et C # sont précédés de deux points : 
-                string commandesql= " update EQUIPES " +
-                "(NUMEQUIPE=:Numequipe, NOM=:nom, LOGO=:Logo, VILLE=:Ville, NUMDIVISION=:NumDivision, DATEINTRODUCTION=:DateValue) values " +
-                "(,,,,,)";
+                string commandesql = " update EQUIPES set " +
+                "NOM=:nom, LOGO=:Logo, VILLE=:Ville, " +
+                "NUMDIVISION=:NumDivision, DATEINTRODUCTION=:DateValue " +
+                "where NUMEQUIPE=" + Properties.Settings.Default.NumValue;
+                
                 // On déclare les paramètres pour chaque paramètre de la requête
-                OracleParameter oraNum = new OracleParameter(":Numequipe", OracleDbType.Int32);
                 OracleParameter oraNom = new OracleParameter(":nom", OracleDbType.Varchar2, 50);
                 OracleParameter oraLogo = new OracleParameter(":Logo", OracleDbType.Blob);
                 OracleParameter oraVille = new OracleParameter(":Ville", OracleDbType.Varchar2, 30);
                 OracleParameter oraDivision = new OracleParameter(":NumDivision", OracleDbType.Int32);
                 OracleParameter oraDate = new OracleParameter(":DateValue", OracleDbType.Date);
-                // on affecte les valeurs aux paramètres.
-                
-                oraNum.Value = Properties.Settings.Default.NumValue;
+                // on affecte les valeurs aux paramètres.                
+               
                 oraNom.Value = TB_NomEquipe.Text;
                 oraLogo.Value = PicToByte();
                 oraVille.Value = TB_LieuxEquipe.Text;
                 oraDivision.Value = CB_InvisibleDiv.Text;
                 oraDate.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
-                //on fait du streaming (lecture en continue du fichier BLOB 
 
                 // En crée un Objet OracleCommand pour passer la requête à la bD 
                 OracleCommand oraAjout = new OracleCommand(commandesql, oraconnGestion);
@@ -324,7 +322,6 @@ namespace HockeyIce
                 // En utilisant la propriété Paramètres de OracleCommand, on spécifie les 
                 // Paramètre de la requête SQLajout.
 
-                oraAjout.Parameters.Add(oraNum);
                 oraAjout.Parameters.Add(oraNom);
                 oraAjout.Parameters.Add(oraLogo);
                 oraAjout.Parameters.Add(oraVille);
@@ -332,7 +329,7 @@ namespace HockeyIce
                 oraAjout.Parameters.Add(oraDate);
                 // on execute la requete 
                 oraAjout.ExecuteNonQuery();
-                MessageBox.Show("Insertion reussi");
+                MessageBox.Show("Modification reussi");
             }
             catch (OracleException ex)
             {
