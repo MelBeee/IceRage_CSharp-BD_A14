@@ -292,26 +292,25 @@ namespace HockeyIce
         }
         private void ModifierEquipe()
         {
-            Properties.Settings.Default.NumValue = base_.ToString();
             try
             {
                 // la requête SQLajout est paramétrée. Elle a 4 paramètres.
                 //les paramètres pour Oracle et C # sont précédés de deux points : 
                 string commandesql = " update EQUIPES set " +
-                "NOM=:nom, LOGO=:Logo, VILLE=:Ville, " +
+                "NOM=:nom, VILLE=:Ville, " +
                 "NUMDIVISION=:NumDivision, DATEINTRODUCTION=:DateValue " +
-                "where NUMEQUIPE=" + Properties.Settings.Default.NumValue;
-                
+                "where NUMEQUIPE=" + Properties.Settings.Default.NumValue.ToString();
+
                 // On déclare les paramètres pour chaque paramètre de la requête
-                OracleParameter oraNom = new OracleParameter(":nom", OracleDbType.Varchar2, 50);
-                OracleParameter oraLogo = new OracleParameter(":Logo", OracleDbType.Blob);
+                OracleParameter oraNom = new OracleParameter(":nom", OracleDbType.Varchar2, 50);                
+//OracleParameter oraLogo = new OracleParameter(":Logo", OracleDbType.Blob);
                 OracleParameter oraVille = new OracleParameter(":Ville", OracleDbType.Varchar2, 30);
                 OracleParameter oraDivision = new OracleParameter(":NumDivision", OracleDbType.Int32);
                 OracleParameter oraDate = new OracleParameter(":DateValue", OracleDbType.Date);
                 // on affecte les valeurs aux paramètres.                
                
                 oraNom.Value = TB_NomEquipe.Text;
-                oraLogo.Value = PicToByte();
+//oraLogo.Value = PicToByte();
                 oraVille.Value = TB_LieuxEquipe.Text;
                 oraDivision.Value = CB_InvisibleDiv.Text;
                 oraDate.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
@@ -323,7 +322,7 @@ namespace HockeyIce
                 // Paramètre de la requête SQLajout.
 
                 oraAjout.Parameters.Add(oraNom);
-                oraAjout.Parameters.Add(oraLogo);
+//oraAjout.Parameters.Add(oraLogo);
                 oraAjout.Parameters.Add(oraVille);
                 oraAjout.Parameters.Add(oraDivision);
                 oraAjout.Parameters.Add(oraDate);
@@ -824,11 +823,15 @@ namespace HockeyIce
         private byte[] PicToByte()
         {
             // le résultat on le met dans une variable de type byte (octets).
-            FileStream Streamp = new FileStream(nomFichier, FileMode.Open, FileAccess.Read);
-            byte[] buffer1 = new byte[Streamp.Length];
-            Streamp.Read(buffer1, 0, System.Convert.ToInt32(Streamp.Length));
-            Streamp.Close();
-            return buffer1;
+            if (nomFichier != null)
+            {
+                FileStream Streamp = new FileStream(nomFichier, FileMode.Open, FileAccess.Read);
+                byte[] buffer1 = new byte[Streamp.Length];
+                Streamp.Read(buffer1, 0, System.Convert.ToInt32(Streamp.Length));
+                Streamp.Close();
+                return buffer1;
+            }
+            return null;
         }
 
         private void PB_LogoE_Click(object sender, EventArgs e)
