@@ -40,6 +40,21 @@ namespace HockeyIce
         {
             EnabledVisibleLesPanels();
             this.Location = Properties.Settings.Default.PosFormClassement;
+            CouleurLoadDGV();
+        }
+
+        private void CouleurLoadDGV()
+        {
+            int compteur = 0;
+            foreach (DataGridViewRow dgvr in DGV_JoueurList.Rows)
+            {
+                if(compteur % 2 == 0)
+                    dgvr.DefaultCellStyle.BackColor = Color.FromArgb(180,213,239);
+                else
+                    dgvr.DefaultCellStyle.BackColor = Color.FromArgb(182, 225, 252);
+
+                compteur++;
+            }
         }
         
         // Telecharge l'image de l'URL fournit
@@ -256,6 +271,11 @@ namespace HockeyIce
         {
             Properties.Settings.Default.PosFormClassement = this.Location;
             Properties.Settings.Default.Save();
+        }
+
+        private void DGV_JoueurList_SelectionChanged(object sender, EventArgs e)
+        {
+            DGV_JoueurList.ClearSelection();
         }
     }
 }

@@ -6,8 +6,6 @@ gestion equipe	-> les images ne se modifie pas encore (Xav continue le code)
 
 classement des joueur - > mettre des titre du tableau
 			  police plus grosse
-			  selectionner devrait etre a none
-			  alterner les couleur
 datagridview joueur -> couleur du #
 			
 http://goo.gl/nznRQJ
