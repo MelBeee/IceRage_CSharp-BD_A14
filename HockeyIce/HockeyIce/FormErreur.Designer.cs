@@ -105,9 +105,9 @@
             this.LB_Text.Size = new System.Drawing.Size(77, 28);
             this.LB_Text.TabIndex = 5;
             this.LB_Text.Text = "Erreur";
-            this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseDown);
-            this.LB_Text.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseMove);
-            this.LB_Text.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseUp);
+            this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormErreur_MouseDown);
+            this.LB_Text.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormErreur_MouseMove);
+            this.LB_Text.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormErreur_MouseUp);
             // 
             // pictureBox2
             // 

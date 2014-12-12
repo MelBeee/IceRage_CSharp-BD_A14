@@ -9,88 +9,98 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      FORM ERREUR
+//      Fait par Melissa Boucher et Xavier Brosseau
+//      15 Decembre 2014
+//      Produit pour le cours de Base de Données et Developpement d'Interfaces
+//
+//      Utilisé pour afficher les exceptions dans l'execution du programme
+//      Description des exceptions : http://www.techonthenet.com/oracle/errors/
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace HockeyIce
 {
     public partial class FormErreur : Form
     {
+        // garde l'erreur a gerer 
         OracleException ExceptionATraiter;
+        // bool savoir si on est entrain de deplacer le form
+        private bool _dragging = false;
+        // emmagasine la position du curseur lors d'un deplacement de form
+        private Point _start_point = new Point(0, 0);
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      CONSTRUCTEUR
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public FormErreur(OracleException ExceptionAGerer)
         {
             InitializeComponent();
+            // Traite l'exception passé en construction lors de l'appel d'un autre form
             ExceptionATraiter = ExceptionAGerer;
         }
 
-        private bool _dragging = false;
-        private Point _start_point = new Point(0, 0);
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      FORM LOAD ET CLOSING 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FormErreur_Load(object sender, EventArgs e)
         {
-            SwitchException(ExceptionATraiter);
+            // loading de la position sauvegardé antérieurement 
             this.Location = Properties.Settings.Default.PosFormErreur;
+            // appel de la fonction qui va traiter l'exception
+            SwitchException(ExceptionATraiter);
+        }
+        private void FormErreur_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Enregistre la localisation du form pour utilisation prochaine
+            Properties.Settings.Default.PosFormErreur = this.Location;
+            Properties.Settings.Default.Save();
         }
 
-        // Events pour pouvoir faire bouger le form 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      DEPLACEMENT DU FORM
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FormErreur_MouseDown(object sender, MouseEventArgs e)
         {
-            _dragging = true;  // _dragging is your variable flag
-            _start_point = new Point(e.X, e.Y);
+            _dragging = true;  // Enregistre que l'utilisateur a selectionner la form
+            _start_point = new Point(e.X, e.Y); // Enregistre le point actuelle du form 
         }
         private void FormErreur_MouseUp(object sender, MouseEventArgs e)
         {
-            _dragging = false; 
+            _dragging = false; // Enregistre que l'utilisateur a "lacher le form"
         }
         private void FormErreur_MouseMove(object sender, MouseEventArgs e)
         {
-            if (_dragging)
+            if (_dragging) // si l'utilisateur a selectionner le form
             {
-                Point p = PointToScreen(e.Location);
+                Point p = PointToScreen(e.Location); 
                 Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
             }
-        }
-        private void LB_Text_MouseDown(object sender, MouseEventArgs e)
-        {
-            _dragging = true;  // _dragging is your variable flag
-            _start_point = new Point(e.X, e.Y);
-        }
-        private void LB_Text_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (_dragging)
-            {
-                Point p = PointToScreen(e.Location);
-                Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
-            }
-        }
-        private void LB_Text_MouseUp(object sender, MouseEventArgs e)
-        {
-            _dragging = false; 
         }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      EVENTS DE FLASHBUTTON
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FB_Quitter_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void FB_Continuer_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }
-
         private void FB_Fermer_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
 
-        private void FormErreur_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Properties.Settings.Default.PosFormErreur = this.Location;
-            Properties.Settings.Default.Save();
-        }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      SWITCH EXCEPTION
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Traite l'exception lancé
         private void SwitchException(OracleException ex)
         {
-            string CodeErreur = ex.Number.ToString();
             string DescriptionErreur;
+            // Va chercher l'erreur lancé et set la description dans un string 
             switch (ex.Number)
             {
                 case 00001:
@@ -145,11 +155,10 @@ namespace HockeyIce
                     DescriptionErreur = ex.Message;
                     break;
             }
-            LB_Text.Text += " " + CodeErreur;
+            // Change le contenu des labels selon l'exception géré ou non géré
+            LB_Text.Text += " " + ex.Number.ToString();
             LB_Description.Text = DescriptionErreur;
         }
+
     }
 }
-/*  Erreurs à gérer http://www.techonthenet.com/oracle/errors/
-
- */
