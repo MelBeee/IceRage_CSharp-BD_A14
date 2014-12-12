@@ -142,7 +142,6 @@ namespace HockeyIce
 
             AfficherErreur();
         }
-
         private void AfficherErreur()
         {
             FormErreur dlg = new FormErreur();
@@ -303,7 +302,9 @@ namespace HockeyIce
 
         private void FB_TrouverJoueur_Click(object sender, EventArgs e)
         {
-            AfficherRecherche("Joueurs");
+            FormChoixStats dlg = new FormChoixStats(oraconn);
+
+            dlg.ShowDialog();
         }
 
         private void AfficherRecherche(string Recherche)

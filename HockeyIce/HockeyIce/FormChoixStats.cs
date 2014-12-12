@@ -14,6 +14,8 @@ namespace HockeyIce
     public partial class FormChoixStats : Form
     {
         private OracleConnection oraconnChoixStats = new OracleConnection();
+        private bool _dragging = false;
+        private Point _start_point = new Point(0, 0);
 
         public FormChoixStats(OracleConnection oraconn)
         {
@@ -54,6 +56,7 @@ namespace HockeyIce
         private void FormChoixStats_Load(object sender, EventArgs e)
         {
             UpdateControl();
+            this.Location = Properties.Settings.Default.PosFormChoixStats;
         }
 
         private void RB_Ajouter_CheckedChanged(object sender, EventArgs e)
@@ -64,6 +67,30 @@ namespace HockeyIce
         private void RB_Afficher_CheckedChanged(object sender, EventArgs e)
         {
             UpdateControl();
+        }
+
+        private void FormGestionStatistiqueJ_MouseDown(object sender, MouseEventArgs e)
+        {
+            _dragging = true;  // _dragging is your variable flag
+            _start_point = new Point(e.X, e.Y);
+        }
+        private void FormGestionStatistiqueJ_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
+            }
+        }
+        private void FormGestionStatistiqueJ_MouseUp(object sender, MouseEventArgs e)
+        {
+            _dragging = false;
+        }
+
+        private void FormChoixStats_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.PosFormChoixStats = this.Location;
+            Properties.Settings.Default.Save();
         }
     }
 }
