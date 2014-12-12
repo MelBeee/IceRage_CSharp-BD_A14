@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 using System.IO;
+using System.Collections.Specialized;
+using System.Net;
 
 // Ajout joueur/division/match fonctionne.  equipe a refaire pour le logo? 
 // suppression marchent pour les 4.
@@ -600,7 +602,8 @@ namespace HockeyIce
         // Event pour updater les control lors d'un changement dans n'importe quel textbox
         private void TB_TextChanged(object sender, EventArgs e)
         {
-            UpdateControl();
+            UpdateControl();            
+            pictureBox5.ImageLocation = TB_PhotoJ.Text;
         }
         // Selected Index changed dans les combobox d'equipe
         private void CB_SelectedIndexChanged(object sender, EventArgs e)
@@ -658,6 +661,19 @@ namespace HockeyIce
                     break;
             }
         }
+
+        public static Image GetImageFromUrl(string url)
+        {
+            HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
+            using (HttpWebResponse httpWebReponse = (HttpWebResponse)httpWebRequest.GetResponse())
+            {
+                using (Stream stream = httpWebReponse.GetResponseStream())
+                {
+                    return Image.FromStream(stream);
+                }
+            }
+        }
+
         // Events pour pouvoir faire bouger le form 
         private void FormGestion_MouseDown(object sender, MouseEventArgs e)
         {

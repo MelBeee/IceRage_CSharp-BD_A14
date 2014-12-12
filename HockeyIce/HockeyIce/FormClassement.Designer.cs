@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClassement));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LB_Text = new System.Windows.Forms.Label();
             this.PN_CJoueurs = new System.Windows.Forms.Panel();
@@ -64,17 +65,17 @@
             this.LB_PrenomBronze = new System.Windows.Forms.Label();
             this.PB_Podium = new System.Windows.Forms.PictureBox();
             this.PN_CEquipe = new System.Windows.Forms.Panel();
+            this.CB_InvisibleDivision = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CB_Division = new System.Windows.Forms.ComboBox();
             this.DGV_Divison = new System.Windows.Forms.DataGridView();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.FB_Quitter = new FlashButton.FlashButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CB_InvisibleDivision = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.FB_Quitter = new FlashButton.FlashButton();
             this.PN_CJoueurs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_JoueurList)).BeginInit();
             this.PN_3Joueurs.SuspendLayout();
@@ -247,7 +248,7 @@
             this.PN_3Joueurs.Controls.Add(this.LB_PrenomBronze);
             this.PN_3Joueurs.Controls.Add(this.PB_Podium);
             this.PN_3Joueurs.Enabled = false;
-            this.PN_3Joueurs.Location = new System.Drawing.Point(942, 102);
+            this.PN_3Joueurs.Location = new System.Drawing.Point(714, 89);
             this.PN_3Joueurs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_3Joueurs.Name = "PN_3Joueurs";
             this.PN_3Joueurs.Size = new System.Drawing.Size(673, 397);
@@ -257,6 +258,8 @@
             // PB_Photo_Bronze
             // 
             this.PB_Photo_Bronze.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PB_Photo_Bronze.ErrorImage = ((System.Drawing.Image)(resources.GetObject("PB_Photo_Bronze.ErrorImage")));
+            this.PB_Photo_Bronze.InitialImage = ((System.Drawing.Image)(resources.GetObject("PB_Photo_Bronze.InitialImage")));
             this.PB_Photo_Bronze.Location = new System.Drawing.Point(439, 170);
             this.PB_Photo_Bronze.Name = "PB_Photo_Bronze";
             this.PB_Photo_Bronze.Size = new System.Drawing.Size(71, 111);
@@ -266,6 +269,8 @@
             // PB_Photo_Gold
             // 
             this.PB_Photo_Gold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PB_Photo_Gold.ErrorImage = ((System.Drawing.Image)(resources.GetObject("PB_Photo_Gold.ErrorImage")));
+            this.PB_Photo_Gold.InitialImage = ((System.Drawing.Image)(resources.GetObject("PB_Photo_Gold.InitialImage")));
             this.PB_Photo_Gold.Location = new System.Drawing.Point(246, 170);
             this.PB_Photo_Gold.Name = "PB_Photo_Gold";
             this.PB_Photo_Gold.Size = new System.Drawing.Size(71, 111);
@@ -275,6 +280,8 @@
             // PB_Photo_Silver
             // 
             this.PB_Photo_Silver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PB_Photo_Silver.ErrorImage = ((System.Drawing.Image)(resources.GetObject("PB_Photo_Silver.ErrorImage")));
+            this.PB_Photo_Silver.InitialImage = ((System.Drawing.Image)(resources.GetObject("PB_Photo_Silver.InitialImage")));
             this.PB_Photo_Silver.Location = new System.Drawing.Point(51, 170);
             this.PB_Photo_Silver.Name = "PB_Photo_Silver";
             this.PB_Photo_Silver.Size = new System.Drawing.Size(71, 111);
@@ -464,12 +471,21 @@
             this.PN_CEquipe.Controls.Add(this.CB_Division);
             this.PN_CEquipe.Controls.Add(this.DGV_Divison);
             this.PN_CEquipe.Enabled = false;
-            this.PN_CEquipe.Location = new System.Drawing.Point(4, 29);
+            this.PN_CEquipe.Location = new System.Drawing.Point(4, 30);
             this.PN_CEquipe.Margin = new System.Windows.Forms.Padding(2);
             this.PN_CEquipe.Name = "PN_CEquipe";
             this.PN_CEquipe.Size = new System.Drawing.Size(673, 397);
             this.PN_CEquipe.TabIndex = 11;
             this.PN_CEquipe.Visible = false;
+            // 
+            // CB_InvisibleDivision
+            // 
+            this.CB_InvisibleDivision.FormattingEnabled = true;
+            this.CB_InvisibleDivision.Location = new System.Drawing.Point(185, 7);
+            this.CB_InvisibleDivision.Name = "CB_InvisibleDivision";
+            this.CB_InvisibleDivision.Size = new System.Drawing.Size(121, 21);
+            this.CB_InvisibleDivision.TabIndex = 4;
+            this.CB_InvisibleDivision.Visible = false;
             // 
             // label1
             // 
@@ -522,32 +538,6 @@
             this.DGV_Divison.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Divison.Size = new System.Drawing.Size(673, 366);
             this.DGV_Divison.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
-            // FB_Quitter
-            // 
-            this.FB_Quitter.BackgroundImage = global::HockeyIce.Properties.Resources.CloseNormal;
-            this.FB_Quitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_Quitter.ImageClick = global::HockeyIce.Properties.Resources.CloseClick;
-            this.FB_Quitter.ImageDisable = global::HockeyIce.Properties.Resources.CloseDisable;
-            this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
-            this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
-            this.FB_Quitter.Location = new System.Drawing.Point(658, 4);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Quitter.Name = "FB_Quitter";
-            this.FB_Quitter.Size = new System.Drawing.Size(19, 20);
-            this.FB_Quitter.TabIndex = 11;
-            this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
             // dataGridViewImageColumn1
             // 
@@ -602,14 +592,31 @@
             this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn5.Width = 99;
             // 
-            // CB_InvisibleDivision
+            // pictureBox2
             // 
-            this.CB_InvisibleDivision.FormattingEnabled = true;
-            this.CB_InvisibleDivision.Location = new System.Drawing.Point(185, 7);
-            this.CB_InvisibleDivision.Name = "CB_InvisibleDivision";
-            this.CB_InvisibleDivision.Size = new System.Drawing.Size(121, 21);
-            this.CB_InvisibleDivision.TabIndex = 4;
-            this.CB_InvisibleDivision.Visible = false;
+            this.pictureBox2.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(22, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // FB_Quitter
+            // 
+            this.FB_Quitter.BackgroundImage = global::HockeyIce.Properties.Resources.CloseNormal;
+            this.FB_Quitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Quitter.ImageClick = global::HockeyIce.Properties.Resources.CloseClick;
+            this.FB_Quitter.ImageDisable = global::HockeyIce.Properties.Resources.CloseDisable;
+            this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
+            this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
+            this.FB_Quitter.Location = new System.Drawing.Point(658, 4);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Quitter.Name = "FB_Quitter";
+            this.FB_Quitter.Size = new System.Drawing.Size(19, 20);
+            this.FB_Quitter.TabIndex = 11;
+            this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
             // FormClassement
             // 

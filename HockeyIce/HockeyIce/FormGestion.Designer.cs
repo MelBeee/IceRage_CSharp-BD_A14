@@ -79,6 +79,13 @@
             this.FB_FermerJ = new FlashButton.FlashButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PN_Matchs = new System.Windows.Forms.Panel();
+            this.FB_DateMatch = new FlashButton.FlashButton();
+            this.CB_EVisiteur = new System.Windows.Forms.ComboBox();
+            this.CB_EMaison = new System.Windows.Forms.ComboBox();
+            this.TB_Endroit = new System.Windows.Forms.TextBox();
+            this.DTP_DateMatch = new System.Windows.Forms.DateTimePicker();
+            this.NUD_PMaison = new System.Windows.Forms.NumericUpDown();
+            this.NUD_PVisiteur = new System.Windows.Forms.NumericUpDown();
             this.LB_EVisiteur = new System.Windows.Forms.Label();
             this.LB_EMaison = new System.Windows.Forms.Label();
             this.FB_AppliquerMatch = new FlashButton.FlashButton();
@@ -89,12 +96,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.DTP_DateMatch = new System.Windows.Forms.DateTimePicker();
-            this.CB_EVisiteur = new System.Windows.Forms.ComboBox();
-            this.CB_EMaison = new System.Windows.Forms.ComboBox();
-            this.NUD_PMaison = new System.Windows.Forms.NumericUpDown();
-            this.NUD_PVisiteur = new System.Windows.Forms.NumericUpDown();
-            this.TB_Endroit = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.FB_FermerM = new FlashButton.FlashButton();
             this.CB_Invisible = new System.Windows.Forms.ComboBox();
@@ -103,7 +104,6 @@
             this.PB_Logo = new System.Windows.Forms.PictureBox();
             this.LB_Invisible = new System.Windows.Forms.Label();
             this.CB_InvisibleDiv = new System.Windows.Forms.ComboBox();
-            this.FB_DateMatch = new FlashButton.FlashButton();
             this.PN_Division.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PN_Equipe.SuspendLayout();
@@ -499,9 +499,14 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(246, 149);
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.ErrorImage = global::HockeyIce.Properties.Resources.no_photo_available;
+            this.pictureBox5.Image = global::HockeyIce.Properties.Resources.no_photo_available;
+            this.pictureBox5.InitialImage = global::HockeyIce.Properties.Resources.ajax_loader;
+            this.pictureBox5.Location = new System.Drawing.Point(246, 123);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(92, 117);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 40;
             this.pictureBox5.TabStop = false;
             // 
@@ -744,6 +749,72 @@
             this.PN_Matchs.TabIndex = 9;
             this.PN_Matchs.Visible = false;
             // 
+            // FB_DateMatch
+            // 
+            this.FB_DateMatch.BackgroundImage = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
+            this.FB_DateMatch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_DateMatch.ImageClick = global::HockeyIce.Properties.Resources.ChoisirDateClick;
+            this.FB_DateMatch.ImageDisable = global::HockeyIce.Properties.Resources.ChoisirDateDisable;
+            this.FB_DateMatch.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
+            this.FB_DateMatch.ImageOver = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
+            this.FB_DateMatch.Location = new System.Drawing.Point(192, 204);
+            this.FB_DateMatch.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_DateMatch.Name = "FB_DateMatch";
+            this.FB_DateMatch.Size = new System.Drawing.Size(104, 19);
+            this.FB_DateMatch.TabIndex = 39;
+            // 
+            // CB_EVisiteur
+            // 
+            this.CB_EVisiteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_EVisiteur.FormattingEnabled = true;
+            this.CB_EVisiteur.Location = new System.Drawing.Point(193, 151);
+            this.CB_EVisiteur.Name = "CB_EVisiteur";
+            this.CB_EVisiteur.Size = new System.Drawing.Size(103, 21);
+            this.CB_EVisiteur.TabIndex = 21;
+            this.CB_EVisiteur.SelectedIndexChanged += new System.EventHandler(this.CB_EVisiteur_SelectedIndexChanged);
+            // 
+            // CB_EMaison
+            // 
+            this.CB_EMaison.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_EMaison.FormattingEnabled = true;
+            this.CB_EMaison.Location = new System.Drawing.Point(193, 124);
+            this.CB_EMaison.Name = "CB_EMaison";
+            this.CB_EMaison.Size = new System.Drawing.Size(103, 21);
+            this.CB_EMaison.TabIndex = 20;
+            this.CB_EMaison.SelectedIndexChanged += new System.EventHandler(this.CB_SelectedIndexChanged);
+            // 
+            // TB_Endroit
+            // 
+            this.TB_Endroit.Location = new System.Drawing.Point(193, 177);
+            this.TB_Endroit.MaxLength = 30;
+            this.TB_Endroit.Name = "TB_Endroit";
+            this.TB_Endroit.Size = new System.Drawing.Size(103, 20);
+            this.TB_Endroit.TabIndex = 17;
+            this.TB_Endroit.TextChanged += new System.EventHandler(this.TB_TextChanged);
+            this.TB_Endroit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
+            // 
+            // DTP_DateMatch
+            // 
+            this.DTP_DateMatch.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.DTP_DateMatch.Location = new System.Drawing.Point(193, 229);
+            this.DTP_DateMatch.Name = "DTP_DateMatch";
+            this.DTP_DateMatch.Size = new System.Drawing.Size(103, 20);
+            this.DTP_DateMatch.TabIndex = 22;
+            // 
+            // NUD_PMaison
+            // 
+            this.NUD_PMaison.Location = new System.Drawing.Point(193, 255);
+            this.NUD_PMaison.Name = "NUD_PMaison";
+            this.NUD_PMaison.Size = new System.Drawing.Size(53, 20);
+            this.NUD_PMaison.TabIndex = 19;
+            // 
+            // NUD_PVisiteur
+            // 
+            this.NUD_PVisiteur.Location = new System.Drawing.Point(192, 281);
+            this.NUD_PVisiteur.Name = "NUD_PVisiteur";
+            this.NUD_PVisiteur.Size = new System.Drawing.Size(53, 20);
+            this.NUD_PVisiteur.TabIndex = 18;
+            // 
             // LB_EVisiteur
             // 
             this.LB_EVisiteur.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -849,58 +920,6 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Équipe maison :";
             // 
-            // DTP_DateMatch
-            // 
-            this.DTP_DateMatch.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DTP_DateMatch.Location = new System.Drawing.Point(193, 229);
-            this.DTP_DateMatch.Name = "DTP_DateMatch";
-            this.DTP_DateMatch.Size = new System.Drawing.Size(103, 20);
-            this.DTP_DateMatch.TabIndex = 22;
-            // 
-            // CB_EVisiteur
-            // 
-            this.CB_EVisiteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_EVisiteur.FormattingEnabled = true;
-            this.CB_EVisiteur.Location = new System.Drawing.Point(193, 151);
-            this.CB_EVisiteur.Name = "CB_EVisiteur";
-            this.CB_EVisiteur.Size = new System.Drawing.Size(103, 21);
-            this.CB_EVisiteur.TabIndex = 21;
-            this.CB_EVisiteur.SelectedIndexChanged += new System.EventHandler(this.CB_EVisiteur_SelectedIndexChanged);
-            // 
-            // CB_EMaison
-            // 
-            this.CB_EMaison.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_EMaison.FormattingEnabled = true;
-            this.CB_EMaison.Location = new System.Drawing.Point(193, 124);
-            this.CB_EMaison.Name = "CB_EMaison";
-            this.CB_EMaison.Size = new System.Drawing.Size(103, 21);
-            this.CB_EMaison.TabIndex = 20;
-            this.CB_EMaison.SelectedIndexChanged += new System.EventHandler(this.CB_SelectedIndexChanged);
-            // 
-            // NUD_PMaison
-            // 
-            this.NUD_PMaison.Location = new System.Drawing.Point(193, 255);
-            this.NUD_PMaison.Name = "NUD_PMaison";
-            this.NUD_PMaison.Size = new System.Drawing.Size(53, 20);
-            this.NUD_PMaison.TabIndex = 19;
-            // 
-            // NUD_PVisiteur
-            // 
-            this.NUD_PVisiteur.Location = new System.Drawing.Point(192, 281);
-            this.NUD_PVisiteur.Name = "NUD_PVisiteur";
-            this.NUD_PVisiteur.Size = new System.Drawing.Size(53, 20);
-            this.NUD_PVisiteur.TabIndex = 18;
-            // 
-            // TB_Endroit
-            // 
-            this.TB_Endroit.Location = new System.Drawing.Point(193, 177);
-            this.TB_Endroit.MaxLength = 30;
-            this.TB_Endroit.Name = "TB_Endroit";
-            this.TB_Endroit.Size = new System.Drawing.Size(103, 20);
-            this.TB_Endroit.TabIndex = 17;
-            this.TB_Endroit.TextChanged += new System.EventHandler(this.TB_TextChanged);
-            this.TB_Endroit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
-            // 
             // pictureBox4
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -988,20 +1007,6 @@
             this.CB_InvisibleDiv.Size = new System.Drawing.Size(121, 21);
             this.CB_InvisibleDiv.TabIndex = 40;
             this.CB_InvisibleDiv.Visible = false;
-            // 
-            // FB_DateMatch
-            // 
-            this.FB_DateMatch.BackgroundImage = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.FB_DateMatch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_DateMatch.ImageClick = global::HockeyIce.Properties.Resources.ChoisirDateClick;
-            this.FB_DateMatch.ImageDisable = global::HockeyIce.Properties.Resources.ChoisirDateDisable;
-            this.FB_DateMatch.ImageNeutral = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.FB_DateMatch.ImageOver = global::HockeyIce.Properties.Resources.ChoisirDateNormal;
-            this.FB_DateMatch.Location = new System.Drawing.Point(192, 204);
-            this.FB_DateMatch.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_DateMatch.Name = "FB_DateMatch";
-            this.FB_DateMatch.Size = new System.Drawing.Size(104, 19);
-            this.FB_DateMatch.TabIndex = 39;
             // 
             // FormGestion
             // 
