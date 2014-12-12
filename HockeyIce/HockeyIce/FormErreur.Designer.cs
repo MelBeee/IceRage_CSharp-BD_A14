@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LB_Description = new System.Windows.Forms.Label();
             this.FB_Fermer = new FlashButton.FlashButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FB_Continuer = new FlashButton.FlashButton();
             this.LB_Text = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FB_Quitter = new FlashButton.FlashButton();
-            this.LB_Description = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -54,6 +54,15 @@
             this.panel1.Size = new System.Drawing.Size(323, 126);
             this.panel1.TabIndex = 0;
             // 
+            // LB_Description
+            // 
+            this.LB_Description.Font = new System.Drawing.Font("Kristen ITC", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Description.Location = new System.Drawing.Point(79, 11);
+            this.LB_Description.Name = "LB_Description";
+            this.LB_Description.Size = new System.Drawing.Size(236, 75);
+            this.LB_Description.TabIndex = 5;
+            this.LB_Description.Text = "label1";
+            // 
             // FB_Fermer
             // 
             this.FB_Fermer.BackgroundImage = global::HockeyIce.Properties.Resources.QuitterNormal;
@@ -63,7 +72,7 @@
             this.FB_Fermer.ImageNeutral = global::HockeyIce.Properties.Resources.QuitterNormal;
             this.FB_Fermer.ImageOver = global::HockeyIce.Properties.Resources.QuitterHover;
             this.FB_Fermer.Location = new System.Drawing.Point(165, 95);
-            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(100, 20);
             this.FB_Fermer.TabIndex = 4;
@@ -89,7 +98,7 @@
             this.FB_Continuer.ImageNeutral = global::HockeyIce.Properties.Resources.ContinuerNormal;
             this.FB_Continuer.ImageOver = global::HockeyIce.Properties.Resources.ContinuerHover;
             this.FB_Continuer.Location = new System.Drawing.Point(59, 95);
-            this.FB_Continuer.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Continuer.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Continuer.Name = "FB_Continuer";
             this.FB_Continuer.Size = new System.Drawing.Size(100, 20);
             this.FB_Continuer.TabIndex = 2;
@@ -129,25 +138,15 @@
             this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
             this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
             this.FB_Quitter.Location = new System.Drawing.Point(300, 4);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Quitter.Name = "FB_Quitter";
             this.FB_Quitter.Size = new System.Drawing.Size(25, 25);
             this.FB_Quitter.TabIndex = 1;
             this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
-            // LB_Description
-            // 
-            this.LB_Description.Font = new System.Drawing.Font("Kristen ITC", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Description.Location = new System.Drawing.Point(79, 11);
-            this.LB_Description.Name = "LB_Description";
-            this.LB_Description.Size = new System.Drawing.Size(236, 75);
-            this.LB_Description.TabIndex = 5;
-            this.LB_Description.Text = "label1";
-            // 
             // FormErreur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(331, 160);
