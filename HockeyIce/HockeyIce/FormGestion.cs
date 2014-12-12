@@ -484,6 +484,7 @@ namespace HockeyIce
                 CB_PositionJ.DropDownStyle = ComboBoxStyle.DropDown;
                 CB_PositionJ.Text = oraRead.GetString(5);
                 TB_PhotoJ.Text = oraRead.GetString(6);
+                CB_ChoixEquipeJ.DropDownStyle = ComboBoxStyle.DropDown;
                 CB_ChoixEquipeJ.Text = oraRead.GetInt32(7).ToString();
 
                 oraRead.Close();

@@ -38,9 +38,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FB_Continuer = new FlashButton.FlashButton();
             this.LB_Description = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FB_Quitter = new FlashButton.FlashButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -156,14 +156,24 @@
             this.LB_Description.Text = "Créé par Melissa Boucher et Xavier Brosseau";
             this.LB_Description.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(11, 47);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(414, 75);
+            this.label5.TabIndex = 9;
+            this.label5.Text = resources.GetString("label5.Text");
+            // 
             // pictureBox2
             // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(29, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
@@ -175,27 +185,18 @@
             this.FB_Quitter.ImageDisable = global::HockeyIce.Properties.Resources.CloseDisable;
             this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
             this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
-            this.FB_Quitter.Location = new System.Drawing.Point(410, 3);
+            this.FB_Quitter.Location = new System.Drawing.Point(412, 3);
             this.FB_Quitter.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Quitter.Name = "FB_Quitter";
-            this.FB_Quitter.Size = new System.Drawing.Size(25, 25);
+            this.FB_Quitter.Size = new System.Drawing.Size(25, 26);
             this.FB_Quitter.TabIndex = 7;
             this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 47);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(414, 75);
-            this.label5.TabIndex = 9;
-            this.label5.Text = resources.GetString("label5.Text");
             // 
             // FormAPropos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(440, 404);
+            this.ClientSize = new System.Drawing.Size(440, 403);
             this.Controls.Add(this.LB_Text);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.FB_Quitter);

@@ -32,7 +32,6 @@
             this.LB_Text = new System.Windows.Forms.Label();
             this.PN_Equipe = new System.Windows.Forms.Panel();
             this.PN_Matchs = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.PN_Joueurs = new System.Windows.Forms.Panel();
             this.LB_Type = new System.Windows.Forms.Label();
             this.LB_DateNais = new System.Windows.Forms.Label();
@@ -103,20 +102,9 @@
             this.PN_Matchs.TabIndex = 9;
             this.PN_Matchs.Visible = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(281, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // PN_Joueurs
             // 
             this.PN_Joueurs.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_Joueurs.Controls.Add(this.button1);
             this.PN_Joueurs.Controls.Add(this.LB_Type);
             this.PN_Joueurs.Controls.Add(this.LB_DateNais);
             this.PN_Joueurs.Controls.Add(this.LB_Prenom);
@@ -131,7 +119,7 @@
             this.PN_Joueurs.Controls.Add(this.PB_Joueur);
             this.PN_Joueurs.Controls.Add(this.labrlds);
             this.PN_Joueurs.Enabled = false;
-            this.PN_Joueurs.Location = new System.Drawing.Point(2, 28);
+            this.PN_Joueurs.Location = new System.Drawing.Point(2, 26);
             this.PN_Joueurs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_Joueurs.Name = "PN_Joueurs";
             this.PN_Joueurs.Size = new System.Drawing.Size(371, 255);
@@ -372,17 +360,17 @@
             this.FB_Fermer.ImageDisable = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageDisable")));
             this.FB_Fermer.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageNeutral")));
             this.FB_Fermer.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageOver")));
-            this.FB_Fermer.Location = new System.Drawing.Point(353, 4);
+            this.FB_Fermer.Location = new System.Drawing.Point(353, 3);
             this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Fermer.Name = "FB_Fermer";
-            this.FB_Fermer.Size = new System.Drawing.Size(20, 21);
+            this.FB_Fermer.Size = new System.Drawing.Size(20, 22);
             this.FB_Fermer.TabIndex = 5;
             this.FB_Fermer.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
             // LB_Tempo
             // 
             this.LB_Tempo.AutoSize = true;
-            this.LB_Tempo.Location = new System.Drawing.Point(271, 103);
+            this.LB_Tempo.Location = new System.Drawing.Point(29, 98);
             this.LB_Tempo.Name = "LB_Tempo";
             this.LB_Tempo.Size = new System.Drawing.Size(35, 13);
             this.LB_Tempo.TabIndex = 18;
@@ -390,7 +378,7 @@
             // 
             // DTP_Tempo
             // 
-            this.DTP_Tempo.Location = new System.Drawing.Point(266, 80);
+            this.DTP_Tempo.Location = new System.Drawing.Point(24, 75);
             this.DTP_Tempo.Name = "DTP_Tempo";
             this.DTP_Tempo.Size = new System.Drawing.Size(92, 20);
             this.DTP_Tempo.TabIndex = 19;
@@ -398,7 +386,7 @@
             // LB_Tempo2
             // 
             this.LB_Tempo2.AutoSize = true;
-            this.LB_Tempo2.Location = new System.Drawing.Point(271, 64);
+            this.LB_Tempo2.Location = new System.Drawing.Point(29, 59);
             this.LB_Tempo2.Name = "LB_Tempo2";
             this.LB_Tempo2.Size = new System.Drawing.Size(35, 13);
             this.LB_Tempo2.TabIndex = 20;
@@ -407,7 +395,7 @@
             // LB_NumJoueur
             // 
             this.LB_NumJoueur.AutoSize = true;
-            this.LB_NumJoueur.Location = new System.Drawing.Point(266, 48);
+            this.LB_NumJoueur.Location = new System.Drawing.Point(24, 43);
             this.LB_NumJoueur.Name = "LB_NumJoueur";
             this.LB_NumJoueur.Size = new System.Drawing.Size(35, 13);
             this.LB_NumJoueur.TabIndex = 21;
@@ -418,7 +406,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(754, 506);
+            this.ClientSize = new System.Drawing.Size(377, 286);
             this.Controls.Add(this.PN_Matchs);
             this.Controls.Add(this.PN_Joueurs);
             this.Controls.Add(this.PN_Equipe);
@@ -458,7 +446,6 @@
         private System.Windows.Forms.Panel PN_Equipe;
         private System.Windows.Forms.Panel PN_Matchs;
         private System.Windows.Forms.Panel PN_Joueurs;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox PB_Joueur;
         private System.Windows.Forms.Label sascfer;
         private System.Windows.Forms.Label LB_Mailot;
