@@ -15,11 +15,7 @@ using Oracle.DataAccess.Client;
 //      label1.Text = (Int32.Parse(TB_ChiffreUn.Text) + Int32.Parse(TB_Chiffre2.Text)).ToString(); 
 
 /*  Erreurs à gérer
- * 00947
- * 00936
- * 00904
- * 00933
- * 01036
+
  */
 
 namespace HockeyIce
@@ -75,7 +71,7 @@ namespace HockeyIce
                 string Dsource = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
                     "(HOST=205.237.244.251)(PORT=1521)))" +
                     "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)))";
-                string user = "boucherm";
+                string user = "boucerm";
                 string passwd = "ORACLE1";
 
                 string chaineconnection = "Data Source = " + Dsource + ";User Id =" + user + "; Password =" + passwd;
@@ -87,66 +83,18 @@ namespace HockeyIce
                 }
                 catch (OracleException ex)
                 {
-                    SwitchException(ex);
+                    AfficherErreur(ex);
                     connection = false;
                 }
             }
         }
 
-        private void SwitchException(OracleException ex)
-        {
-            string CodeErreur = ex.Number.ToString();
-            string DescriptionErreur;
-            switch (ex.Number)
-            {
-                case 2292:
-                    DescriptionErreur = "Tentative de suppression d'une clé lié à une clé étrangère"; 
-                    break;
-                case 1407:
-                    DescriptionErreur = "Vous ne pouvez pas mettre a jour une colonne avec une valeur null";
-                    break;
-                case 1400:
-                    DescriptionErreur = "Vous ne pouvez pas ajouter une colonne avec une valeur null";
-                    break;
-                case 1:
-                    DescriptionErreur = "Le numero d'employé doit être unique";
-                    break;
-                case 1410:
-                    DescriptionErreur = "Vous ne pouvez pas mettre de valeur null";
-                    break;
-                case 1017:
-                    DescriptionErreur = "Mot de passe ou nom d'utilisateur invalide, connection non établi";
-                    break;
-                case 12170:
-                    DescriptionErreur = "La base de données est indisponible, réessayer plus tard";
-                    break;
-                case 12543:
-                    DescriptionErreur = "Connexion impossible. Vérifiez votre connection internet";
-                    break;
-                case 12533:
-                    DescriptionErreur = "Connexion impossible. Le parametre de connexion d'adresse est invalide";
-                    break;
-                case 12504:
-                    DescriptionErreur = "Connexion impossible. Le nom d'instance Oracle est invalide";
-                    break;
-                case 12541:
-                    DescriptionErreur = "Connexion impossible. La destination est invalide ou pas rejoignable";
-                    break;
-                default:
-                    DescriptionErreur = ex.Message; 
-                    break;
-            }
-            Properties.Settings.Default.CodeErreur = CodeErreur;
-            Properties.Settings.Default.DescriptionErreur = DescriptionErreur;
-            Properties.Settings.Default.Save();
 
-            AfficherErreur();
-        }
-        private void AfficherErreur()
+        private void AfficherErreur(OracleException ex)
         {
-            FormErreur dlg = new FormErreur();
+            FormErreur dlg = new FormErreur(ex);
 
-            if(dlg.ShowDialog() == DialogResult.Cancel)
+            if (dlg.ShowDialog() == DialogResult.Cancel)
             {
                 this.Close();
             }

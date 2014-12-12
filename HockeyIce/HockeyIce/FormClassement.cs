@@ -80,8 +80,6 @@ namespace HockeyIce
         {
             try
             {
-                
-               
                 OracleCommand orcd = new OracleCommand(Sql, oraconnClassement);
                 orcd.CommandType = CommandType.Text;
                 OracleDataReader oraRead = orcd.ExecuteReader();
@@ -89,7 +87,6 @@ namespace HockeyIce
                 //Joueur #1
                 while (oraRead.Read())
                 {
-
                     Image Photo = GetImageFromUrl(oraRead.GetString(4));
                     Photo = resizeImage(Photo, new Size(50, 75));
                     Image Logo = Image.FromStream(oraRead.GetOracleBlob(5));
@@ -99,11 +96,15 @@ namespace HockeyIce
                 }
 
                 oraRead.Close();
-
             }
-            catch (OracleException exsqlajout)
+            catch (OracleException ex)
             {
-                MessageBox.Show(exsqlajout.Message.ToString());
+                FormErreur dlg = new FormErreur(ex);
+
+                if(dlg.ShowDialog() == DialogResult.Cancel)
+                {
+                    this.Close();
+                }
             }
         }
 

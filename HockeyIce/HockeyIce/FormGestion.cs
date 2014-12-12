@@ -93,7 +93,7 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                SwitchException(ex);
+                AfficherErreur(ex);
             }
         }
         private void RemplirComboBoxDivision()
@@ -115,7 +115,7 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                SwitchException(ex);
+                AfficherErreur(ex);
             }
         }
         private void RemplirInformation()
@@ -176,7 +176,7 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                SwitchException(ex);
+                AfficherErreur(ex);
             }
         }
         private void AjoutMatch()
@@ -226,7 +226,7 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                SwitchException(ex);
+                AfficherErreur(ex);
             }
         }
         private void SetSelectedIndexMaison(string equipe)
@@ -288,7 +288,7 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                SwitchException(ex);
+                AfficherErreur(ex);
             }
         }
         private void ModifierEquipe()
@@ -336,7 +336,7 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                SwitchException(ex);
+                AfficherErreur(ex);
             }
         }
 
@@ -366,7 +366,7 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                SwitchException(ex);
+                AfficherErreur(ex);
             }
         }
         // DIVISIONS
@@ -399,7 +399,7 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                SwitchException(ex);
+                AfficherErreur(ex);
             }
         }
         private void AjoutDivision()
@@ -437,7 +437,7 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                SwitchException(ex);
+                AfficherErreur(ex);
             }
         }
         // JOUEURS
@@ -484,7 +484,7 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                SwitchException(ex);
+                AfficherErreur(ex);
             }
         }
         private void AjoutJoueur()
@@ -537,63 +537,14 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                SwitchException(ex);
+                AfficherErreur(ex);
             }
         }
 
         // Gestion des erreurs
-        private void SwitchException(OracleException ex)
+        private void AfficherErreur(OracleException ex)
         {
-            string CodeErreur = ex.Number.ToString();
-            string DescriptionErreur;
-            switch (ex.Number)
-            {
-                case 2292:
-                    DescriptionErreur = "Tentative de suppression d'une clé lié à une clé étrangère";
-                    break;
-                case 1407:
-                    DescriptionErreur = "Vous ne pouvez pas mettre a jour une colonne avec une valeur null";
-                    break;
-                case 1400:
-                    DescriptionErreur = "Vous ne pouvez pas ajouter une colonne avec une valeur null";
-                    break;
-                case 1:
-                    DescriptionErreur = "Le numero d'employé doit être unique";
-                    break;
-                case 1410:
-                    DescriptionErreur = "Vous ne pouvez pas mettre de valeur null";
-                    break;
-                case 1017:
-                    DescriptionErreur = "Mot de passe ou nom d'utilisateur invalide, connection non établi";
-                    break;
-                case 12170:
-                    DescriptionErreur = "La base de données est indisponible, réessayer plus tard";
-                    break;
-                case 12543:
-                    DescriptionErreur = "Connexion impossible. Vérifiez votre connection internet";
-                    break;
-                case 12533:
-                    DescriptionErreur = "Connexion impossible. Le parametre de connexion d'adresse est invalide";
-                    break;
-                case 12504:
-                    DescriptionErreur = "Connexion impossible. Le nom d'instance Oracle est invalide";
-                    break;
-                case 12541:
-                    DescriptionErreur = "Connexion impossible. La destination est invalide ou pas rejoignable";
-                    break;
-                default:
-                    DescriptionErreur = ex.Message;
-                    break;
-            }
-            Properties.Settings.Default.CodeErreur = CodeErreur;
-            Properties.Settings.Default.DescriptionErreur = DescriptionErreur;
-            Properties.Settings.Default.Save();
-
-            AfficherErreur();
-        }
-        private void AfficherErreur()
-        {
-            FormErreur dlg = new FormErreur();
+            FormErreur dlg = new FormErreur(ex);
 
             if (dlg.ShowDialog() == DialogResult.Cancel)
             {

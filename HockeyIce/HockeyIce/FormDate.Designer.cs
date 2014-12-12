@@ -45,9 +45,10 @@
             this.panel1.Controls.Add(this.FB_Appliquer);
             this.panel1.Controls.Add(this.FB_Fermer);
             this.panel1.Controls.Add(this.MC_Date);
-            this.panel1.Location = new System.Drawing.Point(2, 25);
+            this.panel1.Location = new System.Drawing.Point(3, 31);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(280, 232);
+            this.panel1.Size = new System.Drawing.Size(373, 286);
             this.panel1.TabIndex = 0;
             // 
             // FB_Appliquer
@@ -58,10 +59,10 @@
             this.FB_Appliquer.ImageDisable = global::HockeyIce.Properties.Resources.AppliquerDisable;
             this.FB_Appliquer.ImageNeutral = global::HockeyIce.Properties.Resources.AppliquerNormal;
             this.FB_Appliquer.ImageOver = global::HockeyIce.Properties.Resources.AppliquerHover;
-            this.FB_Appliquer.Location = new System.Drawing.Point(35, 196);
-            this.FB_Appliquer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FB_Appliquer.Location = new System.Drawing.Point(47, 241);
+            this.FB_Appliquer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.FB_Appliquer.Name = "FB_Appliquer";
-            this.FB_Appliquer.Size = new System.Drawing.Size(102, 20);
+            this.FB_Appliquer.Size = new System.Drawing.Size(136, 25);
             this.FB_Appliquer.TabIndex = 35;
             this.FB_Appliquer.Click += new System.EventHandler(this.FB_Appliquer_Click);
             // 
@@ -73,17 +74,18 @@
             this.FB_Fermer.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
             this.FB_Fermer.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_Fermer.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_Fermer.Location = new System.Drawing.Point(145, 196);
-            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Fermer.Location = new System.Drawing.Point(193, 241);
+            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.FB_Fermer.Name = "FB_Fermer";
-            this.FB_Fermer.Size = new System.Drawing.Size(100, 20);
+            this.FB_Fermer.Size = new System.Drawing.Size(133, 25);
             this.FB_Fermer.TabIndex = 1;
             this.FB_Fermer.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
             // MC_Date
             // 
             this.MC_Date.FirstDayOfWeek = System.Windows.Forms.Day.Sunday;
-            this.MC_Date.Location = new System.Drawing.Point(26, 22);
+            this.MC_Date.Location = new System.Drawing.Point(55, 27);
+            this.MC_Date.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.MC_Date.MaxSelectionCount = 1;
             this.MC_Date.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
             this.MC_Date.Name = "MC_Date";
@@ -95,10 +97,9 @@
             this.LB_Text.AutoSize = true;
             this.LB_Text.Font = new System.Drawing.Font("Kristen ITC", 12F);
             this.LB_Text.ForeColor = System.Drawing.Color.White;
-            this.LB_Text.Location = new System.Drawing.Point(27, 2);
-            this.LB_Text.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LB_Text.Location = new System.Drawing.Point(36, 2);
             this.LB_Text.Name = "LB_Text";
-            this.LB_Text.Size = new System.Drawing.Size(106, 23);
+            this.LB_Text.Size = new System.Drawing.Size(134, 28);
             this.LB_Text.TabIndex = 12;
             this.LB_Text.Text = "Choisir date";
             this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseDown);
@@ -108,10 +109,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
-            this.pictureBox2.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 21);
+            this.pictureBox2.Size = new System.Drawing.Size(29, 26);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
@@ -124,24 +125,24 @@
             this.FB_Quitter.ImageDisable = global::HockeyIce.Properties.Resources.CloseDisable;
             this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
             this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
-            this.FB_Quitter.Location = new System.Drawing.Point(263, 2);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Quitter.Location = new System.Drawing.Point(351, 2);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.FB_Quitter.Name = "FB_Quitter";
-            this.FB_Quitter.Size = new System.Drawing.Size(19, 20);
+            this.FB_Quitter.Size = new System.Drawing.Size(25, 25);
             this.FB_Quitter.TabIndex = 10;
             this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
             // FormDate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(284, 260);
+            this.ClientSize = new System.Drawing.Size(379, 320);
             this.Controls.Add(this.LB_Text);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.FB_Quitter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormDate";
             this.Text = "FormDate";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDate_FormClosing);
