@@ -72,9 +72,9 @@
             this.LB_NomApp.Size = new System.Drawing.Size(97, 28);
             this.LB_NomApp.TabIndex = 2;
             this.LB_NomApp.Text = "Ice Rage";
-            this.LB_NomApp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_NomApp_MouseDown);
-            this.LB_NomApp.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LB_NomApp_MouseMove);
-            this.LB_NomApp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LB_NomApp_MouseUp);
+            this.LB_NomApp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormPrincipale_MouseDown);
+            this.LB_NomApp.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormPrincipale_MouseMove);
+            this.LB_NomApp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormPrincipale_MouseUp);
             // 
             // PN_PasDeConnection
             // 

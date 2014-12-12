@@ -15,7 +15,7 @@ using Oracle.DataAccess.Client;
 //      15 Decembre 2014
 //      Produit pour le cours de Base de Données et Developpement d'Interfaces
 //
-//      Utilisé pour afficher la description et les raccourcis claviers gérés
+//      Utilisé comme page d'ouverture / menu
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace HockeyIce
 {
@@ -110,7 +110,9 @@ namespace HockeyIce
             }
         }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      GESTION ERREURS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void AfficherErreur(OracleException ex)
         {
             FormErreur dlg = new FormErreur(ex);
@@ -121,29 +123,9 @@ namespace HockeyIce
             }
         }
       
-        private void FB_Fermer_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        // Events pour pouvoir faire bouger le form 
-        private void LB_NomApp_MouseDown(object sender, MouseEventArgs e)
-        {
-            _dragging = true;  // _dragging is your variable flag
-            _start_point = new Point(e.X, e.Y);
-        }
-        private void LB_NomApp_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (_dragging)
-            {
-                Point p = PointToScreen(e.Location);
-                Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
-            }
-        }
-        private void LB_NomApp_MouseUp(object sender, MouseEventArgs e)
-        {
-            _dragging = false; 
-        }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      DEPLACEMENT DU FORM
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FormPrincipale_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
@@ -161,6 +143,7 @@ namespace HockeyIce
                 Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
             }
         }
+
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -185,6 +168,10 @@ namespace HockeyIce
             this.Close();
         }
 
+        private void FB_Fermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
 
         private void FB_APropos_Click(object sender, EventArgs e)
