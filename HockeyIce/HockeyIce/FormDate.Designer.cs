@@ -102,9 +102,9 @@
             this.LB_Text.Size = new System.Drawing.Size(134, 28);
             this.LB_Text.TabIndex = 12;
             this.LB_Text.Text = "Choisir date";
-            this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseDown);
-            this.LB_Text.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseMove);
-            this.LB_Text.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseUp);
+            this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDate_MouseDown);
+            this.LB_Text.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormDate_MouseMove);
+            this.LB_Text.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormDate_MouseUp);
             // 
             // pictureBox2
             // 
