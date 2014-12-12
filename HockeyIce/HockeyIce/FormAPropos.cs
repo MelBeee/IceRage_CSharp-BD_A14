@@ -15,7 +15,6 @@ using System.Windows.Forms;
 //      Produit pour le cours de Base de Données et Developpement d'Interfaces
 //
 //      Utilisé pour afficher la description et les raccourcis claviers gérés
-//      Description des exceptions : http://www.techonthenet.com/oracle/errors/
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace HockeyIce
 {

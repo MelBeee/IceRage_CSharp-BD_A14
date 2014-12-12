@@ -49,11 +49,11 @@
             // LB_Text
             // 
             this.LB_Text.AutoSize = true;
-            this.LB_Text.Font = new System.Drawing.Font("Kristen ITC", 12F);
+            this.LB_Text.Font = new System.Drawing.Font("Kristen ITC", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Text.ForeColor = System.Drawing.Color.White;
-            this.LB_Text.Location = new System.Drawing.Point(33, 5);
+            this.LB_Text.Location = new System.Drawing.Point(33, 3);
             this.LB_Text.Name = "LB_Text";
-            this.LB_Text.Size = new System.Drawing.Size(104, 28);
+            this.LB_Text.Size = new System.Drawing.Size(100, 27);
             this.LB_Text.TabIndex = 9;
             this.LB_Text.Text = "À Propos";
             this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormAPropos_MouseDown);

@@ -119,7 +119,7 @@
             this.FB_QuitterPDC.ImageNeutral = global::HockeyIce.Properties.Resources.QuitterNormal;
             this.FB_QuitterPDC.ImageOver = global::HockeyIce.Properties.Resources.QuitterHover;
             this.FB_QuitterPDC.Location = new System.Drawing.Point(113, 89);
-            this.FB_QuitterPDC.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_QuitterPDC.Margin = new System.Windows.Forms.Padding(5);
             this.FB_QuitterPDC.Name = "FB_QuitterPDC";
             this.FB_QuitterPDC.Size = new System.Drawing.Size(100, 20);
             this.FB_QuitterPDC.TabIndex = 0;
@@ -134,7 +134,7 @@
             this.FB_TrouverEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.TrouverEquipe_Normal;
             this.FB_TrouverEquipe.ImageOver = global::HockeyIce.Properties.Resources.TrouverEquipe_Hover;
             this.FB_TrouverEquipe.Location = new System.Drawing.Point(311, 435);
-            this.FB_TrouverEquipe.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_TrouverEquipe.Margin = new System.Windows.Forms.Padding(5);
             this.FB_TrouverEquipe.Name = "FB_TrouverEquipe";
             this.FB_TrouverEquipe.Size = new System.Drawing.Size(125, 119);
             this.FB_TrouverEquipe.TabIndex = 26;
@@ -149,7 +149,7 @@
             this.FB_TrouverJoueur.ImageNeutral = global::HockeyIce.Properties.Resources.TrouverJoueur_Normal;
             this.FB_TrouverJoueur.ImageOver = global::HockeyIce.Properties.Resources.TrouverJoueur_Hover;
             this.FB_TrouverJoueur.Location = new System.Drawing.Point(31, 309);
-            this.FB_TrouverJoueur.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_TrouverJoueur.Margin = new System.Windows.Forms.Padding(5);
             this.FB_TrouverJoueur.Name = "FB_TrouverJoueur";
             this.FB_TrouverJoueur.Size = new System.Drawing.Size(133, 121);
             this.FB_TrouverJoueur.TabIndex = 25;
@@ -164,7 +164,7 @@
             this.FB_TrouverMatch.ImageNeutral = global::HockeyIce.Properties.Resources.TrouverMatch_Normal;
             this.FB_TrouverMatch.ImageOver = global::HockeyIce.Properties.Resources.TrouverMatch_Hover;
             this.FB_TrouverMatch.Location = new System.Drawing.Point(31, 435);
-            this.FB_TrouverMatch.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_TrouverMatch.Margin = new System.Windows.Forms.Padding(5);
             this.FB_TrouverMatch.Name = "FB_TrouverMatch";
             this.FB_TrouverMatch.Size = new System.Drawing.Size(273, 119);
             this.FB_TrouverMatch.TabIndex = 24;
@@ -179,7 +179,7 @@
             this.FB_AMatchs.ImageNeutral = global::HockeyIce.Properties.Resources.AMatchs_Normal;
             this.FB_AMatchs.ImageOver = global::HockeyIce.Properties.Resources.AMatchs_Hover;
             this.FB_AMatchs.Location = new System.Drawing.Point(171, 57);
-            this.FB_AMatchs.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_AMatchs.Margin = new System.Windows.Forms.Padding(5);
             this.FB_AMatchs.Name = "FB_AMatchs";
             this.FB_AMatchs.Size = new System.Drawing.Size(133, 119);
             this.FB_AMatchs.TabIndex = 23;
@@ -194,7 +194,7 @@
             this.FB_AJoueurs.ImageNeutral = global::HockeyIce.Properties.Resources.AJoueurs_Normal;
             this.FB_AJoueurs.ImageOver = global::HockeyIce.Properties.Resources.AJoueurs_Hover;
             this.FB_AJoueurs.Location = new System.Drawing.Point(443, 181);
-            this.FB_AJoueurs.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_AJoueurs.Margin = new System.Windows.Forms.Padding(5);
             this.FB_AJoueurs.Name = "FB_AJoueurs";
             this.FB_AJoueurs.Size = new System.Drawing.Size(261, 122);
             this.FB_AJoueurs.TabIndex = 22;
@@ -209,7 +209,7 @@
             this.FB_AEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.AEquipes_Normal;
             this.FB_AEquipe.ImageOver = global::HockeyIce.Properties.Resources.AEquipes_Hover;
             this.FB_AEquipe.Location = new System.Drawing.Point(171, 181);
-            this.FB_AEquipe.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_AEquipe.Margin = new System.Windows.Forms.Padding(5);
             this.FB_AEquipe.Name = "FB_AEquipe";
             this.FB_AEquipe.Size = new System.Drawing.Size(265, 122);
             this.FB_AEquipe.TabIndex = 21;
@@ -224,7 +224,7 @@
             this.FB_ADivision.ImageNeutral = global::HockeyIce.Properties.Resources.ADivision_Normal;
             this.FB_ADivision.ImageOver = global::HockeyIce.Properties.Resources.ADivision_Hover;
             this.FB_ADivision.Location = new System.Drawing.Point(311, 57);
-            this.FB_ADivision.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_ADivision.Margin = new System.Windows.Forms.Padding(5);
             this.FB_ADivision.Name = "FB_ADivision";
             this.FB_ADivision.Size = new System.Drawing.Size(259, 118);
             this.FB_ADivision.TabIndex = 20;
@@ -240,7 +240,7 @@
             this.FB_CJoueurs.ImageNeutral = global::HockeyIce.Properties.Resources.CJoueursNormal;
             this.FB_CJoueurs.ImageOver = global::HockeyIce.Properties.Resources.CJoueursHover;
             this.FB_CJoueurs.Location = new System.Drawing.Point(849, 57);
-            this.FB_CJoueurs.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_CJoueurs.Margin = new System.Windows.Forms.Padding(5);
             this.FB_CJoueurs.Name = "FB_CJoueurs";
             this.FB_CJoueurs.Size = new System.Drawing.Size(133, 372);
             this.FB_CJoueurs.TabIndex = 19;
@@ -256,7 +256,7 @@
             this.FB_CEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.CEquipeNormal;
             this.FB_CEquipe.ImageOver = global::HockeyIce.Properties.Resources.CEquipeHover;
             this.FB_CEquipe.Location = new System.Drawing.Point(577, 309);
-            this.FB_CEquipe.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_CEquipe.Margin = new System.Windows.Forms.Padding(5);
             this.FB_CEquipe.Name = "FB_CEquipe";
             this.FB_CEquipe.Size = new System.Drawing.Size(265, 119);
             this.FB_CEquipe.TabIndex = 18;
@@ -272,7 +272,7 @@
             this.FB_3MeilleursJs.ImageNeutral = global::HockeyIce.Properties.Resources._3JoueursNormal;
             this.FB_3MeilleursJs.ImageOver = global::HockeyIce.Properties.Resources._3JoueursHover;
             this.FB_3MeilleursJs.Location = new System.Drawing.Point(709, 435);
-            this.FB_3MeilleursJs.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_3MeilleursJs.Margin = new System.Windows.Forms.Padding(5);
             this.FB_3MeilleursJs.Name = "FB_3MeilleursJs";
             this.FB_3MeilleursJs.Size = new System.Drawing.Size(273, 119);
             this.FB_3MeilleursJs.TabIndex = 17;
@@ -288,7 +288,7 @@
             this.FB_APropos.ImageNeutral = global::HockeyIce.Properties.Resources.AideNormal;
             this.FB_APropos.ImageOver = global::HockeyIce.Properties.Resources.AideHover;
             this.FB_APropos.Location = new System.Drawing.Point(31, 57);
-            this.FB_APropos.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_APropos.Margin = new System.Windows.Forms.Padding(5);
             this.FB_APropos.Name = "FB_APropos";
             this.FB_APropos.Size = new System.Drawing.Size(133, 246);
             this.FB_APropos.TabIndex = 16;
@@ -354,7 +354,7 @@
             this.FB_Fermer.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageNeutral")));
             this.FB_Fermer.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageOver")));
             this.FB_Fermer.Location = new System.Drawing.Point(983, 4);
-            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(27, 26);
             this.FB_Fermer.TabIndex = 4;
@@ -387,8 +387,7 @@
             // 
             // FormPrincipale
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1015, 578);

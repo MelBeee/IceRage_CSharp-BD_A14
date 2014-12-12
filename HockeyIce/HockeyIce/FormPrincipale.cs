@@ -9,44 +9,65 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 
-//      PB_Photo_Silver.ImageLocation = "http://i.imgur.com/RrZajkb.jpg";
-//      PB_Photo_Silver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-//      oraRead.GetDataTypeName(4).ToString();
-//      label1.Text = (Int32.Parse(TB_ChiffreUn.Text) + Int32.Parse(TB_Chiffre2.Text)).ToString(); 
-
-/*  Erreurs à gérer
-
- */
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      FORM PRINCIPALE
+//      Fait par Melissa Boucher et Xavier Brosseau
+//      15 Decembre 2014
+//      Produit pour le cours de Base de Données et Developpement d'Interfaces
+//
+//      Utilisé pour afficher la description et les raccourcis claviers gérés
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace HockeyIce
 {
     public partial class FormPrincipale : Form
     {
+        // bool savoir si on est entrain de deplacer le form
         private bool _dragging = false;
+        // emmagasine la position du curseur lors d'un deplacement de form
         private Point _start_point = new Point(0, 0);
+        // boolean pour stocker si le form est connecté ou non
         public bool connection = false;
+        // variable contenant la connection a la bd 
         private OracleConnection oraconn = new OracleConnection();
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      CONSTRUCTEUR
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public FormPrincipale()
         {
             InitializeComponent();
-  
         }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      LOAD ET CLOSING
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FormPrincipale_Load(object sender, EventArgs e)
         {
+            // loading de la position sauvegardé antérieurement 
             this.Location = Properties.Settings.Default.PosFormPrincipale;
+            // appel de fct pour ouvrir la connection
             Connection();
-            if (!connection)
+            if (!connection) // si pas de connection 
             {
                 PasDeConnection();
             }
         }
+        private void FormPrincipale_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Enregistre la localisation du form pour utilisation prochaine
+            Properties.Settings.Default.PosFormPrincipale = this.Location;
+            Properties.Settings.Default.Save();
+            // Ferme la connection
+            oraconn.Close();
+        }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      CONNECTION
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Fait pour disable les flashbuttons quand il n'y a pas de connection
         private void PasDeConnection()
         {
             PN_PasDeConnection.BringToFront();
-
             PN_PasDeConnection.Enabled = true;
             PN_PasDeConnection.Visible = true;
             FB_Fermer.Enabled = false;
@@ -62,7 +83,7 @@ namespace HockeyIce
             FB_TrouverJoueur.Enabled = false;
             FB_TrouverMatch.Enabled = false; 
         }
-
+        // Tente la connection
         private void Connection()
         {
             if (!connection)
@@ -164,13 +185,7 @@ namespace HockeyIce
             this.Close();
         }
 
-        private void FormPrincipale_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            oraconn.Close();
-            Properties.Settings.Default.PosFormPrincipale = this.Location;
-            Properties.Settings.Default.Save();
 
-        }
 
         private void FB_APropos_Click(object sender, EventArgs e)
         {
@@ -269,3 +284,11 @@ namespace HockeyIce
     }
 }
 
+//      PB_Photo_Silver.ImageLocation = "http://i.imgur.com/RrZajkb.jpg";
+//      PB_Photo_Silver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+//      oraRead.GetDataTypeName(4).ToString();
+//      label1.Text = (Int32.Parse(TB_ChiffreUn.Text) + Int32.Parse(TB_Chiffre2.Text)).ToString(); 
+
+/*  Erreurs à gérer
+
+ */
