@@ -84,6 +84,7 @@ namespace HockeyIce
                                  "from equipes e " + 
                                  "inner join Divisions d on e.numdivision = d.numdivision " +
                                  "where e.numequipe = " + LB_NumEquipeGhost.Text;
+
             try
             {
                 OracleCommand orcd = new OracleCommand(commandesql, oraconnRecherche);
