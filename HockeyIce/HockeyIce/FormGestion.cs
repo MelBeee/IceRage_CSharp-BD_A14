@@ -299,7 +299,8 @@ namespace HockeyIce
                 //les paramètres pour Oracle et C # sont précédés de deux points : 
                 string commandesql = " update EQUIPES set " +
                 "NOM=:nom, VILLE=:Ville, " +
-                    /*"NUMDIVISION=:NumDivision "*/ "DATEINTRODUCTION=:DateValue " +
+                "NUMDIVISION=:NumDivision, " +
+                "DATEINTRODUCTION=:DateValue " +
                 "where NUMEQUIPE = " + Properties.Settings.Default.NumValue.ToString();
                 string commandesql2 = " update EQUIPES set " +
                 "Logo=:Logo " +
@@ -308,13 +309,13 @@ namespace HockeyIce
                 // On déclare les paramètres pour chaque paramètre de la requête
                 OracleParameter oraNom = new OracleParameter(":nom", OracleDbType.Varchar2, 50);
                 OracleParameter oraVille = new OracleParameter(":Ville", OracleDbType.Varchar2, 30);
-                //OracleParameter oraDivision = new OracleParameter(":NumDivision", OracleDbType.Int32);
+                OracleParameter oraDivision = new OracleParameter(":NumDivision", OracleDbType.Int32);
                 OracleParameter oraDate = new OracleParameter(":DateValue", OracleDbType.Date);
                 // on affecte les valeurs aux paramètres.                
 
                 oraNom.Value = TB_NomEquipe.Text;
                 oraVille.Value = TB_LieuxEquipe.Text;
-                //oraDivision.Value = CB_InvisibleDiv.Text;
+                oraDivision.Value = LB_Invisible.Text;
                 oraDate.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
 
                 // En crée un Objet OracleCommand pour passer la requête à la bD 
@@ -323,13 +324,13 @@ namespace HockeyIce
 
                 // En utilisant la propriété Paramètres de OracleCommand, on spécifie les 
                 // Paramètre de la requête SQLajout.
-
                 oraAjout.Parameters.Add(oraNom);
                 oraAjout.Parameters.Add(oraVille);
-                //oraAjout.Parameters.Add(oraDivision);
+                oraAjout.Parameters.Add(oraDivision);
                 oraAjout.Parameters.Add(oraDate);
                 // on execute la requete 
                 oraAjout.ExecuteNonQuery();
+
                 if (nomFichier != null)
                 {
                     //Logo Maintenent
@@ -347,10 +348,6 @@ namespace HockeyIce
                 AfficherErreur(ex);
             }
         }
-
-
-
-
         private void LoadInfoEquipe()
         {
             commandesql = "select e.*, d.nom from equipes e " +
@@ -634,6 +631,7 @@ namespace HockeyIce
         {
             UpdateControl();
             CB_InvisibleDiv.SelectedIndex = CB_DivisionEquipe.SelectedIndex;
+            LB_Invisible.Text = CB_InvisibleDiv.Text;
         }
         // Enabled ou Disable les panels lors du load du form 
         private void EnabledVisibleLesPanels()
@@ -701,24 +699,6 @@ namespace HockeyIce
         {
             _dragging = false;
         }
-        private void LB_Text_MouseDown(object sender, MouseEventArgs e)
-        {
-            _dragging = true;  // _dragging is your variable flag
-            _start_point = new Point(e.X, e.Y);
-        }
-        private void LB_Text_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (_dragging)
-            {
-                Point p = PointToScreen(e.Location);
-                Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
-            }
-        }
-        private void LB_Text_MouseUp(object sender, MouseEventArgs e)
-        {
-            _dragging = false;
-        }
-
 
         private void FB_Fermer_Click(object sender, EventArgs e)
         {
