@@ -214,5 +214,17 @@ namespace HockeyIce.Properties {
                 this["PosFormChoixStats"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
+        public global::System.Drawing.Point PosFormOptionJ {
+            get {
+                return ((global::System.Drawing.Point)(this["PosFormOptionJ"]));
+            }
+            set {
+                this["PosFormOptionJ"] = value;
+            }
+        }
     }
 }

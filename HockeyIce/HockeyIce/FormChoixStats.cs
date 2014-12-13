@@ -73,7 +73,7 @@ namespace HockeyIce
         {
             if (RB_Afficher.Checked)
             {
-                FormRecherche dlg = new FormRecherche(oraconnChoixStats);
+                FormOptionJoueurs dlg = new FormOptionJoueurs(oraconnChoixStats);
 
                 Properties.Settings.Default.FenetreAOuvrir = "Joueurs";
                 Properties.Settings.Default.Save();

@@ -103,13 +103,11 @@ namespace HockeyIce
             }
         }
 
-        private void InitJoueur()
+        private void InitJoueur(string sqlcommande)
         {
             try
             {
-                string sql2 = "select * from joueurs";
-
-                OracleDataAdapter Adapter2 = new OracleDataAdapter(sql2, oraconnRecherche);
+                OracleDataAdapter Adapter2 = new OracleDataAdapter(sqlcommande, oraconnRecherche);
                 if (monDataSet.Tables.Contains("joueurs"))
                 {
                     monDataSet.Tables["joueurs"].Clear();
@@ -122,9 +120,9 @@ namespace HockeyIce
                 LierJoueur();
                 AffichageJoueur();
             }
-            catch (OracleException exsql2)
+            catch (OracleException ex)
             {
-                MessageBox.Show(exsql2.Message.ToString());
+                AfficherErreur(ex);
             }
         }
 
@@ -219,7 +217,7 @@ namespace HockeyIce
                     PN_Joueurs.Enabled = true;
                     PN_Joueurs.Location = basePanel;
                     LB_Text.Text = "Joueurs";
-                    InitJoueur();
+                    InitJoueur(VerifierQuelCommande());
                     ChangerLogoEquipe();
                     ChangerStatistiques();
                     break;
@@ -231,6 +229,20 @@ namespace HockeyIce
                     LB_Text.Text = "Matchs";
                     break;
             }
+        }
+
+        private string VerifierQuelCommande()
+        {
+            string sqlcommande;
+            if(!Properties.Settings.Default.ModifierAjouter)
+            {
+                sqlcommande = "select * from joueurs";
+            }
+            else
+            {
+                sqlcommande = "select * from joueurs where numequipe = " + Properties.Settings.Default.NumValue;
+            }
+            return sqlcommande;
         }
 
         // Events pour pouvoir faire bouger le form 

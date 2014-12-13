@@ -127,7 +127,7 @@
             // FB_Ok
             // 
             this.FB_Ok.BackgroundImage = global::HockeyIce.Properties.Resources.ContinuerNormal;
-            this.FB_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FB_Ok.ImageClick = global::HockeyIce.Properties.Resources.ContinuerClick;
             this.FB_Ok.ImageDisable = global::HockeyIce.Properties.Resources.ContinuerDisable;
             this.FB_Ok.ImageNeutral = global::HockeyIce.Properties.Resources.ContinuerNormal;
@@ -142,7 +142,7 @@
             // FB_Annuler
             // 
             this.FB_Annuler.BackgroundImage = global::HockeyIce.Properties.Resources.AnnulerNormal;
-            this.FB_Annuler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Annuler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FB_Annuler.ImageClick = global::HockeyIce.Properties.Resources.AnnulerClick;
             this.FB_Annuler.ImageDisable = global::HockeyIce.Properties.Resources.AnnulerDisable;
             this.FB_Annuler.ImageNeutral = global::HockeyIce.Properties.Resources.AnnulerNormal;

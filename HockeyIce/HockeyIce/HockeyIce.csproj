@@ -94,6 +94,12 @@
     <Compile Include="FormGestionStatistiqueJ.Designer.cs">
       <DependentUpon>FormGestionStatistiqueJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOptionJoueurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOptionJoueurs.Designer.cs">
+      <DependentUpon>FormOptionJoueurs.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOptions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionStatistiqueJ.resx">
       <DependentUpon>FormGestionStatistiqueJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOptionJoueurs.resx">
+      <DependentUpon>FormOptionJoueurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOptions.resx">
       <DependentUpon>FormOptions.cs</DependentUpon>
