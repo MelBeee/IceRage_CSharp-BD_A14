@@ -133,8 +133,14 @@ namespace HockeyIce
                 case 01410:
                     DescriptionErreur = "Vous ne pouvez pas mettre de valeur null.";
                     break;
+                case 01747:
+                    DescriptionErreur = "Tentative d'utilisation d'un mot reservé dans Oracle";  
+                    break;
                 case 02292:
                     DescriptionErreur = "Tentative de suppression d'une clé lié à une clé étrangère.";
+                    break;
+                case 03224:
+                    DescriptionErreur = "Pas de connection à Mercure";
                     break;
                 case 12170:
                     DescriptionErreur = "La base de données est indisponible, réessayer plus tard.";
@@ -164,7 +170,6 @@ namespace HockeyIce
 }
 
 /*
- * 01747
  * 03224
  
  */
