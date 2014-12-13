@@ -18,6 +18,7 @@ namespace HockeyIce
         private Point basePanel = new Point(3, 28);
         private OracleConnection oraconnRecherche = new OracleConnection();
         private DataSet monDataSet = new DataSet();
+        private DataSet monDataSet2 = new DataSet();
 
         public FormRecherche(OracleConnection oraconn)
         {
@@ -41,24 +42,23 @@ namespace HockeyIce
             EnabledVisibleLesPanels();
         }
 
-        private void InitJoueur()
+        private void InitEquipe()
         {
             try
             {
-                string sql2 = "select * from joueurs";// inner join equipes e on joueurs.NUMEQUIPE = e.NUMEQUIPE";
+                string sql2 = "select * from equipes";
 
                 OracleDataAdapter Adapter2 = new OracleDataAdapter(sql2, oraconnRecherche);
-                if (monDataSet.Tables.Contains("joueurs") /*&& monDataSet.Tables.Contains("equipes")*/)
+                if (monDataSet2.Tables.Contains("equipes"))
                 {
-                    monDataSet.Tables["joueurs"].Clear();
-                    /*monDataSet.Tables["equipes"].Clear();*/
+                    monDataSet2.Tables["equipes"].Clear();                    
                 }
 
-                Adapter2.Fill(monDataSet, "joueurs");
+                Adapter2.Fill(monDataSet2, "equipes");
                 Adapter2.Dispose();
                 // on apelle la fonction lier pour faire
                 // la liaison des données du DataSet avec les zones de text.
-                Lier();
+                LierEquipe();
                 AffichageJoueur();
             }
             catch (OracleException exsql2)
@@ -67,7 +67,39 @@ namespace HockeyIce
             }
         }
 
-        private void Lier()
+        private void LierEquipe()
+        {
+            LB_NomEquipe.DataBindings.Add("text", monDataSet2, "equipes.nom");
+            LB_VilleEquipe.DataBindings.Add("text", monDataSet2, "equipes.ville");
+            LB_DivisionNumInvisible.DataBindings.Add("text", monDataSet2, "equipes.numEquipe");
+        }
+
+        private void InitJoueur()
+        {
+            try
+            {
+                string sql2 = "select * from joueurs";
+
+                OracleDataAdapter Adapter2 = new OracleDataAdapter(sql2, oraconnRecherche);
+                if (monDataSet.Tables.Contains("joueurs"))
+                {
+                    monDataSet.Tables["joueurs"].Clear();
+                }
+
+                Adapter2.Fill(monDataSet, "joueurs");
+                Adapter2.Dispose();
+                // on apelle la fonction lier pour faire
+                // la liaison des données du DataSet avec les zones de text.
+                LierJoueur();
+                AffichageJoueur();
+            }
+            catch (OracleException exsql2)
+            {
+                MessageBox.Show(exsql2.Message.ToString());
+            }
+        }
+
+        private void LierJoueur()
         {
             LB_Nom.DataBindings.Add("text", monDataSet, "joueurs.nom");
             LB_Prenom.DataBindings.Add("text", monDataSet, "joueurs.prenom");
@@ -150,6 +182,7 @@ namespace HockeyIce
                     PN_Equipe.Enabled = true;
                     PN_Equipe.Location = basePanel;
                     LB_Text.Text = "Équipes";
+                    InitEquipe();
                     break;
                 case "Joueurs":
                     PN_Joueurs.Parent = this;
@@ -248,6 +281,21 @@ namespace HockeyIce
             {
                 this.Close();
             }
+        }
+
+        private void fermer_equipe(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Next_equipe(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Back_Equipe(object sender, EventArgs e)
+        {
+
         }
     }
 }

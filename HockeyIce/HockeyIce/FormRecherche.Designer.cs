@@ -31,6 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRecherche));
             this.LB_Text = new System.Windows.Forms.Label();
             this.PN_Equipe = new System.Windows.Forms.Panel();
+            this.PN_Ligne = new System.Windows.Forms.FlowLayoutPanel();
+            this.LB_VilleEquipe = new System.Windows.Forms.Label();
+            this.LB_DivisionNomEquipe = new System.Windows.Forms.Label();
+            this.LB_DateEquipe = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.LB_NomEquipe = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flashButton1 = new FlashButton.FlashButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.flashButton2 = new FlashButton.FlashButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LB_Win = new System.Windows.Forms.Label();
+            this.LB_Lost = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.flashButton3 = new FlashButton.FlashButton();
             this.PN_Matchs = new System.Windows.Forms.Panel();
             this.PN_Joueurs = new System.Windows.Forms.Panel();
             this.LB_Type = new System.Windows.Forms.Label();
@@ -53,11 +69,15 @@
             this.PB_Joueur = new System.Windows.Forms.PictureBox();
             this.labrlds = new System.Windows.Forms.Label();
             this.PB_Logo = new System.Windows.Forms.PictureBox();
-            this.FB_Fermer = new FlashButton.FlashButton();
             this.LB_Tempo = new System.Windows.Forms.Label();
             this.DTP_Tempo = new System.Windows.Forms.DateTimePicker();
             this.LB_Tempo2 = new System.Windows.Forms.Label();
             this.LB_NumJoueur = new System.Windows.Forms.Label();
+            this.FB_Fermer = new FlashButton.FlashButton();
+            this.LB_DivisionNumInvisible = new System.Windows.Forms.Label();
+            this.PN_Equipe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.PN_Joueurs.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Equipe)).BeginInit();
@@ -83,6 +103,18 @@
             // PN_Equipe
             // 
             this.PN_Equipe.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PN_Equipe.Controls.Add(this.PN_Ligne);
+            this.PN_Equipe.Controls.Add(this.LB_VilleEquipe);
+            this.PN_Equipe.Controls.Add(this.LB_DivisionNomEquipe);
+            this.PN_Equipe.Controls.Add(this.LB_DateEquipe);
+            this.PN_Equipe.Controls.Add(this.label14);
+            this.PN_Equipe.Controls.Add(this.LB_NomEquipe);
+            this.PN_Equipe.Controls.Add(this.pictureBox1);
+            this.PN_Equipe.Controls.Add(this.flashButton1);
+            this.PN_Equipe.Controls.Add(this.label12);
+            this.PN_Equipe.Controls.Add(this.flashButton2);
+            this.PN_Equipe.Controls.Add(this.groupBox2);
+            this.PN_Equipe.Controls.Add(this.flashButton3);
             this.PN_Equipe.Enabled = false;
             this.PN_Equipe.Location = new System.Drawing.Point(377, 28);
             this.PN_Equipe.Margin = new System.Windows.Forms.Padding(2);
@@ -90,6 +122,186 @@
             this.PN_Equipe.Size = new System.Drawing.Size(371, 255);
             this.PN_Equipe.TabIndex = 8;
             this.PN_Equipe.Visible = false;
+            // 
+            // PN_Ligne
+            // 
+            this.PN_Ligne.BackColor = System.Drawing.Color.White;
+            this.PN_Ligne.Location = new System.Drawing.Point(1, 60);
+            this.PN_Ligne.Name = "PN_Ligne";
+            this.PN_Ligne.Size = new System.Drawing.Size(370, 2);
+            this.PN_Ligne.TabIndex = 32;
+            // 
+            // LB_VilleEquipe
+            // 
+            this.LB_VilleEquipe.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_VilleEquipe.Location = new System.Drawing.Point(9, 36);
+            this.LB_VilleEquipe.Name = "LB_VilleEquipe";
+            this.LB_VilleEquipe.Size = new System.Drawing.Size(351, 18);
+            this.LB_VilleEquipe.TabIndex = 31;
+            this.LB_VilleEquipe.Text = "Ville";
+            this.LB_VilleEquipe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LB_DivisionNomEquipe
+            // 
+            this.LB_DivisionNomEquipe.AutoSize = true;
+            this.LB_DivisionNomEquipe.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_DivisionNomEquipe.Location = new System.Drawing.Point(234, 87);
+            this.LB_DivisionNomEquipe.Name = "LB_DivisionNomEquipe";
+            this.LB_DivisionNomEquipe.Size = new System.Drawing.Size(58, 18);
+            this.LB_DivisionNomEquipe.TabIndex = 30;
+            this.LB_DivisionNomEquipe.Text = "OUEST";
+            // 
+            // LB_DateEquipe
+            // 
+            this.LB_DateEquipe.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_DateEquipe.Location = new System.Drawing.Point(234, 70);
+            this.LB_DateEquipe.Name = "LB_DateEquipe";
+            this.LB_DateEquipe.Size = new System.Drawing.Size(111, 18);
+            this.LB_DateEquipe.TabIndex = 29;
+            this.LB_DateEquipe.Text = "3 fevrier 1923";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(166, 69);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 18);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "Fondé le :";
+            // 
+            // LB_NomEquipe
+            // 
+            this.LB_NomEquipe.Font = new System.Drawing.Font("Kristen ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_NomEquipe.Location = new System.Drawing.Point(11, 8);
+            this.LB_NomEquipe.Name = "LB_NomEquipe";
+            this.LB_NomEquipe.Size = new System.Drawing.Size(351, 26);
+            this.LB_NomEquipe.TabIndex = 27;
+            this.LB_NomEquipe.Text = "Nom Équipe";
+            this.LB_NomEquipe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HockeyIce.Properties.Resources._1280px_Montreal_Canadiens_svg;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 68);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(132, 142);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
+            // flashButton1
+            // 
+            this.flashButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flashButton1.BackgroundImage = global::HockeyIce.Properties.Resources.RetourNormalDoite;
+            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flashButton1.ImageClick = global::HockeyIce.Properties.Resources.RetourClickDoite;
+            this.flashButton1.ImageDisable = global::HockeyIce.Properties.Resources.RetourDisableDoite;
+            this.flashButton1.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormalDoite;
+            this.flashButton1.ImageOver = global::HockeyIce.Properties.Resources.RetourHoverDoite;
+            this.flashButton1.Location = new System.Drawing.Point(87, 224);
+            this.flashButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.flashButton1.Name = "flashButton1";
+            this.flashButton1.Size = new System.Drawing.Size(20, 21);
+            this.flashButton1.TabIndex = 26;
+            this.flashButton1.Click += new System.EventHandler(this.Next_equipe);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(165, 87);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 18);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Division :";
+            // 
+            // flashButton2
+            // 
+            this.flashButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flashButton2.BackgroundImage = global::HockeyIce.Properties.Resources.RetourNormal;
+            this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flashButton2.ImageClick = global::HockeyIce.Properties.Resources.RetourClick;
+            this.flashButton2.ImageDisable = global::HockeyIce.Properties.Resources.RetourDisable;
+            this.flashButton2.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormal;
+            this.flashButton2.ImageOver = global::HockeyIce.Properties.Resources.RetourHover;
+            this.flashButton2.Location = new System.Drawing.Point(59, 224);
+            this.flashButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.flashButton2.Name = "flashButton2";
+            this.flashButton2.Size = new System.Drawing.Size(20, 21);
+            this.flashButton2.TabIndex = 23;
+            this.flashButton2.Click += new System.EventHandler(this.Back_Equipe);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.LB_Win);
+            this.groupBox2.Controls.Add(this.LB_Lost);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(162, 124);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 86);
+            this.groupBox2.TabIndex = 24;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Statistiques";
+            // 
+            // LB_Win
+            // 
+            this.LB_Win.AutoSize = true;
+            this.LB_Win.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Win.Location = new System.Drawing.Point(130, 26);
+            this.LB_Win.Name = "LB_Win";
+            this.LB_Win.Size = new System.Drawing.Size(16, 18);
+            this.LB_Win.TabIndex = 11;
+            this.LB_Win.Text = "0";
+            // 
+            // LB_Lost
+            // 
+            this.LB_Lost.AutoSize = true;
+            this.LB_Lost.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Lost.Location = new System.Drawing.Point(130, 55);
+            this.LB_Lost.Name = "LB_Lost";
+            this.LB_Lost.Size = new System.Drawing.Size(16, 18);
+            this.LB_Lost.TabIndex = 12;
+            this.LB_Lost.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 26);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 18);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Parties Gagnées :";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(8, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(116, 18);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Parties Perdues :";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // flashButton3
+            // 
+            this.flashButton3.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.flashButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flashButton3.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
+            this.flashButton3.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
+            this.flashButton3.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.flashButton3.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
+            this.flashButton3.Location = new System.Drawing.Point(260, 225);
+            this.flashButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.flashButton3.Name = "flashButton3";
+            this.flashButton3.Size = new System.Drawing.Size(102, 19);
+            this.flashButton3.TabIndex = 25;
+            this.flashButton3.Click += new System.EventHandler(this.fermer_equipe);
             // 
             // PN_Matchs
             // 
@@ -351,22 +563,6 @@
             this.PB_Logo.TabIndex = 7;
             this.PB_Logo.TabStop = false;
             // 
-            // FB_Fermer
-            // 
-            this.FB_Fermer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FB_Fermer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.BackgroundImage")));
-            this.FB_Fermer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_Fermer.ImageClick = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageClick")));
-            this.FB_Fermer.ImageDisable = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageDisable")));
-            this.FB_Fermer.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageNeutral")));
-            this.FB_Fermer.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageOver")));
-            this.FB_Fermer.Location = new System.Drawing.Point(353, 3);
-            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Fermer.Name = "FB_Fermer";
-            this.FB_Fermer.Size = new System.Drawing.Size(20, 22);
-            this.FB_Fermer.TabIndex = 5;
-            this.FB_Fermer.Click += new System.EventHandler(this.FB_Fermer_Click);
-            // 
             // LB_Tempo
             // 
             this.LB_Tempo.AutoSize = true;
@@ -401,12 +597,38 @@
             this.LB_NumJoueur.TabIndex = 21;
             this.LB_NumJoueur.Text = "label2";
             // 
+            // FB_Fermer
+            // 
+            this.FB_Fermer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Fermer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.BackgroundImage")));
+            this.FB_Fermer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Fermer.ImageClick = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageClick")));
+            this.FB_Fermer.ImageDisable = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageDisable")));
+            this.FB_Fermer.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageNeutral")));
+            this.FB_Fermer.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageOver")));
+            this.FB_Fermer.Location = new System.Drawing.Point(751, 3);
+            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Fermer.Name = "FB_Fermer";
+            this.FB_Fermer.Size = new System.Drawing.Size(20, 22);
+            this.FB_Fermer.TabIndex = 5;
+            this.FB_Fermer.Click += new System.EventHandler(this.FB_Fermer_Click);
+            // 
+            // LB_DivisionNumInvisible
+            // 
+            this.LB_DivisionNumInvisible.AutoSize = true;
+            this.LB_DivisionNumInvisible.Location = new System.Drawing.Point(482, 323);
+            this.LB_DivisionNumInvisible.Name = "LB_DivisionNumInvisible";
+            this.LB_DivisionNumInvisible.Size = new System.Drawing.Size(82, 13);
+            this.LB_DivisionNumInvisible.TabIndex = 22;
+            this.LB_DivisionNumInvisible.Text = "division invisible";
+            // 
             // FormRecherche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(377, 286);
+            this.ClientSize = new System.Drawing.Size(775, 558);
+            this.Controls.Add(this.LB_DivisionNumInvisible);
             this.Controls.Add(this.PN_Matchs);
             this.Controls.Add(this.PN_Joueurs);
             this.Controls.Add(this.PN_Equipe);
@@ -426,6 +648,11 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormRecherche_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormRecherche_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormRecherche_MouseUp);
+            this.PN_Equipe.ResumeLayout(false);
+            this.PN_Equipe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.PN_Joueurs.ResumeLayout(false);
             this.PN_Joueurs.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -469,5 +696,22 @@
         private System.Windows.Forms.DateTimePicker DTP_Tempo;
         private System.Windows.Forms.Label LB_Tempo2;
         private System.Windows.Forms.Label LB_NumJoueur;
+        private System.Windows.Forms.FlowLayoutPanel PN_Ligne;
+        private System.Windows.Forms.Label LB_VilleEquipe;
+        private System.Windows.Forms.Label LB_DivisionNomEquipe;
+        private System.Windows.Forms.Label LB_DateEquipe;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label LB_NomEquipe;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private FlashButton.FlashButton flashButton1;
+        private System.Windows.Forms.Label label12;
+        private FlashButton.FlashButton flashButton2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label LB_Win;
+        private System.Windows.Forms.Label LB_Lost;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private FlashButton.FlashButton flashButton3;
+        private System.Windows.Forms.Label LB_DivisionNumInvisible;
     }
 }
