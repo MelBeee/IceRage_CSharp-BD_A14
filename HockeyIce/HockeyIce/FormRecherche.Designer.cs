@@ -75,6 +75,7 @@
             this.LB_NumJoueur = new System.Windows.Forms.Label();
             this.FB_Fermer = new FlashButton.FlashButton();
             this.LB_DivisionNumInvisible = new System.Windows.Forms.Label();
+            this.LB_NumEquipeGhost = new System.Windows.Forms.Label();
             this.PN_Equipe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_LogoEquipe)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -331,7 +332,7 @@
             this.PN_Joueurs.Controls.Add(this.PB_Joueur);
             this.PN_Joueurs.Controls.Add(this.labrlds);
             this.PN_Joueurs.Enabled = false;
-            this.PN_Joueurs.Location = new System.Drawing.Point(2, 26);
+            this.PN_Joueurs.Location = new System.Drawing.Point(2, 28);
             this.PN_Joueurs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_Joueurs.Name = "PN_Joueurs";
             this.PN_Joueurs.Size = new System.Drawing.Size(371, 255);
@@ -566,7 +567,7 @@
             // LB_Tempo
             // 
             this.LB_Tempo.AutoSize = true;
-            this.LB_Tempo.Location = new System.Drawing.Point(29, 98);
+            this.LB_Tempo.Location = new System.Drawing.Point(24, 97);
             this.LB_Tempo.Name = "LB_Tempo";
             this.LB_Tempo.Size = new System.Drawing.Size(35, 13);
             this.LB_Tempo.TabIndex = 18;
@@ -574,7 +575,7 @@
             // 
             // DTP_Tempo
             // 
-            this.DTP_Tempo.Location = new System.Drawing.Point(24, 75);
+            this.DTP_Tempo.Location = new System.Drawing.Point(12, 75);
             this.DTP_Tempo.Name = "DTP_Tempo";
             this.DTP_Tempo.Size = new System.Drawing.Size(92, 20);
             this.DTP_Tempo.TabIndex = 19;
@@ -582,7 +583,7 @@
             // LB_Tempo2
             // 
             this.LB_Tempo2.AutoSize = true;
-            this.LB_Tempo2.Location = new System.Drawing.Point(29, 59);
+            this.LB_Tempo2.Location = new System.Drawing.Point(24, 56);
             this.LB_Tempo2.Name = "LB_Tempo2";
             this.LB_Tempo2.Size = new System.Drawing.Size(35, 13);
             this.LB_Tempo2.TabIndex = 20;
@@ -616,11 +617,20 @@
             // LB_DivisionNumInvisible
             // 
             this.LB_DivisionNumInvisible.AutoSize = true;
-            this.LB_DivisionNumInvisible.Location = new System.Drawing.Point(482, 323);
+            this.LB_DivisionNumInvisible.Location = new System.Drawing.Point(476, 347);
             this.LB_DivisionNumInvisible.Name = "LB_DivisionNumInvisible";
             this.LB_DivisionNumInvisible.Size = new System.Drawing.Size(82, 13);
             this.LB_DivisionNumInvisible.TabIndex = 22;
             this.LB_DivisionNumInvisible.Text = "division invisible";
+            // 
+            // LB_NumEquipeGhost
+            // 
+            this.LB_NumEquipeGhost.AutoSize = true;
+            this.LB_NumEquipeGhost.Location = new System.Drawing.Point(476, 328);
+            this.LB_NumEquipeGhost.Name = "LB_NumEquipeGhost";
+            this.LB_NumEquipeGhost.Size = new System.Drawing.Size(61, 13);
+            this.LB_NumEquipeGhost.TabIndex = 23;
+            this.LB_NumEquipeGhost.Text = "equipeNum";
             // 
             // FormRecherche
             // 
@@ -628,9 +638,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(775, 558);
-            this.Controls.Add(this.LB_DivisionNumInvisible);
-            this.Controls.Add(this.PN_Matchs);
             this.Controls.Add(this.PN_Joueurs);
+            this.Controls.Add(this.PN_Matchs);
             this.Controls.Add(this.PN_Equipe);
             this.Controls.Add(this.PB_Logo);
             this.Controls.Add(this.LB_Text);
@@ -639,6 +648,8 @@
             this.Controls.Add(this.LB_Tempo2);
             this.Controls.Add(this.DTP_Tempo);
             this.Controls.Add(this.LB_Tempo);
+            this.Controls.Add(this.LB_DivisionNumInvisible);
+            this.Controls.Add(this.LB_NumEquipeGhost);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormRecherche";
@@ -713,5 +724,6 @@
         private System.Windows.Forms.Label label11;
         private FlashButton.FlashButton flashButton3;
         private System.Windows.Forms.Label LB_DivisionNumInvisible;
+        private System.Windows.Forms.Label LB_NumEquipeGhost;
     }
 }

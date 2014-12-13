@@ -59,7 +59,7 @@ namespace HockeyIce
                 // on apelle la fonction lier pour faire
                 // la liaison des données du DataSet avec les zones de text.
                 LierEquipe();
-                AffichageJoueur();
+                AffichageEquipe();
             }
             catch (OracleException exsql2)
             {
@@ -71,8 +71,36 @@ namespace HockeyIce
         {
             LB_NomEquipe.DataBindings.Add("text", monDataSet2, "equipes.nom");
             LB_VilleEquipe.DataBindings.Add("text", monDataSet2, "equipes.ville");
-            LB_DivisionNumInvisible.DataBindings.Add("text", monDataSet2, "equipes.numEquipe");
+            LB_DivisionNumInvisible.DataBindings.Add("text", monDataSet2, "equipes.numDivision");
             DTP_Tempo.DataBindings.Add("text", monDataSet2, "equipes.DateIntroduction");
+            LB_NumEquipeGhost.DataBindings.Add("text", monDataSet2, "equipes.NumEquipe");
+        }
+
+        private void AffichageEquipe()
+        {
+            LB_DateEquipe.Text = DTP_Tempo.Text;
+
+            string commandesql = " select e.logo, d.nom " + 
+                                 "from equipes e " + 
+                                 "inner join Divisions d on e.numdivision = d.numdivision " +
+                                 "where e.numequipe = " + LB_NumEquipeGhost.Text;
+            try
+            {
+                OracleCommand orcd = new OracleCommand(commandesql, oraconnRecherche);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                oraRead.Read();
+                //**************************************************************
+                PB_LogoEquipe.Image = Image.FromStream(oraRead.GetOracleBlob(0));
+                LB_DivisionNomEquipe.Text = oraRead.GetString(1);
+                //**************************************************************
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                AfficherErreur(ex);
+            }
         }
 
         private void InitJoueur()
@@ -252,7 +280,6 @@ namespace HockeyIce
             this.Close();
         }
 
-
         private void FB_Next_Click(object sender, EventArgs e)
         {
             this.BindingContext[monDataSet, "joueurs"].Position += 1;
@@ -292,11 +319,13 @@ namespace HockeyIce
         private void Next_equipe(object sender, EventArgs e)
         {
             this.BindingContext[monDataSet2, "equipes"].Position += 1;
+            AffichageEquipe();
         }
 
         private void Back_Equipe(object sender, EventArgs e)
         {
             this.BindingContext[monDataSet2, "equipes"].Position -= 1;
+            AffichageEquipe();
         }
     }
 }
