@@ -617,7 +617,7 @@
             // LB_DivisionNumInvisible
             // 
             this.LB_DivisionNumInvisible.AutoSize = true;
-            this.LB_DivisionNumInvisible.Location = new System.Drawing.Point(476, 347);
+            this.LB_DivisionNumInvisible.Location = new System.Drawing.Point(20, 134);
             this.LB_DivisionNumInvisible.Name = "LB_DivisionNumInvisible";
             this.LB_DivisionNumInvisible.Size = new System.Drawing.Size(82, 13);
             this.LB_DivisionNumInvisible.TabIndex = 22;
@@ -626,7 +626,7 @@
             // LB_NumEquipeGhost
             // 
             this.LB_NumEquipeGhost.AutoSize = true;
-            this.LB_NumEquipeGhost.Location = new System.Drawing.Point(476, 328);
+            this.LB_NumEquipeGhost.Location = new System.Drawing.Point(20, 115);
             this.LB_NumEquipeGhost.Name = "LB_NumEquipeGhost";
             this.LB_NumEquipeGhost.Size = new System.Drawing.Size(61, 13);
             this.LB_NumEquipeGhost.TabIndex = 23;
