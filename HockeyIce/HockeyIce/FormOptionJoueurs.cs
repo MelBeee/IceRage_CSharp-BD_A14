@@ -98,7 +98,10 @@ namespace HockeyIce
         // remplissage du combobox 
         private void RemplirComboBox()
         {
-            sqlcommande = "select numequipe, nom from equipes";
+            sqlcommande =   " select e.numequipe, e.nom from equipes e " + 
+                            " inner join joueurs j on j.numequipe = e.numequipe " + 
+                            " where (select count(numjoueur) from joueurs) > 0 " + 
+                            " group by e.numequipe, e.nom";
             try
             {
                 OracleCommand orcd = new OracleCommand(sqlcommande, oraconnOptionJ);
