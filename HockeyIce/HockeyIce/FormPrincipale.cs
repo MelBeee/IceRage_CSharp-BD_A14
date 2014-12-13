@@ -144,7 +144,9 @@ namespace HockeyIce
             }
         }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      GESTION TOUCHES DU CLAVIER
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -163,22 +165,25 @@ namespace HockeyIce
             return result;
         }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      EVENTS DE FLASHBUTTON GENERAL
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FB_QuitterPDC_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void FB_Fermer_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      OUVERTURE FORM A PROPOS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FB_APropos_Click(object sender, EventArgs e)
         {
             AfficherAPropos();
         }
-
         private void AfficherAPropos()
         {
             FormAPropos dlg = new FormAPropos();
@@ -186,21 +191,21 @@ namespace HockeyIce
             dlg.ShowDialog();
         }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      OUVERTURE FORM CLASSEMENT
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FB_CJoueurs_Click(object sender, EventArgs e)
         {
             AfficherClassement("Joueurs");
         }
-
         private void FB_CEquipe_Click(object sender, EventArgs e)
         {
             AfficherClassement("Equipes");
         }
-
         private void FB_3MeilleursJs_Click(object sender, EventArgs e)
         {
             AfficherClassement("Top3");
         }
-
         private void AfficherClassement(string Classement)
         {
             Properties.Settings.Default.FenetreAOuvrir = Classement;
@@ -210,26 +215,25 @@ namespace HockeyIce
             dlg.ShowDialog();
         }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      OUVERTURE FORM GESTION
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FB_AEquipe_Click(object sender, EventArgs e)
         {
             AfficherGestion("Équipes");
         }
-
         private void FB_AJoueurs_Click(object sender, EventArgs e)
         {
             AfficherGestion("Joueurs");
         }
-
         private void FB_AMatchs_Click(object sender, EventArgs e)
         {
             AfficherGestion("Matchs");
         }
-
         private void FB_ADivision_Click(object sender, EventArgs e)
         {
             AfficherGestion("Division");
         }
-
         private void AfficherGestion(string Gestion)
         {
             Properties.Settings.Default.FenetreAOuvrir = Gestion;
@@ -240,23 +244,23 @@ namespace HockeyIce
             dlg.ShowDialog();
         }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      OUVERTURE FORM RECHERCHE
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FB_TrouverEquipe_Click(object sender, EventArgs e)
         {
             AfficherRecherche("Équipes");
         }
-
         private void FB_TrouverMatch_Click(object sender, EventArgs e)
         {
             AfficherRecherche("Matchs");
         }
-
         private void FB_TrouverJoueur_Click(object sender, EventArgs e)
         {
             FormChoixStats dlg = new FormChoixStats(oraconn);
 
             dlg.ShowDialog();
         }
-
         private void AfficherRecherche(string Recherche)
         {
             Properties.Settings.Default.FenetreAOuvrir = Recherche;
@@ -266,7 +270,6 @@ namespace HockeyIce
 
             dlg.ShowDialog();
         }
-
 
     }
 }
