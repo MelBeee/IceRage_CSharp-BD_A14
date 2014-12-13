@@ -292,27 +292,29 @@ namespace HockeyIce
         }
         private void ModifierEquipe()
         {
+
             try
             {
                 // la requête SQLajout est paramétrée. Elle a 4 paramètres.
                 //les paramètres pour Oracle et C # sont précédés de deux points : 
                 string commandesql = " update EQUIPES set " +
                 "NOM=:nom, VILLE=:Ville, " +
-                "NUMDIVISION=:NumDivision, DATEINTRODUCTION=:DateValue " +
-                "where NUMEQUIPE=" + Properties.Settings.Default.NumValue.ToString();
+                    /*"NUMDIVISION=:NumDivision "*/ "DATEINTRODUCTION=:DateValue " +
+                "where NUMEQUIPE = " + Properties.Settings.Default.NumValue.ToString();
+                string commandesql2 = " update EQUIPES set " +
+                "Logo=:Logo " +
+                "where NUMEQUIPE = " + Properties.Settings.Default.NumValue.ToString();
 
                 // On déclare les paramètres pour chaque paramètre de la requête
-                OracleParameter oraNom = new OracleParameter(":nom", OracleDbType.Varchar2, 50);                
-//OracleParameter oraLogo = new OracleParameter(":Logo", OracleDbType.Blob);
+                OracleParameter oraNom = new OracleParameter(":nom", OracleDbType.Varchar2, 50);
                 OracleParameter oraVille = new OracleParameter(":Ville", OracleDbType.Varchar2, 30);
-                OracleParameter oraDivision = new OracleParameter(":NumDivision", OracleDbType.Int32);
+                //OracleParameter oraDivision = new OracleParameter(":NumDivision", OracleDbType.Int32);
                 OracleParameter oraDate = new OracleParameter(":DateValue", OracleDbType.Date);
                 // on affecte les valeurs aux paramètres.                
-               
+
                 oraNom.Value = TB_NomEquipe.Text;
-//oraLogo.Value = PicToByte();
                 oraVille.Value = TB_LieuxEquipe.Text;
-                oraDivision.Value = CB_InvisibleDiv.Text;
+                //oraDivision.Value = CB_InvisibleDiv.Text;
                 oraDate.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
 
                 // En crée un Objet OracleCommand pour passer la requête à la bD 
@@ -322,12 +324,21 @@ namespace HockeyIce
                 // Paramètre de la requête SQLajout.
 
                 oraAjout.Parameters.Add(oraNom);
-//oraAjout.Parameters.Add(oraLogo);
                 oraAjout.Parameters.Add(oraVille);
-                oraAjout.Parameters.Add(oraDivision);
+                //oraAjout.Parameters.Add(oraDivision);
                 oraAjout.Parameters.Add(oraDate);
                 // on execute la requete 
                 oraAjout.ExecuteNonQuery();
+                if (nomFichier != null)
+                {
+                    //Logo Maintenent
+                    OracleParameter oraLogo = new OracleParameter(":Logo", OracleDbType.Blob);
+                    OracleCommand oraAjout2 = new OracleCommand(commandesql2, oraconnGestion);
+                    oraAjout2.CommandType = CommandType.Text;
+                    oraLogo.Value = PicToByte();
+                    oraAjout2.Parameters.Add(oraLogo);
+                    oraAjout2.ExecuteNonQuery();
+                }
                 MessageBox.Show("Modification reussi");
             }
             catch (OracleException ex)
@@ -335,6 +346,9 @@ namespace HockeyIce
                 AfficherErreur(ex);
             }
         }
+
+
+
 
         private void LoadInfoEquipe()
         {
@@ -409,7 +423,7 @@ namespace HockeyIce
         private void ModifierDivision()
         {
             commandesql = "update divisions set " +
-                          "numdivision = :NumDivision, "+
+                          "numdivision = :NumDivision, " +
                           "NOM = :Nom, " +
                           "DATECREATION = :DateValue " +
                           "where numdivision = " + Properties.Settings.Default.NumValue;
@@ -508,7 +522,7 @@ namespace HockeyIce
         }
         private void LoadInfoJoueur()
         {
-            commandesql =   "select j.*, e.nom from joueurs j "+
+            commandesql = "select j.*, e.nom from joueurs j " +
                             "inner join equipes e on e.NUMEQUIPE = j.numequipe " +
                             "where j.numjoueur = " + Properties.Settings.Default.NumValue;
 
@@ -596,7 +610,7 @@ namespace HockeyIce
         // Event pour updater les control lors d'un changement dans n'importe quel textbox
         private void TB_TextChanged(object sender, EventArgs e)
         {
-            UpdateControl();            
+            UpdateControl();
             pictureBox5.ImageLocation = TB_PhotoJ.Text;
         }
         // Selected Index changed dans les combobox d'equipe
