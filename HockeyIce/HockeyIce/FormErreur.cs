@@ -169,7 +169,3 @@ namespace HockeyIce
     }
 }
 
-/*
- * 03224
- 
- */

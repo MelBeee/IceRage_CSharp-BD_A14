@@ -128,16 +128,16 @@ namespace HockeyIce
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FormPrincipale_MouseDown(object sender, MouseEventArgs e)
         {
-            _dragging = true;  // _dragging is your variable flag
-            _start_point = new Point(e.X, e.Y);
+            _dragging = true;  // Enregistre que l'utilisateur a selectionner la form
+            _start_point = new Point(e.X, e.Y); // Enregistre le point actuelle du form 
         }
         private void FormPrincipale_MouseUp(object sender, MouseEventArgs e)
         {
-            _dragging = false; 
+            _dragging = false; // Enregistre que l'utilisateur a "lacher le form"
         }
         private void FormPrincipale_MouseMove(object sender, MouseEventArgs e)
         {
-            if (_dragging)
+            if (_dragging) // si l'utilisateur a selectionner le form
             {
                 Point p = PointToScreen(e.Location);
                 Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
