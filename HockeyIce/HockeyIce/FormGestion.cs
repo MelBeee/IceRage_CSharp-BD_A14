@@ -320,6 +320,7 @@ namespace HockeyIce
                 // En crée un Objet OracleCommand pour passer la requête à la bD 
                 OracleCommand oraAjout = new OracleCommand(commandesql, oraconnGestion);
                 oraAjout.CommandType = CommandType.Text;
+
                 // En utilisant la propriété Paramètres de OracleCommand, on spécifie les 
                 // Paramètre de la requête SQLajout.
 
