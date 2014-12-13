@@ -337,6 +337,7 @@ namespace HockeyIce
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void ExecuteCommandeMatch()
         {
+            bool reussi = true;
             try
             {
                 // on affecte les valeurs aux paramètres.
@@ -372,12 +373,16 @@ namespace HockeyIce
                 // on exécute la requête
                 oraModif.ExecuteNonQuery();
                 // on appelle la fonction dissocier pour pouvoir insérer une deuxième fois.
-                MessageBox.Show("Application reussie");
             }
             catch (OracleException ex)
             {
+                reussi = false;
                 AfficherErreur(ex);
             }
+            if(reussi)
+                MessageBox.Show("Application reussite");
+            else
+                MessageBox.Show("Application non reussite");
         }
         private void AjoutMatch()
         {
@@ -572,6 +577,7 @@ namespace HockeyIce
                 TB_NomEquipe.Text = oraRead.GetString(1);
                 PB_LogoE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                 PB_LogoE.Image = Image.FromStream(oraRead.GetOracleBlob(2));
+                PB_LogoE.BackgroundImage = PB_LogoE.Image;
                 TB_LieuxEquipe.Text = oraRead.GetString(3);
                 LB_Invisible.Text = oraRead.GetInt32(4).ToString();
                 LB_DateEquipe.Text = oraRead.GetDateTime(5).ToString();

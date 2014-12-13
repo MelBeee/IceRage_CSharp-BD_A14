@@ -292,6 +292,7 @@
             this.PB_LogoE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PB_LogoE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PB_LogoE.ErrorImage = global::HockeyIce.Properties.Resources.LogoBase;
+            this.PB_LogoE.Image = global::HockeyIce.Properties.Resources.LogoBase;
             this.PB_LogoE.InitialImage = global::HockeyIce.Properties.Resources.LogoBase;
             this.PB_LogoE.Location = new System.Drawing.Point(223, 204);
             this.PB_LogoE.Margin = new System.Windows.Forms.Padding(4);

@@ -29,7 +29,7 @@ namespace HockeyIce
         // variable contenant la connection a la bd 
         public OracleConnection oraconnGestion = new OracleConnection();
         // string contentenat les différentes commandes voulu
-        string sqlcommande, sqlcommandedelete;
+        string sqlcommande;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //      CONSTRUCTEUR
@@ -97,30 +97,32 @@ namespace HockeyIce
 //      SUPPRIMER
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // selon le choix fait, va utiliser la commande demandé
-        private void WhattoDelete()
+        private bool WhattoDelete()
         {
+            bool reussi = true;
             switch (Properties.Settings.Default.FenetreAOuvrir)
             {
                 case "Équipes":
-                    sqlcommandedelete = "delete from equipes where numequipe =" + CB_Invisible.Text;
+                    reussi = DeleteThing("delete from equipes where numequipe =" + CB_Invisible.Text);
                     break;
                 case "Joueurs":
-                    sqlcommandedelete = "delete from joueurs where numjoueur =" + CB_Invisible.Text;
+                    reussi = DeleteThing("delete from joueurs where numjoueur =" + CB_Invisible.Text);
                     break;
                 case "Division":
-                    sqlcommandedelete = "delete from divisions where numdivision =" + CB_Invisible.Text;
+                    reussi = DeleteThing("delete from divisions where numdivision =" + CB_Invisible.Text);
                     break;
                 case "Matchs":
-                    sqlcommandedelete = "delete from matchs where nummatch =" + CB_Invisible.Text;
+                    reussi = DeleteThing("delete from statistiquesjoueurs where nummatch = " + CB_Invisible.Text);
+                    reussi = DeleteThing("delete from matchs where nummatch =" + CB_Invisible.Text);
                     break;
             }
+            return reussi;
         }
         // execute la commande de suppression
-        private bool DeleteThing()
+        private bool DeleteThing(string commande)
         {
-            WhattoDelete();
             bool reussi = true;
-            OracleCommand orcd = new OracleCommand(sqlcommandedelete, oraconnGestion);
+            OracleCommand orcd = new OracleCommand(commande, oraconnGestion);
             try
             {
                 orcd.CommandType = CommandType.Text;
@@ -214,7 +216,7 @@ namespace HockeyIce
         {
             if (RB_Supprimer.Checked)
             {
-                if (DeleteThing())
+                if (WhattoDelete())
                 {
                     MessageBox.Show("Suppression réussi");
                 }

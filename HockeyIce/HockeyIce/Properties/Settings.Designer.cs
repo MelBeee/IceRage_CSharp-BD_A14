@@ -214,16 +214,5 @@ namespace HockeyIce.Properties {
                 this["PosFormChoixStats"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateChoisiEnDateTime {
-            get {
-                return ((global::System.DateTime)(this["DateChoisiEnDateTime"]));
-            }
-            set {
-                this["DateChoisiEnDateTime"] = value;
-            }
-        }
     }
 }
