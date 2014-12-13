@@ -12,30 +12,43 @@ using System.IO;
 using System.Collections.Specialized;
 using System.Net;
 
-// Ajout joueur/division/match fonctionne.  equipe a refaire pour le logo? 
-// suppression marchent pour les 4.
-// modifier a faire. 
-
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      FORM GESTION
+//      Fait par Melissa Boucher et Xavier Brosseau
+//      15 Decembre 2014
+//      Produit pour le cours de Base de Données et Developpement d'Interfaces
+//
+//      Utilisé pour faire la gestion (Supprimer/Modifier/Ajouter) d'une/un equipe/division/joueurs/matchs
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace HockeyIce
 {
     public partial class FormGestion : Form
     {
-        string nomFichier;
+        string nomFichier, commandesql;
+        // bool savoir si on est entrain de deplacer le form
         private bool _dragging = false;
+        // emmagasine la position du curseur lors d'un deplacement de form
         private Point _start_point = new Point(0, 0);
-        private Point basePanel = new Point(3, 27);
+        // variable contenant la connection a la bd 
         public OracleConnection oraconnGestion = new OracleConnection();
-        string commandesql;
+        // variable pour les ajouts primarykey
         int base_ = 1;
+        // variable utilisé lors des tests de keypress
         const char BACKSPACE = '\b';
+        //private Point basePanel = new Point(3, 27);
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      CONSTRUCTEUR
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public FormGestion(OracleConnection oraconn)
         {
             InitializeComponent();
             oraconnGestion = oraconn;
         }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      LOAD ET CLOSING
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FormGestion_Load(object sender, EventArgs e)
         {
             EnabledVisibleLesPanels();
@@ -58,6 +71,170 @@ namespace HockeyIce
             Properties.Settings.Default.PosFormGestion = this.Location;
             Properties.Settings.Default.Save();
         }
+        private void EnabledVisibleLesPanels()
+        {
+            switch (Properties.Settings.Default.FenetreAOuvrir)
+            {
+                case "Équipes":
+                    PN_Equipe.Parent = this;
+                    PN_Equipe.Visible = true;
+                    PN_Equipe.Enabled = true;
+                    //PN_Equipe.Location = basePanel;
+                    LB_Text.Text = "Gestion des équipes";
+                    break;
+                case "Joueurs":
+                    PN_Joueurs.Parent = this;
+                    PN_Joueurs.Visible = true;
+                    PN_Joueurs.Enabled = true;
+                    //PN_Joueurs.Location = basePanel;
+                    LB_Text.Text = "Gestion des joueurs";
+                    break;
+                case "Division":
+                    PN_Division.Parent = this;
+                    PN_Division.Visible = true;
+                    PN_Division.Enabled = true;
+                    //PN_Division.Location = basePanel;
+                    LB_Text.Text = "Gestion des divisions";
+                    break;
+                case "Matchs":
+                    PN_Matchs.Parent = this;
+                    PN_Matchs.Visible = true;
+                    PN_Matchs.Enabled = true;
+                    //PN_Matchs.Location = basePanel;
+                    LB_Text.Text = "Gestion des matchs";
+                    break;
+            }
+        }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      EVENTS DE FLASHBUTTON
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void FB_Fermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void FB_Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void FB_AppliquerMatch_Click(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.ModifierAjouter)
+            {
+                AjoutMatch();
+            }
+            else
+            {
+                ModifierMatch();
+            }
+            this.Close();
+        }
+        private void FB_AppliquerDivision_Click(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.ModifierAjouter)
+            {
+                AjoutDivision();
+            }
+            else
+            {
+                ModifierDivision();
+            }
+            this.Close();
+        }
+        private void FB_AppliquerEquipe_Click(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.ModifierAjouter)
+            {
+                AjoutEquipe();
+            }
+            else
+            {
+                ModifierEquipe();
+            }
+            this.Close();
+        }
+        private void FB_AppliquerJoueur_Click(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.ModifierAjouter)
+            {
+                AjoutJoueur();
+            }
+            else
+            {
+                ModifierJoueur();
+            }
+            this.Close();
+        }
+        private void UpdateControl()
+        {
+            switch (Properties.Settings.Default.FenetreAOuvrir)
+            {
+                case "Équipes":
+                    if (!Properties.Settings.Default.ModifierAjouter)
+                        FB_AppliquerEquipe.Enabled = (TB_NomEquipe.Text == "" ||
+                                                        TB_LieuxEquipe.Text == "" ||
+                                                        CB_DivisionEquipe.Text == "" ||
+                                                        LB_DateEquipe.Text == "Date") ? false : true;
+                    else
+                        FB_AppliquerEquipe.Enabled = (TB_NomEquipe.Text == "" ||
+                                                        TB_LieuxEquipe.Text == "" ||
+                                                        LB_DateEquipe.Text == "Date") ? false : true;
+                    break;
+                case "Joueurs":
+                    if (!Properties.Settings.Default.ModifierAjouter)
+                        FB_AppliquerJoueur.Enabled = (TB_NomJ.Text == "" ||
+                                                        TB_PrenomJ.Text == "" ||
+                                                        TB_NumeroJ.Text == "" ||
+                                                        TB_PhotoJ.Text == "" ||
+                                                        CB_ChoixEquipeJ.Text == "" ||
+                                                        CB_PositionJ.Text == "" ||
+                                                        LB_DateJ.Text == "Date") ? false : true;
+                    else
+                        FB_AppliquerJoueur.Enabled = (TB_NomJ.Text == "" ||
+                                                        TB_PrenomJ.Text == "" ||
+                                                        TB_NumeroJ.Text == "" ||
+                                                        TB_PhotoJ.Text == "" ||
+                                                        LB_DateJ.Text == "Date") ? false : true;
+                    break;
+                case "Division":
+                    FB_AppliquerDivision.Enabled = (TB_NomDivision.Text == "" ||
+                                                    LB_DateDivision.Text == "Date") ? false : true;
+                    break;
+                case "Matchs":
+                    if (!Properties.Settings.Default.ModifierAjouter)
+                        FB_AppliquerMatch.Enabled = (CB_EMaison.Text == "" ||
+                                                        CB_EVisiteur.Text == "" ||
+                                                        TB_Endroit.Text == "") ? false : true;
+                    else
+                        FB_AppliquerMatch.Enabled = (TB_Endroit.Text == "") ? false : true;
+                    break;
+            }
+        }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      DEPLACEMENT DU FORM
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void FormGestion_MouseDown(object sender, MouseEventArgs e)
+        {
+            _dragging = true;  // Enregistre que l'utilisateur a selectionner la form
+            _start_point = new Point(e.X, e.Y); // Enregistre le point actuelle du form 
+        }
+        private void FormGestion_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_dragging) // si l'utilisateur a selectionner le form
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
+            }
+        }
+        private void FormGestion_MouseUp(object sender, MouseEventArgs e)
+        {
+            _dragging = false; // Enregistre que l'utilisateur a "lacher le form"
+        }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      DATE
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void BTN_Date_Click(object sender, EventArgs e)
         {
             FormDate dlg = new FormDate();
@@ -70,6 +247,9 @@ namespace HockeyIce
             }
         }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      REMPLISSAGE COMBOBOX
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void RemplirComboBoxEquipe()
         {
             string sqlremplir = "select numequipe, nom from equipes";
@@ -137,7 +317,9 @@ namespace HockeyIce
             }
         }
 
-        // MATCHS (RESTE JUSTE A GERER LES HEURES ET LA DATE)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      GESTION DES MATCHS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void ExecuteCommandeMatch()
         {
             try
@@ -157,7 +339,7 @@ namespace HockeyIce
                 oranummatch.Value = Properties.Settings.Default.NumValue;
                 oranumevis.Value = Int32.Parse(CB_Invisible.Text);
                 oranumemai.Value = Int32.Parse(CB_Invisible2.Text);
-                oradate.Value = DTP_DateMatch.Value;
+                //oradate.Value = DTP_DateMatch.Value;
                 oralieu.Value = TB_Endroit.Text;
                 orapointmai.Value = NUD_PMaison.Value;
                 orapointvis.Value = NUD_PVisiteur.Value;
@@ -215,7 +397,7 @@ namespace HockeyIce
                 oraRead.Read();
                 SetSelectedIndexVisiteur(oraRead.GetString(0));
                 SetSelectedIndexMaison(oraRead.GetString(1));
-                DTP_DateMatch.Value = oraRead.GetDateTime(2);
+                //DTP_DateMatch.Value = oraRead.GetDateTime(2);
                 TB_Endroit.Text = oraRead.GetString(3);
                 NUD_PMaison.Value = oraRead.GetInt32(4);
                 NUD_PVisiteur.Value = oraRead.GetInt32(5);
@@ -243,7 +425,10 @@ namespace HockeyIce
             LB_EVisiteur.Visible = true;
             LB_EVisiteur.Text = equipe;
         }
-        // EQUIPES
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      GESTION DES EQUIPES
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void AjoutEquipe()
         {
             Properties.Settings.Default.NumValue = base_.ToString();
@@ -377,7 +562,10 @@ namespace HockeyIce
                 AfficherErreur(ex);
             }
         }
-        // DIVISIONS
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      GESTION DES DIVISIONS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void ExecuteCommandeDivision()
         {
             try
@@ -448,7 +636,10 @@ namespace HockeyIce
                 AfficherErreur(ex);
             }
         }
-        // JOUEURS
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      GESTION DES JOUEURS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void ExecuteCommandeJoueur()
         {
             try
@@ -549,7 +740,9 @@ namespace HockeyIce
             }
         }
 
-        // Gestion des erreurs
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      ERREURS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void AfficherErreur(OracleException ex)
         {
             FormErreur dlg = new FormErreur(ex);
@@ -559,52 +752,10 @@ namespace HockeyIce
                 this.Close();
             }
         }
-        // Event et methode pour updater les flashbuttons
-        private void UpdateControl()
-        {
-            switch (Properties.Settings.Default.FenetreAOuvrir)
-            {
-                case "Équipes":
-                    if (!Properties.Settings.Default.ModifierAjouter)
-                        FB_AppliquerEquipe.Enabled = (TB_NomEquipe.Text == "" ||
-                                                        TB_LieuxEquipe.Text == "" ||
-                                                        CB_DivisionEquipe.Text == "" ||
-                                                        LB_DateEquipe.Text == "Date") ? false : true;
-                    else
-                        FB_AppliquerEquipe.Enabled = (TB_NomEquipe.Text == "" ||
-                                                        TB_LieuxEquipe.Text == "" ||
-                                                        LB_DateEquipe.Text == "Date") ? false : true;
-                    break;
-                case "Joueurs":
-                    if (!Properties.Settings.Default.ModifierAjouter)
-                        FB_AppliquerJoueur.Enabled = (TB_NomJ.Text == "" ||
-                                                        TB_PrenomJ.Text == "" ||
-                                                        TB_NumeroJ.Text == "" ||
-                                                        TB_PhotoJ.Text == "" ||
-                                                        CB_ChoixEquipeJ.Text == "" ||
-                                                        CB_PositionJ.Text == "" ||
-                                                        LB_DateJ.Text == "Date") ? false : true;
-                    else
-                        FB_AppliquerJoueur.Enabled = (TB_NomJ.Text == "" ||
-                                                        TB_PrenomJ.Text == "" ||
-                                                        TB_NumeroJ.Text == "" ||
-                                                        TB_PhotoJ.Text == "" ||
-                                                        LB_DateJ.Text == "Date") ? false : true;
-                    break;
-                case "Division":
-                    FB_AppliquerDivision.Enabled = (TB_NomDivision.Text == "" ||
-                                                    LB_DateDivision.Text == "Date") ? false : true;
-                    break;
-                case "Matchs":
-                    if (!Properties.Settings.Default.ModifierAjouter)
-                        FB_AppliquerMatch.Enabled = (CB_EMaison.Text == "" ||
-                                                        CB_EVisiteur.Text == "" ||
-                                                        TB_Endroit.Text == "") ? false : true;
-                    else
-                        FB_AppliquerMatch.Enabled = (TB_Endroit.Text == "") ? false : true;
-                    break;
-            }
-        }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      EVENT DE CHANGEMENT DE TEXTBOX/COMBOBOX
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Event pour updater les control lors d'un changement dans n'importe quel textbox
         private void TB_TextChanged(object sender, EventArgs e)
         {
@@ -633,132 +784,10 @@ namespace HockeyIce
             CB_InvisibleDiv.SelectedIndex = CB_DivisionEquipe.SelectedIndex;
             LB_Invisible.Text = CB_InvisibleDiv.Text;
         }
-        // Enabled ou Disable les panels lors du load du form 
-        private void EnabledVisibleLesPanels()
-        {
-            switch (Properties.Settings.Default.FenetreAOuvrir)
-            {
-                case "Équipes":
-                    PN_Equipe.Parent = this;
-                    PN_Equipe.Visible = true;
-                    PN_Equipe.Enabled = true;
-                    PN_Equipe.Location = basePanel;
-                    LB_Text.Text = "Gestion des équipes";
-                    break;
-                case "Joueurs":
-                    PN_Joueurs.Parent = this;
-                    PN_Joueurs.Visible = true;
-                    PN_Joueurs.Enabled = true;
-                    PN_Joueurs.Location = basePanel;
-                    LB_Text.Text = "Gestion des joueurs";
-                    break;
-                case "Division":
-                    PN_Division.Parent = this;
-                    PN_Division.Visible = true;
-                    PN_Division.Enabled = true;
-                    PN_Division.Location = basePanel;
-                    LB_Text.Text = "Gestion des divisions";
-                    break;
-                case "Matchs":
-                    PN_Matchs.Parent = this;
-                    PN_Matchs.Visible = true;
-                    PN_Matchs.Enabled = true;
-                    PN_Matchs.Location = basePanel;
-                    LB_Text.Text = "Gestion des matchs";
-                    break;
-            }
-        }
 
-        public static Image GetImageFromUrl(string url)
-        {
-            HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
-            using (HttpWebResponse httpWebReponse = (HttpWebResponse)httpWebRequest.GetResponse())
-            {
-                using (Stream stream = httpWebReponse.GetResponseStream())
-                {
-                    return Image.FromStream(stream);
-                }
-            }
-        }
-
-        // Events pour pouvoir faire bouger le form 
-        private void FormGestion_MouseDown(object sender, MouseEventArgs e)
-        {
-            _dragging = true;  // _dragging is your variable flag
-            _start_point = new Point(e.X, e.Y);
-        }
-        private void FormGestion_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (_dragging)
-            {
-                Point p = PointToScreen(e.Location);
-                Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
-            }
-        }
-        private void FormGestion_MouseUp(object sender, MouseEventArgs e)
-        {
-            _dragging = false;
-        }
-
-        private void FB_Fermer_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void FB_Quitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void FB_AppliquerMatch_Click(object sender, EventArgs e)
-        {
-            if (!Properties.Settings.Default.ModifierAjouter)
-            {
-                AjoutMatch();
-            }
-            else
-            {
-                ModifierMatch();
-            }
-            this.Close();
-        }
-        private void FB_AppliquerDivision_Click(object sender, EventArgs e)
-        {
-            if (!Properties.Settings.Default.ModifierAjouter)
-            {
-                AjoutDivision();
-            }
-            else
-            {
-                ModifierDivision();
-            }
-            this.Close();
-        }
-        private void FB_AppliquerEquipe_Click(object sender, EventArgs e)
-        {
-            if (!Properties.Settings.Default.ModifierAjouter)
-            {
-                AjoutEquipe();
-            }
-            else
-            {
-                ModifierEquipe();
-            }
-            this.Close();
-        }
-        private void FB_AppliquerJoueur_Click(object sender, EventArgs e)
-        {
-            if (!Properties.Settings.Default.ModifierAjouter)
-            {
-                AjoutJoueur();
-            }
-            else
-            {
-                ModifierJoueur();
-            }
-            this.Close();
-        }
-
-        // Verifier les caracteres entré
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      VERIFICATION DES CARACTERES ENTRÉS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         bool EstChiffre(char c)
         {
             String chiffres = "0123456789";
@@ -771,7 +800,6 @@ namespace HockeyIce
             car = car.ToLower();
             return (alpha.IndexOf(car) != -1);
         }
-
         private void TB_NumeroJ_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != BACKSPACE)
@@ -783,16 +811,30 @@ namespace HockeyIce
                 e.Handled = !EstAlpha(e.KeyChar);
         }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      GESTION DES IMAGES
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public static Image GetImageFromUrl(string url)
+        {
+            HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
+            using (HttpWebResponse httpWebReponse = (HttpWebResponse)httpWebRequest.GetResponse())
+            {
+                using (Stream stream = httpWebReponse.GetResponseStream())
+                {
+                    return Image.FromStream(stream);
+                }
+            }
+        }
         private void ParcourirImage()
         {
             nomFichier = RechercherFichier();
             if (nomFichier != null)
             {
                 PB_LogoE.Image = System.Drawing.Image.FromFile(nomFichier);
+                PB_LogoE.BackgroundImage = PB_LogoE.Image;
                 PB_LogoE.ImageLocation = nomFichier;
             }
         }
-
         private string RechercherFichier()
         {
             OpenFileDialog fImage = new OpenFileDialog();
@@ -814,7 +856,6 @@ namespace HockeyIce
             }
             return nomFichier;
         }
-
         private byte[] PicToByte()
         {
             // le résultat on le met dans une variable de type byte (octets).
@@ -828,10 +869,10 @@ namespace HockeyIce
             }
             return null;
         }
-
         private void PB_LogoE_Click(object sender, EventArgs e)
         {
             ParcourirImage();
         }
+
     }
 }
