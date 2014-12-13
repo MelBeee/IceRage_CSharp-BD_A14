@@ -72,6 +72,7 @@ namespace HockeyIce
             LB_NomEquipe.DataBindings.Add("text", monDataSet2, "equipes.nom");
             LB_VilleEquipe.DataBindings.Add("text", monDataSet2, "equipes.ville");
             LB_DivisionNumInvisible.DataBindings.Add("text", monDataSet2, "equipes.numEquipe");
+            DTP_Tempo.DataBindings.Add("text", monDataSet2, "equipes.DateIntroduction");
         }
 
         private void InitJoueur()
@@ -290,12 +291,12 @@ namespace HockeyIce
 
         private void Next_equipe(object sender, EventArgs e)
         {
-
+            this.BindingContext[monDataSet2, "equipes"].Position += 1;
         }
 
         private void Back_Equipe(object sender, EventArgs e)
         {
-
+            this.BindingContext[monDataSet2, "equipes"].Position -= 1;
         }
     }
 }

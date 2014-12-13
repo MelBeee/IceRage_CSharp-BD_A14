@@ -37,7 +37,7 @@
             this.LB_DateEquipe = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.LB_NomEquipe = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PB_LogoEquipe = new System.Windows.Forms.PictureBox();
             this.flashButton1 = new FlashButton.FlashButton();
             this.label12 = new System.Windows.Forms.Label();
             this.flashButton2 = new FlashButton.FlashButton();
@@ -76,7 +76,7 @@
             this.FB_Fermer = new FlashButton.FlashButton();
             this.LB_DivisionNumInvisible = new System.Windows.Forms.Label();
             this.PN_Equipe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoEquipe)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.PN_Joueurs.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -109,7 +109,7 @@
             this.PN_Equipe.Controls.Add(this.LB_DateEquipe);
             this.PN_Equipe.Controls.Add(this.label14);
             this.PN_Equipe.Controls.Add(this.LB_NomEquipe);
-            this.PN_Equipe.Controls.Add(this.pictureBox1);
+            this.PN_Equipe.Controls.Add(this.PB_LogoEquipe);
             this.PN_Equipe.Controls.Add(this.flashButton1);
             this.PN_Equipe.Controls.Add(this.label12);
             this.PN_Equipe.Controls.Add(this.flashButton2);
@@ -180,15 +180,15 @@
             this.LB_NomEquipe.Text = "Nom Équipe";
             this.LB_NomEquipe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // PB_LogoEquipe
             // 
-            this.pictureBox1.Image = global::HockeyIce.Properties.Resources._1280px_Montreal_Canadiens_svg;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 68);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(132, 142);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this.PB_LogoEquipe.Image = global::HockeyIce.Properties.Resources._1280px_Montreal_Canadiens_svg;
+            this.PB_LogoEquipe.Location = new System.Drawing.Point(15, 68);
+            this.PB_LogoEquipe.Name = "PB_LogoEquipe";
+            this.PB_LogoEquipe.Size = new System.Drawing.Size(132, 142);
+            this.PB_LogoEquipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PB_LogoEquipe.TabIndex = 22;
+            this.PB_LogoEquipe.TabStop = false;
             // 
             // flashButton1
             // 
@@ -650,7 +650,7 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormRecherche_MouseUp);
             this.PN_Equipe.ResumeLayout(false);
             this.PN_Equipe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoEquipe)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.PN_Joueurs.ResumeLayout(false);
@@ -702,7 +702,7 @@
         private System.Windows.Forms.Label LB_DateEquipe;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label LB_NomEquipe;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PB_LogoEquipe;
         private FlashButton.FlashButton flashButton1;
         private System.Windows.Forms.Label label12;
         private FlashButton.FlashButton flashButton2;
