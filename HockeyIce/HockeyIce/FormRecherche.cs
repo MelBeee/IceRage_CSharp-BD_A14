@@ -327,5 +327,15 @@ namespace HockeyIce
             this.BindingContext[monDataSet2, "equipes"].Position -= 1;
             AffichageEquipe();
         }
+
+        private void LB_VilleEquipe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LB_NomEquipe_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
