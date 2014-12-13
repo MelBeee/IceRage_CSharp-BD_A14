@@ -483,7 +483,8 @@ namespace HockeyIce
                 }
                 else
                 {
-                    oraLogo.Value = URLToByte("http://i.imgur.com/V4Xf1Cg.png");//Adresse web de l'image de base
+                    oraLogo.Value = URLToByte("http://i.imgur.com/NuDKmK7.png");//Adresse web de l'image de base
+                                            //Ancien Logo de base"http://i.imgur.com/V4Xf1Cg.png"
                 }
                 oraVille.Value = TB_LieuxEquipe.Text;
                 oraDivision.Value = CB_InvisibleDiv.Text;

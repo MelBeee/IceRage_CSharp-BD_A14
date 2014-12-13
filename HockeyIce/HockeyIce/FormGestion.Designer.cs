@@ -32,22 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGestion));
             this.LB_Text = new System.Windows.Forms.Label();
             this.PN_Division = new System.Windows.Forms.Panel();
-            this.FB_DateDivision = new FlashButton.FlashButton();
-            this.FB_AppliquerDivision = new FlashButton.FlashButton();
             this.LB_DateDivision = new System.Windows.Forms.Label();
             this.LB_Division = new System.Windows.Forms.Label();
             this.TB_NomDivision = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.FB_FermerD = new FlashButton.FlashButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PN_Equipe = new System.Windows.Forms.Panel();
-            this.PB_LogoE = new System.Windows.Forms.PictureBox();
-            this.FB_AppliquerEquipe = new FlashButton.FlashButton();
             this.LB_DateEquipe = new System.Windows.Forms.Label();
             this.LB_Equipe = new System.Windows.Forms.Label();
-            this.FB_DateEquipe = new FlashButton.FlashButton();
-            this.FB_FermerE = new FlashButton.FlashButton();
             this.CB_DivisionEquipe = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -56,11 +48,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.TB_LieuxEquipe = new System.Windows.Forms.TextBox();
             this.TB_NomEquipe = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PN_Joueurs = new System.Windows.Forms.Panel();
-            this.FB_NaissanceJ = new FlashButton.FlashButton();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.FB_AppliquerJoueur = new FlashButton.FlashButton();
             this.LB_DateJ = new System.Windows.Forms.Label();
             this.LB_Joueurs = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -76,15 +64,12 @@
             this.TB_PrenomJ = new System.Windows.Forms.TextBox();
             this.TB_NumeroJ = new System.Windows.Forms.TextBox();
             this.TB_NomJ = new System.Windows.Forms.TextBox();
-            this.FB_FermerJ = new FlashButton.FlashButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PN_Matchs = new System.Windows.Forms.Panel();
             this.LB_DateMatch = new System.Windows.Forms.Label();
             this.NUD_Minute = new System.Windows.Forms.NumericUpDown();
             this.NUD_Heure = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.FB_DateMatch = new FlashButton.FlashButton();
             this.CB_EVisiteur = new System.Windows.Forms.ComboBox();
             this.CB_EMaison = new System.Windows.Forms.ComboBox();
             this.TB_Endroit = new System.Windows.Forms.TextBox();
@@ -92,7 +77,6 @@
             this.NUD_PVisiteur = new System.Windows.Forms.NumericUpDown();
             this.LB_EVisiteur = new System.Windows.Forms.Label();
             this.LB_EMaison = new System.Windows.Forms.Label();
-            this.FB_AppliquerMatch = new FlashButton.FlashButton();
             this.LB_Match = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -100,30 +84,46 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.FB_FermerM = new FlashButton.FlashButton();
             this.CB_Invisible = new System.Windows.Forms.ComboBox();
             this.CB_Invisible2 = new System.Windows.Forms.ComboBox();
             this.LB_Invisible = new System.Windows.Forms.Label();
             this.CB_InvisibleDiv = new System.Windows.Forms.ComboBox();
             this.TT_LogoEquipe = new System.Windows.Forms.ToolTip(this.components);
-            this.FB_Quitter = new FlashButton.FlashButton();
-            this.PB_Logo = new System.Windows.Forms.PictureBox();
             this.LB_HeureInvis = new System.Windows.Forms.Label();
             this.DTP_invisi = new System.Windows.Forms.DateTimePicker();
+            this.PB_LogoE = new System.Windows.Forms.PictureBox();
+            this.FB_AppliquerEquipe = new FlashButton.FlashButton();
+            this.FB_DateEquipe = new FlashButton.FlashButton();
+            this.FB_FermerE = new FlashButton.FlashButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.FB_DateDivision = new FlashButton.FlashButton();
+            this.FB_AppliquerDivision = new FlashButton.FlashButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.FB_FermerD = new FlashButton.FlashButton();
+            this.FB_NaissanceJ = new FlashButton.FlashButton();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.FB_AppliquerJoueur = new FlashButton.FlashButton();
+            this.FB_FermerJ = new FlashButton.FlashButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.FB_DateMatch = new FlashButton.FlashButton();
+            this.FB_AppliquerMatch = new FlashButton.FlashButton();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.FB_FermerM = new FlashButton.FlashButton();
+            this.FB_Quitter = new FlashButton.FlashButton();
+            this.PB_Logo = new System.Windows.Forms.PictureBox();
             this.PN_Division.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PN_Equipe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.PN_Joueurs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.PN_Matchs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Minute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Heure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PMaison)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PVisiteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
             this.SuspendLayout();
@@ -163,36 +163,6 @@
             this.PN_Division.TabIndex = 7;
             this.PN_Division.Visible = false;
             // 
-            // FB_DateDivision
-            // 
-            this.FB_DateDivision.BackgroundImage = global::HockeyIce.Properties.Resources.CalendrierNormal;
-            this.FB_DateDivision.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_DateDivision.ImageClick = global::HockeyIce.Properties.Resources.CalendrierClick;
-            this.FB_DateDivision.ImageDisable = global::HockeyIce.Properties.Resources.CalendrierDisable;
-            this.FB_DateDivision.ImageNeutral = global::HockeyIce.Properties.Resources.CalendrierNormal;
-            this.FB_DateDivision.ImageOver = global::HockeyIce.Properties.Resources.CalendrierHover;
-            this.FB_DateDivision.Location = new System.Drawing.Point(272, 151);
-            this.FB_DateDivision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FB_DateDivision.Name = "FB_DateDivision";
-            this.FB_DateDivision.Size = new System.Drawing.Size(22, 24);
-            this.FB_DateDivision.TabIndex = 38;
-            this.FB_DateDivision.Click += new System.EventHandler(this.BTN_Date_Click);
-            // 
-            // FB_AppliquerDivision
-            // 
-            this.FB_AppliquerDivision.BackgroundImage = global::HockeyIce.Properties.Resources.AppliquerNormal;
-            this.FB_AppliquerDivision.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_AppliquerDivision.ImageClick = global::HockeyIce.Properties.Resources.AppliquerClick;
-            this.FB_AppliquerDivision.ImageDisable = global::HockeyIce.Properties.Resources.AppliquerDisable;
-            this.FB_AppliquerDivision.ImageNeutral = global::HockeyIce.Properties.Resources.AppliquerNormal;
-            this.FB_AppliquerDivision.ImageOver = global::HockeyIce.Properties.Resources.AppliquerHover;
-            this.FB_AppliquerDivision.Location = new System.Drawing.Point(76, 310);
-            this.FB_AppliquerDivision.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.FB_AppliquerDivision.Name = "FB_AppliquerDivision";
-            this.FB_AppliquerDivision.Size = new System.Drawing.Size(102, 20);
-            this.FB_AppliquerDivision.TabIndex = 37;
-            this.FB_AppliquerDivision.Click += new System.EventHandler(this.FB_AppliquerDivision_Click);
-            // 
             // LB_DateDivision
             // 
             this.LB_DateDivision.Location = new System.Drawing.Point(168, 156);
@@ -222,31 +192,6 @@
             this.TB_NomDivision.TabIndex = 1;
             this.TB_NomDivision.TextChanged += new System.EventHandler(this.TB_TextChanged);
             this.TB_NomDivision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HockeyIce.Properties.Resources.Baton_de_Hockey2;
-            this.pictureBox1.Location = new System.Drawing.Point(22, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(316, 62);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
-            // FB_FermerD
-            // 
-            this.FB_FermerD.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_FermerD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_FermerD.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
-            this.FB_FermerD.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
-            this.FB_FermerD.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_FermerD.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerD.Location = new System.Drawing.Point(187, 310);
-            this.FB_FermerD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FB_FermerD.Name = "FB_FermerD";
-            this.FB_FermerD.Size = new System.Drawing.Size(102, 20);
-            this.FB_FermerD.TabIndex = 6;
-            this.FB_FermerD.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
             // label4
             // 
@@ -293,37 +238,6 @@
             this.PN_Equipe.TabIndex = 8;
             this.PN_Equipe.Visible = false;
             // 
-            // PB_LogoE
-            // 
-            this.PB_LogoE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PB_LogoE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PB_LogoE.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PB_LogoE.ErrorImage = global::HockeyIce.Properties.Resources.LogoBase;
-            this.PB_LogoE.Image = global::HockeyIce.Properties.Resources.LogoBase;
-            this.PB_LogoE.InitialImage = global::HockeyIce.Properties.Resources.LogoBase;
-            this.PB_LogoE.Location = new System.Drawing.Point(167, 166);
-            this.PB_LogoE.Name = "PB_LogoE";
-            this.PB_LogoE.Size = new System.Drawing.Size(100, 56);
-            this.PB_LogoE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PB_LogoE.TabIndex = 39;
-            this.PB_LogoE.TabStop = false;
-            this.PB_LogoE.Click += new System.EventHandler(this.PB_LogoE_Click);
-            // 
-            // FB_AppliquerEquipe
-            // 
-            this.FB_AppliquerEquipe.BackgroundImage = global::HockeyIce.Properties.Resources.AppliquerNormal;
-            this.FB_AppliquerEquipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_AppliquerEquipe.ImageClick = global::HockeyIce.Properties.Resources.AppliquerClick;
-            this.FB_AppliquerEquipe.ImageDisable = global::HockeyIce.Properties.Resources.AppliquerDisable;
-            this.FB_AppliquerEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.AppliquerNormal;
-            this.FB_AppliquerEquipe.ImageOver = global::HockeyIce.Properties.Resources.AppliquerHover;
-            this.FB_AppliquerEquipe.Location = new System.Drawing.Point(70, 308);
-            this.FB_AppliquerEquipe.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.FB_AppliquerEquipe.Name = "FB_AppliquerEquipe";
-            this.FB_AppliquerEquipe.Size = new System.Drawing.Size(102, 20);
-            this.FB_AppliquerEquipe.TabIndex = 5;
-            this.FB_AppliquerEquipe.Click += new System.EventHandler(this.FB_AppliquerEquipe_Click);
-            // 
             // LB_DateEquipe
             // 
             this.LB_DateEquipe.Font = new System.Drawing.Font("Lucida Console", 9.75F);
@@ -344,36 +258,6 @@
             this.LB_Equipe.Size = new System.Drawing.Size(87, 27);
             this.LB_Equipe.TabIndex = 30;
             this.LB_Equipe.Text = "Ajouter";
-            // 
-            // FB_DateEquipe
-            // 
-            this.FB_DateEquipe.BackgroundImage = global::HockeyIce.Properties.Resources.CalendrierNormal;
-            this.FB_DateEquipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_DateEquipe.ImageClick = global::HockeyIce.Properties.Resources.CalendrierClick;
-            this.FB_DateEquipe.ImageDisable = global::HockeyIce.Properties.Resources.CalendrierDisable;
-            this.FB_DateEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.CalendrierNormal;
-            this.FB_DateEquipe.ImageOver = global::HockeyIce.Properties.Resources.CalendrierHover;
-            this.FB_DateEquipe.Location = new System.Drawing.Point(270, 223);
-            this.FB_DateEquipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FB_DateEquipe.Name = "FB_DateEquipe";
-            this.FB_DateEquipe.Size = new System.Drawing.Size(22, 24);
-            this.FB_DateEquipe.TabIndex = 3;
-            this.FB_DateEquipe.Click += new System.EventHandler(this.BTN_Date_Click);
-            // 
-            // FB_FermerE
-            // 
-            this.FB_FermerE.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_FermerE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_FermerE.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
-            this.FB_FermerE.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
-            this.FB_FermerE.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_FermerE.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerE.Location = new System.Drawing.Point(180, 308);
-            this.FB_FermerE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FB_FermerE.Name = "FB_FermerE";
-            this.FB_FermerE.Size = new System.Drawing.Size(102, 20);
-            this.FB_FermerE.TabIndex = 6;
-            this.FB_FermerE.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
             // CB_DivisionEquipe
             // 
@@ -455,16 +339,6 @@
             this.TB_NomEquipe.TextChanged += new System.EventHandler(this.TB_TextChanged);
             this.TB_NomEquipe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HockeyIce.Properties.Resources.ImageGEquipe;
-            this.pictureBox2.Location = new System.Drawing.Point(21, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(316, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
             // PN_Joueurs
             // 
             this.PN_Joueurs.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -494,49 +368,6 @@
             this.PN_Joueurs.Size = new System.Drawing.Size(360, 360);
             this.PN_Joueurs.TabIndex = 8;
             this.PN_Joueurs.Visible = false;
-            // 
-            // FB_NaissanceJ
-            // 
-            this.FB_NaissanceJ.BackgroundImage = global::HockeyIce.Properties.Resources.CalendrierNormal;
-            this.FB_NaissanceJ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_NaissanceJ.ImageClick = global::HockeyIce.Properties.Resources.CalendrierClick;
-            this.FB_NaissanceJ.ImageDisable = global::HockeyIce.Properties.Resources.CalendrierDisable;
-            this.FB_NaissanceJ.ImageNeutral = global::HockeyIce.Properties.Resources.CalendrierNormal;
-            this.FB_NaissanceJ.ImageOver = global::HockeyIce.Properties.Resources.CalendrierHover;
-            this.FB_NaissanceJ.Location = new System.Drawing.Point(238, 219);
-            this.FB_NaissanceJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FB_NaissanceJ.Name = "FB_NaissanceJ";
-            this.FB_NaissanceJ.Size = new System.Drawing.Size(22, 24);
-            this.FB_NaissanceJ.TabIndex = 5;
-            this.FB_NaissanceJ.Click += new System.EventHandler(this.BTN_Date_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.ErrorImage = global::HockeyIce.Properties.Resources.no_photo_available;
-            this.pictureBox5.Image = global::HockeyIce.Properties.Resources.no_photo_available;
-            this.pictureBox5.InitialImage = global::HockeyIce.Properties.Resources.ajax_loader;
-            this.pictureBox5.Location = new System.Drawing.Point(245, 100);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(92, 117);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 40;
-            this.pictureBox5.TabStop = false;
-            // 
-            // FB_AppliquerJoueur
-            // 
-            this.FB_AppliquerJoueur.BackgroundImage = global::HockeyIce.Properties.Resources.AppliquerNormal;
-            this.FB_AppliquerJoueur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_AppliquerJoueur.ImageClick = global::HockeyIce.Properties.Resources.AppliquerClick;
-            this.FB_AppliquerJoueur.ImageDisable = global::HockeyIce.Properties.Resources.AppliquerDisable;
-            this.FB_AppliquerJoueur.ImageNeutral = global::HockeyIce.Properties.Resources.AppliquerNormal;
-            this.FB_AppliquerJoueur.ImageOver = global::HockeyIce.Properties.Resources.AppliquerHover;
-            this.FB_AppliquerJoueur.Location = new System.Drawing.Point(75, 320);
-            this.FB_AppliquerJoueur.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.FB_AppliquerJoueur.Name = "FB_AppliquerJoueur";
-            this.FB_AppliquerJoueur.Size = new System.Drawing.Size(102, 19);
-            this.FB_AppliquerJoueur.TabIndex = 8;
-            this.FB_AppliquerJoueur.Click += new System.EventHandler(this.FB_AppliquerJoueur_Click);
             // 
             // LB_DateJ
             // 
@@ -692,31 +523,6 @@
             this.TB_NomJ.TextChanged += new System.EventHandler(this.TB_TextChanged);
             this.TB_NomJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
             // 
-            // FB_FermerJ
-            // 
-            this.FB_FermerJ.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_FermerJ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_FermerJ.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
-            this.FB_FermerJ.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
-            this.FB_FermerJ.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_FermerJ.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerJ.Location = new System.Drawing.Point(184, 320);
-            this.FB_FermerJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FB_FermerJ.Name = "FB_FermerJ";
-            this.FB_FermerJ.Size = new System.Drawing.Size(102, 19);
-            this.FB_FermerJ.TabIndex = 9;
-            this.FB_FermerJ.Click += new System.EventHandler(this.FB_Fermer_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::HockeyIce.Properties.Resources.sl_yog_winter_icehockey;
-            this.pictureBox3.Location = new System.Drawing.Point(21, 18);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(316, 62);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
-            // 
             // PN_Matchs
             // 
             this.PN_Matchs.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -808,21 +614,6 @@
             this.label2.TabIndex = 82;
             this.label2.Text = ":";
             // 
-            // FB_DateMatch
-            // 
-            this.FB_DateMatch.BackgroundImage = global::HockeyIce.Properties.Resources.CalendrierNormal;
-            this.FB_DateMatch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_DateMatch.ImageClick = global::HockeyIce.Properties.Resources.CalendrierClick;
-            this.FB_DateMatch.ImageDisable = global::HockeyIce.Properties.Resources.CalendrierDisable;
-            this.FB_DateMatch.ImageNeutral = global::HockeyIce.Properties.Resources.CalendrierNormal;
-            this.FB_DateMatch.ImageOver = global::HockeyIce.Properties.Resources.CalendrierHover;
-            this.FB_DateMatch.Location = new System.Drawing.Point(282, 202);
-            this.FB_DateMatch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FB_DateMatch.Name = "FB_DateMatch";
-            this.FB_DateMatch.Size = new System.Drawing.Size(22, 24);
-            this.FB_DateMatch.TabIndex = 4;
-            this.FB_DateMatch.Click += new System.EventHandler(this.BTN_Date_Click);
-            // 
             // CB_EVisiteur
             // 
             this.CB_EVisiteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -886,21 +677,6 @@
             this.LB_EMaison.TabIndex = 37;
             this.LB_EMaison.Text = "LB_EMaison";
             this.LB_EMaison.Visible = false;
-            // 
-            // FB_AppliquerMatch
-            // 
-            this.FB_AppliquerMatch.BackgroundImage = global::HockeyIce.Properties.Resources.AppliquerNormal;
-            this.FB_AppliquerMatch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_AppliquerMatch.ImageClick = global::HockeyIce.Properties.Resources.AppliquerClick;
-            this.FB_AppliquerMatch.ImageDisable = global::HockeyIce.Properties.Resources.AppliquerDisable;
-            this.FB_AppliquerMatch.ImageNeutral = global::HockeyIce.Properties.Resources.AppliquerNormal;
-            this.FB_AppliquerMatch.ImageOver = global::HockeyIce.Properties.Resources.AppliquerHover;
-            this.FB_AppliquerMatch.Location = new System.Drawing.Point(72, 320);
-            this.FB_AppliquerMatch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.FB_AppliquerMatch.Name = "FB_AppliquerMatch";
-            this.FB_AppliquerMatch.Size = new System.Drawing.Size(102, 19);
-            this.FB_AppliquerMatch.TabIndex = 9;
-            this.FB_AppliquerMatch.Click += new System.EventHandler(this.FB_AppliquerMatch_Click);
             // 
             // LB_Match
             // 
@@ -972,31 +748,6 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Équipe maison :";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::HockeyIce.Properties.Resources.hockey_wallpaper_hd_4_742195;
-            this.pictureBox4.Location = new System.Drawing.Point(21, 18);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(316, 62);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
-            // 
-            // FB_FermerM
-            // 
-            this.FB_FermerM.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_FermerM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_FermerM.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
-            this.FB_FermerM.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
-            this.FB_FermerM.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
-            this.FB_FermerM.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerM.Location = new System.Drawing.Point(182, 320);
-            this.FB_FermerM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FB_FermerM.Name = "FB_FermerM";
-            this.FB_FermerM.Size = new System.Drawing.Size(102, 19);
-            this.FB_FermerM.TabIndex = 10;
-            this.FB_FermerM.Click += new System.EventHandler(this.FB_Fermer_Click);
-            // 
             // CB_Invisible
             // 
             this.CB_Invisible.FormattingEnabled = true;
@@ -1036,33 +787,6 @@
             this.TT_LogoEquipe.InitialDelay = 1;
             this.TT_LogoEquipe.ReshowDelay = 100;
             // 
-            // FB_Quitter
-            // 
-            this.FB_Quitter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FB_Quitter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.BackgroundImage")));
-            this.FB_Quitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_Quitter.ImageClick = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageClick")));
-            this.FB_Quitter.ImageDisable = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageDisable")));
-            this.FB_Quitter.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageNeutral")));
-            this.FB_Quitter.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageOver")));
-            this.FB_Quitter.Location = new System.Drawing.Point(966, 3);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FB_Quitter.Name = "FB_Quitter";
-            this.FB_Quitter.Size = new System.Drawing.Size(20, 21);
-            this.FB_Quitter.TabIndex = 6;
-            this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
-            // 
-            // PB_Logo
-            // 
-            this.PB_Logo.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
-            this.PB_Logo.Location = new System.Drawing.Point(3, 3);
-            this.PB_Logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PB_Logo.Name = "PB_Logo";
-            this.PB_Logo.Size = new System.Drawing.Size(22, 21);
-            this.PB_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB_Logo.TabIndex = 5;
-            this.PB_Logo.TabStop = false;
-            // 
             // LB_HeureInvis
             // 
             this.LB_HeureInvis.AutoSize = true;
@@ -1076,10 +800,286 @@
             // DTP_invisi
             // 
             this.DTP_invisi.Location = new System.Drawing.Point(372, 141);
-            this.DTP_invisi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTP_invisi.Margin = new System.Windows.Forms.Padding(2);
             this.DTP_invisi.Name = "DTP_invisi";
             this.DTP_invisi.Size = new System.Drawing.Size(121, 20);
             this.DTP_invisi.TabIndex = 42;
+            // 
+            // PB_LogoE
+            // 
+            this.PB_LogoE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PB_LogoE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PB_LogoE.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PB_LogoE.ErrorImage = global::HockeyIce.Properties.Resources.LogoDeBaseModifier;
+            this.PB_LogoE.Image = global::HockeyIce.Properties.Resources.LogoDeBaseModifier;
+            this.PB_LogoE.InitialImage = global::HockeyIce.Properties.Resources.LogoDeBaseModifier;
+            this.PB_LogoE.Location = new System.Drawing.Point(167, 166);
+            this.PB_LogoE.Name = "PB_LogoE";
+            this.PB_LogoE.Size = new System.Drawing.Size(100, 56);
+            this.PB_LogoE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PB_LogoE.TabIndex = 39;
+            this.PB_LogoE.TabStop = false;
+            this.PB_LogoE.Click += new System.EventHandler(this.PB_LogoE_Click);
+            // 
+            // FB_AppliquerEquipe
+            // 
+            this.FB_AppliquerEquipe.BackgroundImage = global::HockeyIce.Properties.Resources.AppliquerNormal;
+            this.FB_AppliquerEquipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_AppliquerEquipe.ImageClick = global::HockeyIce.Properties.Resources.AppliquerClick;
+            this.FB_AppliquerEquipe.ImageDisable = global::HockeyIce.Properties.Resources.AppliquerDisable;
+            this.FB_AppliquerEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.AppliquerNormal;
+            this.FB_AppliquerEquipe.ImageOver = global::HockeyIce.Properties.Resources.AppliquerHover;
+            this.FB_AppliquerEquipe.Location = new System.Drawing.Point(70, 308);
+            this.FB_AppliquerEquipe.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FB_AppliquerEquipe.Name = "FB_AppliquerEquipe";
+            this.FB_AppliquerEquipe.Size = new System.Drawing.Size(102, 20);
+            this.FB_AppliquerEquipe.TabIndex = 5;
+            this.FB_AppliquerEquipe.Click += new System.EventHandler(this.FB_AppliquerEquipe_Click);
+            // 
+            // FB_DateEquipe
+            // 
+            this.FB_DateEquipe.BackgroundImage = global::HockeyIce.Properties.Resources.CalendrierNormal;
+            this.FB_DateEquipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_DateEquipe.ImageClick = global::HockeyIce.Properties.Resources.CalendrierClick;
+            this.FB_DateEquipe.ImageDisable = global::HockeyIce.Properties.Resources.CalendrierDisable;
+            this.FB_DateEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.CalendrierNormal;
+            this.FB_DateEquipe.ImageOver = global::HockeyIce.Properties.Resources.CalendrierHover;
+            this.FB_DateEquipe.Location = new System.Drawing.Point(270, 223);
+            this.FB_DateEquipe.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_DateEquipe.Name = "FB_DateEquipe";
+            this.FB_DateEquipe.Size = new System.Drawing.Size(22, 24);
+            this.FB_DateEquipe.TabIndex = 3;
+            this.FB_DateEquipe.Click += new System.EventHandler(this.BTN_Date_Click);
+            // 
+            // FB_FermerE
+            // 
+            this.FB_FermerE.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_FermerE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_FermerE.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
+            this.FB_FermerE.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
+            this.FB_FermerE.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_FermerE.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
+            this.FB_FermerE.Location = new System.Drawing.Point(180, 308);
+            this.FB_FermerE.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_FermerE.Name = "FB_FermerE";
+            this.FB_FermerE.Size = new System.Drawing.Size(102, 20);
+            this.FB_FermerE.TabIndex = 6;
+            this.FB_FermerE.Click += new System.EventHandler(this.FB_Fermer_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HockeyIce.Properties.Resources.ImageGEquipe;
+            this.pictureBox2.Location = new System.Drawing.Point(21, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(316, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // FB_DateDivision
+            // 
+            this.FB_DateDivision.BackgroundImage = global::HockeyIce.Properties.Resources.CalendrierNormal;
+            this.FB_DateDivision.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_DateDivision.ImageClick = global::HockeyIce.Properties.Resources.CalendrierClick;
+            this.FB_DateDivision.ImageDisable = global::HockeyIce.Properties.Resources.CalendrierDisable;
+            this.FB_DateDivision.ImageNeutral = global::HockeyIce.Properties.Resources.CalendrierNormal;
+            this.FB_DateDivision.ImageOver = global::HockeyIce.Properties.Resources.CalendrierHover;
+            this.FB_DateDivision.Location = new System.Drawing.Point(272, 151);
+            this.FB_DateDivision.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_DateDivision.Name = "FB_DateDivision";
+            this.FB_DateDivision.Size = new System.Drawing.Size(22, 24);
+            this.FB_DateDivision.TabIndex = 38;
+            this.FB_DateDivision.Click += new System.EventHandler(this.BTN_Date_Click);
+            // 
+            // FB_AppliquerDivision
+            // 
+            this.FB_AppliquerDivision.BackgroundImage = global::HockeyIce.Properties.Resources.AppliquerNormal;
+            this.FB_AppliquerDivision.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_AppliquerDivision.ImageClick = global::HockeyIce.Properties.Resources.AppliquerClick;
+            this.FB_AppliquerDivision.ImageDisable = global::HockeyIce.Properties.Resources.AppliquerDisable;
+            this.FB_AppliquerDivision.ImageNeutral = global::HockeyIce.Properties.Resources.AppliquerNormal;
+            this.FB_AppliquerDivision.ImageOver = global::HockeyIce.Properties.Resources.AppliquerHover;
+            this.FB_AppliquerDivision.Location = new System.Drawing.Point(76, 310);
+            this.FB_AppliquerDivision.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FB_AppliquerDivision.Name = "FB_AppliquerDivision";
+            this.FB_AppliquerDivision.Size = new System.Drawing.Size(102, 20);
+            this.FB_AppliquerDivision.TabIndex = 37;
+            this.FB_AppliquerDivision.Click += new System.EventHandler(this.FB_AppliquerDivision_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HockeyIce.Properties.Resources.Baton_de_Hockey2;
+            this.pictureBox1.Location = new System.Drawing.Point(22, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(316, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // FB_FermerD
+            // 
+            this.FB_FermerD.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_FermerD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_FermerD.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
+            this.FB_FermerD.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
+            this.FB_FermerD.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_FermerD.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
+            this.FB_FermerD.Location = new System.Drawing.Point(187, 310);
+            this.FB_FermerD.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_FermerD.Name = "FB_FermerD";
+            this.FB_FermerD.Size = new System.Drawing.Size(102, 20);
+            this.FB_FermerD.TabIndex = 6;
+            this.FB_FermerD.Click += new System.EventHandler(this.FB_Fermer_Click);
+            // 
+            // FB_NaissanceJ
+            // 
+            this.FB_NaissanceJ.BackgroundImage = global::HockeyIce.Properties.Resources.CalendrierNormal;
+            this.FB_NaissanceJ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_NaissanceJ.ImageClick = global::HockeyIce.Properties.Resources.CalendrierClick;
+            this.FB_NaissanceJ.ImageDisable = global::HockeyIce.Properties.Resources.CalendrierDisable;
+            this.FB_NaissanceJ.ImageNeutral = global::HockeyIce.Properties.Resources.CalendrierNormal;
+            this.FB_NaissanceJ.ImageOver = global::HockeyIce.Properties.Resources.CalendrierHover;
+            this.FB_NaissanceJ.Location = new System.Drawing.Point(238, 219);
+            this.FB_NaissanceJ.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_NaissanceJ.Name = "FB_NaissanceJ";
+            this.FB_NaissanceJ.Size = new System.Drawing.Size(22, 24);
+            this.FB_NaissanceJ.TabIndex = 5;
+            this.FB_NaissanceJ.Click += new System.EventHandler(this.BTN_Date_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.ErrorImage = global::HockeyIce.Properties.Resources.no_photo_available;
+            this.pictureBox5.Image = global::HockeyIce.Properties.Resources.no_photo_available;
+            this.pictureBox5.InitialImage = global::HockeyIce.Properties.Resources.ajax_loader;
+            this.pictureBox5.Location = new System.Drawing.Point(245, 100);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(92, 117);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 40;
+            this.pictureBox5.TabStop = false;
+            // 
+            // FB_AppliquerJoueur
+            // 
+            this.FB_AppliquerJoueur.BackgroundImage = global::HockeyIce.Properties.Resources.AppliquerNormal;
+            this.FB_AppliquerJoueur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_AppliquerJoueur.ImageClick = global::HockeyIce.Properties.Resources.AppliquerClick;
+            this.FB_AppliquerJoueur.ImageDisable = global::HockeyIce.Properties.Resources.AppliquerDisable;
+            this.FB_AppliquerJoueur.ImageNeutral = global::HockeyIce.Properties.Resources.AppliquerNormal;
+            this.FB_AppliquerJoueur.ImageOver = global::HockeyIce.Properties.Resources.AppliquerHover;
+            this.FB_AppliquerJoueur.Location = new System.Drawing.Point(75, 320);
+            this.FB_AppliquerJoueur.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FB_AppliquerJoueur.Name = "FB_AppliquerJoueur";
+            this.FB_AppliquerJoueur.Size = new System.Drawing.Size(102, 19);
+            this.FB_AppliquerJoueur.TabIndex = 8;
+            this.FB_AppliquerJoueur.Click += new System.EventHandler(this.FB_AppliquerJoueur_Click);
+            // 
+            // FB_FermerJ
+            // 
+            this.FB_FermerJ.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_FermerJ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_FermerJ.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
+            this.FB_FermerJ.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
+            this.FB_FermerJ.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_FermerJ.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
+            this.FB_FermerJ.Location = new System.Drawing.Point(184, 320);
+            this.FB_FermerJ.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_FermerJ.Name = "FB_FermerJ";
+            this.FB_FermerJ.Size = new System.Drawing.Size(102, 19);
+            this.FB_FermerJ.TabIndex = 9;
+            this.FB_FermerJ.Click += new System.EventHandler(this.FB_Fermer_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::HockeyIce.Properties.Resources.sl_yog_winter_icehockey;
+            this.pictureBox3.Location = new System.Drawing.Point(21, 18);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(316, 62);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            // 
+            // FB_DateMatch
+            // 
+            this.FB_DateMatch.BackgroundImage = global::HockeyIce.Properties.Resources.CalendrierNormal;
+            this.FB_DateMatch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_DateMatch.ImageClick = global::HockeyIce.Properties.Resources.CalendrierClick;
+            this.FB_DateMatch.ImageDisable = global::HockeyIce.Properties.Resources.CalendrierDisable;
+            this.FB_DateMatch.ImageNeutral = global::HockeyIce.Properties.Resources.CalendrierNormal;
+            this.FB_DateMatch.ImageOver = global::HockeyIce.Properties.Resources.CalendrierHover;
+            this.FB_DateMatch.Location = new System.Drawing.Point(282, 202);
+            this.FB_DateMatch.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_DateMatch.Name = "FB_DateMatch";
+            this.FB_DateMatch.Size = new System.Drawing.Size(22, 24);
+            this.FB_DateMatch.TabIndex = 4;
+            this.FB_DateMatch.Click += new System.EventHandler(this.BTN_Date_Click);
+            // 
+            // FB_AppliquerMatch
+            // 
+            this.FB_AppliquerMatch.BackgroundImage = global::HockeyIce.Properties.Resources.AppliquerNormal;
+            this.FB_AppliquerMatch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_AppliquerMatch.ImageClick = global::HockeyIce.Properties.Resources.AppliquerClick;
+            this.FB_AppliquerMatch.ImageDisable = global::HockeyIce.Properties.Resources.AppliquerDisable;
+            this.FB_AppliquerMatch.ImageNeutral = global::HockeyIce.Properties.Resources.AppliquerNormal;
+            this.FB_AppliquerMatch.ImageOver = global::HockeyIce.Properties.Resources.AppliquerHover;
+            this.FB_AppliquerMatch.Location = new System.Drawing.Point(72, 320);
+            this.FB_AppliquerMatch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FB_AppliquerMatch.Name = "FB_AppliquerMatch";
+            this.FB_AppliquerMatch.Size = new System.Drawing.Size(102, 19);
+            this.FB_AppliquerMatch.TabIndex = 9;
+            this.FB_AppliquerMatch.Click += new System.EventHandler(this.FB_AppliquerMatch_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::HockeyIce.Properties.Resources.hockey_wallpaper_hd_4_742195;
+            this.pictureBox4.Location = new System.Drawing.Point(21, 18);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(316, 62);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
+            // 
+            // FB_FermerM
+            // 
+            this.FB_FermerM.BackgroundImage = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_FermerM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_FermerM.ImageClick = global::HockeyIce.Properties.Resources.FermerClick;
+            this.FB_FermerM.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
+            this.FB_FermerM.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
+            this.FB_FermerM.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
+            this.FB_FermerM.Location = new System.Drawing.Point(182, 320);
+            this.FB_FermerM.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_FermerM.Name = "FB_FermerM";
+            this.FB_FermerM.Size = new System.Drawing.Size(102, 19);
+            this.FB_FermerM.TabIndex = 10;
+            this.FB_FermerM.Click += new System.EventHandler(this.FB_Fermer_Click);
+            // 
+            // FB_Quitter
+            // 
+            this.FB_Quitter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Quitter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.BackgroundImage")));
+            this.FB_Quitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Quitter.ImageClick = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageClick")));
+            this.FB_Quitter.ImageDisable = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageDisable")));
+            this.FB_Quitter.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageNeutral")));
+            this.FB_Quitter.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Quitter.ImageOver")));
+            this.FB_Quitter.Location = new System.Drawing.Point(966, 3);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Quitter.Name = "FB_Quitter";
+            this.FB_Quitter.Size = new System.Drawing.Size(20, 21);
+            this.FB_Quitter.TabIndex = 6;
+            this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
+            // 
+            // PB_Logo
+            // 
+            this.PB_Logo.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
+            this.PB_Logo.Location = new System.Drawing.Point(3, 3);
+            this.PB_Logo.Margin = new System.Windows.Forms.Padding(2);
+            this.PB_Logo.Name = "PB_Logo";
+            this.PB_Logo.Size = new System.Drawing.Size(22, 21);
+            this.PB_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_Logo.TabIndex = 5;
+            this.PB_Logo.TabStop = false;
             // 
             // FormGestion
             // 
@@ -1110,21 +1110,21 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormGestion_MouseUp);
             this.PN_Division.ResumeLayout(false);
             this.PN_Division.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PN_Equipe.ResumeLayout(false);
             this.PN_Equipe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.PN_Joueurs.ResumeLayout(false);
             this.PN_Joueurs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.PN_Matchs.ResumeLayout(false);
             this.PN_Matchs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Minute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Heure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PMaison)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PVisiteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).EndInit();
             this.ResumeLayout(false);
