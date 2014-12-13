@@ -50,5 +50,8 @@
     <Setting Name="PosFormChoixStats" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">100, 100</Value>
     </Setting>
+    <Setting Name="DateChoisiEnDateTime" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -77,9 +77,9 @@
             this.FB_FermerJ = new FlashButton.FlashButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PN_Matchs = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.NUD_MinuteDebut = new System.Windows.Forms.NumericUpDown();
-            this.NUD_HeureDebut = new System.Windows.Forms.NumericUpDown();
+            this.LB_DateMatch = new System.Windows.Forms.Label();
+            this.NUD_Minute = new System.Windows.Forms.NumericUpDown();
+            this.NUD_Heure = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.FB_DateMatch = new FlashButton.FlashButton();
@@ -109,6 +109,8 @@
             this.PB_Logo = new System.Windows.Forms.PictureBox();
             this.FB_NaissanceJ = new FlashButton.FlashButton();
             this.FB_DateDivision = new FlashButton.FlashButton();
+            this.LB_HeureInvis = new System.Windows.Forms.Label();
+            this.DTP_invisi = new System.Windows.Forms.DateTimePicker();
             this.PN_Division.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PN_Equipe.SuspendLayout();
@@ -118,8 +120,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.PN_Matchs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_MinuteDebut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_HeureDebut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Minute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Heure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PMaison)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -154,7 +156,7 @@
             this.PN_Division.Controls.Add(this.label3);
             this.PN_Division.Enabled = false;
             this.PN_Division.Font = new System.Drawing.Font("Lucida Console", 9.75F);
-            this.PN_Division.Location = new System.Drawing.Point(832, 31);
+            this.PN_Division.Location = new System.Drawing.Point(664, 33);
             this.PN_Division.Margin = new System.Windows.Forms.Padding(4);
             this.PN_Division.Name = "PN_Division";
             this.PN_Division.Size = new System.Drawing.Size(480, 443);
@@ -212,7 +214,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HockeyIce.Properties.Resources.Baton_de_Hockey2;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(30, 22);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(421, 76);
@@ -308,7 +310,7 @@
             this.FB_AppliquerEquipe.ImageDisable = global::HockeyIce.Properties.Resources.AppliquerDisable;
             this.FB_AppliquerEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.AppliquerNormal;
             this.FB_AppliquerEquipe.ImageOver = global::HockeyIce.Properties.Resources.AppliquerHover;
-            this.FB_AppliquerEquipe.Location = new System.Drawing.Point(100, 379);
+            this.FB_AppliquerEquipe.Location = new System.Drawing.Point(94, 379);
             this.FB_AppliquerEquipe.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.FB_AppliquerEquipe.Name = "FB_AppliquerEquipe";
             this.FB_AppliquerEquipe.Size = new System.Drawing.Size(136, 25);
@@ -346,7 +348,7 @@
             this.FB_DateEquipe.ImageDisable = global::HockeyIce.Properties.Resources.CalendrierDisable;
             this.FB_DateEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.CalendrierNormal;
             this.FB_DateEquipe.ImageOver = global::HockeyIce.Properties.Resources.CalendrierHover;
-            this.FB_DateEquipe.Location = new System.Drawing.Point(356, 274);
+            this.FB_DateEquipe.Location = new System.Drawing.Point(360, 275);
             this.FB_DateEquipe.Margin = new System.Windows.Forms.Padding(5);
             this.FB_DateEquipe.Name = "FB_DateEquipe";
             this.FB_DateEquipe.Size = new System.Drawing.Size(30, 30);
@@ -361,7 +363,7 @@
             this.FB_FermerE.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
             this.FB_FermerE.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerE.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerE.Location = new System.Drawing.Point(246, 379);
+            this.FB_FermerE.Location = new System.Drawing.Point(240, 379);
             this.FB_FermerE.Margin = new System.Windows.Forms.Padding(5);
             this.FB_FermerE.Name = "FB_FermerE";
             this.FB_FermerE.Size = new System.Drawing.Size(136, 25);
@@ -491,7 +493,7 @@
             this.PN_Joueurs.Controls.Add(this.FB_FermerJ);
             this.PN_Joueurs.Controls.Add(this.pictureBox3);
             this.PN_Joueurs.Enabled = false;
-            this.PN_Joueurs.Location = new System.Drawing.Point(507, 479);
+            this.PN_Joueurs.Location = new System.Drawing.Point(496, 482);
             this.PN_Joueurs.Margin = new System.Windows.Forms.Padding(4);
             this.PN_Joueurs.Name = "PN_Joueurs";
             this.PN_Joueurs.Size = new System.Drawing.Size(480, 443);
@@ -520,7 +522,7 @@
             this.FB_AppliquerJoueur.ImageDisable = global::HockeyIce.Properties.Resources.AppliquerDisable;
             this.FB_AppliquerJoueur.ImageNeutral = global::HockeyIce.Properties.Resources.AppliquerNormal;
             this.FB_AppliquerJoueur.ImageOver = global::HockeyIce.Properties.Resources.AppliquerHover;
-            this.FB_AppliquerJoueur.Location = new System.Drawing.Point(100, 397);
+            this.FB_AppliquerJoueur.Location = new System.Drawing.Point(100, 394);
             this.FB_AppliquerJoueur.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.FB_AppliquerJoueur.Name = "FB_AppliquerJoueur";
             this.FB_AppliquerJoueur.Size = new System.Drawing.Size(136, 23);
@@ -704,7 +706,7 @@
             this.FB_FermerJ.ImageDisable = global::HockeyIce.Properties.Resources.FermerDisable;
             this.FB_FermerJ.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerJ.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
-            this.FB_FermerJ.Location = new System.Drawing.Point(246, 397);
+            this.FB_FermerJ.Location = new System.Drawing.Point(246, 394);
             this.FB_FermerJ.Margin = new System.Windows.Forms.Padding(5);
             this.FB_FermerJ.Name = "FB_FermerJ";
             this.FB_FermerJ.Size = new System.Drawing.Size(136, 23);
@@ -725,9 +727,9 @@
             // PN_Matchs
             // 
             this.PN_Matchs.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_Matchs.Controls.Add(this.label5);
-            this.PN_Matchs.Controls.Add(this.NUD_MinuteDebut);
-            this.PN_Matchs.Controls.Add(this.NUD_HeureDebut);
+            this.PN_Matchs.Controls.Add(this.LB_DateMatch);
+            this.PN_Matchs.Controls.Add(this.NUD_Minute);
+            this.PN_Matchs.Controls.Add(this.NUD_Heure);
             this.PN_Matchs.Controls.Add(this.label1);
             this.PN_Matchs.Controls.Add(this.label2);
             this.PN_Matchs.Controls.Add(this.FB_DateMatch);
@@ -756,42 +758,42 @@
             this.PN_Matchs.TabIndex = 9;
             this.PN_Matchs.Visible = false;
             // 
-            // label5
+            // LB_DateMatch
             // 
-            this.label5.Font = new System.Drawing.Font("Lucida Console", 9.75F);
-            this.label5.Location = new System.Drawing.Point(235, 254);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 20);
-            this.label5.TabIndex = 83;
-            this.label5.Text = "01-01-2014";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.LB_DateMatch.Font = new System.Drawing.Font("Lucida Console", 9.75F);
+            this.LB_DateMatch.Location = new System.Drawing.Point(235, 254);
+            this.LB_DateMatch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_DateMatch.Name = "LB_DateMatch";
+            this.LB_DateMatch.Size = new System.Drawing.Size(139, 20);
+            this.LB_DateMatch.TabIndex = 83;
+            this.LB_DateMatch.Text = "01-01-2014";
+            this.LB_DateMatch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // NUD_MinuteDebut
+            // NUD_Minute
             // 
-            this.NUD_MinuteDebut.Location = new System.Drawing.Point(301, 284);
-            this.NUD_MinuteDebut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.NUD_MinuteDebut.Maximum = new decimal(new int[] {
+            this.NUD_Minute.Location = new System.Drawing.Point(301, 284);
+            this.NUD_Minute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NUD_Minute.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
-            this.NUD_MinuteDebut.Name = "NUD_MinuteDebut";
-            this.NUD_MinuteDebut.Size = new System.Drawing.Size(53, 22);
-            this.NUD_MinuteDebut.TabIndex = 6;
+            this.NUD_Minute.Name = "NUD_Minute";
+            this.NUD_Minute.Size = new System.Drawing.Size(53, 22);
+            this.NUD_Minute.TabIndex = 6;
             // 
-            // NUD_HeureDebut
+            // NUD_Heure
             // 
-            this.NUD_HeureDebut.Location = new System.Drawing.Point(237, 284);
-            this.NUD_HeureDebut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.NUD_HeureDebut.Maximum = new decimal(new int[] {
+            this.NUD_Heure.Location = new System.Drawing.Point(237, 284);
+            this.NUD_Heure.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NUD_Heure.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
-            this.NUD_HeureDebut.Name = "NUD_HeureDebut";
-            this.NUD_HeureDebut.Size = new System.Drawing.Size(53, 22);
-            this.NUD_HeureDebut.TabIndex = 5;
+            this.NUD_Heure.Name = "NUD_Heure";
+            this.NUD_Heure.Size = new System.Drawing.Size(53, 22);
+            this.NUD_Heure.TabIndex = 5;
             // 
             // label1
             // 
@@ -827,6 +829,7 @@
             this.FB_DateMatch.Name = "FB_DateMatch";
             this.FB_DateMatch.Size = new System.Drawing.Size(30, 30);
             this.FB_DateMatch.TabIndex = 4;
+            this.FB_DateMatch.Click += new System.EventHandler(this.BTN_Date_Click);
             // 
             // CB_EVisiteur
             // 
@@ -994,10 +997,10 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::HockeyIce.Properties.Resources.hockey_wallpaper_hd_4_742195;
-            this.pictureBox4.Location = new System.Drawing.Point(28, 25);
+            this.pictureBox4.Location = new System.Drawing.Point(28, 22);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(421, 77);
+            this.pictureBox4.Size = new System.Drawing.Size(421, 76);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
@@ -1029,7 +1032,7 @@
             // CB_Invisible2
             // 
             this.CB_Invisible2.FormattingEnabled = true;
-            this.CB_Invisible2.Location = new System.Drawing.Point(664, 31);
+            this.CB_Invisible2.Location = new System.Drawing.Point(496, 94);
             this.CB_Invisible2.Margin = new System.Windows.Forms.Padding(4);
             this.CB_Invisible2.Name = "CB_Invisible2";
             this.CB_Invisible2.Size = new System.Drawing.Size(160, 24);
@@ -1038,7 +1041,7 @@
             // LB_Invisible
             // 
             this.LB_Invisible.AutoSize = true;
-            this.LB_Invisible.Location = new System.Drawing.Point(674, 65);
+            this.LB_Invisible.Location = new System.Drawing.Point(506, 128);
             this.LB_Invisible.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Invisible.Name = "LB_Invisible";
             this.LB_Invisible.Size = new System.Drawing.Size(46, 17);
@@ -1110,12 +1113,28 @@
             this.FB_DateDivision.ImageDisable = global::HockeyIce.Properties.Resources.CalendrierDisable;
             this.FB_DateDivision.ImageNeutral = global::HockeyIce.Properties.Resources.CalendrierNormal;
             this.FB_DateDivision.ImageOver = global::HockeyIce.Properties.Resources.CalendrierHover;
-            this.FB_DateDivision.Location = new System.Drawing.Point(364, 186);
+            this.FB_DateDivision.Location = new System.Drawing.Point(362, 186);
             this.FB_DateDivision.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.FB_DateDivision.Name = "FB_DateDivision";
             this.FB_DateDivision.Size = new System.Drawing.Size(30, 30);
             this.FB_DateDivision.TabIndex = 38;
             this.FB_DateDivision.Click += new System.EventHandler(this.BTN_Date_Click);
+            // 
+            // LB_HeureInvis
+            // 
+            this.LB_HeureInvis.AutoSize = true;
+            this.LB_HeureInvis.Location = new System.Drawing.Point(506, 151);
+            this.LB_HeureInvis.Name = "LB_HeureInvis";
+            this.LB_HeureInvis.Size = new System.Drawing.Size(46, 17);
+            this.LB_HeureInvis.TabIndex = 41;
+            this.LB_HeureInvis.Text = "label5";
+            // 
+            // DTP_invisi
+            // 
+            this.DTP_invisi.Location = new System.Drawing.Point(496, 174);
+            this.DTP_invisi.Name = "DTP_invisi";
+            this.DTP_invisi.Size = new System.Drawing.Size(160, 22);
+            this.DTP_invisi.TabIndex = 42;
             // 
             // FormGestion
             // 
@@ -1123,6 +1142,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(1319, 935);
+            this.Controls.Add(this.DTP_invisi);
+            this.Controls.Add(this.LB_HeureInvis);
             this.Controls.Add(this.PN_Equipe);
             this.Controls.Add(this.PN_Division);
             this.Controls.Add(this.PN_Joueurs);
@@ -1156,8 +1177,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.PN_Matchs.ResumeLayout(false);
             this.PN_Matchs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_MinuteDebut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_HeureDebut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Minute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Heure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PMaison)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_PVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1241,12 +1262,14 @@
         private FlashButton.FlashButton FB_DateMatch;
         private System.Windows.Forms.Label LB_Equipe;
         private System.Windows.Forms.ToolTip TT_LogoEquipe;
-        private System.Windows.Forms.NumericUpDown NUD_MinuteDebut;
-        private System.Windows.Forms.NumericUpDown NUD_HeureDebut;
+        private System.Windows.Forms.NumericUpDown NUD_Minute;
+        private System.Windows.Forms.NumericUpDown NUD_Heure;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LB_DateMatch;
         private FlashButton.FlashButton FB_NaissanceJ;
         private FlashButton.FlashButton FB_DateDivision;
+        private System.Windows.Forms.Label LB_HeureInvis;
+        private System.Windows.Forms.DateTimePicker DTP_invisi;
     }
 }

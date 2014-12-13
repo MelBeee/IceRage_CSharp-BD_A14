@@ -244,7 +244,22 @@ namespace HockeyIce
                 LB_DateDivision.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yyyy");
                 LB_DateEquipe.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yyyy");
                 LB_DateJ.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yyyy");
+                LB_DateMatch.Text = Properties.Settings.Default.DateChoisi.ToString("dd-MM-yyyy");
+                DTP_invisi.Value = Properties.Settings.Default.DateChoisi;
             }
+        }
+        private void TraiterHeureLoad()
+        {
+            string words = LB_HeureInvis.Text;
+
+            string[] split = words.Split(new Char[] { ' ', ',', '.', ':', '\t' });
+
+            NUD_Heure.Text = split[0].ToString();
+            NUD_Minute.Text = split[1].ToString();
+        }
+        private string TraiterHeureAjoutModif()
+        {
+            return NUD_Heure.Value.ToString() + ":" + NUD_Minute.Value.ToString();
         }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -329,6 +344,7 @@ namespace HockeyIce
                 OracleParameter oranumevis = new OracleParameter(":NumEquipeVis", OracleDbType.Int32);
                 OracleParameter oranumemai = new OracleParameter(":NumEquipeMai", OracleDbType.Int32);
                 OracleParameter oradate = new OracleParameter(":DateHeure", OracleDbType.Date);
+                OracleParameter oraheure = new OracleParameter(":Heure", OracleDbType.Varchar2);
                 OracleParameter oralieu = new OracleParameter(":Lieu", OracleDbType.Varchar2, 20);
                 OracleParameter orapointmai = new OracleParameter(":PointageMaison", OracleDbType.Int32);
                 OracleParameter orapointvis = new OracleParameter(":PointageVisiteur", OracleDbType.Int32);
@@ -339,7 +355,8 @@ namespace HockeyIce
                 oranummatch.Value = Properties.Settings.Default.NumValue;
                 oranumevis.Value = Int32.Parse(CB_Invisible.Text);
                 oranumemai.Value = Int32.Parse(CB_Invisible2.Text);
-                //oradate.Value = DTP_DateMatch.Value;
+                oradate.Value = DTP_invisi.Value;
+                oraheure.Value = TraiterHeureAjoutModif();
                 oralieu.Value = TB_Endroit.Text;
                 orapointmai.Value = NUD_PMaison.Value;
                 orapointvis.Value = NUD_PVisiteur.Value;
@@ -348,6 +365,7 @@ namespace HockeyIce
                 oraModif.Parameters.Add(oranumevis);
                 oraModif.Parameters.Add(oranumemai);
                 oraModif.Parameters.Add(oradate);
+                oraModif.Parameters.Add(oraheure);
                 oraModif.Parameters.Add(oralieu);
                 oraModif.Parameters.Add(orapointmai);
                 oraModif.Parameters.Add(orapointvis);
@@ -364,8 +382,8 @@ namespace HockeyIce
         private void AjoutMatch()
         {
             commandesql = " insert into matchs " +
-            "(NUMMATCH, NUMEQUIPEVIS, NUMEQUIPEMAI, DATEHEURE, LIEU, POINTAGEMAISON, POINTAGEVISITEUR) values " +
-            "(:NumMatch,:NumEquipeVis,:NumEquipeMai,:DateHeure,:Lieu,:PointageMaison, :PointageVisiteur)";
+            "(NUMMATCH, NUMEQUIPEVIS, NUMEQUIPEMAI, DATEHEURE, HEURE, LIEU, POINTAGEMAISON, POINTAGEVISITEUR) values " +
+            "(:NumMatch,:NumEquipeVis,:NumEquipeMai,:DateHeure,:Heure, :Lieu,:PointageMaison, :PointageVisiteur)";
             Properties.Settings.Default.NumValue = base_.ToString();
             ExecuteCommandeMatch();
         }
@@ -375,6 +393,7 @@ namespace HockeyIce
                                         " numequipevis = :NumEquipeVis, " +
                                         " numequipemai = :NumEquipeMai, " +
                                         " dateheure = :DateHeure," +
+                                        " heure = :Heure, " +
                                         " lieu = :Lieu, " +
                                         " pointagemaison = :PointageMaison, " +
                                         " pointagevisiteur = :PointageVisiteur " +
@@ -383,7 +402,7 @@ namespace HockeyIce
         }
         private void LoadInfoMatch()
         {
-            commandesql = "select ev.nom, em.nom, dateheure, lieu, pointagemaison, pointagevisiteur, numequipevis, numequipemai " +
+            commandesql = "select ev.nom, em.nom, dateheure, heure, lieu, pointagemaison, pointagevisiteur, numequipevis, numequipemai " +
                            "from matchs m " +
                            "inner join EQUIPES ev on ev.NUMEQUIPE = m.NUMEQUIPEVIS " +
                            "inner join EQUIPES em on em.NUMEQUIPE = m.NUMEQUIPEMAI " +
@@ -397,12 +416,16 @@ namespace HockeyIce
                 oraRead.Read();
                 SetSelectedIndexVisiteur(oraRead.GetString(0));
                 SetSelectedIndexMaison(oraRead.GetString(1));
-                //DTP_DateMatch.Value = oraRead.GetDateTime(2);
-                TB_Endroit.Text = oraRead.GetString(3);
-                NUD_PMaison.Value = oraRead.GetInt32(4);
-                NUD_PVisiteur.Value = oraRead.GetInt32(5);
-                CB_Invisible.Text = oraRead.GetInt32(6).ToString();
-                CB_Invisible2.Text = oraRead.GetInt32(7).ToString();
+                DTP_invisi.Value = oraRead.GetDateTime(2);
+                LB_DateMatch.Text = DTP_invisi.Value.ToString();
+                //LB_DateMatch.Text = oraRead.GetDateTime(2).ToString();
+                LB_HeureInvis.Text = oraRead.GetString(3);
+                TraiterHeureLoad();
+                TB_Endroit.Text = oraRead.GetString(4);
+                NUD_PMaison.Value = oraRead.GetInt32(5);
+                NUD_PVisiteur.Value = oraRead.GetInt32(6);
+                CB_Invisible.Text = oraRead.GetInt32(7).ToString();
+                CB_Invisible2.Text = oraRead.GetInt32(8).ToString();
 
                 oraRead.Close();
             }
