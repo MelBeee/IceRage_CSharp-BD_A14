@@ -20,15 +20,10 @@ namespace HockeyIce
         private Point _start_point = new Point(0, 0);
         private Point basePanel = new Point(4, 30);
         public OracleConnection oraconnClassement { set; get; }
-        string Sql = "select j.prenom, j.nom, j.numeromaillot, j.typejoueur, j.photo, e.LOGO, s.NBREBUTS*2 + s.NBREPASSES as Score " +
-                     "from joueurs j inner join equipes e on j.NUMEQUIPE = e.NUMEQUIPE " +
-                     "inner join STATISTIQUESJOUEURS s on j.NUMJOUEUR = s.NUMJOUEUR " +
-                     "where s.NBREBUTS*2 + s.NBREPASSES  is not null " +
-                     "order by Score desc";
-
-        //string SqlEquipe = "select Logo,NumEquipe,Nom,Ville,DateIntroduction " +
-                      //     "from equipes " +
-                      //   "where NumDivision = ";
+        string Sql = "select cj.Prenom, cj.Nom, j.numeromaillot, j.typejoueur, j.Photo, e.Logo, cj.point from ClassementJoueur cj " +
+                     "inner join joueurs j on j.NUMJOUEUR = cj.NUMJOUEUR " +
+                     "inner join EQUIPES e on e.NUMEQUIPE = cj.NUMEQUIPE " +
+                     "where point >=0";
 
         public FormClassement(OracleConnection oraconn)
         {
@@ -48,15 +43,15 @@ namespace HockeyIce
             int compteur = 0;
             foreach (DataGridViewRow dgvr in DGV_JoueurList.Rows)
             {
-                if(compteur % 2 == 0)
-                    dgvr.DefaultCellStyle.BackColor = Color.FromArgb(180,213,239);
+                if (compteur % 2 == 0)
+                    dgvr.DefaultCellStyle.BackColor = Color.FromArgb(180, 213, 239);
                 else
                     dgvr.DefaultCellStyle.BackColor = Color.FromArgb(182, 225, 252);
 
                 compteur++;
             }
         }
-        
+
         // Telecharge l'image de l'URL fournit
         public static Image GetImageFromUrl(string url)
         {
@@ -101,7 +96,7 @@ namespace HockeyIce
             {
                 FormErreur dlg = new FormErreur(ex);
 
-                if(dlg.ShowDialog() == DialogResult.Cancel)
+                if (dlg.ShowDialog() == DialogResult.Cancel)
                 {
                     this.Close();
                 }
@@ -134,9 +129,9 @@ namespace HockeyIce
                     oraRead.GetInt32(6).ToString() + " Points",
                     Logo);
                 }
-                
+
                 oraRead.Close();
-                
+
             }
             catch (OracleException exsqlajout)
             {
