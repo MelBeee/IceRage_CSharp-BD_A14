@@ -477,7 +477,14 @@ namespace HockeyIce
                 // on affecte les valeurs aux paramètres.
                 oraNum.Value = Properties.Settings.Default.NumValue;
                 oraNom.Value = TB_NomEquipe.Text;
-                oraLogo.Value = PicToByte();
+                if (nomFichier != null)
+                {
+                    oraLogo.Value = PicToByte(nomFichier);
+                }
+                else
+                {
+                    oraLogo.Value = URLToByte("http://i.imgur.com/V4Xf1Cg.png");//Adresse web de l'image de base
+                }
                 oraVille.Value = TB_LieuxEquipe.Text;
                 oraDivision.Value = CB_InvisibleDiv.Text;
                 oraDate.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
@@ -550,7 +557,7 @@ namespace HockeyIce
                     OracleParameter oraLogo = new OracleParameter(":Logo", OracleDbType.Blob);
                     OracleCommand oraAjout2 = new OracleCommand(commandesql2, oraconnGestion);
                     oraAjout2.CommandType = CommandType.Text;
-                    oraLogo.Value = PicToByte();
+                    oraLogo.Value = PicToByte(nomFichier);
                     oraAjout2.Parameters.Add(oraLogo);
                     oraAjout2.ExecuteNonQuery();
                 }
@@ -885,12 +892,25 @@ namespace HockeyIce
             }
             return nomFichier;
         }
-        private byte[] PicToByte()
+
+        private byte[] URLToByte(string pathfile)
         {
             // le résultat on le met dans une variable de type byte (octets).
-            if (nomFichier != null)
+            if (pathfile != null)
             {
-                FileStream Streamp = new FileStream(nomFichier, FileMode.Open, FileAccess.Read);
+                MemoryStream ms = new MemoryStream();
+                GetImageFromUrl(pathfile).Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+                return ms.ToArray();
+            }
+            return null;
+        }
+
+        private byte[] PicToByte( string pathfile )
+        {
+            // le résultat on le met dans une variable de type byte (octets).
+            if (pathfile != null)
+            {
+                FileStream Streamp = new FileStream(pathfile, FileMode.Open, FileAccess.Read);
                 byte[] buffer1 = new byte[Streamp.Length];
                 Streamp.Read(buffer1, 0, System.Convert.ToInt32(Streamp.Length));
                 Streamp.Close();
