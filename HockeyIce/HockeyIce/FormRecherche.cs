@@ -32,6 +32,7 @@ namespace HockeyIce
         // Data set utilisé pour afficher les joueurs/equipe
         private DataSet monDataSet = new DataSet();
         private DataSet monDataSet2 = new DataSet();
+        private DataSet monDataSet3 = new DataSet();
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //      CONSTRUCTEUR
@@ -90,6 +91,7 @@ namespace HockeyIce
                     PN_Matchs.Enabled = true;
                     PN_Matchs.Location = basePanel;
                     LB_Text.Text = "Matchs";
+                    InitMatch(VerifierQuelCommandeMatch());
                     break;
             }
         }
@@ -177,9 +179,9 @@ namespace HockeyIce
                     FB_NextEquipe.Enabled = false;
                 }
             }
-            catch (OracleException exsql2)
+            catch (OracleException ex)
             {
-                MessageBox.Show(exsql2.Message.ToString());
+                AfficherErreur(ex);
             }
         }
         private void LierEquipe()
@@ -261,8 +263,206 @@ namespace HockeyIce
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //      MATCHS
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-        
+        private void InitMatch(string commande)
+        {
+            try
+            {
+                OracleDataAdapter Adapter3 = new OracleDataAdapter(commande, oraconnRecherche);
+                if (monDataSet3.Tables.Contains("matchs"))
+                {
+                    monDataSet3.Tables["matchs"].Clear();
+                }
 
+                Adapter3.Fill(monDataSet3, "matchs");
+                Adapter3.Dispose();
+                // on apelle la fonction lier pour faire
+                // la liaison des données du DataSet avec les zones de text.
+                LierEquipe();
+                AffichageEquipe();
+
+                if (this.BindingContext[monDataSet3, "matchs"].Count <= 1)
+                {
+                    FB_LastMatch.Enabled = false;
+                    FB_NextMatch.Enabled = false;
+                }
+            }
+            catch (OracleException ex)
+            {
+                AfficherErreur(ex);
+            }
+        }
+        private string VerifierQuelCommandeMatch()
+        {
+            string commande;
+
+            if(CB_Equipe.Text == "Tous les Matchs")
+            {
+                commande = " select * from matchs " +
+                           " where DateHeure >= " + DTP_APartir.Value.ToString();
+            }
+            else 
+            {
+                commande =  " select * from matchs " +
+                            " where (numequipevis = " + CB_Invisible.Text +
+                            " OR numequipemai = " + CB_Invisible.Text +
+                            ") AND DateHeure >= " + DTP_APartir.Value.ToString();
+            }
+
+            return commande;
+        }
+        private void RemplirCBEquipe()
+        {
+            string sqlremplir = "select numequipe, nom from equipes";
+
+            try
+            {
+                OracleCommand orcd = new OracleCommand(sqlremplir, oraconnRecherche);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                while (oraRead.Read())
+                {
+                    CB_Invisible.Items.Add(oraRead.GetInt32(0).ToString());
+                    CB_Equipe.Items.Add(oraRead.GetString(1).ToString());
+                }
+
+                CB_Equipe.Items.Add("Tous les Matchs");
+
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                AfficherErreur(ex);
+            }
+        }
+        private void LierMatch()
+        {
+            LB_NumVis.DataBindings.Add("text", monDataSet3, "matchs.numequipevis");
+            LB_NumMai.DataBindings.Add("text", monDataSet3, "matchs.numequipemai");
+            DTP_Match.DataBindings.Add("text", monDataSet3, "matchs.dateheure");
+            LB_Ville.DataBindings.Add("text", monDataSet3, "matchs.lieu");
+            LB_PointMM.DataBindings.Add("text", monDataSet3, "matchs.pointagemaison");
+            LB_PointVM.DataBindings.Add("text", monDataSet3, "matchs.pointagevisiteur");
+            LB_HeureM.DataBindings.Add("text", monDataSet3, "matchs.heure");
+        }
+        private void AfficherMatch()
+        {
+            LB_HeureDate.Text = DTP_Match.Value.ToString() + " à " + LB_HeureM.Text;
+            LB_Score.Text = LB_PointMM.Text + " à " + LB_PointVM.Text;
+            RemplirAutreInfo();
+        }
+        private void RemplirAutreInfo()
+        {
+            string logovis = "select logo from equipes where numequipe = " + LB_NumVis.Text;
+            string logomai = "select logo from equipes where numequipe = " + LB_NumMai.Text;
+
+            string joueurvis = "select prenom,nom from joueurs where numequipe = " + LB_NumVis.Text;
+            string joueurmai = "select prenom,nom from joueurs where numequipe = " + LB_NumMai.Text;
+
+            ChangerLogoMatchs(logovis, "visiteur");
+            ChangerLogoMatchs(logomai, "receveur");
+
+            ChangerJoueurs(joueurvis, "visiteur");
+            ChangerJoueurs(joueurmai, "receveur");
+        }
+        private void ChangerLogoMatchs(string commandesql, string equipe)
+        {
+            try
+            {
+                OracleCommand orcd = new OracleCommand(commandesql, oraconnRecherche);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                oraRead.Read();
+                if(equipe == "visiteur")
+                {
+                    PB_Visiteur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                    PB_Visiteur.Image = Image.FromStream(oraRead.GetOracleBlob(0));
+                }
+                else
+                {
+                    PB_Receveur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                    PB_Receveur.Image = Image.FromStream(oraRead.GetOracleBlob(0));
+                }
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                AfficherErreur(ex);
+            }
+        }
+        private void ChangerJoueurs(string commandesql, string equipe)
+        {
+            try
+            {
+                OracleCommand orcd = new OracleCommand(commandesql, oraconnRecherche);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                while(oraRead.Read())
+                {
+                    if (equipe == "visiteur")
+                    {
+                        LB_NomVisiteur.Text =  oraRead.GetString(0) + " " + oraRead.GetString(1) + "\n";
+                    }
+                    else
+                    {
+                        LB_NomReceveur.Text = oraRead.GetString(0) + " " + oraRead.GetString(1) + "\n";
+                    }
+                }
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                AfficherErreur(ex);
+            }
+        }
+        private void FB_DateMatchs_Click(object sender, EventArgs e)
+        {
+            FormDate dlg = new FormDate();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                DTP_APartir.Value = Properties.Settings.Default.DateChoisi;
+                LB_Date.Text = "À partir du " + DTP_APartir.Value.ToString();
+            }
+            else
+            {
+                DateTime dt = new DateTime(2014, 01, 01);
+                DTP_APartir.Value = dt;
+                LB_Date.Text = "À partir du " + dt.ToString();
+            }
+        }
+
+        private void FB_LastMatch_Click(object sender, EventArgs e)
+        {
+            MatchPrecedent();
+        }
+        private void FB_NextMatch_Click(object sender, EventArgs e)
+        {
+            ProchainMatch();
+        }
+        private void ProchainMatch()
+        {
+            FB_LastMatch.Enabled = true;
+            this.BindingContext[monDataSet3, "matchs"].Position += 1;
+            if (this.BindingContext[monDataSet3, "matchs"].Position.ToString() == (this.BindingContext[monDataSet3, "matchs"].Count - 1).ToString())
+            {
+                FB_NextMatch.Enabled = false;
+            }
+            AfficherMatch();
+        }
+        private void MatchPrecedent()
+        {
+            FB_NextMatch.Enabled = true;
+            this.BindingContext[monDataSet3, "matchs"].Position -= 1;
+            if (this.BindingContext[monDataSet3, "matchs"].Position.ToString() == "0")
+            {
+                FB_LastMatch.Enabled = false;
+            }
+            AfficherMatch();
+        }
+        
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //      JOUEURS
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
@@ -435,17 +635,23 @@ namespace HockeyIce
                         JoueurPrecedent();
                     else if (Properties.Settings.Default.FenetreAOuvrir == "Équipes")
                         EquipePrecedente();
+                    else
+                        MatchPrecedent();
                     break;
                 case Keys.Right:
                     if (Properties.Settings.Default.FenetreAOuvrir == "Joueurs")
                         ProchainJoueur();
                     else if (Properties.Settings.Default.FenetreAOuvrir == "Équipes")
                         ProchaineEquipe();
+                    else
+                        ProchainMatch();
                     break;
             }
             bool result = base.ProcessCmdKey(ref msg, keyData);
             return result;
         }
+
+ 
 
     }
 }
