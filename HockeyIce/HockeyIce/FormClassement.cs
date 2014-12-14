@@ -24,7 +24,6 @@ namespace HockeyIce
                      "inner join joueurs j on j.NUMJOUEUR = cj.NUMJOUEUR " +
                      "inner join EQUIPES e on e.NUMEQUIPE = cj.NUMEQUIPE " +
                      "where point >=0";
-        string selectionTempo = null;
 
         public FormClassement(OracleConnection oraconn)
         {
