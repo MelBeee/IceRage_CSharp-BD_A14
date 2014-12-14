@@ -7,8 +7,6 @@
 
 	5- Consulter Matchs
 
-	6- Reduire le nbre de click vers Afficher Joueur (j'ai une idée de comment faire) 
-
 	7- Classement des équipes, afficher tout les equipes peu importe la division ? 
 
 	8- Remodeler l'interface
