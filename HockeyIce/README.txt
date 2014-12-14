@@ -3,7 +3,9 @@
 	CE QU'IL RESTERAIT À FAIRE SELON MOI
 	------------------------------------
 
-	1- Ajouter les erreurs (1438/1008)
+	1- Ajouter les erreurs 
+			#1438(quand on met trop de point dans un match)
+			#1008
 
 	2- Ecrire TOUS les commandes utilisées dans le fichier CommandesSQL.sql
 
