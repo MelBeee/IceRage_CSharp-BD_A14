@@ -35,7 +35,8 @@ namespace HockeyIce
             pos = PB_Joueur.PointToClient(pos);
             LB_Mailot.Parent = PB_Joueur;
             LB_Mailot.Location = pos;
-            LB_Mailot.BackColor = Color.Transparent;
+            //LB_Mailot.BackColor = Color.Transparent;
+            LB_Mailot.BackColor = Color.FromArgb(125, 0, 0, 0);
         }
 
         private void FormRecherche_Load(object sender, EventArgs e)

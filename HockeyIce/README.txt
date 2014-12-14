@@ -11,7 +11,7 @@
 
 	4- Faire en sorte de ne pas pouvoir mettre 1 equipe visiteur et maison en meme temps 
 
-	5- Consulter Matchs
+	5- Consulter Matchs !!!!
 
 	6- Reduire le nbre de click vers Afficher Joueur (j'ai une idée de comment faire) 
 
