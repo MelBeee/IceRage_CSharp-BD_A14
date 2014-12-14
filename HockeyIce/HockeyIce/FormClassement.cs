@@ -85,6 +85,8 @@ namespace HockeyIce
                     CB_Division.Items.Add(oraRead.GetString(0));
                 }
                 oraRead.Close();
+
+                CB_Division.Items.Add("Tous les équipes");
             }
             catch (OracleException ex)
             {
@@ -102,8 +104,13 @@ namespace HockeyIce
             string Sql2 = "select e.LOGO, ce.NOM, e.VILLE, e.DATEINTRODUCTION, d.NOM, ce.POINTS " +
                           "from ClassementEquipe ce " +
                           "inner join equipes e on e.NUMEQUIPE = ce.NUMEQUIPE " +
-                          "inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION " +
-                          "where d.NOM = '" + CB_Division.SelectedItem.ToString() + "'";            
+                          "inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION ";
+            if (CB_Division.SelectedItem.ToString() != "Tous les équipes")
+            {
+                // si l'item du combo box n'est pas d'afficher tout les équipes,
+                //on ajoute la condition WHERE 
+                Sql2 += "where d.NOM = '" + CB_Division.SelectedItem.ToString() + "'";
+            }
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql2, oraconnClassement);
@@ -232,7 +239,7 @@ namespace HockeyIce
                     PN_CEquipe.Enabled = true;
                     PN_CEquipe.Location = basePanel;
                     LB_Text.Text = "Classement des équipes";
-                    InitComboBoxEquipe();                    
+                    InitComboBoxEquipe();
                     break;
                 case "Top3":
                     PN_3Joueurs.Parent = this;
