@@ -614,7 +614,7 @@ namespace HockeyIce
                 // on affecte les valeurs aux paramètres.
                 oraNum.Value = Properties.Settings.Default.NumValue;
                 oraNom.Value = TB_NomDivision.Text;
-                oraDate.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
+                oraDate.Value = Properties.Settings.Default.DateChoisi;
 
                 // En crée un Objet OracleCommand pour passer la requête à la bD 
                 OracleCommand oraAjout = new OracleCommand(commandesql, oraconnGestion);
@@ -694,11 +694,11 @@ namespace HockeyIce
                 oraNum.Value = Properties.Settings.Default.NumValue;
                 oraNom.Value = TB_NomJ.Text;
                 oraPrenom.Value = TB_PrenomJ.Text;
-                oraNaissance.Value = Convert.ToDateTime(Properties.Settings.Default.DateChoisi);
-                oraNumMaillot.Value = TB_NumeroJ.Text;
+                oraNaissance.Value = Properties.Settings.Default.DateChoisi;
+                oraNumMaillot.Value = Int32.Parse(TB_NumeroJ.Text);
                 oraTypeJoueur.Value = CB_PositionJ.Text;
                 oraPhoto.Value = TB_PhotoJ.Text;
-                oraNumEquipe.Value = CB_Invisible.Text;
+                oraNumEquipe.Value = Int32.Parse(CB_Invisible.Text);
 
                 // En crée un Objet OracleCommand pour passer la requête à la bD 
                 OracleCommand oraAjout = new OracleCommand(commandesql, oraconnGestion);
@@ -766,6 +766,7 @@ namespace HockeyIce
                 CB_PositionJ.DropDownStyle = ComboBoxStyle.DropDown;
                 CB_PositionJ.Text = oraRead.GetString(5);
                 TB_PhotoJ.Text = oraRead.GetString(6);
+                CB_Invisible.Text = oraRead.GetInt32(7).ToString();
                 CB_ChoixEquipeJ.DropDownStyle = ComboBoxStyle.DropDown;
                 CB_ChoixEquipeJ.Text = oraRead.GetString(8).ToString();
 
@@ -893,7 +894,6 @@ namespace HockeyIce
             }
             return nomFichier;
         }
-
         private byte[] URLToByte(string pathfile)
         {
             // le résultat on le met dans une variable de type byte (octets).
@@ -905,7 +905,6 @@ namespace HockeyIce
             }
             return null;
         }
-
         private byte[] PicToByte( string pathfile )
         {
             // le résultat on le met dans une variable de type byte (octets).
