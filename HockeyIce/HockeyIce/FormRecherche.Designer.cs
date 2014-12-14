@@ -38,9 +38,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.LB_NomEquipe = new System.Windows.Forms.Label();
             this.PB_LogoEquipe = new System.Windows.Forms.PictureBox();
-            this.flashButton1 = new FlashButton.FlashButton();
+            this.FB_NextEquipe = new FlashButton.FlashButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.flashButton2 = new FlashButton.FlashButton();
+            this.FB_BackEquipe = new FlashButton.FlashButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.LB_Win = new System.Windows.Forms.Label();
             this.LB_Lost = new System.Windows.Forms.Label();
@@ -110,9 +110,9 @@
             this.PN_Equipe.Controls.Add(this.label14);
             this.PN_Equipe.Controls.Add(this.LB_NomEquipe);
             this.PN_Equipe.Controls.Add(this.PB_LogoEquipe);
-            this.PN_Equipe.Controls.Add(this.flashButton1);
+            this.PN_Equipe.Controls.Add(this.FB_NextEquipe);
             this.PN_Equipe.Controls.Add(this.label12);
-            this.PN_Equipe.Controls.Add(this.flashButton2);
+            this.PN_Equipe.Controls.Add(this.FB_BackEquipe);
             this.PN_Equipe.Controls.Add(this.groupBox2);
             this.PN_Equipe.Controls.Add(this.flashButton3);
             this.PN_Equipe.Enabled = false;
@@ -127,7 +127,7 @@
             // 
             this.PN_Ligne.BackColor = System.Drawing.Color.White;
             this.PN_Ligne.Location = new System.Drawing.Point(1, 74);
-            this.PN_Ligne.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PN_Ligne.Margin = new System.Windows.Forms.Padding(4);
             this.PN_Ligne.Name = "PN_Ligne";
             this.PN_Ligne.Size = new System.Drawing.Size(493, 2);
             this.PN_Ligne.TabIndex = 32;
@@ -142,7 +142,6 @@
             this.LB_VilleEquipe.TabIndex = 31;
             this.LB_VilleEquipe.Text = "Ville";
             this.LB_VilleEquipe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LB_VilleEquipe.Click += new System.EventHandler(this.LB_VilleEquipe_Click);
             // 
             // LB_DivisionNomEquipe
             // 
@@ -186,34 +185,33 @@
             this.LB_NomEquipe.TabIndex = 27;
             this.LB_NomEquipe.Text = "Nom Équipe";
             this.LB_NomEquipe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LB_NomEquipe.Click += new System.EventHandler(this.LB_NomEquipe_Click);
             // 
             // PB_LogoEquipe
             // 
             this.PB_LogoEquipe.Image = global::HockeyIce.Properties.Resources._1280px_Montreal_Canadiens_svg;
             this.PB_LogoEquipe.Location = new System.Drawing.Point(20, 84);
-            this.PB_LogoEquipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB_LogoEquipe.Margin = new System.Windows.Forms.Padding(4);
             this.PB_LogoEquipe.Name = "PB_LogoEquipe";
             this.PB_LogoEquipe.Size = new System.Drawing.Size(176, 175);
             this.PB_LogoEquipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_LogoEquipe.TabIndex = 22;
             this.PB_LogoEquipe.TabStop = false;
             // 
-            // flashButton1
+            // FB_NextEquipe
             // 
-            this.flashButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flashButton1.BackgroundImage = global::HockeyIce.Properties.Resources.RetourNormalDoite;
-            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton1.ImageClick = global::HockeyIce.Properties.Resources.RetourClickDoite;
-            this.flashButton1.ImageDisable = global::HockeyIce.Properties.Resources.RetourDisableDoite;
-            this.flashButton1.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormalDoite;
-            this.flashButton1.ImageOver = global::HockeyIce.Properties.Resources.RetourHoverDoite;
-            this.flashButton1.Location = new System.Drawing.Point(116, 276);
-            this.flashButton1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.flashButton1.Name = "flashButton1";
-            this.flashButton1.Size = new System.Drawing.Size(27, 26);
-            this.flashButton1.TabIndex = 26;
-            this.flashButton1.Click += new System.EventHandler(this.Next_equipe);
+            this.FB_NextEquipe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_NextEquipe.BackgroundImage = global::HockeyIce.Properties.Resources.RetourNormalDoite;
+            this.FB_NextEquipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_NextEquipe.ImageClick = global::HockeyIce.Properties.Resources.RetourClickDoite;
+            this.FB_NextEquipe.ImageDisable = global::HockeyIce.Properties.Resources.RetourDisableDoite;
+            this.FB_NextEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormalDoite;
+            this.FB_NextEquipe.ImageOver = global::HockeyIce.Properties.Resources.RetourHoverDoite;
+            this.FB_NextEquipe.Location = new System.Drawing.Point(116, 276);
+            this.FB_NextEquipe.Margin = new System.Windows.Forms.Padding(5);
+            this.FB_NextEquipe.Name = "FB_NextEquipe";
+            this.FB_NextEquipe.Size = new System.Drawing.Size(27, 26);
+            this.FB_NextEquipe.TabIndex = 26;
+            this.FB_NextEquipe.Click += new System.EventHandler(this.Next_equipe);
             // 
             // label12
             // 
@@ -226,21 +224,21 @@
             this.label12.TabIndex = 21;
             this.label12.Text = "Division :";
             // 
-            // flashButton2
+            // FB_BackEquipe
             // 
-            this.flashButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flashButton2.BackgroundImage = global::HockeyIce.Properties.Resources.RetourNormal;
-            this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton2.ImageClick = global::HockeyIce.Properties.Resources.RetourClick;
-            this.flashButton2.ImageDisable = global::HockeyIce.Properties.Resources.RetourDisable;
-            this.flashButton2.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormal;
-            this.flashButton2.ImageOver = global::HockeyIce.Properties.Resources.RetourHover;
-            this.flashButton2.Location = new System.Drawing.Point(79, 276);
-            this.flashButton2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.flashButton2.Name = "flashButton2";
-            this.flashButton2.Size = new System.Drawing.Size(27, 26);
-            this.flashButton2.TabIndex = 23;
-            this.flashButton2.Click += new System.EventHandler(this.Back_Equipe);
+            this.FB_BackEquipe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_BackEquipe.BackgroundImage = global::HockeyIce.Properties.Resources.RetourNormal;
+            this.FB_BackEquipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_BackEquipe.ImageClick = global::HockeyIce.Properties.Resources.RetourClick;
+            this.FB_BackEquipe.ImageDisable = global::HockeyIce.Properties.Resources.RetourDisable;
+            this.FB_BackEquipe.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormal;
+            this.FB_BackEquipe.ImageOver = global::HockeyIce.Properties.Resources.RetourHover;
+            this.FB_BackEquipe.Location = new System.Drawing.Point(79, 276);
+            this.FB_BackEquipe.Margin = new System.Windows.Forms.Padding(5);
+            this.FB_BackEquipe.Name = "FB_BackEquipe";
+            this.FB_BackEquipe.Size = new System.Drawing.Size(27, 26);
+            this.FB_BackEquipe.TabIndex = 23;
+            this.FB_BackEquipe.Click += new System.EventHandler(this.Back_Equipe);
             // 
             // groupBox2
             // 
@@ -250,9 +248,9 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(216, 153);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(267, 106);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
@@ -313,7 +311,7 @@
             this.flashButton3.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.flashButton3.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
             this.flashButton3.Location = new System.Drawing.Point(347, 277);
-            this.flashButton3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flashButton3.Margin = new System.Windows.Forms.Padding(5);
             this.flashButton3.Name = "flashButton3";
             this.flashButton3.Size = new System.Drawing.Size(136, 23);
             this.flashButton3.TabIndex = 25;
@@ -405,7 +403,7 @@
             this.FB_Next.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormalDoite;
             this.FB_Next.ImageOver = global::HockeyIce.Properties.Resources.RetourHoverDoite;
             this.FB_Next.Location = new System.Drawing.Point(113, 278);
-            this.FB_Next.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Next.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Next.Name = "FB_Next";
             this.FB_Next.Size = new System.Drawing.Size(27, 26);
             this.FB_Next.TabIndex = 13;
@@ -421,7 +419,7 @@
             this.FB_Back.ImageNeutral = global::HockeyIce.Properties.Resources.RetourNormal;
             this.FB_Back.ImageOver = global::HockeyIce.Properties.Resources.RetourHover;
             this.FB_Back.Location = new System.Drawing.Point(76, 278);
-            this.FB_Back.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Back.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Back.Name = "FB_Back";
             this.FB_Back.Size = new System.Drawing.Size(27, 26);
             this.FB_Back.TabIndex = 10;
@@ -436,7 +434,7 @@
             this.FB_FermerD.ImageNeutral = global::HockeyIce.Properties.Resources.FermerNormal;
             this.FB_FermerD.ImageOver = global::HockeyIce.Properties.Resources.FermerHover;
             this.FB_FermerD.Location = new System.Drawing.Point(344, 279);
-            this.FB_FermerD.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_FermerD.Margin = new System.Windows.Forms.Padding(5);
             this.FB_FermerD.Name = "FB_FermerD";
             this.FB_FermerD.Size = new System.Drawing.Size(136, 23);
             this.FB_FermerD.TabIndex = 12;
@@ -452,9 +450,9 @@
             this.groupBox1.Controls.Add(this.f4g5d);
             this.groupBox1.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(213, 165);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(267, 106);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
@@ -541,7 +539,7 @@
             // 
             this.PB_Equipe.Image = global::HockeyIce.Properties.Resources._1280px_Montreal_Canadiens_svg;
             this.PB_Equipe.Location = new System.Drawing.Point(208, 12);
-            this.PB_Equipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB_Equipe.Margin = new System.Windows.Forms.Padding(4);
             this.PB_Equipe.Name = "PB_Equipe";
             this.PB_Equipe.Size = new System.Drawing.Size(116, 63);
             this.PB_Equipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -567,7 +565,7 @@
             this.PB_Joueur.Image = global::HockeyIce.Properties.Resources.Burns;
             this.PB_Joueur.InitialImage = global::HockeyIce.Properties.Resources.no_photo_available;
             this.PB_Joueur.Location = new System.Drawing.Point(13, 12);
-            this.PB_Joueur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB_Joueur.Margin = new System.Windows.Forms.Padding(4);
             this.PB_Joueur.Name = "PB_Joueur";
             this.PB_Joueur.Size = new System.Drawing.Size(187, 258);
             this.PB_Joueur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -609,7 +607,7 @@
             // DTP_Tempo
             // 
             this.DTP_Tempo.Location = new System.Drawing.Point(16, 92);
-            this.DTP_Tempo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DTP_Tempo.Margin = new System.Windows.Forms.Padding(4);
             this.DTP_Tempo.Name = "DTP_Tempo";
             this.DTP_Tempo.Size = new System.Drawing.Size(121, 22);
             this.DTP_Tempo.TabIndex = 19;
@@ -644,7 +642,7 @@
             this.FB_Fermer.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageNeutral")));
             this.FB_Fermer.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageOver")));
             this.FB_Fermer.Location = new System.Drawing.Point(1001, 4);
-            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(27, 27);
             this.FB_Fermer.TabIndex = 5;
@@ -752,9 +750,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label LB_NomEquipe;
         private System.Windows.Forms.PictureBox PB_LogoEquipe;
-        private FlashButton.FlashButton flashButton1;
+        private FlashButton.FlashButton FB_NextEquipe;
         private System.Windows.Forms.Label label12;
-        private FlashButton.FlashButton flashButton2;
+        private FlashButton.FlashButton FB_BackEquipe;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label LB_Win;
         private System.Windows.Forms.Label LB_Lost;

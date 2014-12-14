@@ -27,7 +27,7 @@ namespace HockeyIce
             LabelTransparent();
         }
 
- 
+
 
         private void LabelTransparent()
         {
@@ -53,7 +53,7 @@ namespace HockeyIce
                 OracleDataAdapter Adapter2 = new OracleDataAdapter(sql2, oraconnRecherche);
                 if (monDataSet2.Tables.Contains("equipes"))
                 {
-                    monDataSet2.Tables["equipes"].Clear();                    
+                    monDataSet2.Tables["equipes"].Clear();
                 }
 
                 Adapter2.Fill(monDataSet2, "equipes");
@@ -62,6 +62,12 @@ namespace HockeyIce
                 // la liaison des données du DataSet avec les zones de text.
                 LierEquipe();
                 AffichageEquipe();
+
+                if (this.BindingContext[monDataSet2, "equipes"].Count <= 1)
+                {
+                    FB_BackEquipe.Enabled = false;
+                    FB_NextEquipe.Enabled = false;
+                }
             }
             catch (OracleException exsql2)
             {
@@ -82,8 +88,8 @@ namespace HockeyIce
         {
             LB_DateEquipe.Text = DTP_Tempo.Text;
 
-            string commandesql = " select e.logo, d.nom " + 
-                                 "from equipes e " + 
+            string commandesql = " select e.logo, d.nom " +
+                                 "from equipes e " +
                                  "inner join Divisions d on e.numdivision = d.numdivision " +
                                  "where e.numequipe = " + LB_NumEquipeGhost.Text;
 
@@ -122,6 +128,12 @@ namespace HockeyIce
                 // la liaison des données du DataSet avec les zones de text.
                 LierJoueur();
                 AffichageJoueur();
+
+                if (this.BindingContext[monDataSet, "joueurs"].Count <= 1)
+                {
+                    FB_Back.Enabled = false;
+                    FB_Next.Enabled = false;
+                }
             }
             catch (OracleException ex)
             {
@@ -213,12 +225,14 @@ namespace HockeyIce
                     PN_Equipe.Location = basePanel;
                     LB_Text.Text = "Équipes";
                     InitEquipe();
+                    FB_BackEquipe.Enabled = false;
                     break;
                 case "Joueurs":
                     PN_Joueurs.Parent = this;
                     PN_Joueurs.Visible = true;
                     PN_Joueurs.Enabled = true;
                     PN_Joueurs.Location = basePanel;
+                    FB_Back.Enabled = false;
                     LB_Text.Text = "Joueurs";
                     InitJoueur(VerifierQuelCommande());
                     ChangerLogoEquipe();
@@ -237,7 +251,7 @@ namespace HockeyIce
         private string VerifierQuelCommande()
         {
             string sqlcommande;
-            if(!Properties.Settings.Default.ModifierAjouter)
+            if (!Properties.Settings.Default.ModifierAjouter)
             {
                 sqlcommande = "select * from joueurs";
             }
@@ -318,38 +332,50 @@ namespace HockeyIce
 
         private void ProchainJoueur()
         {
+            FB_Back.Enabled = true;
             this.BindingContext[monDataSet, "joueurs"].Position += 1;
+            if (this.BindingContext[monDataSet, "joueurs"].Position.ToString() == (this.BindingContext[monDataSet, "joueurs"].Count - 1).ToString())
+            {
+                FB_Next.Enabled = false;
+            }
             AffichageJoueur();
             ChangerLogoEquipe();
             ChangerStatistiques();
         }
         private void JoueurPrecedent()
         {
+            FB_Next.Enabled = true;
             this.BindingContext[monDataSet, "joueurs"].Position -= 1;
+            if (this.BindingContext[monDataSet, "joueurs"].Position.ToString() == "0")
+            {
+                FB_Back.Enabled = false;
+            }
             AffichageJoueur();
             ChangerLogoEquipe();
             ChangerStatistiques();
         }
         private void ProchaineEquipe()
         {
+            FB_BackEquipe.Enabled = true;
             this.BindingContext[monDataSet2, "equipes"].Position += 1;
+            if (this.BindingContext[monDataSet2, "equipes"].Position.ToString() == (this.BindingContext[monDataSet2, "equipes"].Count - 1).ToString())
+            {
+                FB_NextEquipe.Enabled = false;
+            }
             AffichageEquipe();
         }
         private void EquipePrecedente()
         {
+            FB_NextEquipe.Enabled = true;
             this.BindingContext[monDataSet2, "equipes"].Position -= 1;
+            if (this.BindingContext[monDataSet2, "equipes"].Position.ToString() == "0")
+            {
+                FB_BackEquipe.Enabled = false;
+            }
             AffichageEquipe();
         }
 
-        private void FB_Next_Click(object sender, EventArgs e)
-        {
-            ProchainJoueur();
-        }
 
-        private void FB_Back_Click(object sender, EventArgs e)
-        {
-            JoueurPrecedent();
-        }
 
         private void FB_FermerD_Click(object sender, EventArgs e)
         {
@@ -373,22 +399,47 @@ namespace HockeyIce
 
         private void Next_equipe(object sender, EventArgs e)
         {
-            ProchaineEquipe();
+            if (this.BindingContext[monDataSet2, "equipes"].Count > 1)
+                ProchaineEquipe();
+            else
+            {
+                FB_BackEquipe.Enabled = false;
+                FB_NextEquipe.Enabled = false;
+            }
         }
 
         private void Back_Equipe(object sender, EventArgs e)
         {
-            EquipePrecedente();
+            if (this.BindingContext[monDataSet2, "equipes"].Count > 1)
+                EquipePrecedente();
+            else
+            {
+                FB_BackEquipe.Enabled = false;
+                FB_NextEquipe.Enabled = false;
+            }
         }
-
-        private void LB_VilleEquipe_Click(object sender, EventArgs e)
+        private void FB_Next_Click(object sender, EventArgs e)
         {
-
+            if (this.BindingContext[monDataSet, "joueurs"].Count > 1)
+                ProchainJoueur();
+            else
+            {
+                FB_Back.Enabled = false;
+                FB_Next.Enabled = false;
+            }
         }
 
-        private void LB_NomEquipe_Click(object sender, EventArgs e)
+        private void FB_Back_Click(object sender, EventArgs e)
         {
-
+            if (this.BindingContext[monDataSet, "joueurs"].Count > 1)
+                JoueurPrecedent();
+            else
+            {
+                FB_Back.Enabled = false;
+                FB_Next.Enabled = false;
+            }
         }
+
+
     }
 }
