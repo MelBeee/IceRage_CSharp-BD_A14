@@ -4,6 +4,7 @@
 	------------------------------------
 
 	- Ecrire TOUS les commandes utilisées dans le fichier CommandesSQL.sql
+		-Classement (X)
 
 	- Consulter Matchs 
 
