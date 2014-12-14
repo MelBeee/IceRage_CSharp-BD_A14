@@ -14,3 +14,5 @@
 	9- Mettre un Rectangle noir transparent en dessous du # du joueur 
 
 	10- Le #4 dans le document vert (créer les synonymes ect) dans un fichier sql 
+
+	11- Finir de tout commenter
