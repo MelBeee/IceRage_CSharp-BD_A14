@@ -104,7 +104,7 @@ namespace HockeyIce
                           "from ClassementEquipe ce " +
                           "inner join equipes e on e.NUMEQUIPE = ce.NUMEQUIPE " +
                           "inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION " +
-                          "where d.NOM = '" + CB_Division.SelectedItem.ToString() + "'";
+                          "where d.NOM = '" + CB_Division.SelectedItem.ToString() + "'";            
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql2, oraconnClassement);

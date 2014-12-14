@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClassement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LB_Text = new System.Windows.Forms.Label();
             this.PN_CJoueurs = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -76,6 +76,9 @@
             this.LB_PrenomBronze = new System.Windows.Forms.Label();
             this.PB_Podium = new System.Windows.Forms.PictureBox();
             this.PN_CEquipe = new System.Windows.Forms.Panel();
+            this.PN_Ligne = new System.Windows.Forms.FlowLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.CB_Division = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -83,17 +86,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DGV_Divison = new System.Windows.Forms.DataGridView();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.FB_Quitter = new FlashButton.FlashButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Division = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CB_Division = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.PN_Ligne = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.FB_Quitter = new FlashButton.FlashButton();
             this.PN_CJoueurs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_JoueurList)).BeginInit();
             this.PN_3Joueurs.SuspendLayout();
@@ -228,14 +228,14 @@
             this.DGV_JoueurList.AllowUserToResizeRows = false;
             this.DGV_JoueurList.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.DGV_JoueurList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_JoueurList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_JoueurList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.DGV_JoueurList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_JoueurList.ColumnHeadersVisible = false;
             this.DGV_JoueurList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -246,31 +246,31 @@
             this.TypePosition,
             this.Pointage,
             this.Equipe});
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Kristen ITC", 11.25F);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_JoueurList.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Kristen ITC", 11.25F);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_JoueurList.DefaultCellStyle = dataGridViewCellStyle26;
             this.DGV_JoueurList.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DGV_JoueurList.Location = new System.Drawing.Point(0, 31);
             this.DGV_JoueurList.MultiSelect = false;
             this.DGV_JoueurList.Name = "DGV_JoueurList";
             this.DGV_JoueurList.ReadOnly = true;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Kristen ITC", 11.25F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_JoueurList.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Kristen ITC", 11.25F);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_JoueurList.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.DGV_JoueurList.RowHeadersVisible = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DGV_JoueurList.RowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DGV_JoueurList.RowsDefaultCellStyle = dataGridViewCellStyle28;
             this.DGV_JoueurList.RowTemplate.Height = 75;
             this.DGV_JoueurList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_JoueurList.ShowEditingIcon = false;
@@ -614,6 +614,35 @@
             this.PN_CEquipe.TabIndex = 11;
             this.PN_CEquipe.Visible = false;
             // 
+            // PN_Ligne
+            // 
+            this.PN_Ligne.BackColor = System.Drawing.Color.White;
+            this.PN_Ligne.Location = new System.Drawing.Point(5, 31);
+            this.PN_Ligne.Name = "PN_Ligne";
+            this.PN_Ligne.Size = new System.Drawing.Size(662, 2);
+            this.PN_Ligne.TabIndex = 33;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(5, 4);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 20);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Division :";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CB_Division
+            // 
+            this.CB_Division.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Division.FormattingEnabled = true;
+            this.CB_Division.Location = new System.Drawing.Point(93, 5);
+            this.CB_Division.Name = "CB_Division";
+            this.CB_Division.Size = new System.Drawing.Size(91, 21);
+            this.CB_Division.TabIndex = 13;
+            this.CB_Division.SelectedIndexChanged += new System.EventHandler(this.CB_Division_SelectedIndexChanged);
+            // 
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -685,8 +714,8 @@
             this.DGV_Divison.AllowUserToAddRows = false;
             this.DGV_Divison.AllowUserToDeleteRows = false;
             this.DGV_Divison.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(213)))), ((int)(((byte)(239)))));
-            this.DGV_Divison.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(213)))), ((int)(((byte)(239)))));
+            this.DGV_Divison.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
             this.DGV_Divison.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.DGV_Divison.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.DGV_Divison.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -703,40 +732,14 @@
             this.DGV_Divison.Name = "DGV_Divison";
             this.DGV_Divison.ReadOnly = true;
             this.DGV_Divison.RowHeadersVisible = false;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DGV_Divison.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DGV_Divison.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.DGV_Divison.RowTemplate.Height = 75;
             this.DGV_Divison.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Divison.Size = new System.Drawing.Size(673, 326);
             this.DGV_Divison.TabIndex = 1;
             this.DGV_Divison.SelectionChanged += new System.EventHandler(this.DGV_Divison_SelectionChanged);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
-            // FB_Quitter
-            // 
-            this.FB_Quitter.BackgroundImage = global::HockeyIce.Properties.Resources.CloseNormal;
-            this.FB_Quitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_Quitter.ImageClick = global::HockeyIce.Properties.Resources.CloseClick;
-            this.FB_Quitter.ImageDisable = global::HockeyIce.Properties.Resources.CloseDisable;
-            this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
-            this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
-            this.FB_Quitter.Location = new System.Drawing.Point(658, 4);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Quitter.Name = "FB_Quitter";
-            this.FB_Quitter.Size = new System.Drawing.Size(19, 20);
-            this.FB_Quitter.TabIndex = 11;
-            this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
             // dataGridViewImageColumn1
             // 
@@ -801,34 +804,31 @@
             this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn5.Width = 131;
             // 
-            // CB_Division
+            // pictureBox2
             // 
-            this.CB_Division.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_Division.FormattingEnabled = true;
-            this.CB_Division.Location = new System.Drawing.Point(93, 5);
-            this.CB_Division.Name = "CB_Division";
-            this.CB_Division.Size = new System.Drawing.Size(91, 21);
-            this.CB_Division.TabIndex = 13;
-            this.CB_Division.SelectedIndexChanged += new System.EventHandler(this.CB_Division_SelectedIndexChanged);
+            this.pictureBox2.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(22, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
             // 
-            // label14
+            // FB_Quitter
             // 
-            this.label14.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(5, 4);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 20);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Division :";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // PN_Ligne
-            // 
-            this.PN_Ligne.BackColor = System.Drawing.Color.White;
-            this.PN_Ligne.Location = new System.Drawing.Point(5, 31);
-            this.PN_Ligne.Name = "PN_Ligne";
-            this.PN_Ligne.Size = new System.Drawing.Size(662, 2);
-            this.PN_Ligne.TabIndex = 33;
+            this.FB_Quitter.BackgroundImage = global::HockeyIce.Properties.Resources.CloseNormal;
+            this.FB_Quitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Quitter.ImageClick = global::HockeyIce.Properties.Resources.CloseClick;
+            this.FB_Quitter.ImageDisable = global::HockeyIce.Properties.Resources.CloseDisable;
+            this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
+            this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
+            this.FB_Quitter.Location = new System.Drawing.Point(658, 4);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Quitter.Name = "FB_Quitter";
+            this.FB_Quitter.Size = new System.Drawing.Size(19, 20);
+            this.FB_Quitter.TabIndex = 11;
+            this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
             // FormClassement
             // 
