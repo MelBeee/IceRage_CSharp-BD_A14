@@ -262,6 +262,10 @@ namespace HockeyIce
                 FB_NextEquipe.Enabled = false;
             }
         }
+        private void LoadVictoireDefaite()
+        {
+
+        }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //      MATCHS
@@ -679,8 +683,6 @@ namespace HockeyIce
             return result;
         }
 
-
- 
 
     }
 }
