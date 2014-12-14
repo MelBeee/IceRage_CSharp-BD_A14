@@ -13,3 +13,5 @@
 
 	11- Finir de tout commenter
 		- Gestion des images (FormGestion)
+
+	12- Parties Gagnées/Perdues dans Affichage des équipes
