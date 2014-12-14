@@ -24,6 +24,7 @@ namespace HockeyIce
                      "inner join joueurs j on j.NUMJOUEUR = cj.NUMJOUEUR " +
                      "inner join EQUIPES e on e.NUMEQUIPE = cj.NUMEQUIPE " +
                      "where point >=0";
+        string selectionTempo = null;
 
         public FormClassement(OracleConnection oraconn)
         {
@@ -71,26 +72,53 @@ namespace HockeyIce
             return (Image)(new Bitmap(imgToResize, size));
         }
 
+        private void InitComboBoxEquipe()
+        {
+            try
+            {
+                string Sql3 = "select NOM from divisions";
+                OracleCommand orcd = new OracleCommand(Sql3, oraconnClassement);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
+
+                while (oraRead.Read())
+                {
+                    CB_Division.Items.Add(oraRead.GetString(0));
+                }
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                FormErreur dlg = new FormErreur(ex);
+
+                if (dlg.ShowDialog() == DialogResult.Cancel)
+                {
+                    this.Close();
+                }
+            }
+        }
+
         private void InitDivisionEquipe()
         {
             string Sql2 = "select e.LOGO, ce.NOM, e.VILLE, e.DATEINTRODUCTION, d.NOM, ce.POINTS " +
                           "from ClassementEquipe ce " +
                           "inner join equipes e on e.NUMEQUIPE = ce.NUMEQUIPE " +
-                          "inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION ";
+                          "inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION " +
+                          "where d.NOM = '" + CB_Division.SelectedItem.ToString() + "'";
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql2, oraconnClassement);
                 orcd.CommandType = CommandType.Text;
                 OracleDataReader oraRead = orcd.ExecuteReader();
-
+                DGV_Divison.Rows.Clear();
                 //Joueur #1
                 while (oraRead.Read())
                 {
                     Image Logo = Image.FromStream(oraRead.GetOracleBlob(0));
                     Logo = resizeImage(Logo, new Size(50, 45));
                     //0,1,2,3,4
-                    DGV_Divison.Rows.Add(Logo, oraRead.GetString(1),oraRead.GetString(2),
-                        oraRead.GetDateTime(3).ToShortDateString() ,oraRead.GetString(4),
+                    DGV_Divison.Rows.Add(Logo, oraRead.GetString(1), oraRead.GetString(2),
+                        oraRead.GetDateTime(3).ToShortDateString(), oraRead.GetString(4),
                         oraRead.GetInt32(5));
                 }
                 DGV_Divison.Sort(DGV_Divison.Columns[5], ListSortDirection.Descending);//sort by points
@@ -205,7 +233,7 @@ namespace HockeyIce
                     PN_CEquipe.Enabled = true;
                     PN_CEquipe.Location = basePanel;
                     LB_Text.Text = "Classement des équipes";
-                    InitDivisionEquipe();
+                    InitComboBoxEquipe();                    
                     break;
                 case "Top3":
                     PN_3Joueurs.Parent = this;
@@ -281,6 +309,11 @@ namespace HockeyIce
         private void DGV_Divison_SelectionChanged(object sender, EventArgs e)
         {
             DGV_Divison.ClearSelection();
+        }
+
+        private void CB_Division_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            InitDivisionEquipe();
         }
     }
 }
