@@ -262,6 +262,11 @@ namespace HockeyIce
         }
         private string TraiterHeureAjoutModif()
         {
+            if(NUD_Minute.Value <= 9)
+            {
+                return NUD_Heure.Value.ToString() + ":" + "0" + NUD_Minute.Value.ToString();
+            }
+
             return NUD_Heure.Value.ToString() + ":" + NUD_Minute.Value.ToString();
         }
 
