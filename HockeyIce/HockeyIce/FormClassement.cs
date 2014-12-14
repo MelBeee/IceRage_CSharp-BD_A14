@@ -80,13 +80,17 @@ namespace HockeyIce
                 orcd.CommandType = CommandType.Text;
                 OracleDataReader oraRead = orcd.ExecuteReader();
 
+                //Selection pour afficher tout les équipes
                 CB_Division.Items.Add("Tous les équipes");
 
                 while (oraRead.Read())
                 {
+                    //on remplit le CB des Division existent
                     CB_Division.Items.Add(oraRead.GetString(0));
                 }
                 oraRead.Close();
+
+                //on place la selection du CB par défaut a la position 0 (All Teams)
                 CB_Division.SelectedIndex = 0;
             }
             catch (OracleException ex)
