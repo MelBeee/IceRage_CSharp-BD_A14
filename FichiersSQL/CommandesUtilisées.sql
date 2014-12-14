@@ -41,6 +41,8 @@ from ComptagePointEquipe
 group by NOM,NUMDIVISION, numequipe
 order by Points ;
 
+--CLASSEMENT
+--/////////////////////////////////////////////////////////////////////////////////////
 --Classement Joueur
 select cj.Prenom, cj.Nom, j.numeromaillot, j.typejoueur, j.Photo, e.Logo, cj.point 
 from ClassementJoueur cj
@@ -58,7 +60,8 @@ inner join equipes e on e.NUMEQUIPE = ce.NUMEQUIPE
 inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION
 where d.NOM = 'Est'
 
-
+--Gestion
+--/////////////////////////////////////////////////////////////////////////////////////
 
 
 

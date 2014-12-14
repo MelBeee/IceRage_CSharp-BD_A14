@@ -136,7 +136,7 @@
             this.LB_Text.ForeColor = System.Drawing.Color.White;
             this.LB_Text.Location = new System.Drawing.Point(32, 4);
             this.LB_Text.Name = "LB_Text";
-            this.LB_Text.Size = new System.Drawing.Size(88, 28);
+            this.LB_Text.Size = new System.Drawing.Size(71, 23);
             this.LB_Text.TabIndex = 4;
             this.LB_Text.Text = "Gestion";
             this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormGestion_MouseDown);
@@ -212,7 +212,7 @@
             this.LB_Division.Location = new System.Drawing.Point(181, 106);
             this.LB_Division.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Division.Name = "LB_Division";
-            this.LB_Division.Size = new System.Drawing.Size(108, 33);
+            this.LB_Division.Size = new System.Drawing.Size(87, 27);
             this.LB_Division.TabIndex = 30;
             this.LB_Division.Text = "Ajouter";
             // 
@@ -222,7 +222,7 @@
             this.TB_NomDivision.Margin = new System.Windows.Forms.Padding(4);
             this.TB_NomDivision.MaxLength = 30;
             this.TB_NomDivision.Name = "TB_NomDivision";
-            this.TB_NomDivision.Size = new System.Drawing.Size(133, 24);
+            this.TB_NomDivision.Size = new System.Drawing.Size(133, 20);
             this.TB_NomDivision.TabIndex = 1;
             this.TB_NomDivision.TextChanged += new System.EventHandler(this.TB_TextChanged);
             this.TB_NomDivision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
@@ -260,7 +260,7 @@
             this.label4.Location = new System.Drawing.Point(91, 194);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 17);
+            this.label4.Size = new System.Drawing.Size(111, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Date Intro : ";
             // 
@@ -271,7 +271,7 @@
             this.label3.Location = new System.Drawing.Point(161, 162);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Nom : ";
             // 
@@ -352,7 +352,7 @@
             this.LB_Equipe.Location = new System.Drawing.Point(183, 101);
             this.LB_Equipe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Equipe.Name = "LB_Equipe";
-            this.LB_Equipe.Size = new System.Drawing.Size(108, 33);
+            this.LB_Equipe.Size = new System.Drawing.Size(87, 27);
             this.LB_Equipe.TabIndex = 30;
             this.LB_Equipe.Text = "Ajouter";
             // 
@@ -393,7 +393,7 @@
             this.CB_DivisionEquipe.Location = new System.Drawing.Point(225, 318);
             this.CB_DivisionEquipe.Margin = new System.Windows.Forms.Padding(4);
             this.CB_DivisionEquipe.Name = "CB_DivisionEquipe";
-            this.CB_DivisionEquipe.Size = new System.Drawing.Size(132, 24);
+            this.CB_DivisionEquipe.Size = new System.Drawing.Size(132, 21);
             this.CB_DivisionEquipe.TabIndex = 4;
             this.CB_DivisionEquipe.SelectedIndexChanged += new System.EventHandler(this.CB_DivisionEquipe_SelectedIndexChanged);
             // 
@@ -404,7 +404,7 @@
             this.label11.Location = new System.Drawing.Point(157, 146);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 17);
+            this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 25;
             this.label11.Text = "Nom :";
             // 
@@ -415,7 +415,7 @@
             this.label10.Location = new System.Drawing.Point(137, 178);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 17);
+            this.label10.Size = new System.Drawing.Size(63, 13);
             this.label10.TabIndex = 24;
             this.label10.Text = "Ville :";
             // 
@@ -426,7 +426,7 @@
             this.label9.Location = new System.Drawing.Point(147, 204);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 17);
+            this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 23;
             this.label9.Text = "Logo :";
             // 
@@ -437,7 +437,7 @@
             this.label8.Location = new System.Drawing.Point(87, 283);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 17);
+            this.label8.Size = new System.Drawing.Size(103, 13);
             this.label8.TabIndex = 22;
             this.label8.Text = "Date Intro :";
             // 
@@ -448,7 +448,7 @@
             this.label7.Location = new System.Drawing.Point(107, 320);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 17);
+            this.label7.Size = new System.Drawing.Size(87, 13);
             this.label7.TabIndex = 21;
             this.label7.Text = "Division :";
             // 
@@ -458,7 +458,7 @@
             this.TB_LieuxEquipe.Margin = new System.Windows.Forms.Padding(4);
             this.TB_LieuxEquipe.MaxLength = 30;
             this.TB_LieuxEquipe.Name = "TB_LieuxEquipe";
-            this.TB_LieuxEquipe.Size = new System.Drawing.Size(132, 22);
+            this.TB_LieuxEquipe.Size = new System.Drawing.Size(132, 20);
             this.TB_LieuxEquipe.TabIndex = 2;
             this.TB_LieuxEquipe.TextChanged += new System.EventHandler(this.TB_TextChanged);
             this.TB_LieuxEquipe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
@@ -469,7 +469,7 @@
             this.TB_NomEquipe.Margin = new System.Windows.Forms.Padding(4);
             this.TB_NomEquipe.MaxLength = 50;
             this.TB_NomEquipe.Name = "TB_NomEquipe";
-            this.TB_NomEquipe.Size = new System.Drawing.Size(132, 22);
+            this.TB_NomEquipe.Size = new System.Drawing.Size(132, 20);
             this.TB_NomEquipe.TabIndex = 1;
             this.TB_NomEquipe.TextChanged += new System.EventHandler(this.TB_TextChanged);
             this.TB_NomEquipe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
@@ -579,7 +579,7 @@
             this.LB_Joueurs.Location = new System.Drawing.Point(181, 102);
             this.LB_Joueurs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Joueurs.Name = "LB_Joueurs";
-            this.LB_Joueurs.Size = new System.Drawing.Size(108, 33);
+            this.LB_Joueurs.Size = new System.Drawing.Size(87, 27);
             this.LB_Joueurs.TabIndex = 36;
             this.LB_Joueurs.Text = "Ajouter";
             // 
@@ -590,7 +590,7 @@
             this.label28.Location = new System.Drawing.Point(68, 342);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(108, 17);
+            this.label28.Size = new System.Drawing.Size(87, 13);
             this.label28.TabIndex = 35;
             this.label28.Text = "Position :";
             // 
@@ -601,7 +601,7 @@
             this.label27.Location = new System.Drawing.Point(88, 309);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(88, 17);
+            this.label27.Size = new System.Drawing.Size(71, 13);
             this.label27.TabIndex = 34;
             this.label27.Text = "Équipe :";
             // 
@@ -612,7 +612,7 @@
             this.label26.Location = new System.Drawing.Point(48, 249);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(128, 17);
+            this.label26.Size = new System.Drawing.Size(103, 13);
             this.label26.TabIndex = 33;
             this.label26.Text = "Lien photo :";
             // 
@@ -623,7 +623,7 @@
             this.label25.Location = new System.Drawing.Point(88, 217);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(88, 17);
+            this.label25.Size = new System.Drawing.Size(71, 13);
             this.label25.TabIndex = 30;
             this.label25.Text = "Numero :";
             // 
@@ -634,7 +634,7 @@
             this.label24.Location = new System.Drawing.Point(28, 278);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(148, 17);
+            this.label24.Size = new System.Drawing.Size(119, 13);
             this.label24.TabIndex = 32;
             this.label24.Text = "Anniversaire :";
             // 
@@ -645,7 +645,7 @@
             this.label23.Location = new System.Drawing.Point(88, 186);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(88, 17);
+            this.label23.Size = new System.Drawing.Size(71, 13);
             this.label23.TabIndex = 31;
             this.label23.Text = "Prenom :";
             // 
@@ -656,7 +656,7 @@
             this.label22.Location = new System.Drawing.Point(117, 154);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(58, 17);
+            this.label22.Size = new System.Drawing.Size(47, 13);
             this.label22.TabIndex = 30;
             this.label22.Text = "Nom :";
             // 
@@ -666,7 +666,7 @@
             this.TB_PhotoJ.Margin = new System.Windows.Forms.Padding(4);
             this.TB_PhotoJ.MaxLength = 100;
             this.TB_PhotoJ.Name = "TB_PhotoJ";
-            this.TB_PhotoJ.Size = new System.Drawing.Size(133, 22);
+            this.TB_PhotoJ.Size = new System.Drawing.Size(133, 20);
             this.TB_PhotoJ.TabIndex = 4;
             this.TB_PhotoJ.TextChanged += new System.EventHandler(this.TB_TextChanged);
             // 
@@ -681,7 +681,7 @@
             this.CB_PositionJ.Location = new System.Drawing.Point(183, 338);
             this.CB_PositionJ.Margin = new System.Windows.Forms.Padding(4);
             this.CB_PositionJ.Name = "CB_PositionJ";
-            this.CB_PositionJ.Size = new System.Drawing.Size(135, 24);
+            this.CB_PositionJ.Size = new System.Drawing.Size(135, 21);
             this.CB_PositionJ.TabIndex = 7;
             this.CB_PositionJ.SelectedIndexChanged += new System.EventHandler(this.CB_SelectedIndexChanged);
             // 
@@ -692,7 +692,7 @@
             this.CB_ChoixEquipeJ.Location = new System.Drawing.Point(183, 306);
             this.CB_ChoixEquipeJ.Margin = new System.Windows.Forms.Padding(4);
             this.CB_ChoixEquipeJ.Name = "CB_ChoixEquipeJ";
-            this.CB_ChoixEquipeJ.Size = new System.Drawing.Size(135, 24);
+            this.CB_ChoixEquipeJ.Size = new System.Drawing.Size(135, 21);
             this.CB_ChoixEquipeJ.TabIndex = 6;
             this.CB_ChoixEquipeJ.SelectedIndexChanged += new System.EventHandler(this.CB_ChoixEquipeJ_SelectedIndexChanged);
             // 
@@ -702,7 +702,7 @@
             this.TB_PrenomJ.Margin = new System.Windows.Forms.Padding(4);
             this.TB_PrenomJ.MaxLength = 20;
             this.TB_PrenomJ.Name = "TB_PrenomJ";
-            this.TB_PrenomJ.Size = new System.Drawing.Size(133, 22);
+            this.TB_PrenomJ.Size = new System.Drawing.Size(133, 20);
             this.TB_PrenomJ.TabIndex = 2;
             this.TB_PrenomJ.TextChanged += new System.EventHandler(this.TB_TextChanged);
             this.TB_PrenomJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
@@ -713,7 +713,7 @@
             this.TB_NumeroJ.Margin = new System.Windows.Forms.Padding(4);
             this.TB_NumeroJ.MaxLength = 2;
             this.TB_NumeroJ.Name = "TB_NumeroJ";
-            this.TB_NumeroJ.Size = new System.Drawing.Size(133, 22);
+            this.TB_NumeroJ.Size = new System.Drawing.Size(133, 20);
             this.TB_NumeroJ.TabIndex = 3;
             this.TB_NumeroJ.TextChanged += new System.EventHandler(this.TB_TextChanged);
             this.TB_NumeroJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NumeroJ_KeyPress);
@@ -724,7 +724,7 @@
             this.TB_NomJ.Margin = new System.Windows.Forms.Padding(4);
             this.TB_NomJ.MaxLength = 20;
             this.TB_NomJ.Name = "TB_NomJ";
-            this.TB_NomJ.Size = new System.Drawing.Size(133, 22);
+            this.TB_NomJ.Size = new System.Drawing.Size(133, 20);
             this.TB_NomJ.TabIndex = 1;
             this.TB_NomJ.TextChanged += new System.EventHandler(this.TB_TextChanged);
             this.TB_NomJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
@@ -810,7 +810,7 @@
             0,
             0});
             this.NUD_Minute.Name = "NUD_Minute";
-            this.NUD_Minute.Size = new System.Drawing.Size(53, 22);
+            this.NUD_Minute.Size = new System.Drawing.Size(53, 20);
             this.NUD_Minute.TabIndex = 6;
             // 
             // NUD_Heure
@@ -823,7 +823,7 @@
             0,
             0});
             this.NUD_Heure.Name = "NUD_Heure";
-            this.NUD_Heure.Size = new System.Drawing.Size(53, 22);
+            this.NUD_Heure.Size = new System.Drawing.Size(53, 20);
             this.NUD_Heure.TabIndex = 5;
             // 
             // label1
@@ -832,7 +832,7 @@
             this.label1.Font = new System.Drawing.Font("Lucida Console", 9.75F);
             this.label1.Location = new System.Drawing.Point(155, 286);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 79;
             this.label1.Text = "Heure :";
             // 
@@ -842,7 +842,7 @@
             this.label2.Font = new System.Drawing.Font("Lucida Console", 9.75F);
             this.label2.Location = new System.Drawing.Point(287, 286);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 17);
+            this.label2.Size = new System.Drawing.Size(15, 13);
             this.label2.TabIndex = 82;
             this.label2.Text = ":";
             // 
@@ -868,7 +868,7 @@
             this.CB_EVisiteur.Location = new System.Drawing.Point(237, 185);
             this.CB_EVisiteur.Margin = new System.Windows.Forms.Padding(4);
             this.CB_EVisiteur.Name = "CB_EVisiteur";
-            this.CB_EVisiteur.Size = new System.Drawing.Size(136, 24);
+            this.CB_EVisiteur.Size = new System.Drawing.Size(136, 21);
             this.CB_EVisiteur.TabIndex = 2;
             this.CB_EVisiteur.SelectedIndexChanged += new System.EventHandler(this.CB_EVisiteur_SelectedIndexChanged);
             // 
@@ -879,7 +879,7 @@
             this.CB_EMaison.Location = new System.Drawing.Point(237, 153);
             this.CB_EMaison.Margin = new System.Windows.Forms.Padding(4);
             this.CB_EMaison.Name = "CB_EMaison";
-            this.CB_EMaison.Size = new System.Drawing.Size(136, 24);
+            this.CB_EMaison.Size = new System.Drawing.Size(136, 21);
             this.CB_EMaison.TabIndex = 1;
             this.CB_EMaison.SelectedIndexChanged += new System.EventHandler(this.CB_SelectedIndexChanged);
             // 
@@ -889,7 +889,7 @@
             this.TB_Endroit.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Endroit.MaxLength = 30;
             this.TB_Endroit.Name = "TB_Endroit";
-            this.TB_Endroit.Size = new System.Drawing.Size(136, 22);
+            this.TB_Endroit.Size = new System.Drawing.Size(136, 20);
             this.TB_Endroit.TabIndex = 3;
             this.TB_Endroit.TextChanged += new System.EventHandler(this.TB_TextChanged);
             this.TB_Endroit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_NomEquipe_KeyPress);
@@ -904,7 +904,7 @@
             0,
             0});
             this.NUD_PMaison.Name = "NUD_PMaison";
-            this.NUD_PMaison.Size = new System.Drawing.Size(71, 22);
+            this.NUD_PMaison.Size = new System.Drawing.Size(71, 20);
             this.NUD_PMaison.TabIndex = 7;
             // 
             // NUD_PVisiteur
@@ -917,7 +917,7 @@
             0,
             0});
             this.NUD_PVisiteur.Name = "NUD_PVisiteur";
-            this.NUD_PVisiteur.Size = new System.Drawing.Size(71, 22);
+            this.NUD_PVisiteur.Size = new System.Drawing.Size(71, 20);
             this.NUD_PVisiteur.TabIndex = 8;
             // 
             // LB_EVisiteur
@@ -964,7 +964,7 @@
             this.LB_Match.Location = new System.Drawing.Point(172, 105);
             this.LB_Match.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Match.Name = "LB_Match";
-            this.LB_Match.Size = new System.Drawing.Size(108, 33);
+            this.LB_Match.Size = new System.Drawing.Size(87, 27);
             this.LB_Match.TabIndex = 29;
             this.LB_Match.Text = "Ajouter";
             // 
@@ -975,7 +975,7 @@
             this.label21.Location = new System.Drawing.Point(35, 348);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(198, 17);
+            this.label21.Size = new System.Drawing.Size(159, 13);
             this.label21.TabIndex = 28;
             this.label21.Text = "Pointage visiteur :";
             // 
@@ -986,7 +986,7 @@
             this.label20.Location = new System.Drawing.Point(55, 316);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(178, 17);
+            this.label20.Size = new System.Drawing.Size(143, 13);
             this.label20.TabIndex = 27;
             this.label20.Text = "Pointage maison :";
             // 
@@ -997,7 +997,7 @@
             this.label19.Location = new System.Drawing.Point(165, 257);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(68, 17);
+            this.label19.Size = new System.Drawing.Size(55, 13);
             this.label19.TabIndex = 26;
             this.label19.Text = "Date :";
             // 
@@ -1008,7 +1008,7 @@
             this.label18.Location = new System.Drawing.Point(135, 223);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(98, 17);
+            this.label18.Size = new System.Drawing.Size(79, 13);
             this.label18.TabIndex = 25;
             this.label18.Text = "Endroit :";
             // 
@@ -1019,7 +1019,7 @@
             this.label17.Location = new System.Drawing.Point(55, 191);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(178, 17);
+            this.label17.Size = new System.Drawing.Size(143, 13);
             this.label17.TabIndex = 24;
             this.label17.Text = "Équipe visiteur :";
             // 
@@ -1030,7 +1030,7 @@
             this.label6.Location = new System.Drawing.Point(75, 158);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(158, 17);
+            this.label6.Size = new System.Drawing.Size(127, 13);
             this.label6.TabIndex = 23;
             this.label6.Text = "Équipe maison :";
             // 
@@ -1066,7 +1066,7 @@
             this.CB_Invisible.Location = new System.Drawing.Point(304, 75);
             this.CB_Invisible.Margin = new System.Windows.Forms.Padding(4);
             this.CB_Invisible.Name = "CB_Invisible";
-            this.CB_Invisible.Size = new System.Drawing.Size(160, 24);
+            this.CB_Invisible.Size = new System.Drawing.Size(160, 21);
             this.CB_Invisible.TabIndex = 10;
             // 
             // CB_Invisible2
@@ -1075,7 +1075,7 @@
             this.CB_Invisible2.Location = new System.Drawing.Point(304, 107);
             this.CB_Invisible2.Margin = new System.Windows.Forms.Padding(4);
             this.CB_Invisible2.Name = "CB_Invisible2";
-            this.CB_Invisible2.Size = new System.Drawing.Size(160, 24);
+            this.CB_Invisible2.Size = new System.Drawing.Size(160, 21);
             this.CB_Invisible2.TabIndex = 11;
             // 
             // LB_Invisible
@@ -1084,7 +1084,7 @@
             this.LB_Invisible.Location = new System.Drawing.Point(315, 141);
             this.LB_Invisible.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Invisible.Name = "LB_Invisible";
-            this.LB_Invisible.Size = new System.Drawing.Size(46, 17);
+            this.LB_Invisible.Size = new System.Drawing.Size(35, 13);
             this.LB_Invisible.TabIndex = 39;
             this.LB_Invisible.Text = "label1";
             // 
@@ -1094,7 +1094,7 @@
             this.CB_InvisibleDiv.Location = new System.Drawing.Point(304, 43);
             this.CB_InvisibleDiv.Margin = new System.Windows.Forms.Padding(4);
             this.CB_InvisibleDiv.Name = "CB_InvisibleDiv";
-            this.CB_InvisibleDiv.Size = new System.Drawing.Size(160, 24);
+            this.CB_InvisibleDiv.Size = new System.Drawing.Size(160, 21);
             this.CB_InvisibleDiv.TabIndex = 40;
             // 
             // TT_LogoEquipe
@@ -1108,7 +1108,7 @@
             this.LB_HeureInvis.AutoSize = true;
             this.LB_HeureInvis.Location = new System.Drawing.Point(315, 164);
             this.LB_HeureInvis.Name = "LB_HeureInvis";
-            this.LB_HeureInvis.Size = new System.Drawing.Size(46, 17);
+            this.LB_HeureInvis.Size = new System.Drawing.Size(35, 13);
             this.LB_HeureInvis.TabIndex = 41;
             this.LB_HeureInvis.Text = "label5";
             // 
@@ -1117,7 +1117,7 @@
             this.DTP_invisi.Location = new System.Drawing.Point(304, 187);
             this.DTP_invisi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DTP_invisi.Name = "DTP_invisi";
-            this.DTP_invisi.Size = new System.Drawing.Size(160, 22);
+            this.DTP_invisi.Size = new System.Drawing.Size(160, 20);
             this.DTP_invisi.TabIndex = 42;
             // 
             // FB_Quitter
