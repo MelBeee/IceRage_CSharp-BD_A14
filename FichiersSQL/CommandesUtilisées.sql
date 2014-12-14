@@ -142,3 +142,18 @@ NUMEQUIPE =      :NumEquipe;
 --Load Info Joueur
 select j.*, e.nom from joueurs j
 inner join equipes e on e.NUMEQUIPE = j.numequipe 
+
+
+
+-- #4 
+CREATE SYNONYM SynJoueurXav FOR JOUEURS;
+GRANT SELECT ON SynJoueurXav TO PUBLIC;
+GRANT ALL ON SynJoueurXav TO BOUCHERM;
+
+GRANT SELECT ON ClassementJoueur TO PUBLIC;
+
+CREATE INDEX NomEquipe
+ON JOUEURS(Nom);
+
+CREATE INDEX DateMatch
+ON Matchs (DateHeure);
