@@ -1,9 +1,4 @@
-﻿quand TP fini, mettre classement joueur en Dock = fill  (???) 
-
-gestion equipe	-> les images ne se modifie pas encore (Xav continue le code)  (???)
-
-
-
+﻿
 	------------------------------------
 	CE QU'IL RESTERAIT À FAIRE SELON MOI
 	------------------------------------
