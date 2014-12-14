@@ -1,7 +1,73 @@
-select sum(NbreButs), sum(NbrePasses), sum(TO_NUMBER(TempsPunition))
-from StatistiquesJoueurs
-where numjoueur = 17;
+--COMMANDES UTILISÉS DANS LE CLASSEMENT
+--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--
+--Classement Joueur et Top3
+select cj.Prenom, cj.Nom, j.numeromaillot, j.typejoueur, j.Photo, e.Logo, cj.point 
+from ClassementJoueur cj
+inner join joueurs j on j.NUMJOUEUR = cj.NUMJOUEUR
+inner join EQUIPES e on e.NUMEQUIPE = cj.NUMEQUIPE
+where point >=0;
 
+-- Vue pour points joueurs
+create view ClassementJoueur 
+as
+select sum(sj.Nbrebuts*2 + sj.nbrepasses) as Point, J.NOM, J.PRENOM, E.NOM as NomEquipe, j.numequipe, j.numjoueur
+from StatistiquesJoueurs sj
+inner join Joueurs J on sj.NUMJOUEUR = J.NUMJOUEUR
+inner join EQUIPES E on J.NUMEQUIPE = E.NUMEQUIPE 
+group by J.NOM, J.PRENOM, E.NOM, j.numequipe, j.numjoueur
+order by point desc;
+
+--Remplir combobox Division
+select NOM from divisions;
+
+--Classement Équipe selon Division
+select e.LOGO, ce.NOM, e.VILLE, e.DATEINTRODUCTION, d.NOM, ce.POINTS
+from ClassementEquipe ce
+inner join equipes e on e.NUMEQUIPE = ce.NUMEQUIPE
+inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION
+where d.NOM = 'Est';
+
+-- Vue pour le nbre de Victoire vs le nbre de Defaite pour les equipes
+create view CompterVictoireDefaite
+as
+--victoire Visiteur
+select  1 as Victoire, 0 as Defaite, e.numequipe, e.nom
+from matchs m inner join equipes e on e.numequipe = m.numequipevis
+where m.pointagemaison < m.pointagevisiteur
+union all
+--Égalité Visiteur
+select  0 as Victoire, 0 as Defaite, e.numequipe, e.nom
+from matchs m inner join equipes e on e.numequipe = m.numequipevis
+where m.pointagemaison = m.pointagevisiteur
+union all
+--Défaite Visiteur
+select  0 as Victoire, 1 as Defaite, e.numequipe, e.nom
+from matchs m inner join equipes e on e.numequipe = m.numequipevis
+where m.pointagemaison > m.pointagevisiteur
+union all 
+--Victoire Receveur
+select  1 as Victoire, 0 as Defaite, e.numequipe, e.nom
+from matchs m inner join equipes e on e.numequipe = m.numequipemai
+where m.pointagemaison > m.pointagevisiteur
+union all
+-- Égalité Receveur
+select  0 as Victoire, 0 as Defaite, e.numequipe, e.nom
+from matchs m inner join equipes e on e.numequipe = m.numequipemai
+where m.pointagemaison = m.pointagevisiteur
+union all
+-- Défaite Receveur
+select  0 as Victoire, 1 as Defaite, e.numequipe, e.nom
+from matchs m inner join equipes e on e.numequipe = m.numequipemai
+where m.pointagemaison < m.pointagevisiteur
+;
+
+create view VictoireDefaiteEquipe
+as
+select sum(Victoire) as Victoire, sum(Defaite) as Defaite, numequipe , nom
+from CompterVictoireDefaite
+group by numequipe , nom;
+
+-- Vue pour le nombre de point Victoire pour classement equipe
 create view ComptagePointEquipe
 as
 --victoire Visiteur
@@ -41,27 +107,10 @@ from ComptagePointEquipe
 group by NOM,NUMDIVISION, numequipe
 order by Points ;
 
---CLASSEMENT
---/////////////////////////////////////////////////////////////////////////////////////
---Classement Joueur
-select cj.Prenom, cj.Nom, j.numeromaillot, j.typejoueur, j.Photo, e.Logo, cj.point 
-from ClassementJoueur cj
-inner join joueurs j on j.NUMJOUEUR = cj.NUMJOUEUR
-inner join EQUIPES e on e.NUMEQUIPE = cj.NUMEQUIPE
-where point >=0;
+--COMMANDES UTILISÉS DANS LA GESTION
+--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--
 
---Remplir combobox Division
-select NOM from divisions;
-
---Classement Équipe selon Division
-select e.LOGO, ce.NOM, e.VILLE, e.DATEINTRODUCTION, d.NOM, ce.POINTS
-from ClassementEquipe ce
-inner join equipes e on e.NUMEQUIPE = ce.NUMEQUIPE
-inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION
-where d.NOM = 'Est';
-
---Gestion
---/////////////////////////////////////////////////////////////////////////////////////
+--/////////// GESTION DES EQUIPES ///////////--
 --Remplir CB Gestion Equipe
 select numequipe, nom 
 from equipes;
@@ -69,27 +118,6 @@ from equipes;
 --Remplir CB Gestion Division
 select numdivision, nom 
 from divisions;
-
---Gestion Ajout Match
-insert into matchs
-(NUMMATCH, NUMEQUIPEVIS, NUMEQUIPEMAI, DATEHEURE, HEURE, LIEU, POINTAGEMAISON, POINTAGEVISITEUR) values
-(:NumMatch,:NumEquipeVis,:NumEquipeMai,:DateHeure,:Heure, :Lieu,:PointageMaison, :PointageVisiteur);
-            
---Modifier Match
-update matchs set nummatch = :NumMatch,
-numequipevis = :NumEquipeVis,
-numequipemai = :NumEquipeMai,
-dateheure = :DateHeure,
-heure = :Heure,
-lieu = :Lieu,
-pointagemaison = :PointageMaison,
-pointagevisiteur = :PointageVisiteur;
-
---Load Info Match
-select ev.nom, em.nom, dateheure, heure, lieu, pointagemaison, pointagevisiteur, numequipevis, numequipemai
-from matchs m
-inner join EQUIPES ev on ev.NUMEQUIPE = m.NUMEQUIPEVIS
-inner join EQUIPES em on em.NUMEQUIPE = m.NUMEQUIPEMAI;
 
 -- Ajouter équipe
 insert into EQUIPES
@@ -110,6 +138,36 @@ Logo=:Logo;
 select e.*, d.nom from equipes e 
 inner join divisions d on d.numdivision = e.numdivision;
 
+-- Supprimer une équipe
+delete from equipes where numequipe = 0; --chiffre en conséquence
+
+--/////////// GESTION DES MATCHS ///////////--
+--Gestion Ajout Matchs
+insert into matchs
+(NUMMATCH, NUMEQUIPEVIS, NUMEQUIPEMAI, DATEHEURE, HEURE, LIEU, POINTAGEMAISON, POINTAGEVISITEUR) values
+(:NumMatch,:NumEquipeVis,:NumEquipeMai,:DateHeure,:Heure, :Lieu,:PointageMaison, :PointageVisiteur);
+            
+--Modifier Matchs
+update matchs set nummatch = :NumMatch,
+numequipevis = :NumEquipeVis,
+numequipemai = :NumEquipeMai,
+dateheure = :DateHeure,
+heure = :Heure,
+lieu = :Lieu,
+pointagemaison = :PointageMaison,
+pointagevisiteur = :PointageVisiteur;
+
+--Load Info Matchs
+select ev.nom, em.nom, dateheure, heure, lieu, pointagemaison, pointagevisiteur, numequipevis, numequipemai
+from matchs m
+inner join EQUIPES ev on ev.NUMEQUIPE = m.NUMEQUIPEVIS
+inner join EQUIPES em on em.NUMEQUIPE = m.NUMEQUIPEMAI;
+
+-- Supprimer un match et stats
+delete from statistiquesjoueurs where nummatch = 0; --chiffre en conséquence
+delete from matchs where nummatch = 0; --chiffre en conséquence
+
+--/////////// GESTION DES DIVISIONS ///////////--
 --Ajout Division
 insert into divisions
 (NUMDIVISION,    NOM,    DATECREATION) values
@@ -124,9 +182,14 @@ DATECREATION = :DateValue;
 --Load InfoDivision
 select * from divisions;
 
+--Supprimer une division
+delete from divisions where numdivision = 0; --chiffre en conséquence
+
+--/////////// GESTION DES JOUEURS ///////////--
 --Ajout Joueur
 insert into joueurs
-(NUMJOUEUR,  NOM,    PRENOM,     NAISSANCE,  NUMEROMAILLOT,  TYPEJOUEUR,     PHOTO,  NUMEQUIPE) values (:NumJoueur, :Nom,   :Prenom,    :Naissance, :NumMaillot,    :TypeJoueur,    :Photo, :NumEquipe)";
+(NUMJOUEUR, NOM, PRENOM, NAISSANCE, NUMEROMAILLOT, TYPEJOUEUR, PHOTO, NUMEQUIPE) values 
+(:NumJoueur, :Nom, :Prenom, :Naissance, :NumMaillot, :TypeJoueur, :Photo, :NumEquipe);
 
 --Modifier Joueur
 update joueurs set
@@ -141,19 +204,21 @@ NUMEQUIPE =      :NumEquipe;
 
 --Load Info Joueur
 select j.*, e.nom from joueurs j
-inner join equipes e on e.NUMEQUIPE = j.numequipe 
+inner join equipes e on e.NUMEQUIPE = j.numequipe;
 
+--Supprimer un joueur
+delete from joueurs where numjoueur = 0; --chiffre en conséquence
 
-
--- #4 
+--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--
+-- #4 A et B
 CREATE SYNONYM SynJoueurXav FOR JOUEURS;
 GRANT SELECT ON SynJoueurXav TO PUBLIC;
 GRANT ALL ON SynJoueurXav TO BOUCHERM;
-
+-- #4 D
 GRANT SELECT ON ClassementJoueur TO PUBLIC;
-
+-- #4 E
 CREATE INDEX NomEquipe
 ON JOUEURS(Nom);
-
+-- #4 F
 CREATE INDEX DateMatch
 ON Matchs (DateHeure);

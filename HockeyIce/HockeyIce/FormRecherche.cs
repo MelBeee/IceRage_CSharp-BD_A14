@@ -221,6 +221,7 @@ namespace HockeyIce
             {
                 AfficherErreur(ex);
             }
+            LoadVictoireDefaite();
         }
         private void ProchaineEquipe()
         {
@@ -264,7 +265,24 @@ namespace HockeyIce
         }
         private void LoadVictoireDefaite()
         {
+            string commandesql = " select Victoire, Defaite from VictoireDefaiteEquipe " +
+                                 " where nom = '" + LB_NomEquipe.Text + "'";
+            try
+            {
+                OracleCommand orcd = new OracleCommand(commandesql, oraconnRecherche);
+                orcd.CommandType = CommandType.Text;
+                OracleDataReader oraRead = orcd.ExecuteReader();
 
+                oraRead.Read();
+                LB_Win.Text = oraRead.GetInt32(0).ToString();
+                LB_Lost.Text = oraRead.GetInt32(1).ToString();
+
+                oraRead.Close();
+            }
+            catch (OracleException ex)
+            {
+                AfficherErreur(ex);
+            }
         }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
