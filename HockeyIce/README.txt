@@ -9,8 +9,6 @@
 
 	2- Ecrire TOUS les commandes utilisées dans le fichier CommandesSQL.sql
 
-	3- Changer la methode d'insertion des stasts pour OracleParameters
-
 	4- Faire en sorte de ne pas pouvoir mettre 1 equipe visiteur et maison en meme temps 
 
 	5- Consulter Matchs
