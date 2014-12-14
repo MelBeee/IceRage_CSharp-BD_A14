@@ -76,13 +76,14 @@
             this.PB_Podium = new System.Windows.Forms.PictureBox();
             this.PN_CEquipe = new System.Windows.Forms.Panel();
             this.DGV_Divison = new System.Windows.Forms.DataGridView();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.FB_Quitter = new FlashButton.FlashButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Division = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.FB_Quitter = new FlashButton.FlashButton();
             this.PN_CJoueurs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_JoueurList)).BeginInit();
             this.PN_3Joueurs.SuspendLayout();
@@ -608,6 +609,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
+            this.Division,
             this.dataGridViewTextBoxColumn5});
             this.DGV_Divison.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DGV_Divison.Location = new System.Drawing.Point(0, 31);
@@ -621,6 +623,32 @@
             this.DGV_Divison.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Divison.Size = new System.Drawing.Size(673, 366);
             this.DGV_Divison.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(22, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // FB_Quitter
+            // 
+            this.FB_Quitter.BackgroundImage = global::HockeyIce.Properties.Resources.CloseNormal;
+            this.FB_Quitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_Quitter.ImageClick = global::HockeyIce.Properties.Resources.CloseClick;
+            this.FB_Quitter.ImageDisable = global::HockeyIce.Properties.Resources.CloseDisable;
+            this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
+            this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
+            this.FB_Quitter.Location = new System.Drawing.Point(658, 4);
+            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Quitter.Name = "FB_Quitter";
+            this.FB_Quitter.Size = new System.Drawing.Size(19, 20);
+            this.FB_Quitter.TabIndex = 11;
+            this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
             // dataGridViewImageColumn1
             // 
@@ -665,6 +693,13 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // Division
+            // 
+            this.Division.Frozen = true;
+            this.Division.HeaderText = "Division";
+            this.Division.Name = "Division";
+            this.Division.ReadOnly = true;
+            // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.Frozen = true;
@@ -674,32 +709,6 @@
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn5.Width = 99;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
-            // FB_Quitter
-            // 
-            this.FB_Quitter.BackgroundImage = global::HockeyIce.Properties.Resources.CloseNormal;
-            this.FB_Quitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_Quitter.ImageClick = global::HockeyIce.Properties.Resources.CloseClick;
-            this.FB_Quitter.ImageDisable = global::HockeyIce.Properties.Resources.CloseDisable;
-            this.FB_Quitter.ImageNeutral = global::HockeyIce.Properties.Resources.CloseNormal;
-            this.FB_Quitter.ImageOver = global::HockeyIce.Properties.Resources.CloseHover;
-            this.FB_Quitter.Location = new System.Drawing.Point(658, 4);
-            this.FB_Quitter.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Quitter.Name = "FB_Quitter";
-            this.FB_Quitter.Size = new System.Drawing.Size(19, 20);
-            this.FB_Quitter.TabIndex = 11;
-            this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
             // FormClassement
             // 
@@ -791,5 +800,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Division;
     }
 }

@@ -73,10 +73,10 @@ namespace HockeyIce
 
         private void InitDivisionEquipe()
         {
-            string Sql2 = "select e.LOGO, ce.NOM, e.VILLE, e.DATEINTRODUCTION, d.NOM " +
+            string Sql2 = "select e.LOGO, ce.NOM, e.VILLE, e.DATEINTRODUCTION, d.NOM, ce.POINTS " +
                           "from ClassementEquipe ce " +
                           "inner join equipes e on e.NUMEQUIPE = ce.NUMEQUIPE " +
-                          "inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION" ;
+                          "inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION ";
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql2, oraconnClassement);
@@ -90,9 +90,10 @@ namespace HockeyIce
                     Logo = resizeImage(Logo, new Size(50, 45));
                     //0,1,2,3,4
                     DGV_Divison.Rows.Add(Logo, oraRead.GetString(1),oraRead.GetString(2),
-                        oraRead.GetDateTime(3).ToShortDateString() ,oraRead.GetString(4));
+                        oraRead.GetDateTime(3).ToShortDateString() ,oraRead.GetString(4),
+                        oraRead.GetInt32(5));
                 }
-
+                DGV_Divison.Sort(DGV_Divison.Columns[5], ListSortDirection.Descending);//sort by points
                 oraRead.Close();
             }
             catch (OracleException ex)
