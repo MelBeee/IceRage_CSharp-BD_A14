@@ -309,7 +309,7 @@ namespace HockeyIce
             if(CB_Equipe.Text == "Tous les Matchs" || CB_Equipe.Text == "")
             {
                 commande = " select * from matchs " +
-                           " where DateHeure >= '" + Date + "'";
+                           " where DateHeure >= TO_DATE ('" + Date + "', 'yyyy-mm-dd')";
             }
             else 
             {
