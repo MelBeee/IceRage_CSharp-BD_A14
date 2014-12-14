@@ -29,6 +29,8 @@ namespace HockeyIce
         private bool _dragging = false;
         // emmagasine la position du curseur lors d'un deplacement de form
         private Point _start_point = new Point(0, 0);
+
+        private Point Position = new Point(4, 33);
         // variable contenant la connection a la bd 
         public OracleConnection oraconnGestion = new OracleConnection();
         // variable pour les ajouts primarykey
@@ -65,6 +67,7 @@ namespace HockeyIce
             RemplirComboBoxEquipe();
             RemplirComboBoxDivision();
             TT_LogoEquipe.SetToolTip(this.PB_LogoE, "Clicker pour modifier le Logo!");
+            TT_PhotoJoueur.SetToolTip(this.TB_PhotoJ, "100 caractères maximum");
         }
         private void FormGestion_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -79,28 +82,28 @@ namespace HockeyIce
                     PN_Equipe.Parent = this;
                     PN_Equipe.Visible = true;
                     PN_Equipe.Enabled = true;
-                    //PN_Equipe.Location = basePanel;
+                    PN_Equipe.Location = Position;
                     LB_Text.Text = "Gestion des équipes";
                     break;
                 case "Joueurs":
                     PN_Joueurs.Parent = this;
                     PN_Joueurs.Visible = true;
                     PN_Joueurs.Enabled = true;
-                    //PN_Joueurs.Location = basePanel;
+                    PN_Joueurs.Location = Position;
                     LB_Text.Text = "Gestion des joueurs";
                     break;
                 case "Division":
                     PN_Division.Parent = this;
                     PN_Division.Visible = true;
                     PN_Division.Enabled = true;
-                    //PN_Division.Location = basePanel;
+                    PN_Division.Location = Position;
                     LB_Text.Text = "Gestion des divisions";
                     break;
                 case "Matchs":
                     PN_Matchs.Parent = this;
                     PN_Matchs.Visible = true;
                     PN_Matchs.Enabled = true;
-                    //PN_Matchs.Location = basePanel;
+                    PN_Matchs.Location = Position;
                     LB_Text.Text = "Gestion des matchs";
                     break;
             }
