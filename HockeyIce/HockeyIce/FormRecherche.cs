@@ -268,6 +268,8 @@ namespace HockeyIce
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
         private void InitMatch(string commande)
         {
+            FB_LastMatch.Enabled = false;
+            FB_NextMatch.Enabled = true;
             try
             {
                 OracleDataAdapter Adapter3 = new OracleDataAdapter(commande, oraconnRecherche);
@@ -440,7 +442,7 @@ namespace HockeyIce
                 DTP_APartir.Value = dt;
                 LB_Date.Text = "À partir du " + dt.ToString("dd-MM-yyyy");
             }
-            monDataSet3.Tables["matchs"].Clear();
+            ClearBindings();
             InitMatch(VerifierQuelCommande());
         }
         private void FB_LastMatch_Click(object sender, EventArgs e)
@@ -471,6 +473,23 @@ namespace HockeyIce
             }
             AfficherMatch();
         }
+        private void CB_Equipe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CB_Invisible.SelectedIndex = CB_Equipe.SelectedIndex;
+            ClearBindings();
+            InitMatch(VerifierQuelCommandeMatch());
+        }
+        private void ClearBindings()
+        {
+            LB_NumVis.DataBindings.Clear();
+            LB_NumMai.DataBindings.Clear();
+            DTP_Match.DataBindings.Clear();
+            LB_Ville.DataBindings.Clear();
+            LB_PointMM.DataBindings.Clear();
+            LB_PointVM.DataBindings.Clear();
+            LB_HeureM.DataBindings.Clear();
+        }
+
         
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //      JOUEURS
@@ -659,6 +678,7 @@ namespace HockeyIce
             bool result = base.ProcessCmdKey(ref msg, keyData);
             return result;
         }
+
 
  
 

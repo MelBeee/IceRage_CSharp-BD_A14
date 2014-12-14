@@ -358,7 +358,7 @@
             this.PN_Matchs.Controls.Add(this.CB_Equipe);
             this.PN_Matchs.Controls.Add(this.FB_DateMatchs);
             this.PN_Matchs.Enabled = false;
-            this.PN_Matchs.Location = new System.Drawing.Point(3, 353);
+            this.PN_Matchs.Location = new System.Drawing.Point(3, 352);
             this.PN_Matchs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PN_Matchs.Name = "PN_Matchs";
             this.PN_Matchs.Size = new System.Drawing.Size(495, 314);
@@ -491,6 +491,7 @@
             this.CB_Equipe.Name = "CB_Equipe";
             this.CB_Equipe.Size = new System.Drawing.Size(132, 24);
             this.CB_Equipe.TabIndex = 5;
+            this.CB_Equipe.SelectedIndexChanged += new System.EventHandler(this.CB_Equipe_SelectedIndexChanged);
             // 
             // FB_DateMatchs
             // 
@@ -844,7 +845,6 @@
             // 
             // CB_Invisible
             // 
-            this.CB_Invisible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_Invisible.FormattingEnabled = true;
             this.CB_Invisible.Location = new System.Drawing.Point(15, 364);
             this.CB_Invisible.Margin = new System.Windows.Forms.Padding(4);
