@@ -37,7 +37,6 @@ namespace HockeyIce
         int base_ = 1;
         // variable utilisé lors des tests de keypress
         const char BACKSPACE = '\b';
-        //private Point basePanel = new Point(3, 27);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //      CONSTRUCTEUR

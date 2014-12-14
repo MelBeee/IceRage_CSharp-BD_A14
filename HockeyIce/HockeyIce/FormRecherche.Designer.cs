@@ -97,9 +97,9 @@
             this.LB_Text.Size = new System.Drawing.Size(96, 23);
             this.LB_Text.TabIndex = 6;
             this.LB_Text.Text = "Recherche";
-            this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseDown);
-            this.LB_Text.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseMove);
-            this.LB_Text.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseUp);
+            this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormRecherche_MouseDown);
+            this.LB_Text.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormRecherche_MouseMove);
+            this.LB_Text.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormRecherche_MouseUp);
             // 
             // PN_Equipe
             // 
