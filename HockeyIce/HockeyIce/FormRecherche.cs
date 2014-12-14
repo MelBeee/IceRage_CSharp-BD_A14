@@ -90,6 +90,7 @@ namespace HockeyIce
                     PN_Matchs.Visible = true;
                     PN_Matchs.Enabled = true;
                     PN_Matchs.Location = basePanel;
+                    RemplirCBEquipe();
                     DateTime bl = new DateTime(2014, 01, 01);
                     DTP_APartir.Value = bl;
                     LB_Text.Text = "Matchs";
@@ -351,7 +352,7 @@ namespace HockeyIce
         }
         private void AfficherMatch()
         {
-            LB_HeureDate.Text = DTP_Match.Value.ToString() + " à " + LB_HeureM.Text;
+            LB_HeureDate.Text = DTP_Match.Value.ToString("dd-MM-yyyy") + " à " + LB_HeureM.Text;
             LB_Score.Text = LB_PointMM.Text + " à " + LB_PointVM.Text;
             RemplirAutreInfo();
         }
@@ -366,6 +367,8 @@ namespace HockeyIce
             ChangerLogoMatchs(logovis, "visiteur");
             ChangerLogoMatchs(logomai, "receveur");
 
+            LB_NomVisiteur.Text = "";
+            LB_NomReceveur.Text = "";
             ChangerJoueurs(joueurvis, "visiteur");
             ChangerJoueurs(joueurmai, "receveur");
         }
@@ -403,15 +406,16 @@ namespace HockeyIce
                 orcd.CommandType = CommandType.Text;
                 OracleDataReader oraRead = orcd.ExecuteReader();
 
+ 
                 while(oraRead.Read())
                 {
                     if (equipe == "visiteur")
                     {
-                        LB_NomVisiteur.Text =  oraRead.GetString(0) + " " + oraRead.GetString(1) + "\n";
+                        LB_NomVisiteur.Text +=  oraRead.GetString(0) + " " + oraRead.GetString(1) + "\n";
                     }
                     else
                     {
-                        LB_NomReceveur.Text = oraRead.GetString(0) + " " + oraRead.GetString(1) + "\n";
+                        LB_NomReceveur.Text += oraRead.GetString(0) + " " + oraRead.GetString(1) + "\n";
                     }
                 }
                 oraRead.Close();
@@ -428,16 +432,17 @@ namespace HockeyIce
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 DTP_APartir.Value = Properties.Settings.Default.DateChoisi;
-                LB_Date.Text = "À partir du " + DTP_APartir.Value.ToString();
+                LB_Date.Text = "À partir du " + DTP_APartir.Value.ToString("dd-MM-yyyy");
             }
             else
             {
                 DateTime dt = new DateTime(2014, 01, 01);
                 DTP_APartir.Value = dt;
-                LB_Date.Text = "À partir du " + dt.ToString();
+                LB_Date.Text = "À partir du " + dt.ToString("dd-MM-yyyy");
             }
+            monDataSet3.Tables["matchs"].Clear();
+            InitMatch(VerifierQuelCommande());
         }
-
         private void FB_LastMatch_Click(object sender, EventArgs e)
         {
             MatchPrecedent();
