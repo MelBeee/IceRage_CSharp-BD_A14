@@ -10,7 +10,7 @@ gestion equipe	-> les images ne se modifie pas encore (Xav continue le code)  (?
 
 	- Ajouter les erreurs (1438/1008)
 
-	- Ecrire tous les commandes utilisées dans le fichier CommandesSQL.sql
+	- Ecrire TOUS les commandes utilisées dans le fichier CommandesSQL.sql
 
 	- Changer la methode d'insertion des stasts pour OracleParameters
 
