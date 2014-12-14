@@ -124,13 +124,21 @@ namespace HockeyIce
         {
             if (!Properties.Settings.Default.ModifierAjouter)
             {
-                AjoutMatch();
+                if(CB_EMaison.Text == CB_EVisiteur.Text)
+                {
+                    MessageBox.Show(" Une équipe ne peut pas jouer contre elle même. \n Changez vos choix");
+                }
+                else
+                {
+                    AjoutMatch();
+                    this.Close();
+                }
             }
             else
             {
                 ModifierMatch();
+                this.Close();
             }
-            this.Close();
         }
         private void FB_AppliquerDivision_Click(object sender, EventArgs e)
         {
