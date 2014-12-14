@@ -277,5 +277,10 @@ namespace HockeyIce
         {
             DGV_JoueurList.ClearSelection();
         }
+
+        private void DGV_Divison_SelectionChanged(object sender, EventArgs e)
+        {
+            DGV_Divison.ClearSelection();
+        }
     }
 }
