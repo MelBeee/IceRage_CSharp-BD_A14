@@ -120,9 +120,9 @@
             this.LB_Text.Size = new System.Drawing.Size(99, 23);
             this.LB_Text.TabIndex = 13;
             this.LB_Text.Text = "Classement";
-            this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseDown);
-            this.LB_Text.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseMove);
-            this.LB_Text.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LB_Text_MouseUp);
+            this.LB_Text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormClassement_MouseDown);
+            this.LB_Text.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormClassement_MouseMove);
+            this.LB_Text.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormClassement_MouseUp);
             // 
             // PN_CJoueurs
             // 

@@ -12,35 +12,86 @@ using System.Collections.Specialized;
 using System.Net;
 using System.IO;
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      FORM CLASSEMENT
+//      Fait par Melissa Boucher et Xavier Brosseau
+//      15 Decembre 2014
+//      Produit pour le cours de Base de Données et Developpement d'Interfaces
+//
+//      Utilisé afficher un classement des équipes par division / du top 3 des joueurs ainsi qu'un classement de tous les joueurs
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace HockeyIce
 {
     public partial class FormClassement : Form
     {
+        // bool savoir si on est entrain de deplacer le form
         private bool _dragging = false;
+        // emmagasine la position du curseur lors d'un deplacement de form
         private Point _start_point = new Point(0, 0);
+        // position des panels
         private Point basePanel = new Point(4, 30);
+        // variable contenant la connection a la bd 
         public OracleConnection oraconnClassement { set; get; }
+        // commande pour classement joueurs
         string Sql = "select cj.Prenom, cj.Nom, j.numeromaillot, j.typejoueur, j.Photo, e.Logo, cj.point from ClassementJoueur cj " +
                      "inner join joueurs j on j.NUMJOUEUR = cj.NUMJOUEUR " +
                      "inner join EQUIPES e on e.NUMEQUIPE = cj.NUMEQUIPE " +
                      "where point >=0";
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      CONSTRUCTEUR
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public FormClassement(OracleConnection oraconn)
         {
             InitializeComponent();
             oraconnClassement = oraconn;
         }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      LOAD ET CLOSING
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FormClassement_Load(object sender, EventArgs e)
         {
             EnabledVisibleLesPanels();
             this.Location = Properties.Settings.Default.PosFormClassement;
             CouleurLoadDGV();
         }
-
-        //////////////////////////////////////////////////////////////////////////////////
-        //couleur alterné du DGV du classement de joueurs
-        //////////////////////////////////////////////////////////////////////////////////
+        private void FormClassement_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.PosFormClassement = this.Location;
+            Properties.Settings.Default.Save();
+        }
+        private void EnabledVisibleLesPanels()
+        {
+            switch (Properties.Settings.Default.FenetreAOuvrir)
+            {
+                case "Equipes": //classement d'équipe par division
+                    PN_CEquipe.Parent = this;
+                    PN_CEquipe.Visible = true;
+                    PN_CEquipe.Enabled = true;
+                    PN_CEquipe.Location = basePanel;
+                    LB_Text.Text = "Classement des équipes";
+                    InitComboBoxEquipe();
+                    break;
+                case "Top3": //classement des 3 meileurs joueurs
+                    PN_3Joueurs.Parent = this;
+                    PN_3Joueurs.Visible = true;
+                    PN_3Joueurs.Enabled = true;
+                    PN_3Joueurs.Location = basePanel;
+                    LB_Text.Text = "Trois meilleurs joueurs";
+                    InitClassementBestJoueurs();
+                    break;
+                case "Joueurs": //classement des meileurs joueurs
+                    PN_CJoueurs.Parent = this;
+                    PN_CJoueurs.Visible = true;
+                    PN_CJoueurs.Enabled = true;
+                    PN_CJoueurs.Location = basePanel;
+                    LB_Text.Text = "Classement des joueurs";
+                    InitListJoueur();
+                    break;
+            }
+        }
+        // couleur alterné du DGV du classement de joueurs
         private void CouleurLoadDGV() 
         {
             int compteur = 0;
@@ -55,10 +106,10 @@ namespace HockeyIce
             }
         }
 
-        //////////////////////////////////////////////////////////////////////////////////
-        // Telecharge l'image de l'URL fournit
-        // pour les images de joueur!
-        //////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      GESTION DES IMAGES
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Telecharge l'image de l'URL fournit pour les images de joueur!
         public static Image GetImageFromUrl(string url)
         {
             HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
@@ -70,20 +121,16 @@ namespace HockeyIce
                 }
             }
         }
-
-        //////////////////////////////////////////////////////////////////////////////////
-        //resize l'image passer en paramettre et ces nouvelles dimension
-        //pour les faire bien fiter au colonnes et lignes
-        //////////////////////////////////////////////////////////////////////////////////
+        // resize l'image passer en paramettre et ces nouvelles dimension
+        // pour les faire bien fiter au colonnes et lignes
         public static Image resizeImage(Image imgToResize, Size size)
         {
             return (Image)(new Bitmap(imgToResize, size));
         }
 
-        //////////////////////////////////////////////////////////////////////////////////
-        //Initialiser le combobox du choix de division
-        //pour le classement d'équipes par division
-        //////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      EQUIPE
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void InitComboBoxEquipe()
         {
             try
@@ -117,10 +164,6 @@ namespace HockeyIce
                 }
             }
         }
-
-        //////////////////////////////////////////////////////////////////////////////////
-        //Initialise le DGV de classement des équipe par division
-        //////////////////////////////////////////////////////////////////////////////////
         private void InitDivisionEquipe()
         {
             string Sql2 = "select e.LOGO, ce.NOM, e.VILLE, e.DATEINTRODUCTION, d.NOM, ce.POINTS " +
@@ -169,10 +212,18 @@ namespace HockeyIce
                 }
             }
         }
+        private void DGV_Divison_SelectionChanged(object sender, EventArgs e)
+        {
+            DGV_Divison.ClearSelection();
+        }
+        private void CB_Division_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            InitDivisionEquipe();
+        }
 
-        //////////////////////////////////////////////////////////////////////////////////.
-        //Initialise le DGV de classement des joueur par pointages
-        //////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      JOUEURS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void InitListJoueur()
         {
             try
@@ -207,10 +258,14 @@ namespace HockeyIce
                 MessageBox.Show(exsqlajout.Message.ToString());
             }
         }
+        private void DGV_JoueurList_SelectionChanged(object sender, EventArgs e)
+        {
+            DGV_JoueurList.ClearSelection();
+        }
 
-        //////////////////////////////////////////////////////////////////////////////////
-        //Initialise les classement des 3 meilleurs joueur au total
-        //////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      TOP 3 JOUEURS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void InitClassementBestJoueurs()
         {
             try
@@ -263,43 +318,9 @@ namespace HockeyIce
             }
         }
 
-        //////////////////////////////////////////////////////////////////////////////////
-        //Loader le Panel selon la sélection du menu
-        //////////////////////////////////////////////////////////////////////////////////
-        private void EnabledVisibleLesPanels()
-        {
-            switch (Properties.Settings.Default.FenetreAOuvrir)
-            {
-                case "Equipes": //classement d'équipe par division
-                    PN_CEquipe.Parent = this;
-                    PN_CEquipe.Visible = true;
-                    PN_CEquipe.Enabled = true;
-                    PN_CEquipe.Location = basePanel;
-                    LB_Text.Text = "Classement des équipes";
-                    InitComboBoxEquipe();
-                    break;
-                case "Top3": //classement des 3 meileurs joueurs
-                    PN_3Joueurs.Parent = this;
-                    PN_3Joueurs.Visible = true;
-                    PN_3Joueurs.Enabled = true;
-                    PN_3Joueurs.Location = basePanel;
-                    LB_Text.Text = "Trois meilleurs joueurs";
-                    InitClassementBestJoueurs();
-                    break;
-                case "Joueurs": //classement des meileurs joueurs
-                    PN_CJoueurs.Parent = this;
-                    PN_CJoueurs.Visible = true;
-                    PN_CJoueurs.Enabled = true;
-                    PN_CJoueurs.Location = basePanel;
-                    LB_Text.Text = "Classement des joueurs";
-                    InitListJoueur();
-                    break;
-            }
-        }
-
-        //////////////////////////////////////////////////////////////////////////////////
-        // Events pour pouvoir faire bouger le form 
-        //////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      DEPLACEMENT DU FORM
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FormClassement_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
@@ -317,51 +338,14 @@ namespace HockeyIce
         {
             _dragging = false;
         }
-        private void LB_Text_MouseDown(object sender, MouseEventArgs e)
-        {
-            _dragging = true;  // _dragging is your variable flag
-            _start_point = new Point(e.X, e.Y);
-        }
-        private void LB_Text_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (_dragging)
-            {
-                Point p = PointToScreen(e.Location);
-                Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
-            }
-        }
-        private void LB_Text_MouseUp(object sender, MouseEventArgs e)
-        {
-            _dragging = false;
-        }
 
-        //////////////////////////////////////////////////////////////////////////////////
-        //Event de flash buttons & autres
-        //////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      EVENTS DE FLASHBUTTON
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FB_Quitter_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void DGV_JoueurList_SelectionChanged(object sender, EventArgs e)
-        {
-            DGV_JoueurList.ClearSelection();
-        }
-
-        private void DGV_Divison_SelectionChanged(object sender, EventArgs e)
-        {
-            DGV_Divison.ClearSelection();
-        }
-
-        private void CB_Division_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            InitDivisionEquipe();
-        }
-
-        private void FormClassement_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Properties.Settings.Default.PosFormClassement = this.Location;
-            Properties.Settings.Default.Save();
-        }
     }
 }
