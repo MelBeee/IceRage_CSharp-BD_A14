@@ -295,17 +295,17 @@ namespace HockeyIce
         {
             string commande;
 
-            if(CB_Equipe.Text == "Tous les Matchs")
+            if(CB_Equipe.Text == "Tous les Matchs" || CB_Equipe.Text == "")
             {
                 commande = " select * from matchs " +
-                           " where DateHeure >= " + DTP_APartir.Value.ToString();
+                           " where DateHeure >= '" + DTP_APartir.Value.ToString("dd-MM-yyyy") +"'";
             }
             else 
             {
                 commande =  " select * from matchs " +
                             " where (numequipevis = " + CB_Invisible.Text +
                             " OR numequipemai = " + CB_Invisible.Text +
-                            ") AND DateHeure >= " + DTP_APartir.Value.ToString();
+                            ") AND DateHeure >= '" + DTP_APartir.Value.ToString("dd-MM-yyyy") + "'";
             }
 
             return commande;
