@@ -28,14 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClassement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LB_Text = new System.Windows.Forms.Label();
             this.PN_CJoueurs = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.DGV_JoueurList = new System.Windows.Forms.DataGridView();
             this.PhotoJoueur = new System.Windows.Forms.DataGridViewImageColumn();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,9 +75,6 @@
             this.LB_PrenomBronze = new System.Windows.Forms.Label();
             this.PB_Podium = new System.Windows.Forms.PictureBox();
             this.PN_CEquipe = new System.Windows.Forms.Panel();
-            this.CB_InvisibleDivision = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CB_Division = new System.Windows.Forms.ComboBox();
             this.DGV_Divison = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,13 +83,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FB_Quitter = new FlashButton.FlashButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.PN_CJoueurs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_JoueurList)).BeginInit();
             this.PN_3Joueurs.SuspendLayout();
@@ -128,12 +125,89 @@
             this.PN_CJoueurs.Controls.Add(this.label2);
             this.PN_CJoueurs.Controls.Add(this.DGV_JoueurList);
             this.PN_CJoueurs.Enabled = false;
-            this.PN_CJoueurs.Location = new System.Drawing.Point(683, 30);
+            this.PN_CJoueurs.Location = new System.Drawing.Point(683, 28);
             this.PN_CJoueurs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_CJoueurs.Name = "PN_CJoueurs";
             this.PN_CJoueurs.Size = new System.Drawing.Size(673, 397);
             this.PN_CJoueurs.TabIndex = 10;
             this.PN_CJoueurs.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(507, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Points";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(604, 6);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Équipe";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(408, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Position";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(313, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Numéro";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(186, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Nom";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(56, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Prénom";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(-1, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Photo";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DGV_JoueurList
             // 
@@ -143,14 +217,14 @@
             this.DGV_JoueurList.AllowUserToResizeRows = false;
             this.DGV_JoueurList.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.DGV_JoueurList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_JoueurList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_JoueurList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_JoueurList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_JoueurList.ColumnHeadersVisible = false;
             this.DGV_JoueurList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -161,31 +235,31 @@
             this.TypePosition,
             this.Pointage,
             this.Equipe});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Kristen ITC", 11.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_JoueurList.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Kristen ITC", 11.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_JoueurList.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_JoueurList.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DGV_JoueurList.Location = new System.Drawing.Point(0, 31);
             this.DGV_JoueurList.MultiSelect = false;
             this.DGV_JoueurList.Name = "DGV_JoueurList";
             this.DGV_JoueurList.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Kristen ITC", 11.25F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_JoueurList.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Kristen ITC", 11.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_JoueurList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_JoueurList.RowHeadersVisible = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DGV_JoueurList.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DGV_JoueurList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV_JoueurList.RowTemplate.Height = 75;
             this.DGV_JoueurList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_JoueurList.ShowEditingIcon = false;
@@ -293,7 +367,7 @@
             this.PN_3Joueurs.Controls.Add(this.LB_PrenomBronze);
             this.PN_3Joueurs.Controls.Add(this.PB_Podium);
             this.PN_3Joueurs.Enabled = false;
-            this.PN_3Joueurs.Location = new System.Drawing.Point(6, 28);
+            this.PN_3Joueurs.Location = new System.Drawing.Point(456, 445);
             this.PN_3Joueurs.Margin = new System.Windows.Forms.Padding(2);
             this.PN_3Joueurs.Name = "PN_3Joueurs";
             this.PN_3Joueurs.Size = new System.Drawing.Size(673, 397);
@@ -511,9 +585,6 @@
             // PN_CEquipe
             // 
             this.PN_CEquipe.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.PN_CEquipe.Controls.Add(this.CB_InvisibleDivision);
-            this.PN_CEquipe.Controls.Add(this.label1);
-            this.PN_CEquipe.Controls.Add(this.CB_Division);
             this.PN_CEquipe.Controls.Add(this.DGV_Divison);
             this.PN_CEquipe.Enabled = false;
             this.PN_CEquipe.Location = new System.Drawing.Point(4, 30);
@@ -522,39 +593,6 @@
             this.PN_CEquipe.Size = new System.Drawing.Size(673, 397);
             this.PN_CEquipe.TabIndex = 11;
             this.PN_CEquipe.Visible = false;
-            // 
-            // CB_InvisibleDivision
-            // 
-            this.CB_InvisibleDivision.FormattingEnabled = true;
-            this.CB_InvisibleDivision.Location = new System.Drawing.Point(185, 7);
-            this.CB_InvisibleDivision.Name = "CB_InvisibleDivision";
-            this.CB_InvisibleDivision.Size = new System.Drawing.Size(121, 21);
-            this.CB_InvisibleDivision.TabIndex = 4;
-            this.CB_InvisibleDivision.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Division";
-            // 
-            // CB_Division
-            // 
-            this.CB_Division.AutoCompleteCustomSource.AddRange(new string[] {
-            "Ouest",
-            "Est"});
-            this.CB_Division.DisplayMember = "1";
-            this.CB_Division.FormattingEnabled = true;
-            this.CB_Division.Items.AddRange(new object[] {
-            "Est",
-            "Ouest"});
-            this.CB_Division.Location = new System.Drawing.Point(58, 7);
-            this.CB_Division.Name = "CB_Division";
-            this.CB_Division.Size = new System.Drawing.Size(121, 21);
-            this.CB_Division.TabIndex = 2;
             // 
             // DGV_Divison
             // 
@@ -576,9 +614,9 @@
             this.DGV_Divison.Name = "DGV_Divison";
             this.DGV_Divison.ReadOnly = true;
             this.DGV_Divison.RowHeadersVisible = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DGV_Divison.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DGV_Divison.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DGV_Divison.RowTemplate.Height = 75;
             this.DGV_Divison.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Divison.Size = new System.Drawing.Size(673, 366);
@@ -663,89 +701,12 @@
             this.FB_Quitter.TabIndex = 11;
             this.FB_Quitter.Click += new System.EventHandler(this.FB_Quitter_Click);
             // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(-1, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Photo";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(56, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Prénom";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(186, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Nom";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(313, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Numéro";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(408, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Position";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(604, 6);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Équipe";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(507, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 20);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Points";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormClassement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(1363, 429);
+            this.ClientSize = new System.Drawing.Size(1357, 657);
             this.Controls.Add(this.PN_3Joueurs);
             this.Controls.Add(this.LB_Text);
             this.Controls.Add(this.pictureBox2);
@@ -772,7 +733,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_EquipeBronze)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Podium)).EndInit();
             this.PN_CEquipe.ResumeLayout(false);
-            this.PN_CEquipe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Divison)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -818,15 +778,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TypePosition;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pointage;
         private System.Windows.Forms.DataGridViewImageColumn Equipe;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox CB_Division;
         private System.Windows.Forms.DataGridView DGV_Divison;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.ComboBox CB_InvisibleDivision;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

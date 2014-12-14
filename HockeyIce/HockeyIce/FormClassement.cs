@@ -73,21 +73,24 @@ namespace HockeyIce
 
         private void InitDivisionEquipe()
         {
+            string Sql2 = "select e.LOGO, ce.NOM, e.VILLE, e.DATEINTRODUCTION, d.NOM " +
+                          "from ClassementEquipe ce " +
+                          "inner join equipes e on e.NUMEQUIPE = ce.NUMEQUIPE " +
+                          "inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION" ;
             try
             {
-                OracleCommand orcd = new OracleCommand(Sql, oraconnClassement);
+                OracleCommand orcd = new OracleCommand(Sql2, oraconnClassement);
                 orcd.CommandType = CommandType.Text;
                 OracleDataReader oraRead = orcd.ExecuteReader();
 
                 //Joueur #1
                 while (oraRead.Read())
                 {
-                    Image Photo = GetImageFromUrl(oraRead.GetString(4));
-                    Photo = resizeImage(Photo, new Size(50, 75));
-                    Image Logo = Image.FromStream(oraRead.GetOracleBlob(5));
+                    Image Logo = Image.FromStream(oraRead.GetOracleBlob(0));
                     Logo = resizeImage(Logo, new Size(50, 45));
                     //0,1,2,3,4
-                    DGV_Divison.Rows.Add();
+                    DGV_Divison.Rows.Add(Logo, oraRead.GetString(1),oraRead.GetString(2),
+                        oraRead.GetDateTime(3).ToShortDateString() ,oraRead.GetString(4));
                 }
 
                 oraRead.Close();
