@@ -27,6 +27,8 @@ namespace HockeyIce
             LabelTransparent();
         }
 
+ 
+
         private void LabelTransparent()
         {
             Point pos = new Point(105, 220);
@@ -293,20 +295,60 @@ namespace HockeyIce
             this.Close();
         }
 
-        private void FB_Next_Click(object sender, EventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Left:
+                    if (Properties.Settings.Default.FenetreAOuvrir == "Joueurs")
+                        JoueurPrecedent();
+                    else if (Properties.Settings.Default.FenetreAOuvrir == "Équipes")
+                        EquipePrecedente();
+                    break;
+                case Keys.Right:
+                    if (Properties.Settings.Default.FenetreAOuvrir == "Joueurs")
+                        ProchainJoueur();
+                    else if (Properties.Settings.Default.FenetreAOuvrir == "Équipes")
+                        ProchaineEquipe();
+                    break;
+            }
+            bool result = base.ProcessCmdKey(ref msg, keyData);
+            return result;
+        }
+
+        private void ProchainJoueur()
         {
             this.BindingContext[monDataSet, "joueurs"].Position += 1;
             AffichageJoueur();
             ChangerLogoEquipe();
             ChangerStatistiques();
         }
-
-        private void FB_Back_Click(object sender, EventArgs e)
+        private void JoueurPrecedent()
         {
             this.BindingContext[monDataSet, "joueurs"].Position -= 1;
             AffichageJoueur();
             ChangerLogoEquipe();
             ChangerStatistiques();
+        }
+        private void ProchaineEquipe()
+        {
+            this.BindingContext[monDataSet2, "equipes"].Position += 1;
+            AffichageEquipe();
+        }
+        private void EquipePrecedente()
+        {
+            this.BindingContext[monDataSet2, "equipes"].Position -= 1;
+            AffichageEquipe();
+        }
+
+        private void FB_Next_Click(object sender, EventArgs e)
+        {
+            ProchainJoueur();
+        }
+
+        private void FB_Back_Click(object sender, EventArgs e)
+        {
+            JoueurPrecedent();
         }
 
         private void FB_FermerD_Click(object sender, EventArgs e)
@@ -331,14 +373,12 @@ namespace HockeyIce
 
         private void Next_equipe(object sender, EventArgs e)
         {
-            this.BindingContext[monDataSet2, "equipes"].Position += 1;
-            AffichageEquipe();
+            ProchaineEquipe();
         }
 
         private void Back_Equipe(object sender, EventArgs e)
         {
-            this.BindingContext[monDataSet2, "equipes"].Position -= 1;
-            AffichageEquipe();
+            EquipePrecedente();
         }
 
         private void LB_VilleEquipe_Click(object sender, EventArgs e)
