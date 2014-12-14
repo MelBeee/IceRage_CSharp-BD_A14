@@ -72,6 +72,18 @@ INSERT INTO Matchs VALUES(1, 2, 7, '15-11-14', 'Toronto',      3, 2, '19:30');
 INSERT INTO Matchs VALUES(1, 3, 6, '17-11-14', 'Los Angeles',  1, 2, '20:00');
 INSERT INTO Matchs VALUES(1, 4, 5, '19-11-14', 'Chicago',      2, 5, '18:00');
 
+update matchs set dateheure = '13-11-2014' where nummatch = 9;
+
+select j.*, e.nom from joueurs j 
+inner join equipes e on e.NUMEQUIPE = j.numequipe 
+where j.numjoueur = 1;
+
+commit;
+
+select * from matchs;
+
+select * from divisions;
+
 commit;
 --- Insertion Match 1 
 --- Equipe 1 (1-5)

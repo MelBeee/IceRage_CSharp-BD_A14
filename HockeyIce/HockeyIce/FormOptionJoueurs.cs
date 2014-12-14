@@ -10,13 +10,12 @@ using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//      FORM OPTIONS
+//      FORM OPTIONS JOUEURS
 //      Fait par Melissa Boucher et Xavier Brosseau
 //      15 Decembre 2014
 //      Produit pour le cours de Base de Données et Developpement d'Interfaces
 //
-//      Utilisé pour faire un choix pour modifier/supprimer/ajouter un element dans une des 4 tables de la BD 
-//      soit Divisions, Equipes, Joueurs ou Match
+//      Utilisé pour faire un choix entre afficher tout les joueurs ou les joueurs d'une seule équipe
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace HockeyIce
 {
