@@ -40,3 +40,28 @@ select sum(Point) as Points,NOM,NUMDIVISION, numequipe
 from ComptagePointEquipe
 group by NOM,NUMDIVISION, numequipe
 order by Points ;
+
+--Classement Joueur
+select cj.Prenom, cj.Nom, j.numeromaillot, j.typejoueur, j.Photo, e.Logo, cj.point 
+from ClassementJoueur cj
+inner join joueurs j on j.NUMJOUEUR = cj.NUMJOUEUR
+inner join EQUIPES e on e.NUMEQUIPE = cj.NUMEQUIPE
+where point >=0;
+
+--Remplir combobox Division
+select NOM from divisions
+
+--Classement Équipe selon Division
+select e.LOGO, ce.NOM, e.VILLE, e.DATEINTRODUCTION, d.NOM, ce.POINTS
+from ClassementEquipe ce
+inner join equipes e on e.NUMEQUIPE = ce.NUMEQUIPE
+inner join divisions d on d.NUMDIVISION = ce.NUMDIVISION
+where d.NOM = 'Est'
+
+
+
+
+
+
+
+
