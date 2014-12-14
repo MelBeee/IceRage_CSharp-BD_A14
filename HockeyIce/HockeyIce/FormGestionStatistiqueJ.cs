@@ -30,18 +30,18 @@ namespace HockeyIce
         // variable utilisé pour la verification dans les textboxs
         const char BACKSPACE = '\b';
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//      CONSTRUCTEUR
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //      CONSTRUCTEUR
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public FormGestionStatistiqueJ(OracleConnection oraconn)
         {
             InitializeComponent();
             oraconnStats = oraconn;
         }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//      LOAD ET CLOSING
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //      LOAD ET CLOSING
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FormGestionStatistiqueJ_Load(object sender, EventArgs e)
         {
             // loading de la position sauvegardé antérieurement 
@@ -60,9 +60,9 @@ namespace HockeyIce
             Properties.Settings.Default.Save();
         }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//      VERIFICATION DES CARACTERES
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //      VERIFICATION DES CARACTERES
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // lorsqu'on veut seulement un chiffre
         bool EstChiffre(char c)
         {
@@ -75,9 +75,9 @@ namespace HockeyIce
                 e.Handled = !EstChiffre(e.KeyChar);
         }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//      DEPLACEMENT DU FORM
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //      DEPLACEMENT DU FORM
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void FormGestionStatistiqueJ_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // Enregistre que l'utilisateur a selectionner la form
@@ -96,9 +96,9 @@ namespace HockeyIce
             _dragging = false; // Enregistre que l'utilisateur a "lacher le form"
         }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//      EVENTS DE FLASHBUTTON
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //      EVENTS DE FLASHBUTTON
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void UpdateControl()
         {
             if (LB_Invisible.Text == "Gardien")
@@ -138,9 +138,9 @@ namespace HockeyIce
             }
         }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//      ERREURS
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //      ERREURS
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void AfficherErreur(OracleException ex)
         {
             FormErreur dlg = new FormErreur(ex);
@@ -151,9 +151,9 @@ namespace HockeyIce
             }
         }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//      VERIFICATION TEXT QUI CHANGE CB/TB
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //      VERIFICATION TEXT QUI CHANGE CB/TB
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void CB_Match_TextChanged(object sender, EventArgs e)
         {
             CB_Invisible.SelectedIndex = CB_Match.SelectedIndex;
@@ -190,22 +190,22 @@ namespace HockeyIce
             UpdateControl();
         }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//      REMPLISSAGE DES COMBOBOX
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //      REMPLISSAGE DES COMBOBOX
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void RempliComboBoxMatch()
         {
             string Sql = "select m.nummatch, ev.nom, em.nom " +
                          "from matchs m " +
                          "inner join equipes ev on ev.numequipe = m.numequipevis " +
-                         "inner join equipes em on em.numequipe = m.numequipemai " ; 
+                         "inner join equipes em on em.numequipe = m.numequipemai ";
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql, oraconnStats);
                 orcd.CommandType = CommandType.Text;
                 OracleDataReader oraRead = orcd.ExecuteReader();
 
-                while(oraRead.Read())
+                while (oraRead.Read())
                 {
                     CB_Invisible.Items.Add(oraRead.GetInt32(0).ToString());
                     CB_Match.Items.Add(oraRead.GetString(1).ToString() + " vs " + oraRead.GetString(2).ToString());
@@ -233,7 +233,7 @@ namespace HockeyIce
                             "SELECT J.* FROM STATISTIQUESJOUEURS S  " +
                             "INNER JOIN JOUEURS J ON J.NUMJOUEUR = S.NUMJOUEUR  " +
                             "WHERE S.NUMMATCH = " + CB_Invisible.Text;
-  
+
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql, oraconnStats);
@@ -267,10 +267,8 @@ namespace HockeyIce
                 orcd.CommandType = CommandType.Text;
                 OracleDataReader oraRead = orcd.ExecuteReader();
 
-                while (oraRead.Read())
-                {
-                    LB_Invisible.Text = oraRead.GetString(0).ToString();
-                }
+                oraRead.Read();
+                LB_Invisible.Text = oraRead.GetString(0).ToString();
 
                 oraRead.Close();
             }
@@ -285,30 +283,47 @@ namespace HockeyIce
                 TB_Passes.Enabled = false;
                 TB_Buts.BackColor = Color.FromArgb(95, 124, 143);
                 TB_Passes.BackColor = Color.FromArgb(95, 124, 143);
-                TB_Buts.Text = null;
-                TB_Passes.Text = null;
+                TB_Buts.Text = "0";
+                TB_Passes.Text = "0";
             }
         }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//      AJOUT DES STATS DANS BD
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //      AJOUT DES STATS DANS BD
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private bool AjoutStats()
         {
             bool reussi = true; 
-            string sql = "Insert into StatistiquesJoueurs values(" + 
-                CB_Invisible.Text + ", " +
-                CB_InvisibleJ.Text + ", " +
-                TB_Buts.Text + ", " +
-                TB_Passes.Text + ", '" + 
-                TB_Punition.Text + "') " ;
-            OracleCommand orcd = new OracleCommand(sql, oraconnStats);
             try
             {
-                orcd.CommandType = CommandType.Text;
-                orcd.ExecuteNonQuery();
+                string sql = " insert into StatistiquesJoueurs " +
+                "(NUMMATCH, NUMJOUEUR, NBREBUTS, NBREPASSES, TEMPSPUNITION) values " +
+                "(:NumMatch,:NumJoueur,:NbreButs,:NbrePasses,:TempsPunition)";
+
+                OracleParameter oraNumMatch = new OracleParameter(":NumMatch", OracleDbType.Int32);
+                OracleParameter oraNumJoueur = new OracleParameter(":NumJoueur", OracleDbType.Int32);
+                OracleParameter oraNbreButs = new OracleParameter(":NbreButs", OracleDbType.Int32);
+                OracleParameter oraNbrePasses = new OracleParameter(":NbrePasses", OracleDbType.Int32);
+                OracleParameter oraPunition = new OracleParameter(":TempsPunition", OracleDbType.Varchar2, 5);
+
+                OracleCommand oraAjout = new OracleCommand(sql, oraconnStats);
+                oraAjout.CommandType = CommandType.Text;
+
+                oraNumMatch.Value = Int32.Parse(CB_Invisible.Text);
+                oraNumJoueur.Value = Int32.Parse(CB_InvisibleJ.Text);
+                oraNbreButs.Value = TB_Buts.Text;
+                oraNbrePasses.Value = TB_Passes.Text;
+                oraPunition.Value = TB_Punition.Text;
+
+                oraAjout.Parameters.Add(oraNumMatch);
+                oraAjout.Parameters.Add(oraNumJoueur);
+                oraAjout.Parameters.Add(oraNbreButs);
+                oraAjout.Parameters.Add(oraNbrePasses);
+                oraAjout.Parameters.Add(oraPunition);
+
+                oraAjout.ExecuteNonQuery();
             }
-            catch(OracleException ex)
+            catch (OracleException ex)
             {
                 AfficherErreur(ex);
                 reussi = false;
