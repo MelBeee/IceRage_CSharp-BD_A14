@@ -29,7 +29,7 @@ namespace HockeyIce
         private bool _dragging = false;
         // emmagasine la position du curseur lors d'un deplacement de form
         private Point _start_point = new Point(0, 0);
-
+        // position des panels
         private Point Position = new Point(4, 33);
         // variable contenant la connection a la bd 
         public OracleConnection oraconnGestion = new OracleConnection();
@@ -520,7 +520,7 @@ namespace HockeyIce
                 oraAjout.Parameters.Add(oraDate);
                 // on execute la requete 
                 oraAjout.ExecuteNonQuery();
-                MessageBox.Show("Insertion reussi");
+                MessageBox.Show("Insertion reussite");
             }
             catch (OracleException ex)
             {
@@ -529,7 +529,6 @@ namespace HockeyIce
         }
         private void ModifierEquipe()
         {
-
             try
             {
                 // la requête SQLajout est paramétrée. Elle a 4 paramètres.
@@ -578,7 +577,7 @@ namespace HockeyIce
                     oraAjout2.Parameters.Add(oraLogo);
                     oraAjout2.ExecuteNonQuery();
                 }
-                MessageBox.Show("Modification reussi");
+                MessageBox.Show("Modification reussite");
             }
             catch (OracleException ex)
             {
@@ -590,7 +589,6 @@ namespace HockeyIce
             commandesql = "select e.*, d.nom from equipes e " +
                           "inner join divisions d on d.numdivision = e.numdivision " +
                           "where numequipe = " + Properties.Settings.Default.NumValue;
-
             try
             {
                 OracleCommand orcd = new OracleCommand(commandesql, oraconnGestion);
@@ -637,7 +635,6 @@ namespace HockeyIce
                 oraAjout.CommandType = CommandType.Text;
                 // En utilisant la propriété Paramètres de OracleCommand, on spécifie les 
                 // Paramètre de la requête SQLajout.
-
                 oraAjout.Parameters.Add(oraNum);
                 oraAjout.Parameters.Add(oraNom);
                 oraAjout.Parameters.Add(oraDate);
@@ -654,8 +651,8 @@ namespace HockeyIce
         private void AjoutDivision()
         {
             commandesql = " insert into divisions " +
-                          "(NUMDIVISION, NOM, DATECREATION) values " +
-                          "(:NumDivision,:Nom,:DateValue)";
+                          "(NUMDIVISION,    NOM,    DATECREATION) values " +
+                          "(:NumDivision,   :Nom,   :DateValue)";
             Properties.Settings.Default.NumValue = base_.ToString();
             ExecuteCommandeDivision();
         }
@@ -721,7 +718,6 @@ namespace HockeyIce
                 oraAjout.CommandType = CommandType.Text;
                 // En utilisant la propriété Paramètres de OracleCommand, on spécifie les 
                 // Paramètre de la requête SQLajout.
-
                 oraAjout.Parameters.Add(oraNum);
                 oraAjout.Parameters.Add(oraNom);
                 oraAjout.Parameters.Add(oraPrenom);
@@ -742,8 +738,8 @@ namespace HockeyIce
         private void AjoutJoueur()
         {
             commandesql = "insert into joueurs " +
-                          "(NUMJOUEUR, NOM, PRENOM, NAISSANCE, NUMEROMAILLOT, TYPEJOUEUR, PHOTO, NUMEQUIPE) values " +
-                          "(:NumJoueur, :Nom, :Prenom, :Naissance, :NumMaillot, :TypeJoueur, :Photo, :NumEquipe)";
+                          "(NUMJOUEUR,  NOM,    PRENOM,     NAISSANCE,  NUMEROMAILLOT,  TYPEJOUEUR,     PHOTO,  NUMEQUIPE) values " +
+                          "(:NumJoueur, :Nom,   :Prenom,    :Naissance, :NumMaillot,    :TypeJoueur,    :Photo, :NumEquipe)";
             Properties.Settings.Default.NumValue = base_.ToString();
 
             ExecuteCommandeJoueur();
@@ -751,14 +747,14 @@ namespace HockeyIce
         private void ModifierJoueur()
         {
             commandesql = "update joueurs set " +
-                          "NUMJOUEUR = :NumJoueur, " +
-                          "NOM = :Nom, " +
-                          "PRENOM = :Prenom, " +
-                          "NAISSANCE = :Naissance, " +
-                          "NUMEROMAILLOT = :NumMaillot, " +
-                          "TYPEJOUEUR = :TypeJoueur, " +
-                          "PHOTO = :Photo, " +
-                          "NUMEQUIPE = :NumEquipe " +
+                          "NUMJOUEUR =      :NumJoueur, " +
+                          "NOM =            :Nom, " +
+                          "PRENOM =         :Prenom, " +
+                          "NAISSANCE =      :Naissance, " +
+                          "NUMEROMAILLOT =  :NumMaillot, " +
+                          "TYPEJOUEUR =     :TypeJoueur, " +
+                          "PHOTO =          :Photo, " +
+                          "NUMEQUIPE =      :NumEquipe " +
                           "where NUMJOUEUR = " + Properties.Settings.Default.NumValue;
             ExecuteCommandeJoueur();
         }

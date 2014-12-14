@@ -3,17 +3,9 @@
 	CE QU'IL RESTERAIT À FAIRE SELON MOI
 	------------------------------------
 
-	1- Ajouter les erreurs 
-			#1438(quand on met trop de point dans un match)
-			#1008
-
 	2- Ecrire TOUS les commandes utilisées dans le fichier CommandesSQL.sql
 
-	4- Faire en sorte de ne pas pouvoir mettre 1 equipe visiteur et maison en meme temps 
-
-	5- Consulter Matchs !!!!
-
-	6- Reduire le nbre de click vers Afficher Joueur (j'ai une idée de comment faire) 
+	5- Consulter Matchs
 
 	7- Classement des équipes, afficher tout les equipes peu importe la division ? 
 
@@ -22,3 +14,6 @@
 	9- Mettre un Rectangle noir transparent en dessous du # du joueur 
 
 	10- Le #4 dans le document vert (créer les synonymes ect) dans un fichier sql 
+
+	11- Finir de tout commenter
+		- Gestion des images (FormGestion)
