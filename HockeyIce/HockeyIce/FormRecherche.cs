@@ -90,6 +90,8 @@ namespace HockeyIce
                     PN_Matchs.Visible = true;
                     PN_Matchs.Enabled = true;
                     PN_Matchs.Location = basePanel;
+                    DateTime bl = new DateTime(2014, 01, 01);
+                    DTP_APartir.Value = bl;
                     LB_Text.Text = "Matchs";
                     InitMatch(VerifierQuelCommandeMatch());
                     break;
@@ -277,8 +279,8 @@ namespace HockeyIce
                 Adapter3.Dispose();
                 // on apelle la fonction lier pour faire
                 // la liaison des données du DataSet avec les zones de text.
-                LierEquipe();
-                AffichageEquipe();
+                LierMatch();
+                AfficherMatch();
 
                 if (this.BindingContext[monDataSet3, "matchs"].Count <= 1)
                 {
@@ -295,17 +297,19 @@ namespace HockeyIce
         {
             string commande;
 
+            string Date = DTP_APartir.Value.ToString("yyyy-MM-dd");
+
             if(CB_Equipe.Text == "Tous les Matchs" || CB_Equipe.Text == "")
             {
                 commande = " select * from matchs " +
-                           " where DateHeure >= '" + DTP_APartir.Value.ToString("dd-MM-yyyy") +"'";
+                           " where DateHeure >= '" + Date + "'";
             }
             else 
             {
                 commande =  " select * from matchs " +
                             " where (numequipevis = " + CB_Invisible.Text +
                             " OR numequipemai = " + CB_Invisible.Text +
-                            ") AND DateHeure >= '" + DTP_APartir.Value.ToString("dd-MM-yyyy") + "'";
+                            ") AND DateHeure >= '" + Date + "'";
             }
 
             return commande;
