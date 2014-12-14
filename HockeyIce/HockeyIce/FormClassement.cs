@@ -38,7 +38,10 @@ namespace HockeyIce
             CouleurLoadDGV();
         }
 
-        private void CouleurLoadDGV()
+        //////////////////////////////////////////////////////////////////////////////////
+        //couleur alterné du DGV du classement de joueurs
+        //////////////////////////////////////////////////////////////////////////////////
+        private void CouleurLoadDGV() 
         {
             int compteur = 0;
             foreach (DataGridViewRow dgvr in DGV_JoueurList.Rows)
@@ -52,7 +55,10 @@ namespace HockeyIce
             }
         }
 
+        //////////////////////////////////////////////////////////////////////////////////
         // Telecharge l'image de l'URL fournit
+        // pour les images de joueur!
+        //////////////////////////////////////////////////////////////////////////////////
         public static Image GetImageFromUrl(string url)
         {
             HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
@@ -65,12 +71,19 @@ namespace HockeyIce
             }
         }
 
+        //////////////////////////////////////////////////////////////////////////////////
         //resize l'image passer en paramettre et ces nouvelles dimension
+        //pour les faire bien fiter au colonnes et lignes
+        //////////////////////////////////////////////////////////////////////////////////
         public static Image resizeImage(Image imgToResize, Size size)
         {
             return (Image)(new Bitmap(imgToResize, size));
         }
 
+        //////////////////////////////////////////////////////////////////////////////////
+        //Initialiser le combobox du choix de division
+        //pour le classement d'équipes par division
+        //////////////////////////////////////////////////////////////////////////////////
         private void InitComboBoxEquipe()
         {
             try
@@ -81,6 +94,7 @@ namespace HockeyIce
                 OracleDataReader oraRead = orcd.ExecuteReader();
 
                 //Selection pour afficher tout les équipes
+                //elle est mis en pos 0 du CB
                 CB_Division.Items.Add("Tous les équipes");
 
                 while (oraRead.Read())
@@ -104,6 +118,9 @@ namespace HockeyIce
             }
         }
 
+        //////////////////////////////////////////////////////////////////////////////////
+        //Initialise le DGV de classement des équipe par division
+        //////////////////////////////////////////////////////////////////////////////////
         private void InitDivisionEquipe()
         {
             string Sql2 = "select e.LOGO, ce.NOM, e.VILLE, e.DATEINTRODUCTION, d.NOM, ce.POINTS " +
@@ -113,26 +130,33 @@ namespace HockeyIce
             if (CB_Division.SelectedItem.ToString() != "Tous les équipes")
             {
                 // si l'item du combo box n'est pas d'afficher tout les équipes,
-                //on ajoute la condition WHERE 
+                //on ajoute la condition WHERE suivente a la chaine SQL
                 Sql2 += "where d.NOM = '" + CB_Division.SelectedItem.ToString() + "'";
             }
+
             try
             {
                 OracleCommand orcd = new OracleCommand(Sql2, oraconnClassement);
                 orcd.CommandType = CommandType.Text;
                 OracleDataReader oraRead = orcd.ExecuteReader();
                 DGV_Divison.Rows.Clear();
-                //Joueur #1
+                
                 while (oraRead.Read())
                 {
                     Image Logo = Image.FromStream(oraRead.GetOracleBlob(0));
                     Logo = resizeImage(Logo, new Size(50, 45));
-                    //0,1,2,3,4
-                    DGV_Divison.Rows.Add(Logo, oraRead.GetString(1), oraRead.GetString(2),
-                        oraRead.GetDateTime(3).ToShortDateString(), oraRead.GetString(4),
-                        oraRead.GetInt32(5));
+                    
+                    DGV_Divison.Rows.Add(Logo,  //Logo equipe
+                        oraRead.GetString(1),   //Nom équipe
+                        oraRead.GetString(2),   //Ville
+                        oraRead.GetDateTime(3).ToShortDateString(), // Date de fondation
+                        oraRead.GetString(4),   //Nom de la division
+                        oraRead.GetInt32(5));   //Pointage 
                 }
-                DGV_Divison.Sort(DGV_Divison.Columns[5], ListSortDirection.Descending);//sort by points
+
+                //classement desc par la colonnes de point du DGV.
+                //la façons "Order by" rend le pointage null autrement
+                DGV_Divison.Sort(DGV_Divison.Columns[5], ListSortDirection.Descending);
                 oraRead.Close();
             }
             catch (OracleException ex)
@@ -146,6 +170,9 @@ namespace HockeyIce
             }
         }
 
+        //////////////////////////////////////////////////////////////////////////////////.
+        //Initialise le DGV de classement des joueur par pointages
+        //////////////////////////////////////////////////////////////////////////////////
         private void InitListJoueur()
         {
             try
@@ -154,27 +181,26 @@ namespace HockeyIce
                 orcd.CommandType = CommandType.Text;
                 OracleDataReader oraRead = orcd.ExecuteReader();
 
-                //Joueur #1
                 while (oraRead.Read())
                 {
-
+                    // transforme une adresse URL en type image
                     Image Photo = GetImageFromUrl(oraRead.GetString(4));
-                    Photo = resizeImage(Photo, new Size(50, 75));
+                    // transforme un tableau de Bytes en type image
                     Image Logo = Image.FromStream(oraRead.GetOracleBlob(5));
+
+                    //on Resize les images pour qu'il fitent bien dans le DGV
+                    Photo = resizeImage(Photo, new Size(50, 75));
                     Logo = resizeImage(Logo, new Size(50, 45));
 
-                    DGV_JoueurList.Rows.Add(
-                    Photo,
-                    oraRead.GetString(0),
-                    oraRead.GetString(1),
-                    "Numéro " + oraRead.GetInt32(2).ToString(),
-                    oraRead.GetString(3),
-                    oraRead.GetInt32(6).ToString() + " Points",
-                    Logo);
+                    DGV_JoueurList.Rows.Add(Photo,  //Photo du joueur
+                    oraRead.GetString(0),           //Prénom
+                    oraRead.GetString(1),           //Nom
+                    "Numéro " + oraRead.GetInt32(2).ToString(),//# Maillot
+                    oraRead.GetString(3),           //Position
+                    oraRead.GetInt32(6).ToString() + " Points",//Pointage
+                    Logo);                          //Logo d'équipe
                 }
-
                 oraRead.Close();
-
             }
             catch (OracleException exsqlajout)
             {
@@ -182,6 +208,9 @@ namespace HockeyIce
             }
         }
 
+        //////////////////////////////////////////////////////////////////////////////////
+        //Initialise les classement des 3 meilleurs joueur au total
+        //////////////////////////////////////////////////////////////////////////////////
         private void InitClassementBestJoueurs()
         {
             try
@@ -191,19 +220,19 @@ namespace HockeyIce
                 OracleDataReader oraRead = orcd.ExecuteReader();
 
                 //Joueur #1
-                oraRead.Read();
-                LB_PrenomGold.Text = oraRead.GetString(0);
-                LB_NomGold.Text = oraRead.GetString(1);
-                LB_NumeroGold.Text = "Numéro " + oraRead.GetInt32(2).ToString();
-                LB_PositionGold.Text = oraRead.GetString(3);
-                PB_Photo_Gold.ImageLocation = oraRead.GetString(4);
-                PB_Photo_Gold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                PB_EquipeGold.Image = Image.FromStream(oraRead.GetOracleBlob(5));
-                PB_EquipeGold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                LB_PointsGold.Text = oraRead.GetInt32(6).ToString() + " Points";
+                oraRead.Read(); //Lire le 1er joueur du classement
+                LB_PrenomGold.Text = oraRead.GetString(0);                      //Prénom
+                LB_NomGold.Text = oraRead.GetString(1);                         //Nom
+                LB_NumeroGold.Text = "Numéro " + oraRead.GetInt32(2).ToString();//# Maillot
+                LB_PositionGold.Text = oraRead.GetString(3);                    //Type de joueur
+                PB_Photo_Gold.ImageLocation = oraRead.GetString(4);             //Photo joueur
+                PB_Photo_Gold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;//Resize la photo
+                PB_EquipeGold.Image = Image.FromStream(oraRead.GetOracleBlob(5));//Logo équipe
+                PB_EquipeGold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;//Resize le Logo
+                LB_PointsGold.Text = oraRead.GetInt32(6).ToString() + " Points";//Pointage
 
                 //Joueur #2
-                oraRead.Read();
+                oraRead.Read(); //Lire le 2iem joueur du classement
                 LB_PrenomSilver.Text = oraRead.GetString(0);
                 LB_NomSilver.Text = oraRead.GetString(1);
                 LB_NumeroSilver.Text = "Numéro " + oraRead.GetInt32(2).ToString();
@@ -215,7 +244,7 @@ namespace HockeyIce
                 LB_PointsSilver.Text = oraRead.GetInt32(6).ToString() + " Points";
 
                 //Joueur #3
-                oraRead.Read();
+                oraRead.Read(); //Lire le 3iem joueur du classement
                 LB_PrenomBronze.Text = oraRead.GetString(0);
                 LB_NomBronze.Text = oraRead.GetString(1);
                 LB_NumeroBronze.Text = "Numéro " + oraRead.GetInt32(2).ToString();
@@ -234,11 +263,14 @@ namespace HockeyIce
             }
         }
 
+        //////////////////////////////////////////////////////////////////////////////////
+        //Loader le Panel selon la sélection du menu
+        //////////////////////////////////////////////////////////////////////////////////
         private void EnabledVisibleLesPanels()
         {
             switch (Properties.Settings.Default.FenetreAOuvrir)
             {
-                case "Equipes":
+                case "Equipes": //classement d'équipe par division
                     PN_CEquipe.Parent = this;
                     PN_CEquipe.Visible = true;
                     PN_CEquipe.Enabled = true;
@@ -246,7 +278,7 @@ namespace HockeyIce
                     LB_Text.Text = "Classement des équipes";
                     InitComboBoxEquipe();
                     break;
-                case "Top3":
+                case "Top3": //classement des 3 meileurs joueurs
                     PN_3Joueurs.Parent = this;
                     PN_3Joueurs.Visible = true;
                     PN_3Joueurs.Enabled = true;
@@ -254,7 +286,7 @@ namespace HockeyIce
                     LB_Text.Text = "Trois meilleurs joueurs";
                     InitClassementBestJoueurs();
                     break;
-                case "Joueurs":
+                case "Joueurs": //classement des meileurs joueurs
                     PN_CJoueurs.Parent = this;
                     PN_CJoueurs.Visible = true;
                     PN_CJoueurs.Enabled = true;
@@ -265,7 +297,9 @@ namespace HockeyIce
             }
         }
 
+        //////////////////////////////////////////////////////////////////////////////////
         // Events pour pouvoir faire bouger le form 
+        //////////////////////////////////////////////////////////////////////////////////
         private void FormClassement_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging is your variable flag
@@ -301,15 +335,12 @@ namespace HockeyIce
             _dragging = false;
         }
 
+        //////////////////////////////////////////////////////////////////////////////////
+        //Event de flash buttons & autres
+        //////////////////////////////////////////////////////////////////////////////////
         private void FB_Quitter_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void FormClassement_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Properties.Settings.Default.PosFormClassement = this.Location;
-            Properties.Settings.Default.Save();
         }
 
         private void DGV_JoueurList_SelectionChanged(object sender, EventArgs e)
@@ -325,6 +356,12 @@ namespace HockeyIce
         private void CB_Division_SelectedIndexChanged(object sender, EventArgs e)
         {
             InitDivisionEquipe();
+        }
+
+        private void FormClassement_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.PosFormClassement = this.Location;
+            Properties.Settings.Default.Save();
         }
     }
 }
