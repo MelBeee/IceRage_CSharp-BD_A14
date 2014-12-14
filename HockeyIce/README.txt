@@ -8,6 +8,4 @@ datagridview joueur -> couleur du #
 
 A propos -> binder les bouton <> pour joueur 
 
-Gestion Match -> on peut forcé le pointage a dépasser le max -> ERREUR 1438
-http://goo.gl/nznRQJ
-
+Gestion Match -> on peut forcÃ© le pointage a dÃ©passer le max -> ERREUR 1438
