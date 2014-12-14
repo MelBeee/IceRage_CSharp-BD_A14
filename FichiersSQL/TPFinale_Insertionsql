@@ -1,7 +1,7 @@
 alter SESSION set NLS_DATE_FORMAT = 'DD-MM-YYYY';
 
-INSERT INTO Divisions VALUES(1, 'Est','01-01-14');
-INSERT INTO Divisions VALUES(1, 'Ouest','01-01-14');
+INSERT INTO Divisions VALUES(1, 'Est','01-01-2014');
+INSERT INTO Divisions VALUES(1, 'Ouest','01-01-2014');
 
 commit;
 
@@ -67,24 +67,13 @@ INSERT INTO Joueurs VALUES(1, 'Burns',    'Brent',    '09-03-1985', 88, 'Defense
 
 commit;
 
-INSERT INTO Matchs VALUES(1, 1, 8, '13-11-14', 'Montreal',     7, 2, '19:00');
-INSERT INTO Matchs VALUES(1, 2, 7, '15-11-14', 'Toronto',      3, 2, '19:30');
-INSERT INTO Matchs VALUES(1, 3, 6, '17-11-14', 'Los Angeles',  1, 2, '20:00');
-INSERT INTO Matchs VALUES(1, 4, 5, '19-11-14', 'Chicago',      2, 5, '18:00');
-
-update matchs set dateheure = '13-11-2014' where nummatch = 9;
-
-select j.*, e.nom from joueurs j 
-inner join equipes e on e.NUMEQUIPE = j.numequipe 
-where j.numjoueur = 1;
+INSERT INTO Matchs VALUES(1, 1, 8, '13-11-2014', 'Montreal',     7, 2, '19:00');
+INSERT INTO Matchs VALUES(1, 2, 7, '15-11-2014', 'Toronto',      3, 2, '19:30');
+INSERT INTO Matchs VALUES(1, 3, 6, '17-11-2014', 'Los Angeles',  1, 2, '20:00');
+INSERT INTO Matchs VALUES(1, 4, 5, '19-11-2014', 'Chicago',      2, 5, '18:00');
 
 commit;
 
-select * from matchs;
-
-select * from divisions;
-
-commit;
 --- Insertion Match 1 
 --- Equipe 1 (1-5)
 INSERT INTO StatistiquesJoueurs VALUES(1,1,null,null,'0');
