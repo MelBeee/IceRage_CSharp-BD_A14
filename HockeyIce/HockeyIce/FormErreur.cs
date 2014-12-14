@@ -94,7 +94,7 @@ namespace HockeyIce
         }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//      SWITCH EXCEPTION
+//      SWITCH EXCEPTION    1008
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Traite l'exception lancé
         private void SwitchException(OracleException ex)
@@ -118,6 +118,9 @@ namespace HockeyIce
                 case 00947:
                     DescriptionErreur = "Il manque des informations dans la commande sql exécuté.";
                     break;
+                case 01008:
+                    DescriptionErreur = "Une tentative de liaison de variable a échoué";
+                    break;
                 case 01017:
                     DescriptionErreur = "Mot de passe ou nom d'utilisateur invalide. \nConnection non établi.";
                     break;
@@ -132,6 +135,9 @@ namespace HockeyIce
                     break;
                 case 01410:
                     DescriptionErreur = "Vous ne pouvez pas mettre de valeur null.";
+                    break;
+                case 01438:
+                    DescriptionErreur = "Valeur dépassant la précision maximale dans la BD";
                     break;
                 case 01747:
                     DescriptionErreur = "Tentative d'utilisation d'un mot reservé dans Oracle";  
