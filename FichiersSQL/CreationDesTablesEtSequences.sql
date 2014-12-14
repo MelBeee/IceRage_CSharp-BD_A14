@@ -36,12 +36,12 @@ CREATE TABLE Matchs
     NumEquipeVis NUMBER (2) NOT NULL ,
     NumEquipeMai NUMBER (2) NOT NULL ,
     DateHeure      DATE NOT NULL ,
-    Lieu         VARCHAR2 (30 CHAR) NOT NULL 
+    Lieu         VARCHAR2 (30 CHAR) NOT NULL,
+    PointageMaison number(2),
+    PointageVisiteur number(2),
+    Heure varchar2(5)
   ) ;
-ALTER TABLE Matchs ADD CONSTRAINT Matchs_PK PRIMARY KEY ( NumMatch ) ;
-ALTER TABLE MATCHS ADD PointageMaison NUMBER(2);
-ALTER TABLE MATCHS ADD PointageVisiteur NUMBER(2);
-ALTER TABLE MATCHS ADD Heure VARCHAR2(5);
+ALTER TABLE Matchs ADD CONSTRAINT Matchs_PK PRIMARY KEY ( NumMatch );
 
 CREATE TABLE Equipes
   (
@@ -59,16 +59,16 @@ ALTER TABLE StatistiquesJoueurs ADD CONSTRAINT StatistiquesJoueurs_Joueurs_FK FO
 ALTER TABLE StatistiquesJoueurs ADD CONSTRAINT StatistiquesJoueurs_Matchs_FK FOREIGN KEY ( NumMatch ) REFERENCES Matchs ( NumMatch ) ;
 
 ALTER TABLE Joueurs ADD CONSTRAINT Joueurs_Equipes_FK FOREIGN KEY ( NumEquipe ) REFERENCES Equipes ( NumEquipe ) ON
-DELETE CASCADE ;
+DELETE CASCADE;
 
 ALTER TABLE Matchs ADD CONSTRAINT Matchs_Equipes_FK FOREIGN KEY ( NumEquipeVis ) REFERENCES Equipes ( NumEquipe ) ON
-DELETE CASCADE ;
+DELETE CASCADE;
 
 ALTER TABLE Matchs ADD CONSTRAINT Matchs_Equipes_FKv2 FOREIGN KEY ( NumEquipeMai ) REFERENCES Equipes ( NumEquipe ) ON
-DELETE CASCADE ;
+DELETE CASCADE;
 
 ALTER TABLE Equipes ADD CONSTRAINT Equipes_Divisions_FK FOREIGN KEY ( NumDivision ) REFERENCES Divisions ( NumDivision ) ON
-DELETE CASCADE ;
+DELETE CASCADE;
 
 CREATE SEQUENCE CKDivision START WITH 1 NOCACHE ORDER ;
 CREATE OR REPLACE TRIGGER Divisions_NumDivision_TRG BEFORE
