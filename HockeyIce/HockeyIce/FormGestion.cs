@@ -863,6 +863,7 @@ namespace HockeyIce
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //      GESTION DES IMAGES
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Transformer un lien URL d'une image en type image
         public static Image GetImageFromUrl(string url)
         {
             HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
@@ -879,19 +880,20 @@ namespace HockeyIce
             nomFichier = RechercherFichier();
             if (nomFichier != null)
             {
+                //Placer l'image selectionner dans le PB_LogoE
                 PB_LogoE.Image = System.Drawing.Image.FromFile(nomFichier);
                 PB_LogoE.BackgroundImage = PB_LogoE.Image;
                 PB_LogoE.ImageLocation = nomFichier;
             }
         }
+        //Retourne le Path résultent d'un File dialog
         private string RechercherFichier()
         {
             OpenFileDialog fImage = new OpenFileDialog();
             fImage.Title = "sélectionner une image";
             fImage.CheckFileExists = true;
             fImage.InitialDirectory = @":C\";
-            //fImage.InitialDirectory = Application.StartupPath;
-            fImage.Filter = "Fichiers images (*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG;|All files (*.*)|*.*";
+            fImage.Filter = "Fichiers images (*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
             fImage.FilterIndex = 1;
             fImage.RestoreDirectory = true;
             if (fImage.ShowDialog() == DialogResult.OK)
@@ -905,6 +907,8 @@ namespace HockeyIce
             }
             return nomFichier;
         }
+        //retourne un tableau de Byte d'une image télécharger du Web
+        //Dans ce cas-ci, c'est pour ajoute le logo de base
         private byte[] URLToByte(string pathfile)
         {
             // le résultat on le met dans une variable de type byte (octets).
@@ -916,6 +920,8 @@ namespace HockeyIce
             }
             return null;
         }
+        //retourne un tableau de Byte d'un image local
+        //pour transformer une image en blob
         private byte[] PicToByte( string pathfile )
         {
             // le résultat on le met dans une variable de type byte (octets).
