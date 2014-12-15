@@ -324,7 +324,7 @@ namespace HockeyIce
 
             string Date = DTP_APartir.Value.ToString("yyyy-MM-dd");
 
-            if (CB_Equipe.SelectedIndex == 0 || CB_Equipe.SelectedIndex == -1)
+            if (CB_Equipe.SelectedIndex == CB_Equipe.Items.Count || CB_Equipe.SelectedIndex == -1)
             {
                 commande = " select * from matchs " +
                            " where DateHeure >= TO_DATE ('" + Date + "', 'yyyy-mm-dd')";
@@ -347,9 +347,7 @@ namespace HockeyIce
             {
                 OracleCommand orcd = new OracleCommand(sqlremplir, oraconnRecherche);
                 orcd.CommandType = CommandType.Text;
-                OracleDataReader oraRead = orcd.ExecuteReader();
-
-                CB_Equipe.Items.Add("Tous les Matchs");
+                OracleDataReader oraRead = orcd.ExecuteReader();                
 
                 while (oraRead.Read())
                 {
@@ -357,6 +355,7 @@ namespace HockeyIce
                     CB_Equipe.Items.Add(oraRead.GetString(1).ToString());
                 }
                 oraRead.Close();
+                CB_Equipe.Items.Add("Tous les Matchs");
             }
             catch (OracleException ex)
             {
