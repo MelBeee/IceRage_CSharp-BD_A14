@@ -26,7 +26,7 @@ namespace HockeyIce
         // emmagasine la position du curseur lors d'un deplacement de form
         private Point _start_point = new Point(0, 0);
         // position des panels
-        private Point basePanel = new Point(4, 33);
+        private Point basePanel = new Point(2, 27);
         // variable contenant la connection a la bd 
         private OracleConnection oraconnRecherche = new OracleConnection();
         // Data set utilisé pour afficher les joueurs/equipe
