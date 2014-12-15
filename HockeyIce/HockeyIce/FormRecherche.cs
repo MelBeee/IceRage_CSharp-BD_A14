@@ -26,7 +26,7 @@ namespace HockeyIce
         // emmagasine la position du curseur lors d'un deplacement de form
         private Point _start_point = new Point(0, 0);
         // position des panels
-        private Point basePanel = new Point(3, 28);
+        private Point basePanel = new Point(4, 33);
         // variable contenant la connection a la bd 
         private OracleConnection oraconnRecherche = new OracleConnection();
         // Data set utilisé pour afficher les joueurs/equipe
@@ -46,11 +46,11 @@ namespace HockeyIce
         // Rend le label du numero du joueur plus voyant
         private void LabelTransparent()
         {
-            Point pos = new Point(105, 220);
+            Point pos = new Point(135, 265);
             pos = PB_Joueur.PointToClient(pos);
-            LB_Mailot.Parent = PB_Joueur;
-            LB_Mailot.Location = pos;
-            LB_Mailot.BackColor = Color.FromArgb(125, 0, 0, 0);
+            LB_Maillot.Parent = PB_Joueur;
+            LB_Maillot.Location = pos;
+            LB_Maillot.BackColor = Color.FromArgb(125, 0, 0, 0);
         }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -622,7 +622,7 @@ namespace HockeyIce
         }
         private void AffichageJoueur()
         {
-            LB_Mailot.Text = "#" + LB_Tempo.Text;
+            LB_Maillot.Text = "#" + LB_Tempo.Text;
             PB_Joueur.ImageLocation = LB_Tempo2.Text;
             LB_DateNais.Text = DTP_Tempo.Text;
         }

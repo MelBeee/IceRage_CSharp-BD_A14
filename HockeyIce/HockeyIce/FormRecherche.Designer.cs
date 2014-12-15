@@ -78,7 +78,7 @@
             this.f4g5d = new System.Windows.Forms.Label();
             this.sascfer = new System.Windows.Forms.Label();
             this.PB_Equipe = new System.Windows.Forms.PictureBox();
-            this.LB_Mailot = new System.Windows.Forms.Label();
+            this.LB_Maillot = new System.Windows.Forms.Label();
             this.PB_Joueur = new System.Windows.Forms.PictureBox();
             this.labrlds = new System.Windows.Forms.Label();
             this.PB_Logo = new System.Windows.Forms.PictureBox();
@@ -521,7 +521,7 @@
             this.PN_Joueurs.Controls.Add(this.groupBox1);
             this.PN_Joueurs.Controls.Add(this.sascfer);
             this.PN_Joueurs.Controls.Add(this.PB_Equipe);
-            this.PN_Joueurs.Controls.Add(this.LB_Mailot);
+            this.PN_Joueurs.Controls.Add(this.LB_Maillot);
             this.PN_Joueurs.Controls.Add(this.PB_Joueur);
             this.PN_Joueurs.Controls.Add(this.labrlds);
             this.PN_Joueurs.Enabled = false;
@@ -726,17 +726,17 @@
             this.PB_Equipe.TabIndex = 9;
             this.PB_Equipe.TabStop = false;
             // 
-            // LB_Mailot
+            // LB_Maillot
             // 
-            this.LB_Mailot.AutoSize = true;
-            this.LB_Mailot.Font = new System.Drawing.Font("Kristen ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Mailot.ForeColor = System.Drawing.Color.White;
-            this.LB_Mailot.Location = new System.Drawing.Point(121, 226);
-            this.LB_Mailot.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_Mailot.Name = "LB_Mailot";
-            this.LB_Mailot.Size = new System.Drawing.Size(76, 45);
-            this.LB_Mailot.TabIndex = 7;
-            this.LB_Mailot.Text = "#21";
+            this.LB_Maillot.AutoSize = true;
+            this.LB_Maillot.Font = new System.Drawing.Font("Kristen ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Maillot.ForeColor = System.Drawing.Color.White;
+            this.LB_Maillot.Location = new System.Drawing.Point(123, 226);
+            this.LB_Maillot.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Maillot.Name = "LB_Maillot";
+            this.LB_Maillot.Size = new System.Drawing.Size(76, 45);
+            this.LB_Maillot.TabIndex = 7;
+            this.LB_Maillot.Text = "#21";
             // 
             // PB_Joueur
             // 
@@ -766,11 +766,11 @@
             // PB_Logo
             // 
             this.PB_Logo.Image = global::HockeyIce.Properties.Resources.HockeyIcon;
-            this.PB_Logo.Location = new System.Drawing.Point(3, 5);
+            this.PB_Logo.Location = new System.Drawing.Point(4, 4);
             this.PB_Logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PB_Logo.Name = "PB_Logo";
             this.PB_Logo.Size = new System.Drawing.Size(29, 26);
-            this.PB_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PB_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Logo.TabIndex = 7;
             this.PB_Logo.TabStop = false;
             // 
@@ -818,7 +818,7 @@
             this.FB_Fermer.ImageDisable = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageDisable")));
             this.FB_Fermer.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageNeutral")));
             this.FB_Fermer.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageOver")));
-            this.FB_Fermer.Location = new System.Drawing.Point(1001, 4);
+            this.FB_Fermer.Location = new System.Drawing.Point(472, 4);
             this.FB_Fermer.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(27, 27);
@@ -926,7 +926,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(1033, 687);
+            this.ClientSize = new System.Drawing.Size(501, 350);
             this.Controls.Add(this.DTP_APartir);
             this.Controls.Add(this.DTP_Match);
             this.Controls.Add(this.LB_NumVis);
@@ -987,7 +987,7 @@
         private System.Windows.Forms.Panel PN_Joueurs;
         private System.Windows.Forms.PictureBox PB_Joueur;
         private System.Windows.Forms.Label sascfer;
-        private System.Windows.Forms.Label LB_Mailot;
+        private System.Windows.Forms.Label LB_Maillot;
         private System.Windows.Forms.Label labrlds;
         private System.Windows.Forms.Label csadf56;
         private System.Windows.Forms.Label f4g5d;
