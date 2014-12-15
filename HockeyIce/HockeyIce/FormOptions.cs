@@ -131,8 +131,18 @@ namespace HockeyIce
             }
             catch (OracleException ex)
             {
-                AfficherErreur(ex);
-                reussi = false;
+                switch (Properties.Settings.Default.FenetreAOuvrir)
+                {
+                    case "Équipes":
+                        MessageBox.Show("Impossible de supprimer une équipe lorsqu'il reste des joueurs dedans.");
+                        break;
+                    case "Division":
+                        MessageBox.Show("Impossible de supprimer une division lorsqu'il reste des équipes dedans");
+                        break;
+                    default:
+                        AfficherErreur(ex);
+                        break;
+                }
             }
             return reussi;
         }
