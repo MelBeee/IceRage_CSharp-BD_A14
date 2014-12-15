@@ -334,7 +334,7 @@ namespace HockeyIce
                 commande =  " select * from matchs " +
                             " where (numequipevis = " + CB_Invisible.Text +
                             " OR numequipemai = " + CB_Invisible.Text +
-                            ") AND DateHeure >= '" + Date + "'";
+                            ") AND DateHeure >= TO_DATE ('" + Date + "', 'yyyy-mm-dd')";
             }
 
             return commande;
