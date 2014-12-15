@@ -3,7 +3,5 @@
 	CE QU'IL RESTERAIT À FAIRE
 	--------------------------
 
-	- Consulter Matchs 
+	- Consulter Matchs par Date ("/%!$!"$%!)
 
-	- Remodeler l'interface
-	
