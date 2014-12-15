@@ -324,7 +324,7 @@ namespace HockeyIce
 
             string Date = DTP_APartir.Value.ToString("yyyy-MM-dd");
 
-            if (CB_Equipe.SelectedIndex == CB_Equipe.Items.Count || CB_Equipe.SelectedIndex == -1)
+            if (CB_Equipe.SelectedIndex == CB_Equipe.Items.Count -1 || CB_Equipe.SelectedIndex == -1)
             {
                 commande = " select * from matchs " +
                            " where DateHeure >= TO_DATE ('" + Date + "', 'yyyy-mm-dd')";
@@ -495,7 +495,10 @@ namespace HockeyIce
         }
         private void CB_Equipe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CB_Invisible.SelectedIndex = CB_Equipe.SelectedIndex;
+            if (CB_Equipe.SelectedIndex != CB_Equipe.Items.Count -1)
+            {
+                CB_Invisible.SelectedIndex = CB_Equipe.SelectedIndex;
+            }
             ClearBindings();
             InitMatch(VerifierQuelCommandeMatch());
         }
