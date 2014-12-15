@@ -324,7 +324,7 @@ namespace HockeyIce
 
             string Date = DTP_APartir.Value.ToString("yyyy-MM-dd");
 
-            if(CB_Equipe.SelectedIndex == 0)
+            if (CB_Equipe.SelectedIndex == 0 || CB_Equipe.SelectedIndex == -1)
             {
                 commande = " select * from matchs " +
                            " where DateHeure >= TO_DATE ('" + Date + "', 'yyyy-mm-dd')";
