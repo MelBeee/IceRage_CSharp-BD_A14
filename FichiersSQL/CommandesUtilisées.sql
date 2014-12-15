@@ -1,3 +1,21 @@
+--COMMANDES UTILISÉS DANS LA RECHERCHE / CONSULTATION 
+--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--
+-- Recherche de matchs 
+select * from matchs 
+where DateHeure >= TO_DATE('01-01-2014', 'yyyy-mm-dd'); --selon date choisi
+
+select * from matchs 
+where (numequipevis = 1 OR numequipemai = 1) --selon equipe choisi
+AND DateHeure >= '01-01-2014'; --selon date choisi
+
+-- Recherche d'equipe
+select * from equipes;
+
+-- Recherche de joueurs
+select * from joueurs;
+
+select * from joueurs where numequipe =1; -- selon l'equipe choisi
+
 --COMMANDES UTILISÉS DANS LE CLASSEMENT
 --//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--
 --Classement Joueur et Top3
@@ -208,6 +226,11 @@ inner join equipes e on e.NUMEQUIPE = j.numequipe;
 
 --Supprimer un joueur
 delete from joueurs where numjoueur = 0; --chiffre en conséquence
+
+--/////////// GESTION DES STATISTIQUES ///////////--
+insert into StatistiquesJoueurs 
+(NUMMATCH, NUMJOUEUR, NBREBUTS, NBREPASSES, TEMPSPUNITION) values 
+(:NumMatch,:NumJoueur,:NbreButs,:NbrePasses,:TempsPunition);
 
 --//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--
 -- #4 A et B
