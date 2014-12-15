@@ -52,7 +52,6 @@
             this.LB_NomReceveur = new System.Windows.Forms.Label();
             this.LB_Score = new System.Windows.Forms.Label();
             this.LB_Ville = new System.Windows.Forms.Label();
-            this.LB_Date = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.PB_Receveur = new System.Windows.Forms.PictureBox();
             this.PB_Visiteur = new System.Windows.Forms.PictureBox();
@@ -60,7 +59,6 @@
             this.FB_NextMatch = new FlashButton.FlashButton();
             this.FB_LastMatch = new FlashButton.FlashButton();
             this.CB_Equipe = new System.Windows.Forms.ComboBox();
-            this.FB_DateMatchs = new FlashButton.FlashButton();
             this.PN_Joueurs = new System.Windows.Forms.Panel();
             this.LB_Type = new System.Windows.Forms.Label();
             this.LB_DateNais = new System.Windows.Forms.Label();
@@ -348,7 +346,6 @@
             this.PN_Matchs.Controls.Add(this.LB_NomReceveur);
             this.PN_Matchs.Controls.Add(this.LB_Score);
             this.PN_Matchs.Controls.Add(this.LB_Ville);
-            this.PN_Matchs.Controls.Add(this.LB_Date);
             this.PN_Matchs.Controls.Add(this.flowLayoutPanel1);
             this.PN_Matchs.Controls.Add(this.PB_Receveur);
             this.PN_Matchs.Controls.Add(this.PB_Visiteur);
@@ -356,7 +353,6 @@
             this.PN_Matchs.Controls.Add(this.FB_NextMatch);
             this.PN_Matchs.Controls.Add(this.FB_LastMatch);
             this.PN_Matchs.Controls.Add(this.CB_Equipe);
-            this.PN_Matchs.Controls.Add(this.FB_DateMatchs);
             this.PN_Matchs.Enabled = false;
             this.PN_Matchs.Location = new System.Drawing.Point(3, 352);
             this.PN_Matchs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -404,16 +400,6 @@
             this.LB_Ville.TabIndex = 35;
             this.LB_Ville.Text = "Toronto";
             this.LB_Ville.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // LB_Date
-            // 
-            this.LB_Date.AutoSize = true;
-            this.LB_Date.Font = new System.Drawing.Font("Kristen ITC", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Date.Location = new System.Drawing.Point(179, 12);
-            this.LB_Date.Name = "LB_Date";
-            this.LB_Date.Size = new System.Drawing.Size(191, 24);
-            this.LB_Date.TabIndex = 34;
-            this.LB_Date.Text = "À partir du 01-10-2014";
             // 
             // flowLayoutPanel1
             // 
@@ -492,21 +478,6 @@
             this.CB_Equipe.Size = new System.Drawing.Size(132, 24);
             this.CB_Equipe.TabIndex = 5;
             this.CB_Equipe.SelectedIndexChanged += new System.EventHandler(this.CB_Equipe_SelectedIndexChanged);
-            // 
-            // FB_DateMatchs
-            // 
-            this.FB_DateMatchs.BackgroundImage = global::HockeyIce.Properties.Resources.CalendrierNormal;
-            this.FB_DateMatchs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_DateMatchs.ImageClick = global::HockeyIce.Properties.Resources.CalendrierClick;
-            this.FB_DateMatchs.ImageDisable = global::HockeyIce.Properties.Resources.CalendrierDisable;
-            this.FB_DateMatchs.ImageNeutral = global::HockeyIce.Properties.Resources.CalendrierNormal;
-            this.FB_DateMatchs.ImageOver = global::HockeyIce.Properties.Resources.CalendrierHover;
-            this.FB_DateMatchs.Location = new System.Drawing.Point(149, 11);
-            this.FB_DateMatchs.Margin = new System.Windows.Forms.Padding(5);
-            this.FB_DateMatchs.Name = "FB_DateMatchs";
-            this.FB_DateMatchs.Size = new System.Drawing.Size(29, 24);
-            this.FB_DateMatchs.TabIndex = 4;
-            this.FB_DateMatchs.Click += new System.EventHandler(this.FB_DateMatchs_Click);
             // 
             // PN_Joueurs
             // 
@@ -818,7 +789,7 @@
             this.FB_Fermer.ImageDisable = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageDisable")));
             this.FB_Fermer.ImageNeutral = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageNeutral")));
             this.FB_Fermer.ImageOver = ((System.Drawing.Image)(resources.GetObject("FB_Fermer.ImageOver")));
-            this.FB_Fermer.Location = new System.Drawing.Point(472, 4);
+            this.FB_Fermer.Location = new System.Drawing.Point(471, 4);
             this.FB_Fermer.Margin = new System.Windows.Forms.Padding(5);
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(27, 27);
@@ -926,7 +897,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(501, 350);
+            this.ClientSize = new System.Drawing.Size(500, 351);
             this.Controls.Add(this.DTP_APartir);
             this.Controls.Add(this.DTP_Match);
             this.Controls.Add(this.LB_NumVis);
@@ -962,7 +933,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.PN_Matchs.ResumeLayout(false);
-            this.PN_Matchs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Receveur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Visiteur)).EndInit();
             this.PN_Joueurs.ResumeLayout(false);
@@ -1026,13 +996,11 @@
         private FlashButton.FlashButton flashButton3;
         private System.Windows.Forms.Label LB_DivisionNumInvisible;
         private System.Windows.Forms.Label LB_NumEquipeGhost;
-        private FlashButton.FlashButton FB_DateMatchs;
         private System.Windows.Forms.ComboBox CB_Equipe;
         private System.Windows.Forms.Label LB_NomVisiteur;
         private System.Windows.Forms.Label LB_NomReceveur;
         private System.Windows.Forms.Label LB_Score;
         private System.Windows.Forms.Label LB_Ville;
-        private System.Windows.Forms.Label LB_Date;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox PB_Receveur;
         private System.Windows.Forms.PictureBox PB_Visiteur;

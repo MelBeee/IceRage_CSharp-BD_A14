@@ -106,6 +106,7 @@ namespace HockeyIce
                     reussi = DeleteThing("delete from equipes where numequipe =" + CB_Invisible.Text);
                     break;
                 case "Joueurs":
+                    reussi = DeleteThing("delete from statistiquesjoueurs where numjoueur = " + CB_Invisible.Text);
                     reussi = DeleteThing("delete from joueurs where numjoueur =" + CB_Invisible.Text);
                     break;
                 case "Division":

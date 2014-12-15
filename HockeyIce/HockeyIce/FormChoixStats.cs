@@ -80,6 +80,10 @@ namespace HockeyIce
         {
             VerifierRadioButton();
         }
+        private void FB_Fermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //      LOAD DU COMBOBOX
@@ -206,5 +210,7 @@ namespace HockeyIce
         {
             _dragging = false; // Enregistre que l'utilisateur a "lacher le form"
         }
+
+
     }
 }

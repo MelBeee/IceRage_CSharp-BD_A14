@@ -142,6 +142,18 @@ namespace HockeyIce
                 case 01747:
                     DescriptionErreur = "Tentative d'utilisation d'un mot reservé dans Oracle";  
                     break;
+                case 01830:
+                    DescriptionErreur = "Le format de date est invalide";
+                    break;
+                case 01843:
+                    DescriptionErreur = "La date n'est pas valide";
+                    break;
+                case 01861:
+                    DescriptionErreur = "Le format de date est invalide";
+                    break;
+                case 02290:
+                    DescriptionErreur = "Tentative d'execution d'une commande qui viole une constrainte Check";
+                    break;
                 case 02292:
                     DescriptionErreur = "Tentative de suppression d'une clé lié à une clé étrangère.";
                     break;

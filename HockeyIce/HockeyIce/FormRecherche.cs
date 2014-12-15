@@ -447,24 +447,6 @@ namespace HockeyIce
                 AfficherErreur(ex);
             }
         }
-        private void FB_DateMatchs_Click(object sender, EventArgs e)
-        {
-            FormDate dlg = new FormDate();
-
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                DTP_APartir.Value = Properties.Settings.Default.DateChoisi;
-                LB_Date.Text = "À partir du " + DTP_APartir.Value.ToString("dd-MM-yyyy");
-            }
-            else
-            {
-                DateTime dt = new DateTime(2014, 01, 01);
-                DTP_APartir.Value = dt;
-                LB_Date.Text = "À partir du " + dt.ToString("dd-MM-yyyy");
-            }
-            ClearBindings();
-            InitMatch(VerifierQuelCommande());
-        }
         private void FB_LastMatch_Click(object sender, EventArgs e)
         {
             MatchPrecedent();

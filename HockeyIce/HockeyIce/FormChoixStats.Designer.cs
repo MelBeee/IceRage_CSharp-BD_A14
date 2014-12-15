@@ -83,6 +83,7 @@
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(27, 26);
             this.FB_Fermer.TabIndex = 6;
+            this.FB_Fermer.Click += new System.EventHandler(this.FB_Fermer_Click);
             // 
             // panel1
             // 
